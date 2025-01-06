@@ -1,0 +1,65 @@
+# /*////////////////////////////////////////////////////////////////////////////////////////////// 
+# +--+--+---+-+---+----+
+# |  |  |   | /   |    |
+# |  |--|   --    |    |
+# |  |  |   | \   ---- |
+# |--+--+---+-+--------+
+# Module Name:.gitignore
+# Provider:HuKaiLong
+# Creat Time:2024-12-25 09:11:17
+# Example:
+# 1> ignore floder and ignore sub-files and sub-floder in  floder
+#     Floder/
+# 2> unignore floder ignore sub-files and sub-floder in  floder
+#     Floder/*
+# ############################################RTL IN PRJ############################################
+#ignore vivado floder
+.xil/
+*.ip_user_files/
+*.cache/
+*.hw/
+*.runs/*
+*.sim/
+
+#ignore file type 
+/*.str
+/*.log
+/*.jou
+/*.zip 
+/*.dmp
+
+#ignore other file
+/*.txt
+!procise_incr_cfg.txt
+.vscode/
+
+#include bitfile
+!*.runs/impl_1/
+*.runs/impl_1/*
+!*.runs/impl_1/*.bit
+!*.runs/impl_1/*.bin
+!*.runs/impl_1/*.ltx
+!*.runs/impl_1/*.rbt
+!*.runs/impl_1/*.mcs
+
+# ignore tcl generate floder(RtlNewV2 Generated)
+RTL_UseOnly/
+
+#ignore sim log/work file in RTL
+# Rtl/*_sim/*
+# !Rtl/*_sim/testbentch
+# !Rtl/*_sim/*.tcl
+# !Rtl/*_sim/*.do
+# !Rtl/*_sim/*.bat
+
+#ignore all FileType in Prj
+**/*.zip
+**/*.rar
+**/*.bak
+##Sim File ignore
+**/work
+**/*.vstf
+**/*.wlf
+**/*.vcd
+**/*.fsdb
+**/transcript
