@@ -330,50 +330,6 @@ module Sw_40g_Top (
   ///////////////////////////////////////////              Support                   /////////////////////////////////////////////////////////
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // TenGEthMacPort4  TenGEthMacPort4_inst (
-  //                    .reset(~RstSys_n),
-  //                    //XGMII Ifc
-  //                    .gtx_clk(clk156_out0),
-  //                    //  .tx_clk0(clk156_out0),
-  //                    .xgmii_txd(TenG_xgmii_txd),
-  //                    .xgmii_txc(TenG_xgmii_txc),
-  //                    .rx_clk0(clk156_out0),
-  //                    .xgmii_rxd(TenG_xgmii_rxd),
-  //                    .xgmii_rxc(TenG_xgmii_rxc),
-  //                    .tx_dcm_locked(1'b1),
-  //                    .rx_dcm_locked(1'b1),
-
-  //                    .status_vector_Mac1(status_vector_Mac1),
-  //                    .status_vector_Mac2(status_vector_Mac2),
-  //                    .status_vector_Mac3(status_vector_Mac3),
-  //                    .status_vector_Mac4(status_vector_Mac4),
-
-  //                    //User Data Ifc
-  //                    .tx_axis_fifo_aclk(clk156_out0),
-  //                    .tx_axis_aresetn(RstSys_n),
-  //                    .tx_axis_fifo_tdata(tx_axis_tdata),//I
-  //                    .tx_axis_fifo_tkeep(tx_axis_tkeep),
-  //                    .tx_axis_fifo_tvalid(tx_axis_tvalid),
-  //                    .tx_axis_fifo_tlast(tx_axis_tlast),
-  //                    .tx_axis_fifo_tready(tx_axis_tready),//O
-
-  //                    .rx_axis_fifo_aclk(clk156_out0),
-  //                    .rx_axis_aresetn(RstSys_n),
-  //                    .rx_axis_fifo_tdata(rx_axis_tdata),//O
-  //                    .rx_axis_fifo_tkeep(rx_axis_tkeep),
-  //                    .rx_axis_fifo_tvalid(rx_axis_tvalid),
-  //                    .rx_axis_fifo_tlast(rx_axis_tlast),
-  //                    .rx_axis_fifo_tready(rx_axis_tready),//I
-  //                    .CntClr(CntClr),
-  //                    .RxPkg_Cnt(TenGRxPkg_Cnt),
-  //                    .RxPkgErr_Cnt(RxPkgErr_Cnt),
-  //                    .BriRxPkg_Cnt(TenGBriRxPkg_Cnt),
-  //                    .TxPkg_Cnt(TenGTxPkg_Cnt),
-  //                    .BriTxPkg_Cnt(TenGBriTxPkg_Cnt),
-  //                    .XauiRxFifoStatus(XauiRxFifoStatus)
-  //                  );
-
-  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   genvar i;
   generate
     for(i=0; i<4; i=i+1)
