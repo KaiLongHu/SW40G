@@ -288,13 +288,7 @@ module Sw_40g_Top (
                          .m_axi_rx_tdata   ( Lane2_m_axi_rx_tdata[1:0]  ),//用户接收数据的AXI_STEAM流接口信号；
                          .m_axi_rx_tkeep   ( Lane2_m_axi_rx_tkeep[1:0]  ),//用户接收数据的AXI_STEAM流接口信号；
                          .m_axi_rx_tlast   ( Lane2_m_axi_rx_tlast[1:0]  ),//用户接收数据的AXI_STEAM流接口信号；
-                         .m_axi_rx_tvalid  ( Lane2_m_axi_rx_tvalid[1:0] ),//用户接收数据的AXI_STEAM流接口信号；
-                         .gt_drpaddr       ( 0                 ),//GT收发器的DRP地址信号；
-                         .gt_drpdi         ( 0                 ),//GT收发器的DRP数据输入信号；
-                         .gt_drprdy        (                   ),//GT收发器的DRP应答信号；
-                         .gt_drpen         ( 0                 ),//GT收发器的DRP使能信号；
-                         .gt_drpwe         ( 0                 ),//GT收发器的DRP读写指示信号；
-                         .gt_drpdo         (                   )//GT收发器的DRP数据输出信号；
+                         .m_axi_rx_tvalid  ( Lane2_m_axi_rx_tvalid[1:0] )//用户接收数据的AXI_STEAM流接口信号；
                        );
 
 
