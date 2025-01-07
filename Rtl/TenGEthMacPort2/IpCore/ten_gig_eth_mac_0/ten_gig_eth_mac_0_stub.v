@@ -1,13 +1,13 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Thu Jan  2 09:51:17 2025
+// Date        : Tue Jan  7 17:10:20 2025
 // Host        : hkl running 64-bit Ubuntu 22.04.4 LTS
-// Command     : write_verilog -force -mode synth_stub -rename_top ten_gig_eth_mac_0 -prefix
-//               ten_gig_eth_mac_0_ ten_gig_eth_mac_0_stub.v
+// Command     : write_verilog -force -mode synth_stub
+//               /workspace/HKL_FPGA/TOP63_Aurora/Sw_40G_Prj/Rtl/TenGEthMacPort2/IpCore/ten_gig_eth_mac_0/ten_gig_eth_mac_0_stub.v
 // Design      : ten_gig_eth_mac_0
 // Purpose     : Stub declaration of top-level module interface
-// Device      : xc7k325tffv900-2
+// Device      : xc7k325tffg900-2
 // --------------------------------------------------------------------------------
 
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.

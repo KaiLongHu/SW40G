@@ -12,15 +12,15 @@ Function Description:
 //////////////////////////////////////////////////////////////////////////////////////////////*/
 `timescale 1ns/1ns
 module aurora_channel_lane2_Y0Y1 (
-    input               gt_rx_p             ,//GT收发器的接收数据差分引脚；
-    input               gt_rx_n             ,//GT收发器的接收数据差分引脚；
+    input               [1:0]gt_rx_p             ,//GT收发器的接收数据差分引脚；
+    input               [1:0]gt_rx_n             ,//GT收发器的接收数据差分引脚；
     input               gt_refclk           ,//GT参考时钟，IP设置为156.25MHZ;
     // output              user_clk            ,//用户参考时钟信号；
     output              user_sys_reset      ,//输出给用户的复位信号；
     input               system_rst          ,//系统复位信号；
     input   [2 : 0]     gt_loopback         ,//GT收发器的回环模式控制信号；
-    output              gt_tx_p             ,//GT收发器的发送数据差分引脚；
-    output              gt_tx_n             ,//GT收发器的发送数据差分引脚；
+    output              [1:0]gt_tx_p             ,//GT收发器的发送数据差分引脚；
+    output              [1:0]gt_tx_n             ,//GT收发器的发送数据差分引脚；
     output              hard_err            ,//硬件错误指示信号；
     output              soft_err            ,//软件错误指示信号；
     output              channel_up          ,//通道初始化完成且通道准备好数据时拉高；

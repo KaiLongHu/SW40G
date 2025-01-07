@@ -1,13 +1,13 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Tue Jan  7 10:52:53 2025
+// Date        : Tue Jan  7 17:11:03 2025
 // Host        : hkl running 64-bit Ubuntu 22.04.4 LTS
 // Command     : write_verilog -force -mode synth_stub
 //               /workspace/HKL_FPGA/TOP63_Aurora/Sw_40G_Prj/Rtl/com/SynBlkfifo66x16384/SynBlkfifo66x16384_stub.v
 // Design      : SynBlkfifo66x16384
 // Purpose     : Stub declaration of top-level module interface
-// Device      : xc7k325tffv900-2
+// Device      : xc7k325tffg900-2
 // --------------------------------------------------------------------------------
 
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
