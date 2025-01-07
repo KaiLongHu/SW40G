@@ -261,13 +261,6 @@ module Sw_40g_Top (
                          .system_rst         ( ~RstSys_n        ),//系统复位信号；
                          .init_clk           ( SysClk               ),//初始化时钟，IP设置为100MHz。
                          .drp_clk            ( SysClk               ),//DRP时钟信号,IP设置为100MHz。
-                         //QPLL的DRP接口；
-                         .qpll_drpaddr       ({1'b0,1'b0}),//QPLL的DRP地址信号；
-                         .qpll_drpdi         ({1'b0,1'b0}),//QPLL的DRP数据输入信号；
-                         .qpll_drprdy        (         ),//QPLL的DRP应答信号；
-                         .qpll_drpen         ({1'b0,1'b0}),//QPLL的DRP使能信号；
-                         .qpll_drpwe         ({1'b0,1'b0}),//QPLL的DRP读写指示信号；
-                         .qpll_drpdo         (                   ),//QPLL的DRP数据输出信号；
                          //GT收发器0的相关信号；
                          .gt_rx_p          ( Aurora_Rx_P[3:0]         ),//GT收发器的接收数据差分引脚；
                          .gt_rx_n          ( Aurora_Rx_N[3:0]         ),//GT收发器的接收数据差分引脚；
@@ -337,12 +330,11 @@ module Sw_40g_Top (
   ///////////////////////////////////////////              Support                   /////////////////////////////////////////////////////////
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // assign user_clk = clk156_out0;
   // TenGEthMacPort4  TenGEthMacPort4_inst (
   //                    .reset(~RstSys_n),
   //                    //XGMII Ifc
   //                    .gtx_clk(clk156_out0),
-  //                    .tx_clk0(clk156_out0),
+  //                    //  .tx_clk0(clk156_out0),
   //                    .xgmii_txd(TenG_xgmii_txd),
   //                    .xgmii_txc(TenG_xgmii_txc),
   //                    .rx_clk0(clk156_out0),
@@ -381,40 +373,47 @@ module Sw_40g_Top (
   //                    .XauiRxFifoStatus(XauiRxFifoStatus)
   //                  );
 
-  // TenGEthMacPort4  TenGEthMacPort4_inst (
-  //                    .reset(~RstSys_n),
-  //                    .gtx_clk(clk156_out0),
-  //                    .xgmii_txd(TenG_xgmii_txd),
-  //                    .xgmii_txc(TenG_xgmii_txc),
-  //                    .rx_clk0(clk156_out0),
-  //                    .xgmii_rxd(TenG_xgmii_rxd),
-  //                    .xgmii_rxc(TenG_xgmii_rxc),
-  //                    .status_vector_Mac1(status_vector_Mac1),
-  //                    .status_vector_Mac2(status_vector_Mac2),
-  //                    .status_vector_Mac3(status_vector_Mac3),
-  //                    .status_vector_Mac4(status_vector_Mac4),
-
-  //                    .tx_axis_aresetn(RstSys_n),
-  //                    .tx_axis_fifo_tdata(tx_axis_fifo_tdata),
-  //                    .tx_axis_fifo_tkeep(tx_axis_fifo_tkeep),
-  //                    .tx_axis_fifo_tvalid(tx_axis_fifo_tvalid),
-  //                    .tx_axis_fifo_tlast(tx_axis_fifo_tlast),
-  //                    .tx_axis_fifo_tready(tx_axis_fifo_tready),
-  //                    .rx_axis_aresetn(RstSys_n),
-  //                    .rx_axis_fifo_tdata(rx_axis_fifo_tdata),
-  //                    .rx_axis_fifo_tkeep(rx_axis_fifo_tkeep),
-  //                    .rx_axis_fifo_tvalid(rx_axis_fifo_tvalid),
-  //                    .rx_axis_fifo_tlast(rx_axis_fifo_tlast),
-  //                    .rx_axis_fifo_tready(rx_axis_fifo_tready),
-
-  //                    .user_clk(),
-  //                    .tx_fifo_full(tx_fifo_full),
-  //                    .tx_fifo_status(tx_fifo_status),
-  //                    .tx_axis_mac_tready(tx_axis_mac_tready)
-  //                  );
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////                                 /////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  AxiStream2UserIfc64to128Bridge  AxiStream2UserIfc64to128Bridge_inst (
+                                    .Rst_n(Rst_n),
+                                    .FifoRst_n(FifoRst_n),
+                                    .rx_axis_tdata(rx_axis_tdata),
+                                    .rx_axis_tkeep(rx_axis_tkeep),
+                                    .rx_axis_tvalid(rx_axis_tvalid),
+                                    .rx_axis_tlast(rx_axis_tlast),
+                                    .rx_axis_tready(rx_axis_tready),
+                                    .rx_axis_uclk(rx_axis_uclk),
+                                    .tx_axis_uclk(tx_axis_uclk),
+                                    .tx_axis_tready(tx_axis_tready),
+                                    .tx_axis_tvalid(tx_axis_tvalid),
+                                    .tx_axis_tlast(tx_axis_tlast),
+                                    .tx_axis_tdata(tx_axis_tdata),
+                                    .tx_axis_tkeep(tx_axis_tkeep),
+                                    .CntClr(CntClr),
+                                    .RxPkg_Cnt(RxPkg_Cnt),
+                                    .TxPkg_Cnt(TxPkg_Cnt)
+                                  );
 
-
-
-
+  UserIfc2AxiStream128to64Bridge  UserIfc2AxiStream128to64Bridge_inst (
+                                    .Rst_n(Rst_n),
+                                    .FifoRst_n(FifoRst_n),
+                                    .rx_axis_uclk(rx_axis_uclk),
+                                    .rx_axis_tready(rx_axis_tready),
+                                    .rx_axis_tvalid(rx_axis_tvalid),
+                                    .rx_axis_tlast(rx_axis_tlast),
+                                    .rx_axis_tdata(rx_axis_tdata),
+                                    .rx_axis_tkeep(rx_axis_tkeep),
+                                    .tx_axis_uclk(tx_axis_uclk),
+                                    .tx_axis_tready(tx_axis_tready),
+                                    .tx_axis_tvalid(tx_axis_tvalid),
+                                    .tx_axis_tlast(tx_axis_tlast),
+                                    .tx_axis_tdata(tx_axis_tdata),
+                                    .tx_axis_tkeep(tx_axis_tkeep),
+                                    .CntClr(CntClr),
+                                    .RxPkg_Cnt(RxPkg_Cnt),
+                                    .TxPkg_Cnt(TxPkg_Cnt)
+                                  );
 endmodule

@@ -115,25 +115,25 @@ module aurora_channel (
         .m_axi_rx_tvalid            ( m_axi_rx_tvalid   ),//用户接收数据的AXI_STEAM流接口信号；
         .mmcm_not_locked            ( mmcm_not_locked   ),//MMCM没有锁定指示信号；
         .drp_clk_in                 ( drp_clk           ),//DRP时钟信号；
-        // .drpaddr_in                 ( gt_drpaddr        ),//GT收发器的DRP地址信号；
-        // .drpdi_in                   ( gt_drpdi          ),//GT收发器的DRP数据输入信号；
-        // .drprdy_out                 ( gt_drprdy         ),//GT收发器的DRP应答信号；
-        // .drpen_in                   ( gt_drpen          ),//GT收发器的DRP使能信号；
-        // .drpwe_in                   ( gt_drpwe          ),//GT收发器的DRP读写指示信号；
-        // .drpdo_out                  ( gt_drpdo          ),//GT收发器的DRP数据输出信号；
-        .qpll_drpaddr_in            ( qpll_drpaddr      ),//QPLL的DRP地址信号；
-        .qpll_drpdi_in              ( qpll_drpdi        ),//QPLL的DRP数据输入信号；
-        .qpll_drprdy_out            (                   ),//QPLL的DRP应答信号；
-        .qpll_drpen_in              ( qpll_drpen        ),//QPLL的DRP使能信号；
-        .qpll_drpwe_in              ( qpll_drpwe        ),//QPLL的DRP读写指示信号；
-        .qpll_drpdo_out             (                   ),//QPLL的DRP数据输出信号；
+        .drpaddr_in                 ( gt_drpaddr        ),//GT收发器的DRP地址信号；
+        .drpdi_in                   ( gt_drpdi          ),//GT收发器的DRP数据输入信号；
+        .drprdy_out                 ( gt_drprdy         ),//GT收发器的DRP应答信号；
+        .drpen_in                   ( gt_drpen          ),//GT收发器的DRP使能信号；
+        .drpwe_in                   ( gt_drpwe          ),//GT收发器的DRP读写指示信号；
+        .drpdo_out                  ( gt_drpdo          ),//GT收发器的DRP数据输出信号；
+        // .qpll_drpaddr_in            ( qpll_drpaddr      ),//QPLL的DRP地址信号；
+        // .qpll_drpdi_in              ( qpll_drpdi        ),//QPLL的DRP数据输入信号；
+        // .qpll_drprdy_out            (                   ),//QPLL的DRP应答信号；
+        // .qpll_drpen_in              ( qpll_drpen        ),//QPLL的DRP使能信号；
+        // .qpll_drpwe_in              ( qpll_drpwe        ),//QPLL的DRP读写指示信号；
+        // .qpll_drpdo_out             (                   ),//QPLL的DRP数据输出信号；
         .init_clk                   ( init_clk          ),//初始化时钟，IP设置为100MHz。
         .link_reset_out             (                   ),//output wire link_reset_out
-        .gt_qpllclk_quad1_in        ( gt_qpllclk        ),//QPLL的时钟信号；
-        .gt_qpllrefclk_quad1_in     ( gt_qpllrefclk     ),//QPLL的参考时钟信号；
-        .gt_to_common_qpllreset_out ( gt_qpllreset      ),//QPLL的复位信号；
-        .gt_qplllock_in             ( gt_qplllock       ),//QPLL的锁定信号；
-        .gt_qpllrefclklost_in       ( gt_qpllrefclklost ),//QPLL的参考时钟失锁信号；
+        // .gt_qpllclk_quad1_in        ( gt_qpllclk        ),//QPLL的时钟信号；
+        // .gt_qpllrefclk_quad1_in     ( gt_qpllrefclk     ),//QPLL的参考时钟信号；
+        // .gt_to_common_qpllreset_out ( gt_qpllreset      ),//QPLL的复位信号；
+        // .gt_qplllock_in             ( gt_qplllock       ),//QPLL的锁定信号；
+        // .gt_qpllrefclklost_in       ( gt_qpllrefclklost ),//QPLL的参考时钟失锁信号；
         .gt_rxcdrovrden_in          ( 1'b0              ),//input wire gt_rxcdrovrden_in
         .sys_reset_out              ( user_sys_reset    ) //输出给用户的复位信号；
     );

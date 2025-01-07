@@ -100,7 +100,7 @@ Aurora_64B_Framing_CLOCK_MODULE  clock_module (
                                          .gt_qpllrefclk_quad1_out    ( gt_qpllrefclk     ),//QPLL的参考时钟信号；
                                          .GT0_GTREFCLK0_COMMON_IN    ( gt_refclk         ),//单端时钟输出信号；
                                          .GT0_QPLLLOCK_OUT           ( gt_qplllock       ),//QPLL的锁定信号；
-                                         .GT0_QPLLRESET_IN           ( gt_qpllreset      ),//QPLL的复位信号；
+                                        //  .GT0_QPLLRESET_IN           ( gt_qpllreset      ),//QPLL的复位信号；
                                          .GT0_QPLLLOCKDETCLK_IN      ( init_clk          ),//初始化时钟，IP设置为100MHz。
                                          .GT0_QPLLREFCLKLOST_OUT     ( gt_qpllrefclklost ),//QPLL的参考时钟失锁信号；
                                          .qpll_drpaddr_in            ( qpll_drpaddr      ),//QPLL的DRP地址信号；
