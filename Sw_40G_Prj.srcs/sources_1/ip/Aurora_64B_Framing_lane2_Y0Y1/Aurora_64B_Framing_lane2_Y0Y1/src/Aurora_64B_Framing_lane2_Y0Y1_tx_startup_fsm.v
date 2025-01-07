@@ -60,7 +60,7 @@
 module Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FSM  #
    (
       parameter     GT_TYPE                  = "GTX",
-      parameter     STABLE_CLOCK_PERIOD      = 20,        // Period of the stable clock driving this state-machine, unit is [ns]
+      parameter     STABLE_CLOCK_PERIOD      = 10,        // Period of the stable clock driving this state-machine, unit is [ns]
       parameter     RETRY_COUNTER_BITWIDTH   = 8,
      parameter   EXAMPLE_SIMULATION =   0        // Set to 1 to reduce simulation time
       //pragma translate_off

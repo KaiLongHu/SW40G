@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Mon Jan  6 12:01:15 2025
+// Date        : Mon Jan  6 15:11:52 2025
 // Host        : hkl running 64-bit Ubuntu 22.04.4 LTS
-// Command     : write_verilog -force -mode funcsim
-//               /workspace/HKL_FPGA/TOP63_Aurora/Sw_40G_Prj/Sw_40G_Prj.srcs/sources_1/ip/Aurora_64B_Framing_lane2_Y0Y1/Aurora_64B_Framing_lane2_Y0Y1_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top Aurora_64B_Framing_lane2_Y0Y1 -prefix
+//               Aurora_64B_Framing_lane2_Y0Y1_ Aurora_64B_Framing_lane2_Y0Y1_sim_netlist.v
 // Design      : Aurora_64B_Framing_lane2_Y0Y1
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -163,7 +163,7 @@ module Aurora_64B_Framing_lane2_Y0Y1
   (* EXAMPLE_SIMULATION = "0" *) 
   (* INTER_CB_GAP = "5'b01001" *) 
   (* SIM_GTXRESET_SPEEDUP = "TRUE" *) 
-  (* STABLE_CLOCK_PERIOD = "20" *) 
+  (* STABLE_CLOCK_PERIOD = "10" *) 
   Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_core inst
        (.channel_up(channel_up),
         .drp_clk_in(drp_clk_in),
@@ -213,7 +213,6 @@ module Aurora_64B_Framing_lane2_Y0Y1
         .user_clk(user_clk));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_AURORA_LANE" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_AURORA_LANE
    (lane_up_flop_i,
     rx_reset_i_1,
@@ -768,7 +767,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_AURORA_LANE_0
         .user_clk(user_clk));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_AXI_TO_LL" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_AXI_TO_LL
    (new_pkt_r,
     new_pkt_r_reg_0,
@@ -789,7 +787,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_AXI_TO_LL
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_BLOCK_SYNC_SM" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_BLOCK_SYNC_SM
    (D,
     system_reset_r2,
@@ -2301,7 +2298,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_BLOCK_SYNC_SM
         .R(system_reset_r2));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_CHANNEL_BOND_GEN" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_CHANNEL_BOND_GEN
    (gen_ch_bond_int_reg_0,
     gen_ch_bond_int_reg_1,
@@ -2463,7 +2459,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_CHANNEL_BOND_
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_CHANNEL_ERR_DETECT" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_CHANNEL_ERR_DETECT
    (hard_err,
     channel_hard_err_c,
@@ -2484,7 +2479,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_CHANNEL_ERR_D
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_CHANNEL_INIT_SM" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_CHANNEL_INIT_SM
    (reset_lanes_i,
     en_chan_sync_i,
@@ -3417,7 +3411,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_CHANNEL_INIT_
         .R(CHANNEL_UP_TX_IF_reg_2));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_CH_BOND_MASTER" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_CH_BOND_MASTER
    (rxchanisaligned,
     do_rd_en_reg,
@@ -3695,7 +3688,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_CH_BOND_MASTE
         .Q(rxchanisaligned));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_CH_BOND_SLAVE" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_CH_BOND_SLAVE
    (rxchanisaligned,
     do_rd_en_reg,
@@ -3997,7 +3989,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_CH_BOND_SLAVE
         .Q(slave_stop_cb_r));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_CLOCK_CORRECTION_CHANNEL_BONDING" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_CLOCK_CORRECTION_CHANNEL_BONDING
    (DO,
     DOP,
@@ -4553,7 +4544,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_CLOCK_CORRECT
        (.I0(master_do_rd_en_q),
         .I1(p_0_in6_in),
         .O(CB_flag_direct_0));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
   LUT2 #(
     .INIT(4'h8)) 
     CB_flag_flopped_i_1__0
@@ -4691,19 +4682,19 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_CLOCK_CORRECT
   LUT5 #(
     .INIT(32'hFFFF7FFF)) 
     \LINK_RESET[0]_i_2 
-       (.I0(count_for_reset_r_reg[15]),
-        .I1(count_for_reset_r_reg[13]),
-        .I2(count_for_reset_r_reg[19]),
-        .I3(count_for_reset_r_reg[8]),
+       (.I0(count_for_reset_r_reg[18]),
+        .I1(count_for_reset_r_reg[14]),
+        .I2(count_for_reset_r_reg[22]),
+        .I3(count_for_reset_r_reg[10]),
         .I4(\LINK_RESET[0]_i_5_n_0 ),
         .O(\LINK_RESET[0]_i_2_n_0 ));
   LUT5 #(
     .INIT(32'h00008000)) 
     \LINK_RESET[0]_i_3 
-       (.I0(count_for_reset_r_reg[23]),
-        .I1(count_for_reset_r_reg[11]),
-        .I2(count_for_reset_r_reg[18]),
-        .I3(count_for_reset_r_reg[9]),
+       (.I0(count_for_reset_r_reg[15]),
+        .I1(count_for_reset_r_reg[13]),
+        .I2(count_for_reset_r_reg[21]),
+        .I3(count_for_reset_r_reg[17]),
         .I4(\LINK_RESET[0]_i_6_n_0 ),
         .O(\LINK_RESET[0]_i_3_n_0 ));
   LUT6 #(
@@ -4719,26 +4710,26 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_CLOCK_CORRECT
   LUT4 #(
     .INIT(16'h7FFF)) 
     \LINK_RESET[0]_i_5 
-       (.I0(count_for_reset_r_reg[10]),
-        .I1(count_for_reset_r_reg[16]),
-        .I2(count_for_reset_r_reg[20]),
-        .I3(count_for_reset_r_reg[22]),
+       (.I0(count_for_reset_r_reg[16]),
+        .I1(count_for_reset_r_reg[19]),
+        .I2(count_for_reset_r_reg[9]),
+        .I3(count_for_reset_r_reg[11]),
         .O(\LINK_RESET[0]_i_5_n_0 ));
   LUT4 #(
     .INIT(16'h7FFF)) 
     \LINK_RESET[0]_i_6 
-       (.I0(count_for_reset_r_reg[14]),
-        .I1(count_for_reset_r_reg[17]),
+       (.I0(count_for_reset_r_reg[8]),
+        .I1(count_for_reset_r_reg[20]),
         .I2(count_for_reset_r_reg[12]),
-        .I3(count_for_reset_r_reg[21]),
+        .I3(count_for_reset_r_reg[23]),
         .O(\LINK_RESET[0]_i_6_n_0 ));
   LUT4 #(
     .INIT(16'h8000)) 
     \LINK_RESET[0]_i_7 
-       (.I0(count_for_reset_r_reg[5]),
-        .I1(count_for_reset_r_reg[6]),
+       (.I0(count_for_reset_r_reg[3]),
+        .I1(count_for_reset_r_reg[5]),
         .I2(count_for_reset_r_reg[9]),
-        .I3(count_for_reset_r_reg[3]),
+        .I3(count_for_reset_r_reg[6]),
         .O(\LINK_RESET[0]_i_7_n_0 ));
   LUT2 #(
     .INIT(4'hE)) 
@@ -4774,13 +4765,13 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_CLOCK_CORRECT
         .D(rxchanisaligned),
         .Q(ch_bond_done_i),
         .R(cbcc_reset_cbstg2_rd_clk));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \RX_DATA_REG[63]_i_1 
        (.I0(hold_reg),
         .O(hold_reg_reg_0));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
   LUT3 #(
     .INIT(8'hE0)) 
     SOFT_ERR0_i_1
@@ -4812,7 +4803,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_CLOCK_CORRECT
         .D(rxdatavalid_to_fifo_i),
         .Q(rxdatavalid_lookahead_i),
         .Q31(NLW_SRLC32E_inst_4_Q31_UNCONNECTED));
-  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
   LUT3 #(
     .INIT(8'h0E)) 
     START_CB_WRITES_OUT_i_1
@@ -4828,7 +4819,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_CLOCK_CORRECT
         .D(START_CB_WRITES_OUT_i_1_n_0),
         .Q(start_cb_writes_i),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
   LUT2 #(
     .INIT(4'h8)) 
     all_start_cb_writes_out_i_1
@@ -5275,7 +5266,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_CLOCK_CORRECT
         .D(first_cb_to_write_to_fifo),
         .Q(first_cb_to_write_to_fifo_dlyd),
         .R(cbcc_fifo_reset_wr_clk));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
   LUT2 #(
     .INIT(4'hE)) 
     hold_reg_i_1
@@ -7614,14 +7605,14 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_CLOCK_CORRECT
         .D(en32_fifo_din_i[9]),
         .Q(en32_fifo_din_i[49]),
         .R(cbcc_fifo_reset_wr_clk));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \wdth_conv_count[0]_i_1 
        (.I0(mod_do_wr_en),
         .I1(\wdth_conv_count_reg_n_0_[0] ),
         .O(\wdth_conv_count[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \wdth_conv_count[1]_i_1 
@@ -8494,7 +8485,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_CLOCK_CORRECT
         .D(rxchanisaligned),
         .Q(ch_bond_done_i),
         .R(cbcc_reset_cbstg2_rd_clk));
-  (* SOFT_HLUTNM = "soft_lutpair38" *) 
+  (* SOFT_HLUTNM = "soft_lutpair40" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \RX_DATA_REG[63]_i_1__0 
@@ -8954,7 +8945,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_CLOCK_CORRECT
         .I4(rxbuferr_out_i[0]),
         .I5(hard_err_usr_reg),
         .O(hard_err_usr1));
-  (* SOFT_HLUTNM = "soft_lutpair38" *) 
+  (* SOFT_HLUTNM = "soft_lutpair40" *) 
   LUT2 #(
     .INIT(4'hE)) 
     hold_reg_i_1__0
@@ -10160,7 +10151,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_CLOCK_CORRECT
         .D(CC_detect),
         .Q(valid_btf_detect),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair36" *) 
   LUT3 #(
     .INIT(8'h87)) 
     \wait_for_rd_en[0]_i_1__0 
@@ -10168,6 +10158,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_CLOCK_CORRECT
         .I1(wait_for_rd_en[1]),
         .I2(wait_for_rd_en[0]),
         .O(\wait_for_rd_en[0]_i_1__0_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair36" *) 
   LUT3 #(
     .INIT(8'hE6)) 
     \wait_for_rd_en[1]_i_1__0 
@@ -10207,14 +10198,14 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_CLOCK_CORRECT
         .D(\wait_for_rd_en[2]_i_1__0_n_0 ),
         .Q(wait_for_rd_en[2]),
         .R(cbcc_fifo_reset_rd_clk));
-  (* SOFT_HLUTNM = "soft_lutpair40" *) 
+  (* SOFT_HLUTNM = "soft_lutpair38" *) 
   LUT2 #(
     .INIT(4'hB)) 
     \wait_for_wr_en[0]_i_1__0 
        (.I0(wait_for_wr_en[1]),
         .I1(wait_for_wr_en[0]),
         .O(\wait_for_wr_en[0]_i_1__0_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair40" *) 
+  (* SOFT_HLUTNM = "soft_lutpair38" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \wait_for_wr_en[1]_i_1__0 
@@ -11486,7 +11477,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_CLOCK_CORRECT
         .R(cbcc_fifo_reset_to_fifo_wr_clk));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_DESCRAMBLER_64B66B" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_DESCRAMBLER_64B66B
    (D,
     Q,
@@ -13408,7 +13398,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_DESCRAMBLER_6
         .O(D[0]));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_ERR_DETECT" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_ERR_DETECT
    (SOFT_ERR_reg_0,
     hard_err_i,
@@ -13512,7 +13501,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_ERR_DETECT_6
         .O(SOFT_ERR_reg_0));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_GLOBAL_LOGIC" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_GLOBAL_LOGIC
    (reset_lanes_i,
     en_chan_sync_i,
@@ -13701,7 +13689,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_GLOBAL_LOGIC
         .wait_for_lane_up_r_reg_2(wait_for_lane_up_r_reg));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_GTX" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_GTX
    (in0,
     drprdy_out,
@@ -15667,7 +15654,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_GTX_53
         .TXUSRCLK2(user_clk));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_LANE_INIT_SM" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_LANE_INIT_SM
    (lane_up_flop_i_0,
     rst_r_reg_0,
@@ -16346,7 +16332,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_LANE_INIT_SM_
         .user_clk(user_clk));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_MULTI_GT" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_MULTI_GT
    (in0,
     drprdy_out,
@@ -16637,7 +16622,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_MULTI_GT
         .user_clk(user_clk));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_RESET_LOGIC" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RESET_LOGIC
    (SYSTEM_RESET_reg_0,
     reset_count_r0,
@@ -16731,7 +16715,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RESET_LOGIC
         .user_clk(user_clk));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_RX_LL" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_LL
    (raw_data_r_0,
     raw_data_r_1,
@@ -16814,7 +16797,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_LL
         .user_clk_0(raw_data_r_1));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_RX_LL_DATAPATH" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_LL_DATAPATH
    (raw_data_r_0,
     user_clk_0,
@@ -22980,7 +22962,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_LL_DATAPAT
         .Q31(\NLW_srlc32e1[9].SRLC32E_inst_Q31_UNCONNECTED ));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_RX_STARTUP_FSM" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_STARTUP_FSM
    (out,
     SR,
@@ -23142,7 +23123,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_STARTUP_FS
   wire time_out_1us_i_4_n_0;
   wire time_out_1us_i_5_n_0;
   wire time_out_1us_i_6_n_0;
-  wire time_out_1us_i_7_n_0;
   wire time_out_1us_reg_n_0;
   wire time_out_2ms;
   wire time_out_2ms_i_1__0_n_0;
@@ -23152,7 +23132,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_STARTUP_FS
   wire time_out_2ms_i_6_n_0;
   wire time_out_2ms_reg_n_0;
   wire time_out_counter;
-  wire \time_out_counter[0]_i_3_n_0 ;
+  wire \time_out_counter[0]_i_3__0_n_0 ;
   wire [18:0]time_out_counter_reg;
   wire \time_out_counter_reg[0]_i_2__0_n_0 ;
   wire \time_out_counter_reg[0]_i_2__0_n_1 ;
@@ -23200,6 +23180,8 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_STARTUP_FS
   wire time_tlock_max_i_2__0_n_0;
   wire time_tlock_max_i_3__0_n_0;
   wire time_tlock_max_i_4__0_n_0;
+  wire time_tlock_max_i_5_n_0;
+  wire time_tlock_max_i_6_n_0;
   wire u_rst_sync_plllock_n_0;
   wire u_rst_sync_plllock_n_1;
   wire u_rst_sync_plllock_n_4;
@@ -23331,7 +23313,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_STARTUP_FS
        (.I0(init_wait_count_reg[1]),
         .I1(init_wait_count_reg[0]),
         .O(p_0_in__1[1]));
-  (* SOFT_HLUTNM = "soft_lutpair76" *) 
+  (* SOFT_HLUTNM = "soft_lutpair79" *) 
   LUT3 #(
     .INIT(8'h6A)) 
     \init_wait_count[2]_i_1__0 
@@ -23339,79 +23321,79 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_STARTUP_FS
         .I1(init_wait_count_reg[1]),
         .I2(init_wait_count_reg[0]),
         .O(p_0_in__1[2]));
-  (* SOFT_HLUTNM = "soft_lutpair79" *) 
+  (* SOFT_HLUTNM = "soft_lutpair78" *) 
   LUT4 #(
-    .INIT(16'h6AAA)) 
+    .INIT(16'h7F80)) 
     \init_wait_count[3]_i_1__0 
-       (.I0(init_wait_count_reg[3]),
+       (.I0(init_wait_count_reg[0]),
+        .I1(init_wait_count_reg[1]),
+        .I2(init_wait_count_reg[2]),
+        .I3(init_wait_count_reg[3]),
+        .O(p_0_in__1[3]));
+  (* SOFT_HLUTNM = "soft_lutpair75" *) 
+  LUT5 #(
+    .INIT(32'h6AAAAAAA)) 
+    \init_wait_count[4]_i_1__0 
+       (.I0(init_wait_count_reg[4]),
         .I1(init_wait_count_reg[0]),
         .I2(init_wait_count_reg[1]),
         .I3(init_wait_count_reg[2]),
-        .O(p_0_in__1[3]));
-  (* SOFT_HLUTNM = "soft_lutpair74" *) 
-  LUT5 #(
-    .INIT(32'h7FFF8000)) 
-    \init_wait_count[4]_i_1__0 
+        .I4(init_wait_count_reg[3]),
+        .O(p_0_in__1[4]));
+  LUT6 #(
+    .INIT(64'h7FFFFFFF80000000)) 
+    \init_wait_count[5]_i_1__0 
        (.I0(init_wait_count_reg[2]),
         .I1(init_wait_count_reg[1]),
         .I2(init_wait_count_reg[0]),
-        .I3(init_wait_count_reg[3]),
-        .I4(init_wait_count_reg[4]),
-        .O(p_0_in__1[4]));
-  LUT6 #(
-    .INIT(64'h6AAAAAAAAAAAAAAA)) 
-    \init_wait_count[5]_i_1__0 
-       (.I0(init_wait_count_reg[5]),
-        .I1(init_wait_count_reg[2]),
-        .I2(init_wait_count_reg[1]),
-        .I3(init_wait_count_reg[0]),
+        .I3(init_wait_count_reg[4]),
         .I4(init_wait_count_reg[3]),
-        .I5(init_wait_count_reg[4]),
+        .I5(init_wait_count_reg[5]),
         .O(p_0_in__1[5]));
-  (* SOFT_HLUTNM = "soft_lutpair78" *) 
-  LUT3 #(
-    .INIT(8'h6A)) 
+  LUT5 #(
+    .INIT(32'h9AAAAAAA)) 
     \init_wait_count[6]_i_1__0 
        (.I0(init_wait_count_reg[6]),
         .I1(\init_wait_count[7]_i_4__0_n_0 ),
-        .I2(init_wait_count_reg[5]),
+        .I2(init_wait_count_reg[4]),
+        .I3(init_wait_count_reg[3]),
+        .I4(init_wait_count_reg[5]),
         .O(p_0_in__1[6]));
   LUT5 #(
-    .INIT(32'hFFFFFFEF)) 
+    .INIT(32'hFFFFEFFF)) 
     \init_wait_count[7]_i_1__0 
        (.I0(\init_wait_count[7]_i_3__0_n_0 ),
-        .I1(init_wait_count_reg[3]),
-        .I2(init_wait_count_reg[5]),
-        .I3(init_wait_count_reg[7]),
+        .I1(init_wait_count_reg[7]),
+        .I2(init_wait_count_reg[2]),
+        .I3(init_wait_count_reg[5]),
         .I4(init_wait_count_reg[6]),
         .O(init_wait_count));
-  (* SOFT_HLUTNM = "soft_lutpair78" *) 
-  LUT4 #(
-    .INIT(16'h6AAA)) 
+  LUT6 #(
+    .INIT(64'hAAAA6AAAAAAAAAAA)) 
     \init_wait_count[7]_i_2__0 
        (.I0(init_wait_count_reg[7]),
         .I1(init_wait_count_reg[5]),
-        .I2(\init_wait_count[7]_i_4__0_n_0 ),
-        .I3(init_wait_count_reg[6]),
+        .I2(init_wait_count_reg[3]),
+        .I3(init_wait_count_reg[4]),
+        .I4(\init_wait_count[7]_i_4__0_n_0 ),
+        .I5(init_wait_count_reg[6]),
         .O(p_0_in__1[7]));
-  (* SOFT_HLUTNM = "soft_lutpair76" *) 
+  (* SOFT_HLUTNM = "soft_lutpair75" *) 
   LUT4 #(
     .INIT(16'hFFF7)) 
     \init_wait_count[7]_i_3__0 
-       (.I0(init_wait_count_reg[0]),
-        .I1(init_wait_count_reg[1]),
-        .I2(init_wait_count_reg[4]),
-        .I3(init_wait_count_reg[2]),
-        .O(\init_wait_count[7]_i_3__0_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair74" *) 
-  LUT5 #(
-    .INIT(32'h80000000)) 
-    \init_wait_count[7]_i_4__0 
        (.I0(init_wait_count_reg[4]),
         .I1(init_wait_count_reg[3]),
         .I2(init_wait_count_reg[0]),
         .I3(init_wait_count_reg[1]),
-        .I4(init_wait_count_reg[2]),
+        .O(\init_wait_count[7]_i_3__0_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair78" *) 
+  LUT3 #(
+    .INIT(8'h7F)) 
+    \init_wait_count[7]_i_4__0 
+       (.I0(init_wait_count_reg[0]),
+        .I1(init_wait_count_reg[1]),
+        .I2(init_wait_count_reg[2]),
         .O(\init_wait_count[7]_i_4__0_n_0 ));
   FDCE #(
     .INIT(1'b0)) 
@@ -23478,12 +23460,12 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_STARTUP_FS
         .D(p_0_in__1[7]),
         .Q(init_wait_count_reg[7]));
   LUT6 #(
-    .INIT(64'hFFFFFFFF00000010)) 
+    .INIT(64'hFFFFFFFF00001000)) 
     init_wait_done_i_1__0
        (.I0(\init_wait_count[7]_i_3__0_n_0 ),
-        .I1(init_wait_count_reg[3]),
-        .I2(init_wait_count_reg[5]),
-        .I3(init_wait_count_reg[7]),
+        .I1(init_wait_count_reg[7]),
+        .I2(init_wait_count_reg[2]),
+        .I3(init_wait_count_reg[5]),
         .I4(init_wait_count_reg[6]),
         .I5(init_wait_done_reg_n_0),
         .O(init_wait_done_i_1__0_n_0));
@@ -23619,7 +23601,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_STARTUP_FS
         .I4(\rx_cdrlock_counter_reg_n_0_[0] ),
         .O(\rx_cdrlock_counter[0]_i_1_n_0 ));
   LUT5 #(
-    .INIT(32'hFFFF0001)) 
+    .INIT(32'hFFFE0000)) 
     \rx_cdrlock_counter[10]_i_1 
        (.I0(\rx_cdrlock_counter[31]_i_2_n_0 ),
         .I1(\rx_cdrlock_counter[31]_i_3_n_0 ),
@@ -23628,7 +23610,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_STARTUP_FS
         .I4(data0[10]),
         .O(rx_cdrlock_counter[10]));
   LUT5 #(
-    .INIT(32'hFFFE0000)) 
+    .INIT(32'hFFFF0001)) 
     \rx_cdrlock_counter[11]_i_1 
        (.I0(\rx_cdrlock_counter[31]_i_2_n_0 ),
         .I1(\rx_cdrlock_counter[31]_i_3_n_0 ),
@@ -23664,7 +23646,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_STARTUP_FS
         .I4(data0[14]),
         .O(rx_cdrlock_counter[14]));
   LUT5 #(
-    .INIT(32'hFFFF0001)) 
+    .INIT(32'hFFFE0000)) 
     \rx_cdrlock_counter[15]_i_1 
        (.I0(\rx_cdrlock_counter[31]_i_2_n_0 ),
         .I1(\rx_cdrlock_counter[31]_i_3_n_0 ),
@@ -23673,7 +23655,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_STARTUP_FS
         .I4(data0[15]),
         .O(rx_cdrlock_counter[15]));
   LUT5 #(
-    .INIT(32'hFFFE0000)) 
+    .INIT(32'hFFFF0001)) 
     \rx_cdrlock_counter[16]_i_1 
        (.I0(\rx_cdrlock_counter[31]_i_2_n_0 ),
         .I1(\rx_cdrlock_counter[31]_i_3_n_0 ),
@@ -23691,7 +23673,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_STARTUP_FS
         .I4(data0[17]),
         .O(rx_cdrlock_counter[17]));
   LUT5 #(
-    .INIT(32'hFFFF0001)) 
+    .INIT(32'hFFFE0000)) 
     \rx_cdrlock_counter[18]_i_1 
        (.I0(\rx_cdrlock_counter[31]_i_2_n_0 ),
         .I1(\rx_cdrlock_counter[31]_i_3_n_0 ),
@@ -23700,7 +23682,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_STARTUP_FS
         .I4(data0[18]),
         .O(rx_cdrlock_counter[18]));
   LUT5 #(
-    .INIT(32'hFFFE0000)) 
+    .INIT(32'hFFFF0001)) 
     \rx_cdrlock_counter[19]_i_1 
        (.I0(\rx_cdrlock_counter[31]_i_2_n_0 ),
         .I1(\rx_cdrlock_counter[31]_i_3_n_0 ),
@@ -23837,8 +23819,8 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_STARTUP_FS
   LUT5 #(
     .INIT(32'hFFFFFFFB)) 
     \rx_cdrlock_counter[31]_i_2 
-       (.I0(\rx_cdrlock_counter_reg_n_0_[11] ),
-        .I1(\rx_cdrlock_counter_reg_n_0_[10] ),
+       (.I0(\rx_cdrlock_counter_reg_n_0_[10] ),
+        .I1(\rx_cdrlock_counter_reg_n_0_[11] ),
         .I2(\rx_cdrlock_counter_reg_n_0_[8] ),
         .I3(\rx_cdrlock_counter_reg_n_0_[9] ),
         .I4(\rx_cdrlock_counter[31]_i_6_n_0 ),
@@ -23862,16 +23844,16 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_STARTUP_FS
         .I4(\rx_cdrlock_counter[31]_i_8_n_0 ),
         .O(\rx_cdrlock_counter[31]_i_4_n_0 ));
   LUT5 #(
-    .INIT(32'hFFFFFFFB)) 
+    .INIT(32'hFFFFFBFF)) 
     \rx_cdrlock_counter[31]_i_5 
-       (.I0(\rx_cdrlock_counter_reg_n_0_[19] ),
-        .I1(\rx_cdrlock_counter_reg_n_0_[18] ),
-        .I2(\rx_cdrlock_counter_reg_n_0_[16] ),
-        .I3(\rx_cdrlock_counter_reg_n_0_[17] ),
+       (.I0(\rx_cdrlock_counter_reg_n_0_[18] ),
+        .I1(\rx_cdrlock_counter_reg_n_0_[19] ),
+        .I2(\rx_cdrlock_counter_reg_n_0_[17] ),
+        .I3(\rx_cdrlock_counter_reg_n_0_[16] ),
         .I4(\rx_cdrlock_counter[31]_i_9_n_0 ),
         .O(\rx_cdrlock_counter[31]_i_5_n_0 ));
   LUT4 #(
-    .INIT(16'hFFEF)) 
+    .INIT(16'hFFFE)) 
     \rx_cdrlock_counter[31]_i_6 
        (.I0(\rx_cdrlock_counter_reg_n_0_[13] ),
         .I1(\rx_cdrlock_counter_reg_n_0_[12] ),
@@ -23883,8 +23865,8 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_STARTUP_FS
     \rx_cdrlock_counter[31]_i_7 
        (.I0(\rx_cdrlock_counter_reg_n_0_[5] ),
         .I1(\rx_cdrlock_counter_reg_n_0_[4] ),
-        .I2(\rx_cdrlock_counter_reg_n_0_[6] ),
-        .I3(\rx_cdrlock_counter_reg_n_0_[7] ),
+        .I2(\rx_cdrlock_counter_reg_n_0_[7] ),
+        .I3(\rx_cdrlock_counter_reg_n_0_[6] ),
         .O(\rx_cdrlock_counter[31]_i_7_n_0 ));
   LUT4 #(
     .INIT(16'hFFFE)) 
@@ -23930,7 +23912,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_STARTUP_FS
         .I4(data0[5]),
         .O(rx_cdrlock_counter[5]));
   LUT5 #(
-    .INIT(32'hFFFF0001)) 
+    .INIT(32'hFFFE0000)) 
     \rx_cdrlock_counter[6]_i_1 
        (.I0(\rx_cdrlock_counter[31]_i_2_n_0 ),
         .I1(\rx_cdrlock_counter[31]_i_3_n_0 ),
@@ -23939,7 +23921,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_STARTUP_FS
         .I4(data0[6]),
         .O(rx_cdrlock_counter[6]));
   LUT5 #(
-    .INIT(32'hFFFE0000)) 
+    .INIT(32'hFFFF0001)) 
     \rx_cdrlock_counter[7]_i_1 
        (.I0(\rx_cdrlock_counter[31]_i_2_n_0 ),
         .I1(\rx_cdrlock_counter[31]_i_3_n_0 ),
@@ -24290,7 +24272,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_STARTUP_FS
         .I2(\rx_state[6]_i_2_n_0 ),
         .I3(rx_state[7]),
         .O(\rx_state[1]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair75" *) 
+  (* SOFT_HLUTNM = "soft_lutpair76" *) 
   LUT4 #(
     .INIT(16'h0001)) 
     \rx_state[3]_i_4 
@@ -24325,7 +24307,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_STARTUP_FS
         .I2(rx_state[2]),
         .I3(rx_state[1]),
         .O(\rx_state[5]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair75" *) 
+  (* SOFT_HLUTNM = "soft_lutpair76" *) 
   LUT4 #(
     .INIT(16'hFFFE)) 
     \rx_state[6]_i_2 
@@ -24470,54 +24452,49 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_STARTUP_FS
         .I2(time_out_1us_i_3_n_0),
         .I3(reset_time_out_reg_n_0),
         .O(time_out_1us_i_1_n_0));
-  LUT6 #(
-    .INIT(64'h0000000000000040)) 
-    time_out_1us_i_2
-       (.I0(time_out_counter_reg[7]),
-        .I1(time_out_counter_reg[1]),
-        .I2(time_out_counter_reg[4]),
-        .I3(time_out_counter_reg[2]),
-        .I4(time_out_1us_i_4_n_0),
-        .I5(time_out_1us_i_5_n_0),
-        .O(time_out_1us_i_2_n_0));
   LUT5 #(
-    .INIT(32'hFFFFFFFE)) 
-    time_out_1us_i_3
-       (.I0(time_out_1us_i_6_n_0),
-        .I1(time_out_1us_i_7_n_0),
-        .I2(time_out_counter_reg[3]),
-        .I3(time_out_counter_reg[8]),
-        .I4(time_out_counter_reg[9]),
-        .O(time_out_1us_i_3_n_0));
-  LUT2 #(
-    .INIT(4'hE)) 
-    time_out_1us_i_4
-       (.I0(time_out_counter_reg[11]),
-        .I1(time_out_counter_reg[12]),
-        .O(time_out_1us_i_4_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair77" *) 
-  LUT2 #(
-    .INIT(4'hE)) 
-    time_out_1us_i_5
+    .INIT(32'h00000001)) 
+    time_out_1us_i_2
        (.I0(time_out_counter_reg[18]),
         .I1(time_out_counter_reg[17]),
-        .O(time_out_1us_i_5_n_0));
+        .I2(time_out_counter_reg[16]),
+        .I3(time_out_counter_reg[15]),
+        .I4(time_out_1us_i_4_n_0),
+        .O(time_out_1us_i_2_n_0));
+  LUT5 #(
+    .INIT(32'hFFFFFFFB)) 
+    time_out_1us_i_3
+       (.I0(time_out_counter_reg[4]),
+        .I1(time_out_counter_reg[6]),
+        .I2(time_out_counter_reg[3]),
+        .I3(time_out_1us_i_5_n_0),
+        .I4(time_out_1us_i_6_n_0),
+        .O(time_out_1us_i_3_n_0));
   LUT4 #(
     .INIT(16'hFFFE)) 
-    time_out_1us_i_6
-       (.I0(time_out_counter_reg[14]),
-        .I1(time_out_counter_reg[13]),
-        .I2(time_out_counter_reg[15]),
-        .I3(time_out_counter_reg[16]),
-        .O(time_out_1us_i_6_n_0));
+    time_out_1us_i_4
+       (.I0(time_out_counter_reg[12]),
+        .I1(time_out_counter_reg[11]),
+        .I2(time_out_counter_reg[14]),
+        .I3(time_out_counter_reg[13]),
+        .O(time_out_1us_i_4_n_0));
   LUT4 #(
-    .INIT(16'hFFFD)) 
-    time_out_1us_i_7
+    .INIT(16'hFFFE)) 
+    time_out_1us_i_5
+       (.I0(time_out_counter_reg[1]),
+        .I1(time_out_counter_reg[0]),
+        .I2(time_out_counter_reg[8]),
+        .I3(time_out_counter_reg[10]),
+        .O(time_out_1us_i_5_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair77" *) 
+  LUT4 #(
+    .INIT(16'hFFDF)) 
+    time_out_1us_i_6
        (.I0(time_out_counter_reg[5]),
-        .I1(time_out_counter_reg[10]),
-        .I2(time_out_counter_reg[6]),
-        .I3(time_out_counter_reg[0]),
-        .O(time_out_1us_i_7_n_0));
+        .I1(time_out_counter_reg[7]),
+        .I2(time_out_counter_reg[2]),
+        .I3(time_out_counter_reg[9]),
+        .O(time_out_1us_i_6_n_0));
   FDRE #(
     .INIT(1'b0)) 
     time_out_1us_reg
@@ -24533,49 +24510,49 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_STARTUP_FS
         .I1(time_out_2ms),
         .I2(reset_time_out_reg_n_0),
         .O(time_out_2ms_i_1__0_n_0));
-  LUT6 #(
-    .INIT(64'h0000000000000001)) 
+  (* SOFT_HLUTNM = "soft_lutpair74" *) 
+  LUT5 #(
+    .INIT(32'h00000002)) 
     time_out_2ms_i_2__0
        (.I0(time_out_2ms_i_3__0_n_0),
-        .I1(time_out_counter_reg[4]),
-        .I2(time_out_counter_reg[6]),
-        .I3(time_out_counter_reg[12]),
-        .I4(time_out_counter_reg[11]),
-        .I5(time_out_2ms_i_4__0_n_0),
+        .I1(time_out_2ms_i_4__0_n_0),
+        .I2(time_out_counter_reg[2]),
+        .I3(time_out_counter_reg[1]),
+        .I4(time_out_counter_reg[0]),
         .O(time_out_2ms));
-  LUT4 #(
-    .INIT(16'hFFF7)) 
+  LUT5 #(
+    .INIT(32'h00000001)) 
     time_out_2ms_i_3__0
-       (.I0(time_out_counter_reg[7]),
-        .I1(time_out_counter_reg[9]),
+       (.I0(time_out_counter_reg[3]),
+        .I1(time_out_counter_reg[4]),
+        .I2(time_out_counter_reg[9]),
+        .I3(time_out_counter_reg[12]),
+        .I4(time_out_2ms_i_5__0_n_0),
+        .O(time_out_2ms_i_3__0_n_0));
+  LUT5 #(
+    .INIT(32'hFFFFFBFF)) 
+    time_out_2ms_i_4__0
+       (.I0(time_out_counter_reg[18]),
+        .I1(time_out_counter_reg[6]),
+        .I2(time_out_counter_reg[15]),
+        .I3(time_out_counter_reg[11]),
+        .I4(time_out_2ms_i_6_n_0),
+        .O(time_out_2ms_i_4__0_n_0));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    time_out_2ms_i_5__0
+       (.I0(time_out_counter_reg[5]),
+        .I1(time_out_counter_reg[7]),
         .I2(time_out_counter_reg[14]),
         .I3(time_out_counter_reg[13]),
-        .O(time_out_2ms_i_3__0_n_0));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFDFFFFF)) 
-    time_out_2ms_i_4__0
-       (.I0(time_out_2ms_i_5__0_n_0),
-        .I1(time_out_2ms_i_6_n_0),
-        .I2(time_out_counter_reg[10]),
-        .I3(time_out_counter_reg[3]),
-        .I4(time_out_counter_reg[15]),
-        .I5(time_out_counter_reg[8]),
-        .O(time_out_2ms_i_4__0_n_0));
-  LUT3 #(
-    .INIT(8'h01)) 
-    time_out_2ms_i_5__0
-       (.I0(time_out_counter_reg[0]),
-        .I1(time_out_counter_reg[1]),
-        .I2(time_out_counter_reg[2]),
         .O(time_out_2ms_i_5__0_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair77" *) 
   LUT4 #(
-    .INIT(16'hEFFF)) 
+    .INIT(16'h7FFF)) 
     time_out_2ms_i_6
        (.I0(time_out_counter_reg[17]),
-        .I1(time_out_counter_reg[18]),
+        .I1(time_out_counter_reg[10]),
         .I2(time_out_counter_reg[16]),
-        .I3(time_out_counter_reg[5]),
+        .I3(time_out_counter_reg[8]),
         .O(time_out_2ms_i_6_n_0));
   FDRE #(
     .INIT(1'b0)) 
@@ -24592,9 +24569,9 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_STARTUP_FS
         .O(time_out_counter));
   LUT1 #(
     .INIT(2'h1)) 
-    \time_out_counter[0]_i_3 
+    \time_out_counter[0]_i_3__0 
        (.I0(time_out_counter_reg[0]),
-        .O(\time_out_counter[0]_i_3_n_0 ));
+        .O(\time_out_counter[0]_i_3__0_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \time_out_counter_reg[0] 
@@ -24609,7 +24586,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_STARTUP_FS
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b1}),
         .O({\time_out_counter_reg[0]_i_2__0_n_4 ,\time_out_counter_reg[0]_i_2__0_n_5 ,\time_out_counter_reg[0]_i_2__0_n_6 ,\time_out_counter_reg[0]_i_2__0_n_7 }),
-        .S({time_out_counter_reg[3:1],\time_out_counter[0]_i_3_n_0 }));
+        .S({time_out_counter_reg[3:1],\time_out_counter[0]_i_3__0_n_0 }));
   FDRE #(
     .INIT(1'b0)) 
     \time_out_counter_reg[10] 
@@ -24826,39 +24803,53 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_STARTUP_FS
        (.I0(time_tlock_max),
         .I1(check_tlock_max_reg_n_0),
         .I2(time_tlock_max_i_2__0_n_0),
-        .I3(time_out_counter_reg[12]),
+        .I3(time_out_counter_reg[13]),
         .I4(time_tlock_max_i_3__0_n_0),
         .I5(reset_time_out_reg_n_0),
         .O(time_tlock_max_i_1__0_n_0));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFFE)) 
+  LUT5 #(
+    .INIT(32'hFFFFFFFE)) 
     time_tlock_max_i_2__0
-       (.I0(time_out_counter_reg[16]),
-        .I1(time_out_counter_reg[15]),
-        .I2(time_out_counter_reg[13]),
-        .I3(time_out_counter_reg[14]),
-        .I4(time_out_counter_reg[17]),
-        .I5(time_out_counter_reg[18]),
+       (.I0(time_out_counter_reg[15]),
+        .I1(time_out_counter_reg[16]),
+        .I2(time_out_counter_reg[18]),
+        .I3(time_out_counter_reg[17]),
+        .I4(time_out_counter_reg[14]),
         .O(time_tlock_max_i_2__0_n_0));
   LUT6 #(
     .INIT(64'hEEEEEEEEFEEEEEEE)) 
     time_tlock_max_i_3__0
-       (.I0(time_out_counter_reg[10]),
+       (.I0(time_out_counter_reg[12]),
         .I1(time_out_counter_reg[11]),
-        .I2(time_out_counter_reg[7]),
+        .I2(time_out_counter_reg[10]),
         .I3(time_out_counter_reg[9]),
         .I4(time_out_counter_reg[8]),
         .I5(time_tlock_max_i_4__0_n_0),
         .O(time_tlock_max_i_3__0_n_0));
-  LUT5 #(
-    .INIT(32'h0000000D)) 
+  LUT6 #(
+    .INIT(64'h00000000000001FF)) 
     time_tlock_max_i_4__0
-       (.I0(time_out_counter_reg[3]),
-        .I1(time_out_2ms_i_5__0_n_0),
-        .I2(time_out_counter_reg[6]),
+       (.I0(time_tlock_max_i_5_n_0),
+        .I1(time_out_counter_reg[2]),
+        .I2(time_out_counter_reg[3]),
         .I3(time_out_counter_reg[4]),
-        .I4(time_out_counter_reg[5]),
+        .I4(time_tlock_max_i_6_n_0),
+        .I5(time_out_counter_reg[6]),
         .O(time_tlock_max_i_4__0_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair74" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    time_tlock_max_i_5
+       (.I0(time_out_counter_reg[0]),
+        .I1(time_out_counter_reg[1]),
+        .O(time_tlock_max_i_5_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair77" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    time_tlock_max_i_6
+       (.I0(time_out_counter_reg[7]),
+        .I1(time_out_counter_reg[5]),
+        .O(time_tlock_max_i_6_n_0));
   FDRE #(
     .INIT(1'b0)) 
     time_tlock_max_reg
@@ -25090,7 +25081,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_RX_STARTUP_FS
         .R(clear));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_SCRAMBLER_64B66B" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_SCRAMBLER_64B66B
    (scrambler,
     Q,
@@ -28032,7 +28022,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_SCRAMBLER_64B
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_STANDARD_CC_MODULE" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_STANDARD_CC_MODULE
    (do_cc_r_reg0,
     DO_CC,
@@ -28677,7 +28666,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_STANDARD_CC_M
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_SYM_DEC" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_SYM_DEC
    (RX_SEP7_reg_0,
     RX_SEP_reg_0,
@@ -32035,7 +32023,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_SYM_DEC_8
         .R(RX_IDLE_reg_0));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_SYM_GEN" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_SYM_GEN
    (stg5_reg,
     TX_HEADER_1_reg_0,
@@ -33343,7 +33330,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_SYM_GEN_9
         .user_clk(user_clk));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_TX_LL" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_LL
    (gen_cc_i,
     tx_dst_rdy_n_i,
@@ -33564,7 +33550,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_LL
         .wait_for_lane_up_r(wait_for_lane_up_r));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_TX_LL_CONTROL_SM" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_LL_CONTROL_SM
    (gen_cc_flop_0_i_0,
     gen_cc_flop_1_i_0,
@@ -35286,7 +35271,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_LL_CONTROL
         .R(R0));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_TX_LL_DATAPATH" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_LL_DATAPATH
    (in_frame_r_reg_0,
     tx_pe_data_v_i,
@@ -36173,7 +36157,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_LL_DATAPAT
         .R(R0));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FSM" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FSM
    (out,
     stg5_reg,
@@ -36237,7 +36220,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FS
   wire mmcm_not_locked;
   wire mmcm_reset_i;
   wire [7:1]p_0_in__0;
-  wire [7:0]p_0_in__0_0;
+  wire [6:0]p_0_in__0_0;
   wire pll_reset_asserted_i_1_n_0;
   wire pll_reset_asserted_i_2_n_0;
   wire pll_reset_asserted_i_3_n_0;
@@ -36254,8 +36237,8 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FS
   wire stg5;
   wire stg5_reg;
   wire sync_clk;
+  wire time_out_2ms;
   wire time_out_2ms_i_1_n_0;
-  wire time_out_2ms_i_2_n_0;
   wire time_out_2ms_i_3_n_0;
   wire time_out_2ms_i_4_n_0;
   wire time_out_2ms_i_5_n_0;
@@ -36263,11 +36246,12 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FS
   wire time_out_500us_i_1_n_0;
   wire time_out_500us_i_2_n_0;
   wire time_out_500us_i_3_n_0;
+  wire time_out_500us_i_4_n_0;
+  wire time_out_500us_i_5_n_0;
+  wire time_out_500us_i_6_n_0;
   wire time_out_500us_reg_n_0;
   wire time_out_counter;
-  wire \time_out_counter[0]_i_3__0_n_0 ;
-  wire \time_out_counter[0]_i_4_n_0 ;
-  wire \time_out_counter[0]_i_5_n_0 ;
+  wire \time_out_counter[0]_i_3_n_0 ;
   wire [18:0]time_out_counter_reg;
   wire \time_out_counter_reg[0]_i_2_n_0 ;
   wire \time_out_counter_reg[0]_i_2_n_1 ;
@@ -36324,19 +36308,19 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FS
   wire tx_seq_scramb_reset_int_i_1_n_0;
   wire tx_seq_scramb_reset_int_i_3_n_0;
   (* RTL_KEEP = "true" *) wire [7:0]tx_state;
-  wire \tx_state[0]_i_2_n_0 ;
-  wire \tx_state[0]_i_5_n_0 ;
+  wire \tx_state[1]_i_3_n_0 ;
   wire \tx_state[1]_i_5_n_0 ;
-  wire \tx_state[1]_i_6_n_0 ;
-  wire \tx_state[2]_i_2_n_0 ;
-  wire \tx_state[2]_i_4_n_0 ;
+  wire \tx_state[1]_i_7_n_0 ;
+  wire \tx_state[1]_i_8_n_0 ;
+  wire \tx_state[1]_i_9_n_0 ;
+  wire \tx_state[2]_i_3_n_0 ;
   wire \tx_state[2]_i_5_n_0 ;
+  wire \tx_state[2]_i_6_n_0 ;
   wire \tx_state[2]_i_7_n_0 ;
-  wire \tx_state[2]_i_8_n_0 ;
-  wire \tx_state[2]_i_9_n_0 ;
-  wire \tx_state[5]_i_2_n_0 ;
-  wire \tx_state[5]_i_6_n_0 ;
-  wire \tx_state[5]_i_8_n_0 ;
+  wire \tx_state[5]_i_4_n_0 ;
+  wire \tx_state[7]_i_10_n_0 ;
+  wire \tx_state[7]_i_11_n_0 ;
+  wire \tx_state[7]_i_12_n_0 ;
   wire \tx_state[7]_i_1_n_0 ;
   wire \tx_state[7]_i_3_n_0 ;
   wire \tx_state[7]_i_4_n_0 ;
@@ -36348,17 +36332,16 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FS
   wire txclk_locked_c;
   wire txuserrdy_t;
   wire u_rst_sync_plllock_n_1;
-  wire u_rst_sync_plllock_n_2;
-  wire u_rst_sync_plllock_n_4;
-  wire u_rst_sync_plllock_n_5;
   wire u_rst_sync_run_phase_align_n_0;
-  wire u_rst_sync_time_out_wait_bypass_n_6;
-  wire u_rst_sync_time_out_wait_bypass_n_7;
+  wire u_rst_sync_time_out_wait_bypass_n_0;
+  wire u_rst_sync_time_out_wait_bypass_n_1;
+  wire u_rst_sync_time_out_wait_bypass_n_2;
+  wire u_rst_sync_time_out_wait_bypass_n_3;
+  wire u_rst_sync_time_out_wait_bypass_n_4;
   wire u_rst_sync_tx_fsm_rst_done_n_0;
   wire u_rst_sync_tx_fsm_rst_done_n_1;
   wire u_rst_sync_txresetdone_n_0;
   wire u_rst_sync_txresetdone_n_1;
-  wire u_rst_sync_txresetdone_n_3;
   wire u_rst_sync_txresetdone_n_4;
   wire u_rst_sync_txresetdone_n_5;
   wire u_rst_sync_txresetdone_n_6;
@@ -36397,14 +36380,12 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FS
   wire \wait_bypass_count_reg[8]_i_1_n_5 ;
   wire \wait_bypass_count_reg[8]_i_1_n_6 ;
   wire \wait_bypass_count_reg[8]_i_1_n_7 ;
-  wire \wait_time_cnt[0]_i_10_n_0 ;
   wire \wait_time_cnt[0]_i_1_n_0 ;
   wire \wait_time_cnt[0]_i_4_n_0 ;
   wire \wait_time_cnt[0]_i_5_n_0 ;
   wire \wait_time_cnt[0]_i_6_n_0 ;
   wire \wait_time_cnt[0]_i_7_n_0 ;
   wire \wait_time_cnt[0]_i_8_n_0 ;
-  wire \wait_time_cnt[0]_i_9_n_0 ;
   wire \wait_time_cnt[12]_i_2_n_0 ;
   wire \wait_time_cnt[12]_i_3_n_0 ;
   wire \wait_time_cnt[12]_i_4_n_0 ;
@@ -36581,7 +36562,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FS
        (.I0(init_wait_count_reg__0[1]),
         .I1(init_wait_count_reg__0[0]),
         .O(p_0_in__0[1]));
-  (* SOFT_HLUTNM = "soft_lutpair127" *) 
+  (* SOFT_HLUTNM = "soft_lutpair128" *) 
   LUT3 #(
     .INIT(8'h6A)) 
     \init_wait_count[2]_i_1 
@@ -36589,79 +36570,79 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FS
         .I1(init_wait_count_reg__0[1]),
         .I2(init_wait_count_reg__0[0]),
         .O(p_0_in__0[2]));
-  (* SOFT_HLUTNM = "soft_lutpair128" *) 
+  (* SOFT_HLUTNM = "soft_lutpair127" *) 
   LUT4 #(
-    .INIT(16'h6AAA)) 
+    .INIT(16'h7F80)) 
     \init_wait_count[3]_i_1 
-       (.I0(init_wait_count_reg__0[3]),
+       (.I0(init_wait_count_reg__0[0]),
+        .I1(init_wait_count_reg__0[1]),
+        .I2(init_wait_count_reg__0[2]),
+        .I3(init_wait_count_reg__0[3]),
+        .O(p_0_in__0[3]));
+  (* SOFT_HLUTNM = "soft_lutpair123" *) 
+  LUT5 #(
+    .INIT(32'h6AAAAAAA)) 
+    \init_wait_count[4]_i_1 
+       (.I0(init_wait_count_reg__0[4]),
         .I1(init_wait_count_reg__0[0]),
         .I2(init_wait_count_reg__0[1]),
         .I3(init_wait_count_reg__0[2]),
-        .O(p_0_in__0[3]));
-  (* SOFT_HLUTNM = "soft_lutpair124" *) 
-  LUT5 #(
-    .INIT(32'h7FFF8000)) 
-    \init_wait_count[4]_i_1 
+        .I4(init_wait_count_reg__0[3]),
+        .O(p_0_in__0[4]));
+  LUT6 #(
+    .INIT(64'h7FFFFFFF80000000)) 
+    \init_wait_count[5]_i_1 
        (.I0(init_wait_count_reg__0[2]),
         .I1(init_wait_count_reg__0[1]),
         .I2(init_wait_count_reg__0[0]),
-        .I3(init_wait_count_reg__0[3]),
-        .I4(init_wait_count_reg__0[4]),
-        .O(p_0_in__0[4]));
-  LUT6 #(
-    .INIT(64'h6AAAAAAAAAAAAAAA)) 
-    \init_wait_count[5]_i_1 
-       (.I0(init_wait_count_reg__0[5]),
-        .I1(init_wait_count_reg__0[2]),
-        .I2(init_wait_count_reg__0[1]),
-        .I3(init_wait_count_reg__0[0]),
+        .I3(init_wait_count_reg__0[4]),
         .I4(init_wait_count_reg__0[3]),
-        .I5(init_wait_count_reg__0[4]),
+        .I5(init_wait_count_reg__0[5]),
         .O(p_0_in__0[5]));
-  (* SOFT_HLUTNM = "soft_lutpair126" *) 
-  LUT3 #(
-    .INIT(8'h6A)) 
+  LUT5 #(
+    .INIT(32'h9AAAAAAA)) 
     \init_wait_count[6]_i_1 
        (.I0(init_wait_count_reg__0[6]),
         .I1(\init_wait_count[7]_i_4_n_0 ),
-        .I2(init_wait_count_reg__0[5]),
+        .I2(init_wait_count_reg__0[4]),
+        .I3(init_wait_count_reg__0[3]),
+        .I4(init_wait_count_reg__0[5]),
         .O(p_0_in__0[6]));
   LUT5 #(
-    .INIT(32'hFFFFFFEF)) 
+    .INIT(32'hFFFFEFFF)) 
     \init_wait_count[7]_i_1 
        (.I0(\init_wait_count[7]_i_3_n_0 ),
-        .I1(init_wait_count_reg__0[3]),
-        .I2(init_wait_count_reg__0[5]),
-        .I3(init_wait_count_reg__0[7]),
+        .I1(init_wait_count_reg__0[7]),
+        .I2(init_wait_count_reg__0[2]),
+        .I3(init_wait_count_reg__0[5]),
         .I4(init_wait_count_reg__0[6]),
         .O(init_wait_count));
-  (* SOFT_HLUTNM = "soft_lutpair126" *) 
-  LUT4 #(
-    .INIT(16'h6AAA)) 
+  LUT6 #(
+    .INIT(64'hAAAA6AAAAAAAAAAA)) 
     \init_wait_count[7]_i_2 
        (.I0(init_wait_count_reg__0[7]),
         .I1(init_wait_count_reg__0[5]),
-        .I2(\init_wait_count[7]_i_4_n_0 ),
-        .I3(init_wait_count_reg__0[6]),
+        .I2(init_wait_count_reg__0[3]),
+        .I3(init_wait_count_reg__0[4]),
+        .I4(\init_wait_count[7]_i_4_n_0 ),
+        .I5(init_wait_count_reg__0[6]),
         .O(p_0_in__0[7]));
-  (* SOFT_HLUTNM = "soft_lutpair127" *) 
+  (* SOFT_HLUTNM = "soft_lutpair123" *) 
   LUT4 #(
     .INIT(16'hFFF7)) 
     \init_wait_count[7]_i_3 
-       (.I0(init_wait_count_reg__0[0]),
-        .I1(init_wait_count_reg__0[1]),
-        .I2(init_wait_count_reg__0[4]),
-        .I3(init_wait_count_reg__0[2]),
-        .O(\init_wait_count[7]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair124" *) 
-  LUT5 #(
-    .INIT(32'h80000000)) 
-    \init_wait_count[7]_i_4 
        (.I0(init_wait_count_reg__0[4]),
         .I1(init_wait_count_reg__0[3]),
         .I2(init_wait_count_reg__0[0]),
         .I3(init_wait_count_reg__0[1]),
-        .I4(init_wait_count_reg__0[2]),
+        .O(\init_wait_count[7]_i_3_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair127" *) 
+  LUT3 #(
+    .INIT(8'h7F)) 
+    \init_wait_count[7]_i_4 
+       (.I0(init_wait_count_reg__0[0]),
+        .I1(init_wait_count_reg__0[1]),
+        .I2(init_wait_count_reg__0[2]),
         .O(\init_wait_count[7]_i_4_n_0 ));
   FDCE #(
     .INIT(1'b0)) 
@@ -36728,12 +36709,12 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FS
         .D(p_0_in__0[7]),
         .Q(init_wait_count_reg__0[7]));
   LUT6 #(
-    .INIT(64'hFFFFFFFF00000010)) 
+    .INIT(64'hFFFFFFFF00001000)) 
     init_wait_done_i_1
        (.I0(\init_wait_count[7]_i_3_n_0 ),
-        .I1(init_wait_count_reg__0[3]),
-        .I2(init_wait_count_reg__0[5]),
-        .I3(init_wait_count_reg__0[7]),
+        .I1(init_wait_count_reg__0[7]),
+        .I2(init_wait_count_reg__0[2]),
+        .I3(init_wait_count_reg__0[5]),
         .I4(init_wait_count_reg__0[6]),
         .I5(init_wait_done_reg_n_0),
         .O(init_wait_done_i_1_n_0));
@@ -36851,50 +36832,47 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FS
         .CLR(pma_init_sync),
         .D(run_phase_alignment_int_i_1_n_0),
         .Q(run_phase_alignment_int_reg_n_0));
-  LUT6 #(
-    .INIT(64'h00000000AAAAAAAE)) 
+  LUT3 #(
+    .INIT(8'h0E)) 
     time_out_2ms_i_1
        (.I0(time_out_2ms_reg_n_0),
-        .I1(time_out_2ms_i_2_n_0),
-        .I2(time_out_2ms_i_3_n_0),
-        .I3(time_out_2ms_i_4_n_0),
-        .I4(time_out_2ms_i_5_n_0),
-        .I5(reset_time_out_reg_n_0),
+        .I1(time_out_2ms),
+        .I2(reset_time_out_reg_n_0),
         .O(time_out_2ms_i_1_n_0));
-  LUT5 #(
-    .INIT(32'h00004000)) 
+  LUT6 #(
+    .INIT(64'h0000000000000020)) 
     time_out_2ms_i_2
-       (.I0(time_out_counter_reg[3]),
-        .I1(time_out_counter_reg[15]),
-        .I2(time_out_counter_reg[7]),
-        .I3(time_out_counter_reg[10]),
-        .I4(time_out_counter_reg[8]),
-        .O(time_out_2ms_i_2_n_0));
+       (.I0(time_tlock_max_i_2_n_0),
+        .I1(time_out_counter_reg[4]),
+        .I2(time_out_counter_reg[17]),
+        .I3(time_out_counter_reg[9]),
+        .I4(time_out_2ms_i_3_n_0),
+        .I5(time_out_2ms_i_4_n_0),
+        .O(time_out_2ms));
   LUT4 #(
-    .INIT(16'hFFFD)) 
+    .INIT(16'hFF7F)) 
     time_out_2ms_i_3
-       (.I0(time_out_counter_reg[9]),
-        .I1(time_out_counter_reg[6]),
-        .I2(time_out_counter_reg[14]),
-        .I3(time_out_counter_reg[13]),
+       (.I0(time_out_counter_reg[6]),
+        .I1(time_out_counter_reg[10]),
+        .I2(time_out_counter_reg[16]),
+        .I3(time_out_counter_reg[18]),
         .O(time_out_2ms_i_3_n_0));
+  LUT5 #(
+    .INIT(32'hFFFFFBFF)) 
+    time_out_2ms_i_4
+       (.I0(time_out_counter_reg[14]),
+        .I1(time_out_counter_reg[11]),
+        .I2(time_out_counter_reg[12]),
+        .I3(time_out_counter_reg[8]),
+        .I4(time_out_2ms_i_5_n_0),
+        .O(time_out_2ms_i_4_n_0));
   LUT4 #(
     .INIT(16'hFFFE)) 
-    time_out_2ms_i_4
-       (.I0(time_out_counter_reg[1]),
-        .I1(time_out_counter_reg[2]),
-        .I2(time_out_counter_reg[17]),
-        .I3(time_out_counter_reg[18]),
-        .O(time_out_2ms_i_4_n_0));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFEFFF)) 
     time_out_2ms_i_5
-       (.I0(time_out_counter_reg[4]),
-        .I1(time_out_counter_reg[0]),
-        .I2(time_out_counter_reg[5]),
-        .I3(time_out_counter_reg[16]),
-        .I4(time_out_counter_reg[11]),
-        .I5(time_out_counter_reg[12]),
+       (.I0(time_out_counter_reg[13]),
+        .I1(time_out_counter_reg[5]),
+        .I2(time_out_counter_reg[1]),
+        .I3(time_out_counter_reg[0]),
         .O(time_out_2ms_i_5_n_0));
   FDRE #(
     .INIT(1'b0)) 
@@ -36904,30 +36882,58 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FS
         .D(time_out_2ms_i_1_n_0),
         .Q(time_out_2ms_reg_n_0),
         .R(1'b0));
-  LUT4 #(
-    .INIT(16'h00AE)) 
+  LUT6 #(
+    .INIT(64'h00000000AAAAAAAE)) 
     time_out_500us_i_1
        (.I0(time_out_500us_reg_n_0),
-        .I1(time_tlock_max_i_2_n_0),
-        .I2(time_out_500us_i_2_n_0),
-        .I3(reset_time_out_reg_n_0),
+        .I1(time_out_500us_i_2_n_0),
+        .I2(time_out_500us_i_3_n_0),
+        .I3(time_out_500us_i_4_n_0),
+        .I4(time_out_500us_i_5_n_0),
+        .I5(reset_time_out_reg_n_0),
         .O(time_out_500us_i_1_n_0));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFEFFFFFFF)) 
+  LUT5 #(
+    .INIT(32'h00000080)) 
     time_out_500us_i_2
-       (.I0(time_out_counter_reg[9]),
-        .I1(time_out_counter_reg[6]),
-        .I2(time_out_counter_reg[5]),
-        .I3(time_out_counter_reg[13]),
-        .I4(time_out_counter_reg[14]),
-        .I5(time_out_500us_i_3_n_0),
+       (.I0(time_out_counter_reg[4]),
+        .I1(time_out_counter_reg[14]),
+        .I2(time_out_counter_reg[15]),
+        .I3(time_out_counter_reg[16]),
+        .I4(time_out_500us_i_6_n_0),
         .O(time_out_500us_i_2_n_0));
-  LUT2 #(
-    .INIT(4'hE)) 
+  (* SOFT_HLUTNM = "soft_lutpair125" *) 
+  LUT3 #(
+    .INIT(8'hFE)) 
     time_out_500us_i_3
-       (.I0(time_out_counter_reg[11]),
-        .I1(time_out_counter_reg[12]),
+       (.I0(time_out_counter_reg[2]),
+        .I1(time_out_counter_reg[3]),
+        .I2(time_out_counter_reg[7]),
         .O(time_out_500us_i_3_n_0));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    time_out_500us_i_4
+       (.I0(time_out_counter_reg[1]),
+        .I1(time_out_counter_reg[0]),
+        .I2(time_out_counter_reg[12]),
+        .I3(time_out_counter_reg[11]),
+        .O(time_out_500us_i_4_n_0));
+  LUT4 #(
+    .INIT(16'hFFDF)) 
+    time_out_500us_i_5
+       (.I0(time_out_counter_reg[8]),
+        .I1(time_out_counter_reg[17]),
+        .I2(time_out_counter_reg[9]),
+        .I3(time_out_counter_reg[18]),
+        .O(time_out_500us_i_5_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair126" *) 
+  LUT4 #(
+    .INIT(16'hFFEF)) 
+    time_out_500us_i_6
+       (.I0(time_out_counter_reg[13]),
+        .I1(time_out_counter_reg[5]),
+        .I2(time_out_counter_reg[6]),
+        .I3(time_out_counter_reg[10]),
+        .O(time_out_500us_i_6_n_0));
   FDRE #(
     .INIT(1'b0)) 
     time_out_500us_reg
@@ -36936,38 +36942,16 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FS
         .D(time_out_500us_i_1_n_0),
         .Q(time_out_500us_reg_n_0),
         .R(1'b0));
-  LUT4 #(
-    .INIT(16'hFFFD)) 
-    \time_out_counter[0]_i_1 
-       (.I0(time_out_2ms_i_2_n_0),
-        .I1(time_out_2ms_i_3_n_0),
-        .I2(\time_out_counter[0]_i_3__0_n_0 ),
-        .I3(\time_out_counter[0]_i_4_n_0 ),
-        .O(time_out_counter));
-  (* SOFT_HLUTNM = "soft_lutpair125" *) 
-  LUT4 #(
-    .INIT(16'hEFFF)) 
-    \time_out_counter[0]_i_3__0 
-       (.I0(time_out_counter_reg[12]),
-        .I1(time_out_counter_reg[11]),
-        .I2(time_out_counter_reg[16]),
-        .I3(time_out_counter_reg[5]),
-        .O(\time_out_counter[0]_i_3__0_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFFE)) 
-    \time_out_counter[0]_i_4 
-       (.I0(time_out_counter_reg[1]),
-        .I1(time_out_counter_reg[2]),
-        .I2(time_out_counter_reg[0]),
-        .I3(time_out_counter_reg[4]),
-        .I4(time_out_counter_reg[18]),
-        .I5(time_out_counter_reg[17]),
-        .O(\time_out_counter[0]_i_4_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
-    \time_out_counter[0]_i_5 
+    \time_out_counter[0]_i_1 
+       (.I0(time_out_2ms),
+        .O(time_out_counter));
+  LUT1 #(
+    .INIT(2'h1)) 
+    \time_out_counter[0]_i_3 
        (.I0(time_out_counter_reg[0]),
-        .O(\time_out_counter[0]_i_5_n_0 ));
+        .O(\time_out_counter[0]_i_3_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \time_out_counter_reg[0] 
@@ -36982,7 +36966,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FS
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b1}),
         .O({\time_out_counter_reg[0]_i_2_n_4 ,\time_out_counter_reg[0]_i_2_n_5 ,\time_out_counter_reg[0]_i_2_n_6 ,\time_out_counter_reg[0]_i_2_n_7 }),
-        .S({time_out_counter_reg[3:1],\time_out_counter[0]_i_5_n_0 }));
+        .S({time_out_counter_reg[3:1],\time_out_counter[0]_i_3_n_0 }));
   FDRE #(
     .INIT(1'b0)) 
     \time_out_counter_reg[10] 
@@ -37207,32 +37191,33 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FS
         .I2(time_tlock_max_i_3_n_0),
         .I3(reset_time_out_reg_n_0),
         .O(time_tlock_max_i_1_n_0));
-  LUT6 #(
-    .INIT(64'h0000000000000400)) 
-    time_tlock_max_i_2
-       (.I0(time_tlock_max_i_4_n_0),
-        .I1(time_out_counter_reg[7]),
-        .I2(time_out_counter_reg[10]),
-        .I3(time_out_counter_reg[8]),
-        .I4(time_out_counter_reg[16]),
-        .I5(time_out_2ms_i_4_n_0),
-        .O(time_tlock_max_i_2_n_0));
   (* SOFT_HLUTNM = "soft_lutpair125" *) 
   LUT4 #(
-    .INIT(16'hFFEF)) 
-    time_tlock_max_i_3
-       (.I0(time_out_2ms_i_3_n_0),
-        .I1(time_out_counter_reg[11]),
-        .I2(time_out_counter_reg[12]),
-        .I3(time_out_counter_reg[5]),
-        .O(time_tlock_max_i_3_n_0));
-  LUT4 #(
-    .INIT(16'hFFEF)) 
-    time_tlock_max_i_4
-       (.I0(time_out_counter_reg[4]),
-        .I1(time_out_counter_reg[0]),
+    .INIT(16'h0001)) 
+    time_tlock_max_i_2
+       (.I0(time_out_counter_reg[15]),
+        .I1(time_out_counter_reg[7]),
         .I2(time_out_counter_reg[3]),
-        .I3(time_out_counter_reg[15]),
+        .I3(time_out_counter_reg[2]),
+        .O(time_tlock_max_i_2_n_0));
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFFFFFFEF)) 
+    time_tlock_max_i_3
+       (.I0(time_tlock_max_i_4_n_0),
+        .I1(time_out_counter_reg[6]),
+        .I2(time_out_counter_reg[4]),
+        .I3(time_out_counter_reg[14]),
+        .I4(time_out_500us_i_4_n_0),
+        .I5(time_out_500us_i_5_n_0),
+        .O(time_tlock_max_i_3_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair126" *) 
+  LUT4 #(
+    .INIT(16'hFFDF)) 
+    time_tlock_max_i_4
+       (.I0(time_out_counter_reg[10]),
+        .I1(time_out_counter_reg[16]),
+        .I2(time_out_counter_reg[13]),
+        .I3(time_out_counter_reg[5]),
         .O(time_tlock_max_i_4_n_0));
   FDRE #(
     .INIT(1'b0)) 
@@ -37307,128 +37292,100 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FS
         .PRE(pma_init_sync),
         .Q(tx_seq_scramb_reset_int));
   LUT6 #(
-    .INIT(64'hFFFFFEFEFFFFFEFF)) 
-    \tx_state[0]_i_2 
-       (.I0(tx_state[6]),
-        .I1(tx_state[0]),
-        .I2(tx_state[7]),
-        .I3(tx_state[2]),
-        .I4(tx_state[4]),
-        .I5(tx_state[3]),
-        .O(\tx_state[0]_i_2_n_0 ));
-  LUT3 #(
-    .INIT(8'hAB)) 
-    \tx_state[0]_i_5 
-       (.I0(mmcm_lock_r2),
-        .I1(tx_state[0]),
-        .I2(time_tlock_max_reg_n_0),
-        .O(\tx_state[0]_i_5_n_0 ));
+    .INIT(64'hAAAAAAAAAAAAA2AA)) 
+    \tx_state[1]_i_3 
+       (.I0(\tx_state[7]_i_8_n_0 ),
+        .I1(\tx_state[7]_i_7_n_0 ),
+        .I2(\tx_state[7]_i_11_n_0 ),
+        .I3(\tx_state[1]_i_7_n_0 ),
+        .I4(\tx_state[1]_i_8_n_0 ),
+        .I5(\tx_state[1]_i_9_n_0 ),
+        .O(\tx_state[1]_i_3_n_0 ));
   LUT6 #(
-    .INIT(64'h77777777777777F7)) 
+    .INIT(64'h0010FFFFFFFFFFFF)) 
     \tx_state[1]_i_5 
-       (.I0(\tx_state[7]_i_8_n_0 ),
-        .I1(tx_state[1]),
-        .I2(\tx_state[2]_i_9_n_0 ),
-        .I3(\tx_state[2]_i_8_n_0 ),
-        .I4(\tx_state[2]_i_7_n_0 ),
-        .I5(\wait_time_cnt[0]_i_5_n_0 ),
+       (.I0(\tx_state[1]_i_9_n_0 ),
+        .I1(\tx_state[1]_i_8_n_0 ),
+        .I2(\tx_state[1]_i_7_n_0 ),
+        .I3(\tx_state[7]_i_11_n_0 ),
+        .I4(\tx_state[7]_i_7_n_0 ),
+        .I5(tx_state[1]),
         .O(\tx_state[1]_i_5_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFDFFFF00000000)) 
-    \tx_state[1]_i_6 
-       (.I0(\tx_state[7]_i_8_n_0 ),
-        .I1(\wait_time_cnt[0]_i_5_n_0 ),
-        .I2(\tx_state[2]_i_7_n_0 ),
-        .I3(\tx_state[2]_i_8_n_0 ),
-        .I4(\tx_state[2]_i_9_n_0 ),
-        .I5(\tx_state[7]_i_6_n_0 ),
-        .O(\tx_state[1]_i_6_n_0 ));
-  LUT6 #(
-    .INIT(64'hFEFF0000FFFFFFFF)) 
-    \tx_state[2]_i_2 
-       (.I0(\wait_time_cnt[0]_i_5_n_0 ),
-        .I1(\tx_state[2]_i_7_n_0 ),
-        .I2(\tx_state[2]_i_8_n_0 ),
-        .I3(\tx_state[2]_i_9_n_0 ),
-        .I4(tx_state[2]),
-        .I5(\tx_state[7]_i_6_n_0 ),
-        .O(\tx_state[2]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFBFFFFFFFF)) 
-    \tx_state[2]_i_4 
-       (.I0(\tx_state[7]_i_7_n_0 ),
-        .I1(\tx_state[7]_i_8_n_0 ),
-        .I2(\wait_time_cnt[0]_i_5_n_0 ),
-        .I3(\tx_state[2]_i_7_n_0 ),
-        .I4(\tx_state[2]_i_8_n_0 ),
-        .I5(\tx_state[2]_i_9_n_0 ),
-        .O(\tx_state[2]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'hF0F0F0F0F0F0F0F1)) 
-    \tx_state[2]_i_5 
-       (.I0(tx_state[3]),
-        .I1(tx_state[4]),
-        .I2(tx_state[2]),
-        .I3(tx_state[7]),
-        .I4(tx_state[1]),
-        .I5(tx_state[6]),
-        .O(\tx_state[2]_i_5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair123" *) 
+  (* SOFT_HLUTNM = "soft_lutpair124" *) 
+  LUT4 #(
+    .INIT(16'h0001)) 
+    \tx_state[1]_i_7 
+       (.I0(wait_time_cnt_reg[15]),
+        .I1(wait_time_cnt_reg[14]),
+        .I2(wait_time_cnt_reg[0]),
+        .I3(wait_time_cnt_reg[10]),
+        .O(\tx_state[1]_i_7_n_0 ));
   LUT4 #(
     .INIT(16'hFFFE)) 
-    \tx_state[2]_i_7 
-       (.I0(wait_time_cnt_reg[0]),
-        .I1(wait_time_cnt_reg[3]),
-        .I2(wait_time_cnt_reg[1]),
-        .I3(wait_time_cnt_reg[2]),
-        .O(\tx_state[2]_i_7_n_0 ));
+    \tx_state[1]_i_8 
+       (.I0(wait_time_cnt_reg[7]),
+        .I1(wait_time_cnt_reg[4]),
+        .I2(wait_time_cnt_reg[2]),
+        .I3(wait_time_cnt_reg[5]),
+        .O(\tx_state[1]_i_8_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair122" *) 
   LUT4 #(
     .INIT(16'hFFFE)) 
-    \tx_state[2]_i_8 
+    \tx_state[1]_i_9 
        (.I0(wait_time_cnt_reg[8]),
         .I1(wait_time_cnt_reg[11]),
         .I2(wait_time_cnt_reg[9]),
-        .I3(wait_time_cnt_reg[10]),
-        .O(\tx_state[2]_i_8_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair122" *) 
-  LUT4 #(
-    .INIT(16'h0001)) 
-    \tx_state[2]_i_9 
-       (.I0(wait_time_cnt_reg[15]),
-        .I1(wait_time_cnt_reg[13]),
-        .I2(wait_time_cnt_reg[14]),
-        .I3(wait_time_cnt_reg[12]),
-        .O(\tx_state[2]_i_9_n_0 ));
+        .I3(wait_time_cnt_reg[6]),
+        .O(\tx_state[1]_i_9_n_0 ));
+  LUT5 #(
+    .INIT(32'h5D000000)) 
+    \tx_state[2]_i_3 
+       (.I0(tx_state[2]),
+        .I1(\tx_state[2]_i_7_n_0 ),
+        .I2(\tx_state[7]_i_12_n_0 ),
+        .I3(\tx_state[7]_i_8_n_0 ),
+        .I4(\tx_state[7]_i_7_n_0 ),
+        .O(\tx_state[2]_i_3_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFEEE0)) 
-    \tx_state[5]_i_2 
+    .INIT(64'hFFFFFFFF0001FFFF)) 
+    \tx_state[2]_i_5 
+       (.I0(tx_state[0]),
+        .I1(tx_state[6]),
+        .I2(tx_state[4]),
+        .I3(tx_state[7]),
+        .I4(\tx_state[2]_i_7_n_0 ),
+        .I5(\tx_state[7]_i_12_n_0 ),
+        .O(\tx_state[2]_i_5_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFF0000FFFF0001)) 
+    \tx_state[2]_i_6 
+       (.I0(tx_state[6]),
+        .I1(tx_state[4]),
+        .I2(tx_state[3]),
+        .I3(tx_state[1]),
+        .I4(tx_state[2]),
+        .I5(tx_state[7]),
+        .O(\tx_state[2]_i_6_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair124" *) 
+  LUT5 #(
+    .INIT(32'h00000001)) 
+    \tx_state[2]_i_7 
+       (.I0(wait_time_cnt_reg[10]),
+        .I1(wait_time_cnt_reg[0]),
+        .I2(wait_time_cnt_reg[14]),
+        .I3(wait_time_cnt_reg[15]),
+        .I4(\tx_state[7]_i_11_n_0 ),
+        .O(\tx_state[2]_i_7_n_0 ));
+  LUT6 #(
+    .INIT(64'h000000110000001F)) 
+    \tx_state[5]_i_4 
        (.I0(tx_state[7]),
         .I1(tx_state[2]),
-        .I2(tx_state[6]),
-        .I3(tx_state[1]),
+        .I2(tx_state[1]),
+        .I3(tx_state[3]),
         .I4(tx_state[4]),
-        .I5(tx_state[3]),
-        .O(\tx_state[5]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'hDDDDDDDDDDDDDDDF)) 
-    \tx_state[5]_i_6 
-       (.I0(\wait_time_cnt[0]_i_6_n_0 ),
-        .I1(\tx_state[5]_i_8_n_0 ),
-        .I2(tx_state[7]),
-        .I3(tx_state[4]),
-        .I4(tx_state[6]),
-        .I5(tx_state[0]),
-        .O(\tx_state[5]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair123" *) 
-  LUT5 #(
-    .INIT(32'hFFFFFFFE)) 
-    \tx_state[5]_i_8 
-       (.I0(wait_time_cnt_reg[2]),
-        .I1(wait_time_cnt_reg[1]),
-        .I2(wait_time_cnt_reg[3]),
-        .I3(wait_time_cnt_reg[0]),
-        .I4(\wait_time_cnt[0]_i_5_n_0 ),
-        .O(\tx_state[5]_i_8_n_0 ));
+        .I5(tx_state[6]),
+        .O(\tx_state[5]_i_4_n_0 ));
   LUT6 #(
     .INIT(64'h101010FF10101010)) 
     \tx_state[7]_i_1 
@@ -37439,6 +37396,34 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FS
         .I4(tx_state[0]),
         .I5(\tx_state[7]_i_5_n_0 ),
         .O(\tx_state[7]_i_1_n_0 ));
+  LUT6 #(
+    .INIT(64'h0000000000000001)) 
+    \tx_state[7]_i_10 
+       (.I0(\tx_state[7]_i_11_n_0 ),
+        .I1(wait_time_cnt_reg[15]),
+        .I2(wait_time_cnt_reg[14]),
+        .I3(wait_time_cnt_reg[0]),
+        .I4(wait_time_cnt_reg[10]),
+        .I5(\tx_state[7]_i_12_n_0 ),
+        .O(\tx_state[7]_i_10_n_0 ));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    \tx_state[7]_i_11 
+       (.I0(wait_time_cnt_reg[13]),
+        .I1(wait_time_cnt_reg[3]),
+        .I2(wait_time_cnt_reg[12]),
+        .I3(wait_time_cnt_reg[1]),
+        .O(\tx_state[7]_i_11_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair122" *) 
+  LUT5 #(
+    .INIT(32'hFFFFFFFE)) 
+    \tx_state[7]_i_12 
+       (.I0(wait_time_cnt_reg[6]),
+        .I1(wait_time_cnt_reg[9]),
+        .I2(wait_time_cnt_reg[11]),
+        .I3(wait_time_cnt_reg[8]),
+        .I4(\tx_state[1]_i_8_n_0 ),
+        .O(\tx_state[7]_i_12_n_0 ));
   LUT2 #(
     .INIT(4'hE)) 
     \tx_state[7]_i_3 
@@ -37468,33 +37453,33 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FS
     \tx_state[7]_i_6 
        (.I0(tx_state[3]),
         .I1(tx_state[4]),
-        .I2(tx_state[1]),
-        .I3(tx_state[6]),
+        .I2(tx_state[2]),
+        .I3(tx_state[7]),
         .O(\tx_state[7]_i_6_n_0 ));
   LUT4 #(
     .INIT(16'hFFFE)) 
     \tx_state[7]_i_7 
-       (.I0(tx_state[3]),
-        .I1(tx_state[4]),
-        .I2(tx_state[2]),
-        .I3(tx_state[7]),
-        .O(\tx_state[7]_i_7_n_0 ));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    \tx_state[7]_i_8 
        (.I0(tx_state[0]),
         .I1(tx_state[6]),
         .I2(tx_state[4]),
         .I3(tx_state[7]),
+        .O(\tx_state[7]_i_7_n_0 ));
+  LUT4 #(
+    .INIT(16'h0001)) 
+    \tx_state[7]_i_8 
+       (.I0(tx_state[6]),
+        .I1(tx_state[4]),
+        .I2(tx_state[3]),
+        .I3(tx_state[1]),
         .O(\tx_state[7]_i_8_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFF00000008)) 
+    .INIT(64'h00000000FFFFFEFF)) 
     \tx_state[7]_i_9 
-       (.I0(mmcm_lock_r2),
-        .I1(\tx_state[7]_i_6_n_0 ),
-        .I2(tx_state[0]),
-        .I3(tx_state[6]),
-        .I4(tx_state[4]),
+       (.I0(tx_state[4]),
+        .I1(tx_state[3]),
+        .I2(tx_state[1]),
+        .I3(mmcm_lock_r2),
+        .I4(\tx_state[7]_i_7_n_0 ),
         .I5(tx_state[7]),
         .O(\tx_state[7]_i_9_n_0 ));
   (* FSM_ENCODED_STATES = "INIT:00000000,ASSERT_ALL_RESETS:00000001,RELEASE_PLL_RESET:00000010,DELAY4_RELEASE_MMCM_RESET:01000000,RELEASE_MMCM_RESET:00000100,DELAY4_WAIT_RESET_DONE:10000000,WAIT_RESET_DONE:00001000,DO_PHASE_ALIGNMENT:00010000,RESET_FSM_DONE:00100000" *) 
@@ -37545,7 +37530,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FS
        (.C(init_clk),
         .CE(\tx_state[7]_i_1_n_0 ),
         .CLR(pma_init_sync),
-        .D(p_0_in__0_0[4]),
+        .D(u_rst_sync_txresetdone_n_1),
         .Q(tx_state[4]));
   (* FSM_ENCODED_STATES = "INIT:00000000,ASSERT_ALL_RESETS:00000001,RELEASE_PLL_RESET:00000010,DELAY4_RELEASE_MMCM_RESET:01000000,RELEASE_MMCM_RESET:00000100,DELAY4_WAIT_RESET_DONE:10000000,WAIT_RESET_DONE:00001000,DO_PHASE_ALIGNMENT:00010000,RESET_FSM_DONE:00100000" *) 
   (* KEEP = "yes" *) 
@@ -37575,14 +37560,13 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FS
        (.C(init_clk),
         .CE(\tx_state[7]_i_1_n_0 ),
         .CLR(pma_init_sync),
-        .D(p_0_in__0_0[7]),
+        .D(u_rst_sync_time_out_wait_bypass_n_1),
         .Q(tx_state[7]));
   Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_rst_sync__parameterized1 u_rst_sync_plllock
-       (.D(p_0_in__0_0[0]),
-        .Q({tx_state[7:6],tx_state[4],tx_state[1:0]}),
+       (.D({p_0_in__0_0[6:5],p_0_in__0_0[1:0]}),
+        .Q({tx_state[7:4],tx_state[1:0]}),
         .in0(in0),
         .init_clk(init_clk),
-        .init_wait_done_reg(u_rst_sync_plllock_n_4),
         .out({tx_state[7:6],tx_state[4:0]}),
         .reset_time_out_reg(reset_time_out_i_3_n_0),
         .reset_time_out_reg_0(reset_time_out_reg_n_0),
@@ -37590,52 +37574,44 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FS
         .reset_time_out_reg_2(mmcm_lock_r2),
         .reset_time_out_reg_3(reset_time_out_i_6_n_0),
         .reset_time_out_reg_4(reset_time_out_i_7_n_0),
-        .sel(sel),
         .stg5(stg5),
-        .\tx_state_reg[0] (\tx_state[7]_i_6_n_0 ),
-        .\tx_state_reg[0]_0 (\tx_state[7]_i_8_n_0 ),
-        .\tx_state_reg[0]_1 (time_out_2ms_reg_n_0),
-        .\tx_state_reg[0]_2 (\tx_state[0]_i_2_n_0 ),
-        .\tx_state_reg[0]_3 (u_rst_sync_txresetdone_n_4),
-        .\tx_state_reg[0]_4 (u_rst_sync_time_out_wait_bypass_n_6),
-        .\tx_state_reg[0]_5 (init_wait_done_reg_n_0),
-        .\tx_state_reg[1] (u_rst_sync_plllock_n_2),
-        .\tx_state_reg[3] (\tx_state[7]_i_7_n_0 ),
+        .\tx_state_reg[0] (u_rst_sync_txresetdone_n_6),
+        .\tx_state_reg[1] (\tx_state[7]_i_6_n_0 ),
+        .\tx_state_reg[1]_0 (\tx_state[1]_i_3_n_0 ),
+        .\tx_state_reg[1]_1 (u_rst_sync_txresetdone_n_4),
+        .\tx_state_reg[1]_2 (\tx_state[1]_i_5_n_0 ),
+        .\tx_state_reg[1]_3 (u_rst_sync_time_out_wait_bypass_n_2),
+        .\tx_state_reg[5] (time_out_2ms_reg_n_0),
+        .\tx_state_reg[5]_0 (init_wait_done_reg_n_0),
+        .\tx_state_reg[5]_1 (\tx_state[7]_i_7_n_0 ),
+        .\tx_state_reg[5]_2 (u_rst_sync_time_out_wait_bypass_n_4),
+        .\tx_state_reg[5]_3 (\tx_state[7]_i_10_n_0 ),
+        .\tx_state_reg[5]_4 (\tx_state[5]_i_4_n_0 ),
+        .\tx_state_reg[5]_5 (u_rst_sync_txresetdone_n_5),
         .\tx_state_reg[6] (u_rst_sync_plllock_n_1),
-        .\tx_state_reg[7] (u_rst_sync_plllock_n_5));
+        .\tx_state_reg[6]_0 (\tx_state[7]_i_8_n_0 ),
+        .\tx_state_reg[6]_1 (u_rst_sync_time_out_wait_bypass_n_0));
   Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_rst_sync__parameterized1_25 u_rst_sync_run_phase_align
        (.clear(clear),
         .in0(run_phase_alignment_int_reg_n_0),
         .stg5_reg_0(u_rst_sync_run_phase_align_n_0),
         .sync_clk(sync_clk));
   Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_rst_sync__parameterized1_26 u_rst_sync_time_out_wait_bypass
-       (.D({p_0_in__0_0[7:4],p_0_in__0_0[2:1]}),
-        .Q({tx_state[7:3],tx_state[1:0]}),
+       (.D(u_rst_sync_time_out_wait_bypass_n_1),
+        .Q({tx_state[6],tx_state[4:3],tx_state[1]}),
         .in0(time_out_wait_bypass_reg_n_0),
         .init_clk(init_clk),
-        .sel(sel),
-        .stg5_reg_0(u_rst_sync_time_out_wait_bypass_n_6),
-        .\tx_state_reg[1] (u_rst_sync_txresetdone_n_6),
-        .\tx_state_reg[1]_0 (\tx_state[7]_i_7_n_0 ),
-        .\tx_state_reg[1]_1 (u_rst_sync_plllock_n_2),
-        .\tx_state_reg[1]_2 (\tx_state[1]_i_5_n_0 ),
-        .\tx_state_reg[1]_3 (\tx_state[1]_i_6_n_0 ),
-        .\tx_state_reg[2] (\tx_state[7]_i_8_n_0 ),
-        .\tx_state_reg[2]_0 (\tx_state[2]_i_2_n_0 ),
-        .\tx_state_reg[2]_1 (\tx_state[2]_i_4_n_0 ),
-        .\tx_state_reg[2]_2 (\tx_state[2]_i_5_n_0 ),
-        .\tx_state_reg[2]_3 (u_rst_sync_txresetdone_n_3),
-        .\tx_state_reg[2]_4 (\tx_state[5]_i_8_n_0 ),
-        .\tx_state_reg[2]_5 (\wait_time_cnt[0]_i_6_n_0 ),
-        .\tx_state_reg[4] (u_rst_sync_txresetdone_n_5),
-        .\tx_state_reg[5] (\tx_state[5]_i_2_n_0 ),
-        .\tx_state_reg[5]_0 (u_rst_sync_plllock_n_4),
-        .\tx_state_reg[5]_1 (u_rst_sync_txresetdone_n_1),
-        .\tx_state_reg[5]_2 (\tx_state[5]_i_6_n_0 ),
-        .\tx_state_reg[6] (\tx_state[7]_i_6_n_0 ),
-        .\tx_state_reg[6]_0 (u_rst_sync_plllock_n_5),
-        .\tx_state_reg[7] (u_rst_sync_time_out_wait_bypass_n_7),
-        .\tx_state_reg[7]_0 (\tx_state[7]_i_9_n_0 ));
+        .stg5_reg_0(u_rst_sync_time_out_wait_bypass_n_0),
+        .stg5_reg_1(u_rst_sync_time_out_wait_bypass_n_3),
+        .stg5_reg_2(u_rst_sync_time_out_wait_bypass_n_4),
+        .\tx_state_reg[1] (u_rst_sync_time_out_wait_bypass_n_2),
+        .\tx_state_reg[2] (\tx_state[2]_i_7_n_0 ),
+        .\tx_state_reg[2]_0 (\tx_state[7]_i_12_n_0 ),
+        .\tx_state_reg[7] (\tx_state[7]_i_6_n_0 ),
+        .\tx_state_reg[7]_0 (\tx_state[7]_i_7_n_0 ),
+        .\tx_state_reg[7]_1 (\tx_state[7]_i_8_n_0 ),
+        .\tx_state_reg[7]_2 (\tx_state[7]_i_9_n_0 ),
+        .\tx_state_reg[7]_3 (\tx_state[7]_i_10_n_0 ));
   Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_rst_sync__parameterized1_27 u_rst_sync_tx_fsm_rst_done
        (.in0(time_out_wait_bypass_reg_n_0),
         .out(tx_fsm_reset_done_int),
@@ -37649,28 +37625,28 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FS
         .stg5_reg_0(stg5_reg),
         .sync_clk(sync_clk));
   Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_rst_sync__parameterized1_29 u_rst_sync_txresetdone
-       (.D(p_0_in__0_0[3]),
-        .Q({tx_state[4:3],tx_state[1:0]}),
+       (.D({u_rst_sync_txresetdone_n_1,p_0_in__0_0[3:2]}),
+        .Q({tx_state[7:6],tx_state[4:3],tx_state[1:0]}),
         .init_clk(init_clk),
-        .mmcm_lock_r2_reg(u_rst_sync_txresetdone_n_1),
+        .mmcm_lock_r2_reg(u_rst_sync_txresetdone_n_6),
         .out(mmcm_lock_r2),
         .stg1_Aurora_64B_Framing_lane2_Y0Y1_cdc_to_reg_0(stg1_Aurora_64B_Framing_lane2_Y0Y1_cdc_to_reg),
         .stg5(stg5),
         .stg5_reg_0(u_rst_sync_txresetdone_n_0),
-        .stg5_reg_1(u_rst_sync_txresetdone_n_3),
-        .stg5_reg_2(u_rst_sync_txresetdone_n_6),
-        .time_out_500us_reg(u_rst_sync_txresetdone_n_4),
-        .\tx_state_reg[0] (time_out_500us_reg_n_0),
-        .\tx_state_reg[0]_0 (\tx_state[0]_i_5_n_0 ),
-        .\tx_state_reg[2] (\tx_state[7]_i_8_n_0 ),
-        .\tx_state_reg[2]_0 (\tx_state[7]_i_6_n_0 ),
-        .\tx_state_reg[2]_1 (time_out_2ms_reg_n_0),
+        .stg5_reg_1(u_rst_sync_txresetdone_n_4),
+        .stg5_reg_2(u_rst_sync_txresetdone_n_5),
+        .\tx_state_reg[0] (time_tlock_max_reg_n_0),
+        .\tx_state_reg[2] (\tx_state[2]_i_3_n_0 ),
+        .\tx_state_reg[2]_0 (u_rst_sync_time_out_wait_bypass_n_3),
+        .\tx_state_reg[2]_1 (\tx_state[2]_i_5_n_0 ),
+        .\tx_state_reg[2]_2 (\tx_state[2]_i_6_n_0 ),
+        .\tx_state_reg[2]_3 (time_out_2ms_reg_n_0),
         .\tx_state_reg[3] (\tx_state[7]_i_7_n_0 ),
-        .\tx_state_reg[3]_0 (u_rst_sync_time_out_wait_bypass_n_7),
-        .\tx_state_reg[3]_1 (u_rst_sync_plllock_n_4),
-        .\tx_state_reg[3]_2 (\tx_state[5]_i_6_n_0 ),
-        .\tx_state_reg[4] (u_rst_sync_txresetdone_n_5),
-        .\tx_state_reg[5] (time_tlock_max_reg_n_0));
+        .\tx_state_reg[3]_0 (time_out_500us_reg_n_0),
+        .\tx_state_reg[4] (\tx_state[7]_i_6_n_0 ),
+        .\tx_state_reg[4]_0 (\tx_state[7]_i_10_n_0 ),
+        .\tx_state_reg[4]_1 (u_rst_sync_time_out_wait_bypass_n_0),
+        .\tx_state_reg[4]_2 (\tx_state[7]_i_8_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
     \wait_bypass_count[0]_i_4 
@@ -37859,18 +37835,8 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FS
         .O(\wait_time_cnt[0]_i_1_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
-    \wait_time_cnt[0]_i_10 
-       (.I0(wait_time_cnt_reg[0]),
-        .O(\wait_time_cnt[0]_i_10_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFEFFFFFFFF)) 
     \wait_time_cnt[0]_i_2 
-       (.I0(\wait_time_cnt[0]_i_5_n_0 ),
-        .I1(wait_time_cnt_reg[0]),
-        .I2(wait_time_cnt_reg[3]),
-        .I3(wait_time_cnt_reg[1]),
-        .I4(wait_time_cnt_reg[2]),
-        .I5(\wait_time_cnt[0]_i_6_n_0 ),
+       (.I0(\tx_state[7]_i_10_n_0 ),
         .O(sel));
   LUT3 #(
     .INIT(8'h17)) 
@@ -37879,39 +37845,26 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FS
         .I1(tx_state[2]),
         .I2(tx_state[1]),
         .O(\wait_time_cnt[0]_i_4_n_0 ));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
+  LUT1 #(
+    .INIT(2'h1)) 
     \wait_time_cnt[0]_i_5 
-       (.I0(wait_time_cnt_reg[6]),
-        .I1(wait_time_cnt_reg[5]),
-        .I2(wait_time_cnt_reg[7]),
-        .I3(wait_time_cnt_reg[4]),
+       (.I0(wait_time_cnt_reg[3]),
         .O(\wait_time_cnt[0]_i_5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair122" *) 
-  LUT5 #(
-    .INIT(32'h00000001)) 
+  LUT1 #(
+    .INIT(2'h1)) 
     \wait_time_cnt[0]_i_6 
-       (.I0(wait_time_cnt_reg[12]),
-        .I1(wait_time_cnt_reg[14]),
-        .I2(wait_time_cnt_reg[13]),
-        .I3(wait_time_cnt_reg[15]),
-        .I4(\tx_state[2]_i_8_n_0 ),
+       (.I0(wait_time_cnt_reg[2]),
         .O(\wait_time_cnt[0]_i_6_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
     \wait_time_cnt[0]_i_7 
-       (.I0(wait_time_cnt_reg[3]),
+       (.I0(wait_time_cnt_reg[1]),
         .O(\wait_time_cnt[0]_i_7_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
     \wait_time_cnt[0]_i_8 
-       (.I0(wait_time_cnt_reg[2]),
+       (.I0(wait_time_cnt_reg[0]),
         .O(\wait_time_cnt[0]_i_8_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \wait_time_cnt[0]_i_9 
-       (.I0(wait_time_cnt_reg[1]),
-        .O(\wait_time_cnt[0]_i_9_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
     \wait_time_cnt[12]_i_2 
@@ -37984,7 +37937,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FS
         .CYINIT(1'b0),
         .DI({1'b1,1'b1,1'b1,1'b1}),
         .O({\wait_time_cnt_reg[0]_i_3_n_4 ,\wait_time_cnt_reg[0]_i_3_n_5 ,\wait_time_cnt_reg[0]_i_3_n_6 ,\wait_time_cnt_reg[0]_i_3_n_7 }),
-        .S({\wait_time_cnt[0]_i_7_n_0 ,\wait_time_cnt[0]_i_8_n_0 ,\wait_time_cnt[0]_i_9_n_0 ,\wait_time_cnt[0]_i_10_n_0 }));
+        .S({\wait_time_cnt[0]_i_5_n_0 ,\wait_time_cnt[0]_i_6_n_0 ,\wait_time_cnt[0]_i_7_n_0 ,\wait_time_cnt[0]_i_8_n_0 }));
   FDRE \wait_time_cnt_reg[10] 
        (.C(init_clk),
         .CE(sel),
@@ -38034,24 +37987,24 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FS
         .D(\wait_time_cnt_reg[0]_i_3_n_6 ),
         .Q(wait_time_cnt_reg[1]),
         .R(\wait_time_cnt[0]_i_1_n_0 ));
-  FDSE \wait_time_cnt_reg[2] 
+  FDRE \wait_time_cnt_reg[2] 
        (.C(init_clk),
         .CE(sel),
         .D(\wait_time_cnt_reg[0]_i_3_n_5 ),
         .Q(wait_time_cnt_reg[2]),
-        .S(\wait_time_cnt[0]_i_1_n_0 ));
-  FDRE \wait_time_cnt_reg[3] 
+        .R(\wait_time_cnt[0]_i_1_n_0 ));
+  FDSE \wait_time_cnt_reg[3] 
        (.C(init_clk),
         .CE(sel),
         .D(\wait_time_cnt_reg[0]_i_3_n_4 ),
         .Q(wait_time_cnt_reg[3]),
-        .R(\wait_time_cnt[0]_i_1_n_0 ));
-  FDSE \wait_time_cnt_reg[4] 
+        .S(\wait_time_cnt[0]_i_1_n_0 ));
+  FDRE \wait_time_cnt_reg[4] 
        (.C(init_clk),
         .CE(sel),
         .D(\wait_time_cnt_reg[4]_i_1_n_7 ),
         .Q(wait_time_cnt_reg[4]),
-        .S(\wait_time_cnt[0]_i_1_n_0 ));
+        .R(\wait_time_cnt[0]_i_1_n_0 ));
   CARRY4 \wait_time_cnt_reg[4]_i_1 
        (.CI(\wait_time_cnt_reg[0]_i_3_n_0 ),
         .CO({\wait_time_cnt_reg[4]_i_1_n_0 ,\wait_time_cnt_reg[4]_i_1_n_1 ,\wait_time_cnt_reg[4]_i_1_n_2 ,\wait_time_cnt_reg[4]_i_1_n_3 }),
@@ -38090,15 +38043,14 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_TX_STARTUP_FS
         .DI({1'b1,1'b1,1'b1,1'b1}),
         .O({\wait_time_cnt_reg[8]_i_1_n_4 ,\wait_time_cnt_reg[8]_i_1_n_5 ,\wait_time_cnt_reg[8]_i_1_n_6 ,\wait_time_cnt_reg[8]_i_1_n_7 }),
         .S({\wait_time_cnt[8]_i_2_n_0 ,\wait_time_cnt[8]_i_3_n_0 ,\wait_time_cnt[8]_i_4_n_0 ,\wait_time_cnt[8]_i_5_n_0 }));
-  FDRE \wait_time_cnt_reg[9] 
+  FDSE \wait_time_cnt_reg[9] 
        (.C(init_clk),
         .CE(sel),
         .D(\wait_time_cnt_reg[8]_i_1_n_6 ),
         .Q(wait_time_cnt_reg[9]),
-        .R(\wait_time_cnt[0]_i_1_n_0 ));
+        .S(\wait_time_cnt[0]_i_1_n_0 ));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_WRAPPER" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_WRAPPER
    (fsm_resetdone,
     drprdy_out,
@@ -38835,7 +38787,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_WRAPPER
        (.I0(cdr_reset_fsm_lnkreset),
         .I1(cdr_reset_fsm_cntr_r[0]),
         .O(\cdr_reset_fsm_cntr_r[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair137" *) 
+  (* SOFT_HLUTNM = "soft_lutpair136" *) 
   LUT3 #(
     .INIT(8'h60)) 
     \cdr_reset_fsm_cntr_r[1]_i_1 
@@ -38843,7 +38795,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_WRAPPER
         .I1(cdr_reset_fsm_cntr_r[0]),
         .I2(cdr_reset_fsm_lnkreset),
         .O(\cdr_reset_fsm_cntr_r[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair135" *) 
+  (* SOFT_HLUTNM = "soft_lutpair134" *) 
   LUT4 #(
     .INIT(16'h7800)) 
     \cdr_reset_fsm_cntr_r[2]_i_1 
@@ -38852,7 +38804,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_WRAPPER
         .I2(cdr_reset_fsm_cntr_r[2]),
         .I3(cdr_reset_fsm_lnkreset),
         .O(\cdr_reset_fsm_cntr_r[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair135" *) 
+  (* SOFT_HLUTNM = "soft_lutpair134" *) 
   LUT5 #(
     .INIT(32'h2AAA8000)) 
     \cdr_reset_fsm_cntr_r[3]_i_1 
@@ -38872,7 +38824,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_WRAPPER
         .I4(cdr_reset_fsm_cntr_r[4]),
         .I5(cdr_reset_fsm_lnkreset),
         .O(\cdr_reset_fsm_cntr_r[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair134" *) 
+  (* SOFT_HLUTNM = "soft_lutpair132" *) 
   LUT4 #(
     .INIT(16'h2A80)) 
     \cdr_reset_fsm_cntr_r[5]_i_1 
@@ -38881,7 +38833,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_WRAPPER
         .I2(\cdr_reset_fsm_cntr_r[7]_i_5_n_0 ),
         .I3(cdr_reset_fsm_cntr_r[5]),
         .O(\cdr_reset_fsm_cntr_r[5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair134" *) 
+  (* SOFT_HLUTNM = "soft_lutpair132" *) 
   LUT5 #(
     .INIT(32'h2AAA8000)) 
     \cdr_reset_fsm_cntr_r[6]_i_1 
@@ -38918,7 +38870,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_WRAPPER
         .I4(cdr_reset_fsm_cntr_r[7]),
         .I5(\cdr_reset_fsm_cntr_r[7]_i_5_n_0 ),
         .O(\cdr_reset_fsm_cntr_r[7]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair137" *) 
+  (* SOFT_HLUTNM = "soft_lutpair136" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     \cdr_reset_fsm_cntr_r[7]_i_5 
@@ -39042,7 +38994,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_WRAPPER
         .I4(\txseq_counter_i_reg_n_0_[0] ),
         .I5(\txseq_counter_i_reg_n_0_[1] ),
         .O(txdatavalid_i));
-  (* SOFT_HLUTNM = "soft_lutpair140" *) 
   LUT2 #(
     .INIT(4'hE)) 
     datavalid_in_r_i_2
@@ -39079,7 +39030,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_WRAPPER
         .out(rxrecclk_to_fabric_i),
         .rxdatavalid_to_fifo_lane1_i(rxdatavalid_to_fifo_lane1_i),
         .tempData(unscrambled_data_i052_out_0));
-  (* SOFT_HLUTNM = "soft_lutpair143" *) 
+  (* SOFT_HLUTNM = "soft_lutpair140" *) 
   LUT3 #(
     .INIT(8'hD0)) 
     extend_cc_r_i_1
@@ -39100,7 +39051,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_WRAPPER
        (.I0(hard_err_cntr_r_reg__0[0]),
         .I1(hard_err_cntr_r_reg__0[1]),
         .O(p_0_in__2[1]));
-  (* SOFT_HLUTNM = "soft_lutpair145" *) 
+  (* SOFT_HLUTNM = "soft_lutpair144" *) 
   LUT3 #(
     .INIT(8'h6A)) 
     \hard_err_cntr_r[2]_i_1 
@@ -39108,7 +39059,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_WRAPPER
         .I1(hard_err_cntr_r_reg__0[0]),
         .I2(hard_err_cntr_r_reg__0[1]),
         .O(p_0_in__2[2]));
-  (* SOFT_HLUTNM = "soft_lutpair136" *) 
+  (* SOFT_HLUTNM = "soft_lutpair138" *) 
   LUT4 #(
     .INIT(16'h6AAA)) 
     \hard_err_cntr_r[3]_i_1 
@@ -39117,7 +39068,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_WRAPPER
         .I2(hard_err_cntr_r_reg__0[0]),
         .I3(hard_err_cntr_r_reg__0[2]),
         .O(p_0_in__2[3]));
-  (* SOFT_HLUTNM = "soft_lutpair133" *) 
+  (* SOFT_HLUTNM = "soft_lutpair135" *) 
   LUT5 #(
     .INIT(32'h6AAAAAAA)) 
     \hard_err_cntr_r[4]_i_1 
@@ -39137,7 +39088,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_WRAPPER
         .I4(hard_err_cntr_r_reg__0[4]),
         .I5(hard_err_cntr_r_reg__0[5]),
         .O(p_0_in__2[5]));
-  (* SOFT_HLUTNM = "soft_lutpair138" *) 
+  (* SOFT_HLUTNM = "soft_lutpair137" *) 
   LUT3 #(
     .INIT(8'h9A)) 
     \hard_err_cntr_r[6]_i_1 
@@ -39145,7 +39096,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_WRAPPER
         .I1(\hard_err_cntr_r[7]_i_6_n_0 ),
         .I2(hard_err_cntr_r_reg__0[5]),
         .O(p_0_in__2[6]));
-  (* SOFT_HLUTNM = "soft_lutpair138" *) 
+  (* SOFT_HLUTNM = "soft_lutpair137" *) 
   LUT4 #(
     .INIT(16'hAA6A)) 
     \hard_err_cntr_r[7]_i_3 
@@ -39154,7 +39105,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_WRAPPER
         .I2(hard_err_cntr_r_reg__0[6]),
         .I3(\hard_err_cntr_r[7]_i_6_n_0 ),
         .O(p_0_in__2[7]));
-  (* SOFT_HLUTNM = "soft_lutpair136" *) 
+  (* SOFT_HLUTNM = "soft_lutpair138" *) 
   LUT4 #(
     .INIT(16'h7FFF)) 
     \hard_err_cntr_r[7]_i_5 
@@ -39163,7 +39114,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_WRAPPER
         .I2(hard_err_cntr_r_reg__0[3]),
         .I3(hard_err_cntr_r_reg__0[2]),
         .O(\hard_err_cntr_r[7]_i_5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair133" *) 
+  (* SOFT_HLUTNM = "soft_lutpair135" *) 
   LUT5 #(
     .INIT(32'h7FFFFFFF)) 
     \hard_err_cntr_r[7]_i_6 
@@ -39237,7 +39188,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_WRAPPER
         .D(p_0_in__2[7]),
         .Q(hard_err_cntr_r_reg__0[7]),
         .R(HPCNT_RESET_IN));
-  (* SOFT_HLUTNM = "soft_lutpair145" *) 
+  (* SOFT_HLUTNM = "soft_lutpair144" *) 
   LUT2 #(
     .INIT(4'hE)) 
     hard_err_rst_int_i_2
@@ -39748,7 +39699,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_WRAPPER
         .D(pre_r4_rxdatavalid_lane1_i),
         .Q(pos_rxdatavalid_lane1_i),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair144" *) 
+  (* SOFT_HLUTNM = "soft_lutpair142" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \pos_rxheader_from_gtx_i[0]_i_1 
@@ -39756,7 +39707,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_WRAPPER
         .I1(pre_r4_rxheadervalid_i),
         .I2(pos_rxheader_from_gtx_i[0]),
         .O(\pos_rxheader_from_gtx_i[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair144" *) 
+  (* SOFT_HLUTNM = "soft_lutpair142" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \pos_rxheader_from_gtx_i[1]_i_1 
@@ -41295,7 +41246,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_WRAPPER
         .D(D[1]),
         .Q(tx_hdr_r[1]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair143" *) 
+  (* SOFT_HLUTNM = "soft_lutpair140" *) 
   LUT3 #(
     .INIT(8'h04)) 
     txeof_txdv_coincide_r_i_1
@@ -41320,20 +41271,21 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_WRAPPER
         .stg5_reg(txusrclk_gtx_reset_comb),
         .sync_clk(sync_clk),
         .txuserrdy_t(txuserrdy_t));
-  (* SOFT_HLUTNM = "soft_lutpair141" *) 
+  (* SOFT_HLUTNM = "soft_lutpair145" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \txseq_counter_i[0]_i_1 
        (.I0(\txseq_counter_i[5]_i_2_n_0 ),
         .I1(\txseq_counter_i_reg_n_0_[0] ),
         .O(txseq_counter_i[0]));
+  (* SOFT_HLUTNM = "soft_lutpair145" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \txseq_counter_i[1]_i_1 
        (.I0(\txseq_counter_i_reg_n_0_[0] ),
         .I1(\txseq_counter_i_reg_n_0_[1] ),
         .O(txseq_counter_i[1]));
-  (* SOFT_HLUTNM = "soft_lutpair142" *) 
+  (* SOFT_HLUTNM = "soft_lutpair143" *) 
   LUT3 #(
     .INIT(8'h6A)) 
     \txseq_counter_i[2]_i_1 
@@ -41341,7 +41293,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_WRAPPER
         .I1(\txseq_counter_i_reg_n_0_[0] ),
         .I2(\txseq_counter_i_reg_n_0_[1] ),
         .O(txseq_counter_i[2]));
-  (* SOFT_HLUTNM = "soft_lutpair132" *) 
+  (* SOFT_HLUTNM = "soft_lutpair133" *) 
   LUT4 #(
     .INIT(16'h6AAA)) 
     \txseq_counter_i[3]_i_1 
@@ -41350,7 +41302,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_WRAPPER
         .I2(\txseq_counter_i_reg_n_0_[1] ),
         .I3(\txseq_counter_i_reg_n_0_[2] ),
         .O(txseq_counter_i[3]));
-  (* SOFT_HLUTNM = "soft_lutpair132" *) 
+  (* SOFT_HLUTNM = "soft_lutpair133" *) 
   LUT5 #(
     .INIT(32'h6AAAAAAA)) 
     \txseq_counter_i[4]_i_1 
@@ -41378,14 +41330,14 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_WRAPPER
         .I4(\txseq_counter_i_reg_n_0_[6] ),
         .I5(\txseq_counter_i_reg_n_0_[5] ),
         .O(\txseq_counter_i[5]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair142" *) 
+  (* SOFT_HLUTNM = "soft_lutpair143" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \txseq_counter_i[5]_i_3 
        (.I0(\txseq_counter_i_reg_n_0_[0] ),
         .I1(\txseq_counter_i_reg_n_0_[1] ),
         .O(\txseq_counter_i[5]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair140" *) 
+  (* SOFT_HLUTNM = "soft_lutpair141" *) 
   LUT3 #(
     .INIT(8'h9A)) 
     \txseq_counter_i[6]_i_1 
@@ -41544,7 +41496,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_WRAPPER
         .O(unscrambled_data_i052_out_0));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_cdc_sync" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_cdc_sync
    (next_ready_c,
     next_begin_c,
@@ -60297,7 +60248,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_cdc_sync__par
         .R(cbcc_fifo_reset_rd_clk));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_common_logic_cbcc" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_common_logic_cbcc
    (in0,
     master_do_rd_en_i,
@@ -60480,7 +60430,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_common_logic_
         .R(cbcc_fifo_reset_wr_clk));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_common_reset_cbcc" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_common_reset_cbcc
    (cbcc_only_reset_rd_clk,
     cbcc_fifo_reset_to_fifo_wr_clk,
@@ -60769,8 +60718,7 @@ endmodule
 
 (* BACKWARD_COMP_MODE1 = "1'b0" *) (* BACKWARD_COMP_MODE2 = "1'b0" *) (* BACKWARD_COMP_MODE3 = "1'b0" *) 
 (* CC_FREQ_FACTOR = "5'b11000" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* EXAMPLE_SIMULATION = "0" *) 
-(* INTER_CB_GAP = "5'b01001" *) (* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_core" *) (* SIM_GTXRESET_SPEEDUP = "TRUE" *) 
-(* STABLE_CLOCK_PERIOD = "20" *) 
+(* INTER_CB_GAP = "5'b01001" *) (* SIM_GTXRESET_SPEEDUP = "TRUE" *) (* STABLE_CLOCK_PERIOD = "10" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_core
    (s_axi_tx_tdata,
     s_axi_tx_tvalid,
@@ -61453,7 +61401,6 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_core
         .wait_for_lane_up_r(\channel_init_sm_i/wait_for_lane_up_r ));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_rst_sync" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_rst_sync
    (pma_init_sync,
     pma_init,
@@ -63317,60 +63264,65 @@ endmodule
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_rst_sync__parameterized1
    (stg5,
     \tx_state_reg[6] ,
-    \tx_state_reg[1] ,
     D,
-    init_wait_done_reg,
-    \tx_state_reg[7] ,
     in0,
     init_clk,
     out,
     reset_time_out_reg,
     reset_time_out_reg_0,
-    \tx_state_reg[0] ,
-    \tx_state_reg[0]_0 ,
+    \tx_state_reg[6]_0 ,
     Q,
-    \tx_state_reg[0]_1 ,
+    \tx_state_reg[5] ,
+    \tx_state_reg[5]_0 ,
+    \tx_state_reg[1] ,
+    \tx_state_reg[5]_1 ,
     reset_time_out_reg_1,
     reset_time_out_reg_2,
     reset_time_out_reg_3,
     reset_time_out_reg_4,
-    \tx_state_reg[0]_2 ,
-    \tx_state_reg[0]_3 ,
-    sel,
-    \tx_state_reg[0]_4 ,
-    \tx_state_reg[0]_5 ,
-    \tx_state_reg[3] );
+    \tx_state_reg[5]_2 ,
+    \tx_state_reg[5]_3 ,
+    \tx_state_reg[5]_4 ,
+    \tx_state_reg[1]_0 ,
+    \tx_state_reg[1]_1 ,
+    \tx_state_reg[1]_2 ,
+    \tx_state_reg[1]_3 ,
+    \tx_state_reg[0] ,
+    \tx_state_reg[6]_1 ,
+    \tx_state_reg[5]_5 );
   output stg5;
   output \tx_state_reg[6] ;
-  output \tx_state_reg[1] ;
-  output [0:0]D;
-  output init_wait_done_reg;
-  output \tx_state_reg[7] ;
+  output [3:0]D;
   input in0;
   input init_clk;
   input [6:0]out;
   input reset_time_out_reg;
   input reset_time_out_reg_0;
-  input \tx_state_reg[0] ;
-  input \tx_state_reg[0]_0 ;
-  input [4:0]Q;
-  input \tx_state_reg[0]_1 ;
+  input \tx_state_reg[6]_0 ;
+  input [5:0]Q;
+  input \tx_state_reg[5] ;
+  input \tx_state_reg[5]_0 ;
+  input \tx_state_reg[1] ;
+  input \tx_state_reg[5]_1 ;
   input reset_time_out_reg_1;
   input reset_time_out_reg_2;
   input reset_time_out_reg_3;
   input reset_time_out_reg_4;
-  input \tx_state_reg[0]_2 ;
-  input \tx_state_reg[0]_3 ;
-  input sel;
-  input \tx_state_reg[0]_4 ;
-  input \tx_state_reg[0]_5 ;
-  input \tx_state_reg[3] ;
+  input \tx_state_reg[5]_2 ;
+  input \tx_state_reg[5]_3 ;
+  input \tx_state_reg[5]_4 ;
+  input \tx_state_reg[1]_0 ;
+  input \tx_state_reg[1]_1 ;
+  input \tx_state_reg[1]_2 ;
+  input \tx_state_reg[1]_3 ;
+  input \tx_state_reg[0] ;
+  input \tx_state_reg[6]_1 ;
+  input \tx_state_reg[5]_5 ;
 
-  wire [0:0]D;
-  wire [4:0]Q;
+  wire [3:0]D;
+  wire [5:0]Q;
   wire in0;
   wire init_clk;
-  wire init_wait_done_reg;
   wire [6:0]out;
   wire reset_time_out_i_2_n_0;
   wire reset_time_out_i_4_n_0;
@@ -63381,24 +63333,31 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_rst_sync__par
   wire reset_time_out_reg_2;
   wire reset_time_out_reg_3;
   wire reset_time_out_reg_4;
-  wire sel;
   (* async_reg = "true" *) (* shift_extract = "{no}" *) wire stg1_Aurora_64B_Framing_lane2_Y0Y1_cdc_to;
   (* async_reg = "true" *) (* shift_extract = "{no}" *) wire stg2;
   (* async_reg = "true" *) (* shift_extract = "{no}" *) wire stg3;
   wire stg4;
   wire stg5;
-  wire \tx_state[0]_i_3_n_0 ;
+  wire \tx_state[0]_i_2_n_0 ;
+  wire \tx_state[1]_i_2_n_0 ;
+  wire \tx_state[5]_i_2_n_0 ;
+  wire \tx_state[6]_i_2_n_0 ;
   wire \tx_state_reg[0] ;
-  wire \tx_state_reg[0]_0 ;
-  wire \tx_state_reg[0]_1 ;
-  wire \tx_state_reg[0]_2 ;
-  wire \tx_state_reg[0]_3 ;
-  wire \tx_state_reg[0]_4 ;
-  wire \tx_state_reg[0]_5 ;
   wire \tx_state_reg[1] ;
-  wire \tx_state_reg[3] ;
+  wire \tx_state_reg[1]_0 ;
+  wire \tx_state_reg[1]_1 ;
+  wire \tx_state_reg[1]_2 ;
+  wire \tx_state_reg[1]_3 ;
+  wire \tx_state_reg[5] ;
+  wire \tx_state_reg[5]_0 ;
+  wire \tx_state_reg[5]_1 ;
+  wire \tx_state_reg[5]_2 ;
+  wire \tx_state_reg[5]_3 ;
+  wire \tx_state_reg[5]_4 ;
+  wire \tx_state_reg[5]_5 ;
   wire \tx_state_reg[6] ;
-  wire \tx_state_reg[7] ;
+  wire \tx_state_reg[6]_0 ;
+  wire \tx_state_reg[6]_1 ;
 
   LUT6 #(
     .INIT(64'hFEFFFEFE02000202)) 
@@ -63421,13 +63380,13 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_rst_sync__par
         .I5(reset_time_out_reg_3),
         .O(reset_time_out_i_2_n_0));
   LUT6 #(
-    .INIT(64'hFFFFFFFFFFFCFDFC)) 
+    .INIT(64'hFFFFFFFFFEFCFFFC)) 
     reset_time_out_i_4
-       (.I0(stg5),
+       (.I0(out[0]),
         .I1(out[4]),
         .I2(out[2]),
         .I3(out[1]),
-        .I4(out[0]),
+        .I4(stg5),
         .I5(reset_time_out_reg_4),
         .O(reset_time_out_i_4_n_0));
   LUT2 #(
@@ -63488,54 +63447,84 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_rst_sync__par
         .Q(stg5),
         .R(1'b0));
   LUT6 #(
-    .INIT(64'hFFFFFFFFFFD0D0D0)) 
+    .INIT(64'hFFFFFFFF0D0DFF0D)) 
     \tx_state[0]_i_1 
-       (.I0(\tx_state_reg[0]_2 ),
-        .I1(\tx_state[0]_i_3_n_0 ),
-        .I2(\tx_state_reg[0]_3 ),
+       (.I0(\tx_state[0]_i_2_n_0 ),
+        .I1(\tx_state_reg[0] ),
+        .I2(\tx_state_reg[5]_1 ),
         .I3(Q[0]),
-        .I4(sel),
-        .I5(\tx_state_reg[0]_4 ),
-        .O(D));
+        .I4(\tx_state_reg[5]_3 ),
+        .I5(\tx_state_reg[5]_2 ),
+        .O(D[0]));
   LUT6 #(
-    .INIT(64'h2222222230333030)) 
-    \tx_state[0]_i_3 
-       (.I0(\tx_state_reg[0]_5 ),
-        .I1(\tx_state_reg[0]_0 ),
-        .I2(\tx_state_reg[0]_1 ),
-        .I3(stg5),
-        .I4(Q[0]),
-        .I5(\tx_state_reg[0] ),
-        .O(\tx_state[0]_i_3_n_0 ));
+    .INIT(64'h0051AAFBFFFFFFFF)) 
+    \tx_state[0]_i_2 
+       (.I0(\tx_state_reg[6]_0 ),
+        .I1(Q[0]),
+        .I2(stg5),
+        .I3(\tx_state_reg[5] ),
+        .I4(\tx_state_reg[5]_0 ),
+        .I5(\tx_state_reg[1] ),
+        .O(\tx_state[0]_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'h1F103F3F1F103F30)) 
+    \tx_state[1]_i_1 
+       (.I0(\tx_state[1]_i_2_n_0 ),
+        .I1(\tx_state_reg[1]_0 ),
+        .I2(\tx_state_reg[1] ),
+        .I3(\tx_state_reg[1]_1 ),
+        .I4(\tx_state_reg[1]_2 ),
+        .I5(\tx_state_reg[1]_3 ),
+        .O(D[1]));
   LUT5 #(
     .INIT(32'h55555545)) 
-    \tx_state[1]_i_4 
-       (.I0(\tx_state_reg[0] ),
-        .I1(\tx_state_reg[0]_0 ),
+    \tx_state[1]_i_2 
+       (.I0(\tx_state_reg[6]_0 ),
+        .I1(\tx_state_reg[5]_1 ),
         .I2(Q[1]),
         .I3(stg5),
-        .I4(\tx_state_reg[0]_1 ),
-        .O(\tx_state_reg[1] ));
+        .I4(\tx_state_reg[5] ),
+        .O(\tx_state[1]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000022223330)) 
-    \tx_state[5]_i_4 
-       (.I0(\tx_state_reg[0]_5 ),
-        .I1(\tx_state_reg[0]_0 ),
-        .I2(\tx_state_reg[0]_1 ),
-        .I3(stg5),
-        .I4(\tx_state_reg[0] ),
-        .I5(\tx_state_reg[3] ),
-        .O(init_wait_done_reg));
+    .INIT(64'h0232323200003000)) 
+    \tx_state[5]_i_1 
+       (.I0(\tx_state[5]_i_2_n_0 ),
+        .I1(\tx_state_reg[5]_2 ),
+        .I2(\tx_state_reg[5]_1 ),
+        .I3(\tx_state_reg[5]_3 ),
+        .I4(\tx_state_reg[5]_4 ),
+        .I5(Q[3]),
+        .O(D[2]));
+  LUT6 #(
+    .INIT(64'h000000002227FFFF)) 
+    \tx_state[5]_i_2 
+       (.I0(\tx_state_reg[6]_0 ),
+        .I1(\tx_state_reg[5]_0 ),
+        .I2(stg5),
+        .I3(\tx_state_reg[5] ),
+        .I4(\tx_state_reg[1] ),
+        .I5(\tx_state_reg[5]_5 ),
+        .O(\tx_state[5]_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'h10501010105F1010)) 
+    \tx_state[6]_i_1 
+       (.I0(\tx_state_reg[6]_0 ),
+        .I1(\tx_state[6]_i_2_n_0 ),
+        .I2(\tx_state_reg[1] ),
+        .I3(\tx_state_reg[5]_3 ),
+        .I4(Q[4]),
+        .I5(\tx_state_reg[6]_1 ),
+        .O(D[3]));
   LUT6 #(
     .INIT(64'hFFFFFFFFFFFEFFFF)) 
     \tx_state[6]_i_2 
-       (.I0(Q[4]),
+       (.I0(Q[5]),
         .I1(Q[2]),
         .I2(Q[0]),
-        .I3(Q[3]),
+        .I3(Q[4]),
         .I4(stg5),
-        .I5(\tx_state_reg[0]_1 ),
-        .O(\tx_state_reg[7] ));
+        .I5(\tx_state_reg[5] ),
+        .O(\tx_state[6]_i_2_n_0 ));
 endmodule
 
 (* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_rst_sync" *) 
@@ -63618,95 +63607,56 @@ endmodule
 
 (* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_rst_sync" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_rst_sync__parameterized1_26
-   (D,
-    stg5_reg_0,
-    \tx_state_reg[7] ,
+   (stg5_reg_0,
+    D,
+    \tx_state_reg[1] ,
+    stg5_reg_1,
+    stg5_reg_2,
     in0,
     init_clk,
+    \tx_state_reg[7] ,
+    \tx_state_reg[7]_0 ,
+    \tx_state_reg[7]_1 ,
+    \tx_state_reg[7]_2 ,
+    \tx_state_reg[7]_3 ,
     Q,
-    \tx_state_reg[1] ,
-    \tx_state_reg[1]_0 ,
-    \tx_state_reg[1]_1 ,
-    \tx_state_reg[1]_2 ,
-    \tx_state_reg[1]_3 ,
     \tx_state_reg[2] ,
-    \tx_state_reg[2]_0 ,
-    \tx_state_reg[2]_1 ,
-    \tx_state_reg[2]_2 ,
-    \tx_state_reg[2]_3 ,
-    \tx_state_reg[2]_4 ,
-    \tx_state_reg[2]_5 ,
-    \tx_state_reg[6] ,
-    sel,
-    \tx_state_reg[6]_0 ,
-    \tx_state_reg[4] ,
-    \tx_state_reg[5] ,
-    \tx_state_reg[5]_0 ,
-    \tx_state_reg[5]_1 ,
-    \tx_state_reg[5]_2 ,
-    \tx_state_reg[7]_0 );
-  output [5:0]D;
+    \tx_state_reg[2]_0 );
   output stg5_reg_0;
-  output \tx_state_reg[7] ;
+  output [0:0]D;
+  output \tx_state_reg[1] ;
+  output stg5_reg_1;
+  output stg5_reg_2;
   input in0;
   input init_clk;
-  input [6:0]Q;
-  input \tx_state_reg[1] ;
-  input \tx_state_reg[1]_0 ;
-  input \tx_state_reg[1]_1 ;
-  input \tx_state_reg[1]_2 ;
-  input \tx_state_reg[1]_3 ;
+  input \tx_state_reg[7] ;
+  input \tx_state_reg[7]_0 ;
+  input \tx_state_reg[7]_1 ;
+  input \tx_state_reg[7]_2 ;
+  input \tx_state_reg[7]_3 ;
+  input [3:0]Q;
   input \tx_state_reg[2] ;
   input \tx_state_reg[2]_0 ;
-  input \tx_state_reg[2]_1 ;
-  input \tx_state_reg[2]_2 ;
-  input \tx_state_reg[2]_3 ;
-  input \tx_state_reg[2]_4 ;
-  input \tx_state_reg[2]_5 ;
-  input \tx_state_reg[6] ;
-  input sel;
-  input \tx_state_reg[6]_0 ;
-  input \tx_state_reg[4] ;
-  input \tx_state_reg[5] ;
-  input \tx_state_reg[5]_0 ;
-  input \tx_state_reg[5]_1 ;
-  input \tx_state_reg[5]_2 ;
-  input \tx_state_reg[7]_0 ;
 
-  wire [5:0]D;
-  wire [6:0]Q;
+  wire [0:0]D;
+  wire [3:0]Q;
   wire in0;
   wire init_clk;
-  wire sel;
   (* async_reg = "true" *) (* shift_extract = "{no}" *) wire stg1_Aurora_64B_Framing_lane2_Y0Y1_cdc_to;
   (* async_reg = "true" *) (* shift_extract = "{no}" *) wire stg2;
   (* async_reg = "true" *) (* shift_extract = "{no}" *) wire stg3;
   wire stg4_reg_n_0;
   wire stg5_reg_0;
-  wire stg5_reg_n_0;
-  wire \tx_state[1]_i_2_n_0 ;
-  wire \tx_state[2]_i_3_n_0 ;
+  wire stg5_reg_1;
+  wire stg5_reg_2;
   wire \tx_state_reg[1] ;
-  wire \tx_state_reg[1]_0 ;
-  wire \tx_state_reg[1]_1 ;
-  wire \tx_state_reg[1]_2 ;
-  wire \tx_state_reg[1]_3 ;
   wire \tx_state_reg[2] ;
   wire \tx_state_reg[2]_0 ;
-  wire \tx_state_reg[2]_1 ;
-  wire \tx_state_reg[2]_2 ;
-  wire \tx_state_reg[2]_3 ;
-  wire \tx_state_reg[2]_4 ;
-  wire \tx_state_reg[2]_5 ;
-  wire \tx_state_reg[4] ;
-  wire \tx_state_reg[5] ;
-  wire \tx_state_reg[5]_0 ;
-  wire \tx_state_reg[5]_1 ;
-  wire \tx_state_reg[5]_2 ;
-  wire \tx_state_reg[6] ;
-  wire \tx_state_reg[6]_0 ;
   wire \tx_state_reg[7] ;
   wire \tx_state_reg[7]_0 ;
+  wire \tx_state_reg[7]_1 ;
+  wire \tx_state_reg[7]_2 ;
+  wire \tx_state_reg[7]_3 ;
 
   (* ASYNC_REG *) 
   (* KEEP = "yes" *) 
@@ -63757,103 +63707,45 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_rst_sync__par
        (.C(init_clk),
         .CE(1'b1),
         .D(stg4_reg_n_0),
-        .Q(stg5_reg_n_0),
+        .Q(stg5_reg_0),
         .R(1'b0));
-  LUT6 #(
-    .INIT(64'hC0C0E0E0C0CFEFEF)) 
-    \tx_state[1]_i_1 
-       (.I0(\tx_state[1]_i_2_n_0 ),
-        .I1(\tx_state_reg[1] ),
-        .I2(\tx_state_reg[1]_0 ),
-        .I3(\tx_state_reg[1]_1 ),
-        .I4(\tx_state_reg[1]_2 ),
-        .I5(\tx_state_reg[1]_3 ),
-        .O(D[0]));
   LUT5 #(
     .INIT(32'h0001FFFF)) 
-    \tx_state[1]_i_2 
-       (.I0(Q[5]),
+    \tx_state[1]_i_6 
+       (.I0(Q[0]),
         .I1(Q[1]),
-        .I2(Q[3]),
-        .I3(Q[2]),
-        .I4(stg5_reg_n_0),
-        .O(\tx_state[1]_i_2_n_0 ));
+        .I2(Q[2]),
+        .I3(Q[3]),
+        .I4(stg5_reg_0),
+        .O(\tx_state_reg[1] ));
   LUT6 #(
-    .INIT(64'h000000005D5D005D)) 
-    \tx_state[2]_i_1 
-       (.I0(\tx_state_reg[2] ),
-        .I1(\tx_state_reg[2]_0 ),
-        .I2(\tx_state[2]_i_3_n_0 ),
-        .I3(\tx_state_reg[2]_1 ),
-        .I4(\tx_state_reg[2]_2 ),
-        .I5(\tx_state_reg[2]_3 ),
-        .O(D[1]));
-  LUT5 #(
-    .INIT(32'h20AA2020)) 
-    \tx_state[2]_i_3 
-       (.I0(\tx_state_reg[1]_0 ),
-        .I1(\tx_state_reg[2]_4 ),
-        .I2(\tx_state_reg[2]_5 ),
-        .I3(\tx_state_reg[6] ),
-        .I4(stg5_reg_n_0),
-        .O(\tx_state[2]_i_3_n_0 ));
-  LUT5 #(
-    .INIT(32'h0000FFFE)) 
-    \tx_state[3]_i_3 
-       (.I0(Q[6]),
-        .I1(Q[3]),
-        .I2(Q[5]),
-        .I3(Q[0]),
-        .I4(stg5_reg_n_0),
-        .O(\tx_state_reg[7] ));
-  LUT6 #(
-    .INIT(64'h00000000F7FF5555)) 
-    \tx_state[4]_i_1 
-       (.I0(\tx_state_reg[2] ),
-        .I1(\tx_state_reg[1]_0 ),
-        .I2(\tx_state_reg[6] ),
-        .I3(stg5_reg_n_0),
-        .I4(sel),
-        .I5(\tx_state_reg[4] ),
-        .O(D[2]));
-  LUT6 #(
-    .INIT(64'h0003000200000002)) 
-    \tx_state[5]_i_1 
-       (.I0(\tx_state_reg[5] ),
+    .INIT(64'h040004000F000400)) 
+    \tx_state[2]_i_4 
+       (.I0(\tx_state_reg[7]_1 ),
         .I1(stg5_reg_0),
-        .I2(\tx_state_reg[5]_0 ),
-        .I3(\tx_state_reg[5]_1 ),
-        .I4(\tx_state_reg[5]_2 ),
-        .I5(Q[4]),
-        .O(D[3]));
-  LUT4 #(
-    .INIT(16'h0800)) 
-    \tx_state[5]_i_3 
-       (.I0(\tx_state_reg[2] ),
-        .I1(\tx_state_reg[1]_0 ),
-        .I2(\tx_state_reg[6] ),
-        .I3(stg5_reg_n_0),
-        .O(stg5_reg_0));
-  LUT6 #(
-    .INIT(64'h4700000047030303)) 
-    \tx_state[6]_i_1 
-       (.I0(stg5_reg_n_0),
-        .I1(\tx_state_reg[1]_0 ),
-        .I2(\tx_state_reg[6] ),
-        .I3(Q[5]),
-        .I4(sel),
-        .I5(\tx_state_reg[6]_0 ),
-        .O(D[4]));
-  LUT6 #(
-    .INIT(64'hA200FF0000000000)) 
-    \tx_state[7]_i_2 
-       (.I0(sel),
-        .I1(stg5_reg_n_0),
-        .I2(\tx_state_reg[6] ),
-        .I3(\tx_state_reg[1]_0 ),
+        .I2(\tx_state_reg[7] ),
+        .I3(\tx_state_reg[7]_0 ),
         .I4(\tx_state_reg[2] ),
-        .I5(\tx_state_reg[7]_0 ),
-        .O(D[5]));
+        .I5(\tx_state_reg[2]_0 ),
+        .O(stg5_reg_1));
+  LUT4 #(
+    .INIT(16'h0020)) 
+    \tx_state[5]_i_3 
+       (.I0(stg5_reg_0),
+        .I1(\tx_state_reg[7]_1 ),
+        .I2(\tx_state_reg[7]_0 ),
+        .I3(\tx_state_reg[7] ),
+        .O(stg5_reg_2));
+  LUT6 #(
+    .INIT(64'h0000111100005155)) 
+    \tx_state[7]_i_2 
+       (.I0(\tx_state_reg[7] ),
+        .I1(\tx_state_reg[7]_0 ),
+        .I2(\tx_state_reg[7]_1 ),
+        .I3(stg5_reg_0),
+        .I4(\tx_state_reg[7]_2 ),
+        .I5(\tx_state_reg[7]_3 ),
+        .O(D));
 endmodule
 
 (* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_rst_sync" *) 
@@ -64028,52 +63920,52 @@ endmodule
 (* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_rst_sync" *) 
 module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_rst_sync__parameterized1_29
    (stg5_reg_0,
-    mmcm_lock_r2_reg,
     D,
     stg5_reg_1,
-    time_out_500us_reg,
-    \tx_state_reg[4] ,
     stg5_reg_2,
+    mmcm_lock_r2_reg,
     stg1_Aurora_64B_Framing_lane2_Y0Y1_cdc_to_reg_0,
     init_clk,
-    \tx_state_reg[2] ,
-    \tx_state_reg[3] ,
-    \tx_state_reg[2]_0 ,
-    out,
-    \tx_state_reg[5] ,
-    \tx_state_reg[3]_0 ,
-    \tx_state_reg[3]_1 ,
-    \tx_state_reg[3]_2 ,
+    \tx_state_reg[4] ,
+    \tx_state_reg[4]_0 ,
     Q,
-    stg5,
+    \tx_state_reg[4]_1 ,
+    \tx_state_reg[4]_2 ,
+    \tx_state_reg[3] ,
+    \tx_state_reg[3]_0 ,
+    \tx_state_reg[2] ,
+    \tx_state_reg[2]_0 ,
     \tx_state_reg[2]_1 ,
+    \tx_state_reg[2]_2 ,
+    stg5,
+    \tx_state_reg[2]_3 ,
     \tx_state_reg[0] ,
-    \tx_state_reg[0]_0 );
+    out);
   output stg5_reg_0;
-  output mmcm_lock_r2_reg;
-  output [0:0]D;
+  output [2:0]D;
   output stg5_reg_1;
-  output time_out_500us_reg;
-  output \tx_state_reg[4] ;
   output stg5_reg_2;
+  output mmcm_lock_r2_reg;
   input stg1_Aurora_64B_Framing_lane2_Y0Y1_cdc_to_reg_0;
   input init_clk;
-  input \tx_state_reg[2] ;
+  input \tx_state_reg[4] ;
+  input \tx_state_reg[4]_0 ;
+  input [5:0]Q;
+  input \tx_state_reg[4]_1 ;
+  input \tx_state_reg[4]_2 ;
   input \tx_state_reg[3] ;
-  input \tx_state_reg[2]_0 ;
-  input out;
-  input \tx_state_reg[5] ;
   input \tx_state_reg[3]_0 ;
-  input \tx_state_reg[3]_1 ;
-  input \tx_state_reg[3]_2 ;
-  input [3:0]Q;
-  input stg5;
+  input \tx_state_reg[2] ;
+  input \tx_state_reg[2]_0 ;
   input \tx_state_reg[2]_1 ;
+  input \tx_state_reg[2]_2 ;
+  input stg5;
+  input \tx_state_reg[2]_3 ;
   input \tx_state_reg[0] ;
-  input \tx_state_reg[0]_0 ;
+  input out;
 
-  wire [0:0]D;
-  wire [3:0]Q;
+  wire [2:0]D;
+  wire [5:0]Q;
   wire init_clk;
   wire mmcm_lock_r2_reg;
   wire out;
@@ -64086,20 +63978,22 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_rst_sync__par
   wire stg5_reg_0;
   wire stg5_reg_1;
   wire stg5_reg_2;
-  wire time_out_500us_reg;
+  wire \tx_state[0]_i_4_n_0 ;
+  wire \tx_state[2]_i_2_n_0 ;
   wire \tx_state[3]_i_2_n_0 ;
-  wire \tx_state[5]_i_7_n_0 ;
+  wire \tx_state[4]_i_2_n_0 ;
   wire \tx_state_reg[0] ;
-  wire \tx_state_reg[0]_0 ;
   wire \tx_state_reg[2] ;
   wire \tx_state_reg[2]_0 ;
   wire \tx_state_reg[2]_1 ;
+  wire \tx_state_reg[2]_2 ;
+  wire \tx_state_reg[2]_3 ;
   wire \tx_state_reg[3] ;
   wire \tx_state_reg[3]_0 ;
-  wire \tx_state_reg[3]_1 ;
-  wire \tx_state_reg[3]_2 ;
   wire \tx_state_reg[4] ;
-  wire \tx_state_reg[5] ;
+  wire \tx_state_reg[4]_0 ;
+  wire \tx_state_reg[4]_1 ;
+  wire \tx_state_reg[4]_2 ;
 
   (* ASYNC_REG *) 
   (* KEEP = "yes" *) 
@@ -64153,79 +64047,100 @@ module Aurora_64B_Framing_lane2_Y0Y1_Aurora_64B_Framing_lane2_Y0Y1_rst_sync__par
         .Q(stg5_reg_0),
         .R(1'b0));
   LUT6 #(
-    .INIT(64'h3333FFFFBFBBBFBB)) 
+    .INIT(64'h0000000054FF5400)) 
+    \tx_state[0]_i_3 
+       (.I0(out),
+        .I1(Q[0]),
+        .I2(\tx_state_reg[0] ),
+        .I3(\tx_state_reg[4]_2 ),
+        .I4(\tx_state[0]_i_4_n_0 ),
+        .I5(\tx_state_reg[4] ),
+        .O(mmcm_lock_r2_reg));
+  LUT3 #(
+    .INIT(8'hBA)) 
     \tx_state[0]_i_4 
-       (.I0(\tx_state_reg[0] ),
-        .I1(\tx_state_reg[3] ),
-        .I2(stg5_reg_0),
-        .I3(Q[0]),
-        .I4(\tx_state_reg[0]_0 ),
-        .I5(\tx_state_reg[2]_0 ),
-        .O(time_out_500us_reg));
+       (.I0(\tx_state_reg[3]_0 ),
+        .I1(stg5_reg_0),
+        .I2(Q[0]),
+        .O(\tx_state[0]_i_4_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair121" *) 
   LUT4 #(
-    .INIT(16'h0004)) 
-    \tx_state[1]_i_3 
-       (.I0(stg5_reg_0),
-        .I1(Q[1]),
-        .I2(\tx_state_reg[0] ),
-        .I3(\tx_state_reg[2] ),
-        .O(stg5_reg_2));
-  LUT6 #(
-    .INIT(64'hAAAAAAAABBBBBBBA)) 
-    \tx_state[2]_i_6 
-       (.I0(mmcm_lock_r2_reg),
-        .I1(\tx_state_reg[3] ),
-        .I2(\tx_state_reg[2]_0 ),
-        .I3(stg5),
-        .I4(\tx_state_reg[2]_1 ),
-        .I5(\tx_state_reg[2] ),
+    .INIT(16'h0010)) 
+    \tx_state[1]_i_4 
+       (.I0(\tx_state_reg[3] ),
+        .I1(stg5_reg_0),
+        .I2(Q[1]),
+        .I3(\tx_state_reg[3]_0 ),
         .O(stg5_reg_1));
   LUT6 #(
-    .INIT(64'h0E0A0F00000A0000)) 
+    .INIT(64'h0202020200000200)) 
+    \tx_state[2]_i_1 
+       (.I0(\tx_state[2]_i_2_n_0 ),
+        .I1(\tx_state_reg[2] ),
+        .I2(\tx_state_reg[2]_0 ),
+        .I3(\tx_state_reg[4] ),
+        .I4(\tx_state_reg[2]_1 ),
+        .I5(\tx_state_reg[2]_2 ),
+        .O(D[0]));
+  LUT6 #(
+    .INIT(64'hAAAAAAABBBBBBBBB)) 
+    \tx_state[2]_i_2 
+       (.I0(\tx_state_reg[3] ),
+        .I1(stg5_reg_2),
+        .I2(\tx_state_reg[4]_2 ),
+        .I3(stg5),
+        .I4(\tx_state_reg[2]_3 ),
+        .I5(\tx_state_reg[4] ),
+        .O(\tx_state[2]_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'h00000000ABAAA000)) 
     \tx_state[3]_i_1 
        (.I0(\tx_state[3]_i_2_n_0 ),
-        .I1(\tx_state_reg[3]_0 ),
-        .I2(\tx_state_reg[3]_1 ),
-        .I3(\tx_state_reg[3]_2 ),
-        .I4(\tx_state_reg[3] ),
-        .I5(Q[2]),
-        .O(D));
+        .I1(\tx_state_reg[4]_1 ),
+        .I2(\tx_state_reg[4]_0 ),
+        .I3(\tx_state_reg[3] ),
+        .I4(Q[2]),
+        .I5(\tx_state_reg[4] ),
+        .O(D[1]));
   (* SOFT_HLUTNM = "soft_lutpair121" *) 
   LUT4 #(
     .INIT(16'hAAAB)) 
     \tx_state[3]_i_2 
-       (.I0(\tx_state_reg[2]_0 ),
+       (.I0(\tx_state_reg[4]_2 ),
         .I1(stg5_reg_0),
-        .I2(\tx_state_reg[0] ),
-        .I3(\tx_state_reg[2] ),
+        .I2(\tx_state_reg[3]_0 ),
+        .I3(\tx_state_reg[3] ),
         .O(\tx_state[3]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFF5F515F5F)) 
-    \tx_state[4]_i_2 
-       (.I0(Q[3]),
-        .I1(stg5_reg_0),
-        .I2(\tx_state_reg[2] ),
-        .I3(\tx_state_reg[0] ),
-        .I4(\tx_state_reg[3] ),
-        .I5(\tx_state_reg[2]_0 ),
-        .O(\tx_state_reg[4] ));
+    .INIT(64'h0000000011111511)) 
+    \tx_state[4]_i_1 
+       (.I0(\tx_state_reg[4] ),
+        .I1(\tx_state[4]_i_2_n_0 ),
+        .I2(\tx_state_reg[4]_0 ),
+        .I3(Q[3]),
+        .I4(\tx_state_reg[4]_1 ),
+        .I5(\tx_state_reg[4]_2 ),
+        .O(D[2]));
   LUT6 #(
-    .INIT(64'h4444440440404000)) 
+    .INIT(64'hFFFFFFFFFFFEFFFF)) 
+    \tx_state[4]_i_2 
+       (.I0(Q[5]),
+        .I1(Q[4]),
+        .I2(Q[0]),
+        .I3(Q[3]),
+        .I4(stg5_reg_0),
+        .I5(\tx_state_reg[3]_0 ),
+        .O(\tx_state[4]_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'h00000000FFF0EEEE)) 
     \tx_state[5]_i_5 
-       (.I0(\tx_state_reg[2] ),
-        .I1(\tx_state_reg[3] ),
-        .I2(\tx_state_reg[2]_0 ),
-        .I3(out),
-        .I4(\tx_state_reg[5] ),
-        .I5(\tx_state[5]_i_7_n_0 ),
-        .O(mmcm_lock_r2_reg));
-  LUT2 #(
-    .INIT(4'hE)) 
-    \tx_state[5]_i_7 
        (.I0(stg5_reg_0),
-        .I1(\tx_state_reg[0] ),
-        .O(\tx_state[5]_i_7_n_0 ));
+        .I1(\tx_state_reg[3]_0 ),
+        .I2(\tx_state_reg[0] ),
+        .I3(out),
+        .I4(\tx_state_reg[4]_2 ),
+        .I5(\tx_state_reg[4] ),
+        .O(stg5_reg_2));
 endmodule
 
 (* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y0Y1_rst_sync" *) 

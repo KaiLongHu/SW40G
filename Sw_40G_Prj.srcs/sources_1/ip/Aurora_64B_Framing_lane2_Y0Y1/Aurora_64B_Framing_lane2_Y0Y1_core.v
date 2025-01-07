@@ -72,7 +72,7 @@
  module Aurora_64B_Framing_lane2_Y0Y1_core #
  (
 
-      parameter     STABLE_CLOCK_PERIOD = 20,            //Period of the stable clock driving this state-machine, unit is [ns]
+      parameter     STABLE_CLOCK_PERIOD = 10,            //Period of the stable clock driving this state-machine, unit is [ns]
       parameter   SIM_GTXRESET_SPEEDUP=   "TRUE",      // Set to 1 to speed up sim reset
  
       parameter CC_FREQ_FACTOR = 5'd24, // Its highly RECOMMENDED that this value be NOT changed.

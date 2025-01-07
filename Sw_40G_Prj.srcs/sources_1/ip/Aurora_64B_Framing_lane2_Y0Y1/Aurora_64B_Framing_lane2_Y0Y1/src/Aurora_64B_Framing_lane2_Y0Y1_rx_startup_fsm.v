@@ -67,7 +67,7 @@ module Aurora_64B_Framing_lane2_Y0Y1_RX_STARTUP_FSM #
        parameter     BACKWARD_COMP_MODE2     = 1'b0,       //reduce RXCDR lock time
        parameter     GT_TYPE                 = "GTX",
        parameter     EQ_MODE                 = "DFE",       //Rx Equalization Mode - Set to DFE or LPM
-       parameter     STABLE_CLOCK_PERIOD     = 20,           //Period of the stable clock driving this state-machine, unit is [ns]
+       parameter     STABLE_CLOCK_PERIOD     = 10,           //Period of the stable clock driving this state-machine, unit is [ns]
        parameter     RETRY_COUNTER_BITWIDTH  = 8, 
        parameter     TX_QPLL_USED            = "FALSE",     // the TX and RX Reset FSMs must
        parameter     RX_QPLL_USED            = "FALSE",     // share these two generic values

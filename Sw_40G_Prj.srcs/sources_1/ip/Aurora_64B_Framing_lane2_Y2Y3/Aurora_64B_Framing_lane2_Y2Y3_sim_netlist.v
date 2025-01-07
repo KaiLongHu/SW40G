@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Mon Jan  6 11:34:22 2025
+// Date        : Mon Jan  6 11:34:20 2025
 // Host        : hkl running 64-bit Ubuntu 22.04.4 LTS
-// Command     : write_verilog -force -mode funcsim
-//               /workspace/HKL_FPGA/TOP63_Aurora/Sw_40G_Prj/Sw_40G_Prj.srcs/sources_1/ip/Aurora_64B_Framing_lane2_Y2Y3/Aurora_64B_Framing_lane2_Y2Y3_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top Aurora_64B_Framing_lane2_Y2Y3 -prefix
+//               Aurora_64B_Framing_lane2_Y2Y3_ Aurora_64B_Framing_lane2_Y2Y3_sim_netlist.v
 // Design      : Aurora_64B_Framing_lane2_Y2Y3
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -213,7 +213,6 @@ module Aurora_64B_Framing_lane2_Y2Y3
         .user_clk(user_clk));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_AURORA_LANE" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_AURORA_LANE
    (lane_up_flop_i,
     rx_reset_i_1,
@@ -768,7 +767,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_AURORA_LANE_0
         .user_clk(user_clk));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_AXI_TO_LL" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_AXI_TO_LL
    (new_pkt_r,
     new_pkt_r_reg_0,
@@ -789,7 +787,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_AXI_TO_LL
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_BLOCK_SYNC_SM" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_BLOCK_SYNC_SM
    (D,
     system_reset_r2,
@@ -2301,7 +2298,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_BLOCK_SYNC_SM
         .R(system_reset_r2));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_CHANNEL_BOND_GEN" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CHANNEL_BOND_GEN
    (gen_ch_bond_int_reg_0,
     gen_ch_bond_int_reg_1,
@@ -2463,7 +2459,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CHANNEL_BOND_
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_CHANNEL_ERR_DETECT" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CHANNEL_ERR_DETECT
    (hard_err,
     channel_hard_err_c,
@@ -2484,7 +2479,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CHANNEL_ERR_D
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_CHANNEL_INIT_SM" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CHANNEL_INIT_SM
    (reset_lanes_i,
     en_chan_sync_i,
@@ -3417,7 +3411,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CHANNEL_INIT_
         .R(CHANNEL_UP_TX_IF_reg_2));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_CH_BOND_MASTER" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CH_BOND_MASTER
    (rxchanisaligned,
     do_rd_en_reg,
@@ -3695,7 +3688,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CH_BOND_MASTE
         .Q(rxchanisaligned));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_CH_BOND_SLAVE" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CH_BOND_SLAVE
    (rxchanisaligned,
     do_rd_en_reg,
@@ -3997,7 +3989,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CH_BOND_SLAVE
         .Q(slave_stop_cb_r));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_CLOCK_CORRECTION_CHANNEL_BONDING" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CLOCK_CORRECTION_CHANNEL_BONDING
    (DO,
     DOP,
@@ -11486,7 +11477,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CLOCK_CORRECT
         .R(cbcc_fifo_reset_to_fifo_wr_clk));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_DESCRAMBLER_64B66B" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_DESCRAMBLER_64B66B
    (D,
     Q,
@@ -13408,7 +13398,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_DESCRAMBLER_6
         .O(D[0]));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_ERR_DETECT" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_ERR_DETECT
    (SOFT_ERR_reg_0,
     hard_err_i,
@@ -13512,7 +13501,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_ERR_DETECT_6
         .O(SOFT_ERR_reg_0));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_GLOBAL_LOGIC" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_GLOBAL_LOGIC
    (reset_lanes_i,
     en_chan_sync_i,
@@ -13701,7 +13689,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_GLOBAL_LOGIC
         .wait_for_lane_up_r_reg_2(wait_for_lane_up_r_reg));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_GTX" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_GTX
    (in0,
     drprdy_out,
@@ -15667,7 +15654,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_GTX_53
         .TXUSRCLK2(user_clk));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_LANE_INIT_SM" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_LANE_INIT_SM
    (lane_up_flop_i_0,
     rst_r_reg_0,
@@ -16346,7 +16332,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_LANE_INIT_SM_
         .user_clk(user_clk));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_MULTI_GT" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_MULTI_GT
    (in0,
     drprdy_out,
@@ -16637,7 +16622,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_MULTI_GT
         .user_clk(user_clk));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_RESET_LOGIC" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_RESET_LOGIC
    (SYSTEM_RESET_reg_0,
     reset_count_r0,
@@ -16731,7 +16715,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_RESET_LOGIC
         .user_clk(user_clk));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_RX_LL" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_RX_LL
    (raw_data_r_0,
     raw_data_r_1,
@@ -16814,7 +16797,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_RX_LL
         .user_clk_0(raw_data_r_1));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_RX_LL_DATAPATH" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_RX_LL_DATAPATH
    (raw_data_r_0,
     user_clk_0,
@@ -22980,7 +22962,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_RX_LL_DATAPAT
         .Q31(\NLW_srlc32e1[9].SRLC32E_inst_Q31_UNCONNECTED ));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_RX_STARTUP_FSM" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_RX_STARTUP_FSM
    (out,
     SR,
@@ -25100,7 +25081,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_RX_STARTUP_FS
         .R(clear));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_SCRAMBLER_64B66B" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_SCRAMBLER_64B66B
    (scrambler,
     Q,
@@ -28042,7 +28022,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_SCRAMBLER_64B
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_STANDARD_CC_MODULE" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_STANDARD_CC_MODULE
    (do_cc_r_reg0,
     DO_CC,
@@ -28687,7 +28666,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_STANDARD_CC_M
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_SYM_DEC" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_SYM_DEC
    (RX_SEP7_reg_0,
     RX_SEP_reg_0,
@@ -32045,7 +32023,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_SYM_DEC_8
         .R(RX_IDLE_reg_0));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_SYM_GEN" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_SYM_GEN
    (stg5_reg,
     TX_HEADER_1_reg_0,
@@ -33353,7 +33330,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_SYM_GEN_9
         .user_clk(user_clk));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_TX_LL" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_TX_LL
    (gen_cc_i,
     tx_dst_rdy_n_i,
@@ -33574,7 +33550,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_TX_LL
         .wait_for_lane_up_r(wait_for_lane_up_r));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_TX_LL_CONTROL_SM" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_TX_LL_CONTROL_SM
    (gen_cc_flop_0_i_0,
     gen_cc_flop_1_i_0,
@@ -35296,7 +35271,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_TX_LL_CONTROL
         .R(R0));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_TX_LL_DATAPATH" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_TX_LL_DATAPATH
    (in_frame_r_reg_0,
     tx_pe_data_v_i,
@@ -36183,7 +36157,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_TX_LL_DATAPAT
         .R(R0));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_TX_STARTUP_FSM" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_TX_STARTUP_FSM
    (out,
     stg5_reg,
@@ -38078,7 +38051,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_TX_STARTUP_FS
         .S(\wait_time_cnt[0]_i_1_n_0 ));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_WRAPPER" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_WRAPPER
    (fsm_resetdone,
     drprdy_out,
@@ -41524,7 +41496,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_WRAPPER
         .O(unscrambled_data_i052_out_0));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_cdc_sync" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_cdc_sync
    (next_ready_c,
     next_begin_c,
@@ -60277,7 +60248,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_cdc_sync__par
         .R(cbcc_fifo_reset_rd_clk));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_common_logic_cbcc" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_common_logic_cbcc
    (in0,
     master_do_rd_en_i,
@@ -60460,7 +60430,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_common_logic_
         .R(cbcc_fifo_reset_wr_clk));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_common_reset_cbcc" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_common_reset_cbcc
    (cbcc_only_reset_rd_clk,
     cbcc_fifo_reset_to_fifo_wr_clk,
@@ -60749,8 +60718,7 @@ endmodule
 
 (* BACKWARD_COMP_MODE1 = "1'b0" *) (* BACKWARD_COMP_MODE2 = "1'b0" *) (* BACKWARD_COMP_MODE3 = "1'b0" *) 
 (* CC_FREQ_FACTOR = "5'b11000" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* EXAMPLE_SIMULATION = "0" *) 
-(* INTER_CB_GAP = "5'b01001" *) (* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_core" *) (* SIM_GTXRESET_SPEEDUP = "TRUE" *) 
-(* STABLE_CLOCK_PERIOD = "10" *) 
+(* INTER_CB_GAP = "5'b01001" *) (* SIM_GTXRESET_SPEEDUP = "TRUE" *) (* STABLE_CLOCK_PERIOD = "10" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_core
    (s_axi_tx_tdata,
     s_axi_tx_tvalid,
@@ -61433,7 +61401,6 @@ module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_core
         .wait_for_lane_up_r(\channel_init_sm_i/wait_for_lane_up_r ));
 endmodule
 
-(* ORIG_REF_NAME = "Aurora_64B_Framing_lane2_Y2Y3_rst_sync" *) 
 module Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_rst_sync
    (pma_init_sync,
     pma_init,

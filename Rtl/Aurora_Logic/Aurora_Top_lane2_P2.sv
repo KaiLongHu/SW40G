@@ -17,13 +17,13 @@ module Aurora_Top_lane2_P2 (
     input               system_rst          ,//系统复位信号；
     input               init_clk            ,//初始化时钟，IP设置为100MHz。
     input               drp_clk             ,//DRP时钟信号,IP设置为100MHz。
-    //QPLL的DRP接口；
-    input   [7 : 0]     qpll_drpaddr        ,//QPLL的DRP地址信号；
-    input   [15 : 0]    qpll_drpdi          ,//QPLL的DRP数据输入信号；
-    output              qpll_drprdy         ,//QPLL的DRP应答信号；
-    input               qpll_drpen          ,//QPLL的DRP使能信号；
-    input               qpll_drpwe          ,//QPLL的DRP读写指示信号；
-    output  [15 : 0]    qpll_drpdo          ,//QPLL的DRP数据输出信号；
+    // //QPLL的DRP接口；
+    // input   [7 : 0]     qpll_drpaddr        ,//QPLL的DRP地址信号；
+    // input   [15 : 0]    qpll_drpdi          ,//QPLL的DRP数据输入信号；
+    // output              qpll_drprdy         ,//QPLL的DRP应答信号；
+    // input               qpll_drpen          ,//QPLL的DRP使能信号；
+    // input               qpll_drpwe          ,//QPLL的DRP读写指示信号；
+    // output  [15 : 0]    qpll_drpdo          ,//QPLL的DRP数据输出信号；
     //GT收发器0的相关信号；
     input   [3:0]             gt_rx_p           ,//GT收发器的接收数据差分引脚；
     input   [3:0]             gt_rx_n           ,//GT收发器的接收数据差分引脚；
@@ -44,13 +44,13 @@ module Aurora_Top_lane2_P2 (
     output  [1:0] [127: 0]    m_axi_rx_tdata    ,//用户接收数据的AXI_STEAM流接口信号；
     output  [1:0] [15: 0]     m_axi_rx_tkeep    ,//用户接收数据的AXI_STEAM流接口信号；
     output  [1:0]             m_axi_rx_tlast    ,//用户接收数据的AXI_STEAM流接口信号；
-    output  [1:0]             m_axi_rx_tvalid   ,//用户接收数据的AXI_STEAM流接口信号；
-    input   [1:0] [8 : 0]     gt_drpaddr        ,//GT收发器的DRP地址信号；
-    input   [1:0] [15 : 0]    gt_drpdi          ,//GT收发器的DRP数据输入信号；
-    output  [1:0]             gt_drprdy         ,//GT收发器的DRP应答信号；
-    input   [1:0]             gt_drpen          ,//GT收发器的DRP使能信号；
-    input   [1:0]             gt_drpwe          ,//GT收发器的DRP读写指示信号；
-    output  [1:0] [15 : 0]    gt_drpdo          //GT收发器的DRP数据输出信号；
+    output  [1:0]             m_axi_rx_tvalid   //用户接收数据的AXI_STEAM流接口信号；
+    // input   [1:0] [8 : 0]     gt_drpaddr        ,//GT收发器的DRP地址信号；
+    // input   [1:0] [15 : 0]    gt_drpdi          ,//GT收发器的DRP数据输入信号；
+    // output  [1:0]             gt_drprdy         ,//GT收发器的DRP应答信号；
+    // input   [1:0]             gt_drpen          ,//GT收发器的DRP使能信号；
+    // input   [1:0]             gt_drpwe          ,//GT收发器的DRP读写指示信号；
+    // output  [1:0] [15 : 0]    gt_drpdo          //GT收发器的DRP数据输出信号；
   );
 
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -139,23 +139,8 @@ module Aurora_Top_lane2_P2 (
                               .m_axi_rx_tvalid    ( m_axi_rx_tvalid[0] ),//用户接收数据的AXI_STEAM流接口信号；
                               .init_clk           ( init_clk          ),//初始化时钟，IP设置为100MHz。
                               .drp_clk            ( drp_clk           ),//DRP时钟信号,IP设置为100MHz。
-                              .gt_drpaddr         ( gt_drpaddr[0]      ),//GT收发器的DRP地址信号；
-                              .gt_drpdi           ( gt_drpdi[0]        ),//GT收发器的DRP数据输入信号；
-                              .gt_drprdy          ( gt_drprdy[0]       ),//GT收发器的DRP应答信号；
-                              .gt_drpen           ( gt_drpen[0]        ),//GT收发器的DRP使能信号；
-                              .gt_drpwe           ( gt_drpwe[0]        ),//GT收发器的DRP读写指示信号；
-                              .gt_drpdo           ( gt_drpdo[0]        ),//GT收发器的DRP数据输出信号；
-                              .qpll_drpaddr       ( qpll_drpaddr      ),//QPLL的DRP地址信号；
-                              .qpll_drpdi         ( qpll_drpdi        ),//QPLL的DRP数据输入信号；
-                              .qpll_drpen         ( qpll_drpen        ),//QPLL的DRP使能信号；
-                              .qpll_drpwe         ( qpll_drpwe        ),//QPLL的DRP读写指示信号；
-                              .gt_qpllclk         ( gt_qpllclk        ),//QPLL的时钟信号；
-                              .gt_qpllrefclk      ( gt_qpllrefclk     ),//QPLL的参考时钟信号；
-                              .gt_qpllreset       (                   ),//QPLL的复位信号；
-                              .gt_qplllock        ( gt_qplllock       ),//QPLL的锁定信号；
-                              .gt_qpllrefclklost  ( gt_qpllrefclklost ), //QPLL的参考时钟失锁信号；
-                              .tx_out_clk(),
-                              .gt_pll_lock(),
+                              .tx_out_clk(tx_out_clk),
+                              .gt_pll_lock(gt_pll_lock),
                               .sync_clk(sync_clk),
                               .mmcm_not_locked(mmcm_not_locked)
                             );
@@ -186,21 +171,6 @@ module Aurora_Top_lane2_P2 (
                               .m_axi_rx_tvalid    ( m_axi_rx_tvalid[1] ),//用户接收数据的AXI_STEAM流接口信号；
                               .init_clk           ( init_clk          ),//初始化时钟，IP设置为100MHz。
                               .drp_clk            ( drp_clk           ),//DRP时钟信号,IP设置为100MHz。
-                              .gt_drpaddr         ( gt_drpaddr[1]      ),//GT收发器的DRP地址信号；
-                              .gt_drpdi           ( gt_drpdi[1]        ),//GT收发器的DRP数据输入信号；
-                              .gt_drprdy          ( gt_drprdy[1]       ),//GT收发器的DRP应答信号；
-                              .gt_drpen           ( gt_drpen[1]        ),//GT收发器的DRP使能信号；
-                              .gt_drpwe           ( gt_drpwe[1]        ),//GT收发器的DRP读写指示信号；
-                              .gt_drpdo           ( gt_drpdo[1]        ),//GT收发器的DRP数据输出信号；
-                              .qpll_drpaddr       ( qpll_drpaddr      ),//QPLL的DRP地址信号；
-                              .qpll_drpdi         ( qpll_drpdi        ),//QPLL的DRP数据输入信号；
-                              .qpll_drpen         ( qpll_drpen        ),//QPLL的DRP使能信号；
-                              .qpll_drpwe         ( qpll_drpwe        ),//QPLL的DRP读写指示信号；
-                              .gt_qpllclk         ( gt_qpllclk        ),//QPLL的时钟信号；
-                              .gt_qpllrefclk      ( gt_qpllrefclk     ),//QPLL的参考时钟信号；
-                              .gt_qpllreset       (                   ),//QPLL的复位信号；
-                              .gt_qplllock        ( gt_qplllock       ),//QPLL的锁定信号；
-                              .gt_qpllrefclklost  ( gt_qpllrefclklost ), //QPLL的参考时钟失锁信号；
                               .tx_out_clk(),
                               .gt_pll_lock(),
                               .sync_clk(sync_clk),

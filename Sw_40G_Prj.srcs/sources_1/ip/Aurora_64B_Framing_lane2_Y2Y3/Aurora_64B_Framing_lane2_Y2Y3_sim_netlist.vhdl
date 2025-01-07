@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
--- Date        : Mon Jan  6 11:34:23 2025
+-- Date        : Mon Jan  6 11:34:21 2025
 -- Host        : hkl running 64-bit Ubuntu 22.04.4 LTS
--- Command     : write_vhdl -force -mode funcsim
---               /workspace/HKL_FPGA/TOP63_Aurora/Sw_40G_Prj/Sw_40G_Prj.srcs/sources_1/ip/Aurora_64B_Framing_lane2_Y2Y3/Aurora_64B_Framing_lane2_Y2Y3_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top Aurora_64B_Framing_lane2_Y2Y3 -prefix
+--               Aurora_64B_Framing_lane2_Y2Y3_ Aurora_64B_Framing_lane2_Y2Y3_sim_netlist.vhdl
 -- Design      : Aurora_64B_Framing_lane2_Y2Y3
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -20,8 +20,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_AXI_TO_LL is
     new_pkt_r_reg_0 : in STD_LOGIC;
     user_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_AXI_TO_LL : entity is "Aurora_64B_Framing_lane2_Y2Y3_AXI_TO_LL";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_AXI_TO_LL;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_AXI_TO_LL is
@@ -51,8 +49,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_BLOCK_SYNC_SM
     Q : in STD_LOGIC_VECTOR ( 1 downto 0 );
     blocksync_out_lane1_i : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_BLOCK_SYNC_SM : entity is "Aurora_64B_Framing_lane2_Y2Y3_BLOCK_SYNC_SM";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_BLOCK_SYNC_SM;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_BLOCK_SYNC_SM is
@@ -2055,8 +2051,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CHANNEL_BOND_
     \free_count_r_reg[4]_0\ : in STD_LOGIC;
     gen_ch_bond_int_reg_3 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CHANNEL_BOND_GEN : entity is "Aurora_64B_Framing_lane2_Y2Y3_CHANNEL_BOND_GEN";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CHANNEL_BOND_GEN;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CHANNEL_BOND_GEN is
@@ -2254,8 +2248,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CHANNEL_ERR_D
     channel_hard_err_c : in STD_LOGIC;
     user_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CHANNEL_ERR_DETECT : entity is "Aurora_64B_Framing_lane2_Y2Y3_CHANNEL_ERR_DETECT";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CHANNEL_ERR_DETECT;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CHANNEL_ERR_DETECT is
@@ -2317,8 +2309,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CHANNEL_INIT_
     s_axi_tx_tlast : in STD_LOGIC;
     new_pkt_r : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CHANNEL_INIT_SM : entity is "Aurora_64B_Framing_lane2_Y2Y3_CHANNEL_INIT_SM";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CHANNEL_INIT_SM;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CHANNEL_INIT_SM is
@@ -3442,8 +3432,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CH_BOND_MASTE
     CB_align_ver : in STD_LOGIC;
     CB_flag_flopped : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CH_BOND_MASTER : entity is "Aurora_64B_Framing_lane2_Y2Y3_CH_BOND_MASTER";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CH_BOND_MASTER;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CH_BOND_MASTER is
@@ -3777,8 +3765,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CH_BOND_SLAVE
     CB_align_ver : in STD_LOGIC;
     do_rd_en_i_inferred_i_1_0 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CH_BOND_SLAVE : entity is "Aurora_64B_Framing_lane2_Y2Y3_CH_BOND_SLAVE";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CH_BOND_SLAVE;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CH_BOND_SLAVE is
@@ -4147,8 +4133,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_DESCRAMBLER_6
     \descrambler_reg[31]_0\ : in STD_LOGIC_VECTOR ( 31 downto 0 );
     \unscrambled_data_i_reg[13]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_DESCRAMBLER_64B66B : entity is "Aurora_64B_Framing_lane2_Y2Y3_DESCRAMBLER_64B66B";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_DESCRAMBLER_64B66B;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_DESCRAMBLER_64B66B is
@@ -6632,8 +6616,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_ERR_DETECT is
     HARD_ERR_reg_0 : in STD_LOGIC;
     CHANNEL_HARD_ERR_reg : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_ERR_DETECT : entity is "Aurora_64B_Framing_lane2_Y2Y3_ERR_DETECT";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_ERR_DETECT;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_ERR_DETECT is
@@ -6784,8 +6766,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_GTX is
     hard_err_usr_reg : in STD_LOGIC_VECTOR ( 0 to 0 );
     hard_err_usr1 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_GTX : entity is "Aurora_64B_Framing_lane2_Y2Y3_GTX";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_GTX;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_GTX is
@@ -8791,8 +8771,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_RX_LL_DATAPAT
     rx_src_rdy_n_r_reg_0 : in STD_LOGIC;
     p_0_in_0 : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_RX_LL_DATAPATH : entity is "Aurora_64B_Framing_lane2_Y2Y3_RX_LL_DATAPATH";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_RX_LL_DATAPATH;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_RX_LL_DATAPATH is
@@ -16471,8 +16449,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_SCRAMBLER_64B
     user_clk : in STD_LOGIC;
     tempData : in STD_LOGIC_VECTOR ( 5 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_SCRAMBLER_64B66B : entity is "Aurora_64B_Framing_lane2_Y2Y3_SCRAMBLER_64B66B";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_SCRAMBLER_64B66B;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_SCRAMBLER_64B66B is
@@ -20369,8 +20345,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_STANDARD_CC_M
     SR : in STD_LOGIC;
     user_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_STANDARD_CC_MODULE : entity is "Aurora_64B_Framing_lane2_Y2Y3_STANDARD_CC_MODULE";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_STANDARD_CC_MODULE;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_STANDARD_CC_MODULE is
@@ -21220,8 +21194,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_SYM_DEC is
     \RX_DATA_REG_reg[63]_0\ : in STD_LOGIC_VECTOR ( 63 downto 0 );
     rxdatavalid_to_ll_i : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_SYM_DEC : entity is "Aurora_64B_Framing_lane2_Y2Y3_SYM_DEC";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_SYM_DEC;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_SYM_DEC is
@@ -25533,8 +25505,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_TX_LL_CONTROL
     in_frame_r_reg : in STD_LOGIC;
     txdatavalid_symgen_i : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_TX_LL_CONTROL_SM : entity is "Aurora_64B_Framing_lane2_Y2Y3_TX_LL_CONTROL_SM";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_TX_LL_CONTROL_SM;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_TX_LL_CONTROL_SM is
@@ -27636,8 +27606,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_TX_LL_DATAPAT
     s_axi_tx_tlast : in STD_LOGIC;
     s_axi_tx_tdata : in STD_LOGIC_VECTOR ( 0 to 127 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_TX_LL_DATAPATH : entity is "Aurora_64B_Framing_lane2_Y2Y3_TX_LL_DATAPATH";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_TX_LL_DATAPATH;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_TX_LL_DATAPATH is
@@ -28771,8 +28739,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_cdc_sync is
     rx_polarity_r_reg_0 : in STD_LOGIC;
     prev_rx_polarity_r : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_cdc_sync : entity is "Aurora_64B_Framing_lane2_Y2Y3_cdc_sync";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_cdc_sync;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_cdc_sync is
@@ -58603,8 +58569,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_common_logic_
     \first_cb_to_fifo_wr_window_reg[0]_1\ : in STD_LOGIC;
     SR : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_common_logic_cbcc : entity is "Aurora_64B_Framing_lane2_Y2Y3_common_logic_cbcc";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_common_logic_cbcc;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_common_logic_cbcc is
@@ -58796,8 +58760,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_rst_sync is
     pma_init : in STD_LOGIC;
     init_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_rst_sync : entity is "Aurora_64B_Framing_lane2_Y2Y3_rst_sync";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_rst_sync;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_rst_sync is
@@ -63597,8 +63559,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CLOCK_CORRECT
     illegal_btf_i : in STD_LOGIC;
     SR : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CLOCK_CORRECTION_CHANNEL_BONDING : entity is "Aurora_64B_Framing_lane2_Y2Y3_CLOCK_CORRECTION_CHANNEL_BONDING";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CLOCK_CORRECTION_CHANNEL_BONDING;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_CLOCK_CORRECTION_CHANNEL_BONDING is
@@ -73050,8 +73010,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_GLOBAL_LOGIC 
     s_axi_tx_tlast : in STD_LOGIC;
     new_pkt_r : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_GLOBAL_LOGIC : entity is "Aurora_64B_Framing_lane2_Y2Y3_GLOBAL_LOGIC";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_GLOBAL_LOGIC;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_GLOBAL_LOGIC is
@@ -73145,8 +73103,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_LANE_INIT_SM 
     reset_lanes_i : in STD_LOGIC;
     \HARD_ERR0__0\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_LANE_INIT_SM : entity is "Aurora_64B_Framing_lane2_Y2Y3_LANE_INIT_SM";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_LANE_INIT_SM;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_LANE_INIT_SM is
@@ -74028,8 +73984,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_MULTI_GT is
     channel_up_tx_if : in STD_LOGIC;
     hard_err_usr1 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_MULTI_GT : entity is "Aurora_64B_Framing_lane2_Y2Y3_MULTI_GT";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_MULTI_GT;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_MULTI_GT is
@@ -74156,8 +74110,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_RESET_LOGIC i
     hard_err_i : in STD_LOGIC_VECTOR ( 0 to 0 );
     rx_reset_i_0 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_RESET_LOGIC : entity is "Aurora_64B_Framing_lane2_Y2Y3_RESET_LOGIC";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_RESET_LOGIC;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_RESET_LOGIC is
@@ -74265,8 +74217,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_RX_LL is
     rx_src_rdy_n_r_reg : in STD_LOGIC;
     p_0_in_0 : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_RX_LL : entity is "Aurora_64B_Framing_lane2_Y2Y3_RX_LL";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_RX_LL;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_RX_LL is
@@ -74314,8 +74264,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_RX_STARTUP_FS
     \rx_state_reg[0]_0\ : in STD_LOGIC;
     fsm_resetdone_to_new_gtx_rx_comb : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_RX_STARTUP_FSM : entity is "Aurora_64B_Framing_lane2_Y2Y3_RX_STARTUP_FSM";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_RX_STARTUP_FSM;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_RX_STARTUP_FSM is
@@ -77178,8 +77126,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_SYM_GEN is
     \TX_DATA_reg[47]_0\ : in STD_LOGIC;
     \TX_DATA_reg[7]_0\ : in STD_LOGIC_VECTOR ( 47 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_SYM_GEN : entity is "Aurora_64B_Framing_lane2_Y2Y3_SYM_GEN";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_SYM_GEN;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_SYM_GEN is
@@ -78911,8 +78857,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_TX_LL is
     txdatavalid_symgen_i : in STD_LOGIC;
     s_axi_tx_tdata : in STD_LOGIC_VECTOR ( 0 to 127 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_TX_LL : entity is "Aurora_64B_Framing_lane2_Y2Y3_TX_LL";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_TX_LL;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_TX_LL is
@@ -79084,8 +79028,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_TX_STARTUP_FS
     ack_flag : in STD_LOGIC;
     ack_flag_0 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_TX_STARTUP_FSM : entity is "Aurora_64B_Framing_lane2_Y2Y3_TX_STARTUP_FSM";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_TX_STARTUP_FSM;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_TX_STARTUP_FSM is
@@ -81645,8 +81587,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_common_reset_
     \first_cb_to_fifo_wr_window_reg[3]_0\ : in STD_LOGIC;
     cb_bit_err_i : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_common_reset_cbcc : entity is "Aurora_64B_Framing_lane2_Y2Y3_common_reset_cbcc";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_common_reset_cbcc;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_common_reset_cbcc is
@@ -82051,8 +81991,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_AURORA_LANE i
     Q : in STD_LOGIC_VECTOR ( 47 downto 0 );
     DO : in STD_LOGIC_VECTOR ( 63 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_AURORA_LANE : entity is "Aurora_64B_Framing_lane2_Y2Y3_AURORA_LANE";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_AURORA_LANE;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_AURORA_LANE is
@@ -82391,8 +82329,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_WRAPPER is
     tempData : in STD_LOGIC_VECTOR ( 5 downto 0 );
     \SCRAMBLED_DATA_OUT_reg[5]\ : in STD_LOGIC_VECTOR ( 5 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_WRAPPER : entity is "Aurora_64B_Framing_lane2_Y2Y3_WRAPPER";
 end Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_WRAPPER;
 
 architecture STRUCTURE of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_WRAPPER is
@@ -86497,8 +86433,6 @@ entity Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_core is
   attribute EXAMPLE_SIMULATION of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_core : entity is 0;
   attribute INTER_CB_GAP : string;
   attribute INTER_CB_GAP of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_core : entity is "5'b01001";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_core : entity is "Aurora_64B_Framing_lane2_Y2Y3_core";
   attribute SIM_GTXRESET_SPEEDUP : string;
   attribute SIM_GTXRESET_SPEEDUP of Aurora_64B_Framing_lane2_Y2Y3_Aurora_64B_Framing_lane2_Y2Y3_core : entity is "TRUE";
   attribute STABLE_CLOCK_PERIOD : integer;

@@ -70,7 +70,7 @@
       parameter BACKWARD_COMP_MODE1 = 1'b0, //disable check for interCB gap
       parameter BACKWARD_COMP_MODE2 = 1'b0, //reduce RXCDR lock time, Block Sync SH max count, disable CDR FSM in wrapper
       parameter BACKWARD_COMP_MODE3 = 1'b0, //clear hot-plug counter with any valid btf detected
-      parameter     STABLE_CLOCK_PERIOD = 20,           //Period of the stable clock driving this state-machine, unit is [ns]
+      parameter     STABLE_CLOCK_PERIOD = 10,           //Period of the stable clock driving this state-machine, unit is [ns]
      // Channel bond MASTER/SLAVE connection
       parameter CHAN_BOND_MODE_0 = 2'b10,
       parameter CHAN_BOND_MODE_1 = 2'b10,

@@ -83,7 +83,7 @@
 		### create_clock -name TS_rxrecclk_32 -period 5.120	 [get_pins -hier *rxrecclk_bufg_i/O]
 
 	### 50MHz board Clock Constraint
-           	create_clock -period 20.000	 [get_ports init_clk]
+           	create_clock -period 10.000	 [get_ports init_clk]
  
  
 	##########################################################################

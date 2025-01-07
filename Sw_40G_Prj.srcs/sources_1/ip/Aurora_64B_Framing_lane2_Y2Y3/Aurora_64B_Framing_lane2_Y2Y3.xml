@@ -22598,6 +22598,24 @@ AXILITE_DRP_IF_5:AXILITE_DRP_IF_6:AXILITE_DRP_IF_7:AXILITE_DRP_IF_8:AXILITE_DRP_
   <spirit:model>
     <spirit:views>
       <spirit:view>
+        <spirit:name>xilinx_externalfiles</spirit:name>
+        <spirit:displayName>External Files</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:external.files</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_externalfiles_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Tue Jan 07 00:50:09 UTC 2025</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:3a682d7b</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
         <spirit:name>xilinx_elaboratesubcores</spirit:name>
         <spirit:displayName>Elaborate Sub-Cores</spirit:displayName>
         <spirit:envIdentifier>:vivado.xilinx.com:elaborate.subcores</spirit:envIdentifier>
@@ -22619,7 +22637,7 @@ AXILITE_DRP_IF_5:AXILITE_DRP_IF_6:AXILITE_DRP_IF_7:AXILITE_DRP_IF_8:AXILITE_DRP_
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Jan 06 03:33:28 UTC 2025</spirit:value>
+            <spirit:value>Tue Jan 07 00:50:06 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -22638,7 +22656,7 @@ AXILITE_DRP_IF_5:AXILITE_DRP_IF_6:AXILITE_DRP_IF_7:AXILITE_DRP_IF_8:AXILITE_DRP_
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Jan 06 03:33:40 UTC 2025</spirit:value>
+            <spirit:value>Tue Jan 07 00:50:08 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -22658,7 +22676,7 @@ AXILITE_DRP_IF_5:AXILITE_DRP_IF_6:AXILITE_DRP_IF_7:AXILITE_DRP_IF_8:AXILITE_DRP_
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Jan 06 03:33:40 UTC 2025</spirit:value>
+            <spirit:value>Tue Jan 07 00:50:08 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -22677,7 +22695,7 @@ AXILITE_DRP_IF_5:AXILITE_DRP_IF_6:AXILITE_DRP_IF_7:AXILITE_DRP_IF_8:AXILITE_DRP_
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Jan 06 03:33:40 UTC 2025</spirit:value>
+            <spirit:value>Tue Jan 07 00:50:08 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -22697,7 +22715,7 @@ AXILITE_DRP_IF_5:AXILITE_DRP_IF_6:AXILITE_DRP_IF_7:AXILITE_DRP_IF_8:AXILITE_DRP_
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Jan 06 03:33:40 UTC 2025</spirit:value>
+            <spirit:value>Tue Jan 07 00:50:08 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -22715,7 +22733,7 @@ AXILITE_DRP_IF_5:AXILITE_DRP_IF_6:AXILITE_DRP_IF_7:AXILITE_DRP_IF_8:AXILITE_DRP_
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Jan 06 03:33:40 UTC 2025</spirit:value>
+            <spirit:value>Tue Jan 07 00:50:08 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -22733,25 +22751,7 @@ AXILITE_DRP_IF_5:AXILITE_DRP_IF_6:AXILITE_DRP_IF_7:AXILITE_DRP_IF_8:AXILITE_DRP_
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Jan 06 03:33:40 UTC 2025</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:d6ad676d</spirit:value>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:view>
-      <spirit:view>
-        <spirit:name>xilinx_externalfiles</spirit:name>
-        <spirit:displayName>External Files</spirit:displayName>
-        <spirit:envIdentifier>:vivado.xilinx.com:external.files</spirit:envIdentifier>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_externalfiles_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Jan 06 03:34:23 UTC 2025</spirit:value>
+            <spirit:value>Tue Jan 07 00:50:08 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -57419,6 +57419,42 @@ AXILITE_DRP_IF_5:AXILITE_DRP_IF_6:AXILITE_DRP_IF_7:AXILITE_DRP_IF_8:AXILITE_DRP_
   </spirit:choices>
   <spirit:fileSets>
     <spirit:fileSet>
+      <spirit:name>xilinx_externalfiles_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>Aurora_64B_Framing_lane2_Y2Y3.dcp</spirit:name>
+        <spirit:userFileType>dcp</spirit:userFileType>
+        <spirit:userFileType>USED_IN_implementation</spirit:userFileType>
+        <spirit:userFileType>USED_IN_synthesis</spirit:userFileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>Aurora_64B_Framing_lane2_Y2Y3_stub.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_synth_blackbox_stub</spirit:userFileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>Aurora_64B_Framing_lane2_Y2Y3_stub.vhdl</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_synth_blackbox_stub</spirit:userFileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>Aurora_64B_Framing_lane2_Y2Y3_sim_netlist.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
+        <spirit:userFileType>USED_IN_single_language</spirit:userFileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>Aurora_64B_Framing_lane2_Y2Y3_sim_netlist.vhdl</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
+        <spirit:userFileType>USED_IN_single_language</spirit:userFileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
       <spirit:name>xilinx_veriloginstantiationtemplate_view_fileset</spirit:name>
       <spirit:file>
         <spirit:name>Aurora_64B_Framing_lane2_Y2Y3.vho</spirit:name>
@@ -57756,42 +57792,6 @@ AXILITE_DRP_IF_5:AXILITE_DRP_IF_6:AXILITE_DRP_IF_7:AXILITE_DRP_IF_8:AXILITE_DRP_
       <spirit:file>
         <spirit:name>doc/aurora_64b66b_v11_2_changelog.txt</spirit:name>
         <spirit:userFileType>text</spirit:userFileType>
-      </spirit:file>
-    </spirit:fileSet>
-    <spirit:fileSet>
-      <spirit:name>xilinx_externalfiles_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>Aurora_64B_Framing_lane2_Y2Y3.dcp</spirit:name>
-        <spirit:userFileType>dcp</spirit:userFileType>
-        <spirit:userFileType>USED_IN_implementation</spirit:userFileType>
-        <spirit:userFileType>USED_IN_synthesis</spirit:userFileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>Aurora_64B_Framing_lane2_Y2Y3_stub.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_synth_blackbox_stub</spirit:userFileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>Aurora_64B_Framing_lane2_Y2Y3_stub.vhdl</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_synth_blackbox_stub</spirit:userFileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>Aurora_64B_Framing_lane2_Y2Y3_sim_netlist.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
-        <spirit:userFileType>USED_IN_single_language</spirit:userFileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>Aurora_64B_Framing_lane2_Y2Y3_sim_netlist.vhdl</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
-        <spirit:userFileType>USED_IN_single_language</spirit:userFileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
     </spirit:fileSet>
   </spirit:fileSets>

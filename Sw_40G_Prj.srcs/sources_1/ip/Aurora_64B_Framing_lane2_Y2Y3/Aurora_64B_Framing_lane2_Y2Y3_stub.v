@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Mon Jan  6 11:34:22 2025
+// Date        : Mon Jan  6 11:34:20 2025
 // Host        : hkl running 64-bit Ubuntu 22.04.4 LTS
-// Command     : write_verilog -force -mode synth_stub
-//               /workspace/HKL_FPGA/TOP63_Aurora/Sw_40G_Prj/Sw_40G_Prj.srcs/sources_1/ip/Aurora_64B_Framing_lane2_Y2Y3/Aurora_64B_Framing_lane2_Y2Y3_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top Aurora_64B_Framing_lane2_Y2Y3 -prefix
+//               Aurora_64B_Framing_lane2_Y2Y3_ Aurora_64B_Framing_lane2_Y2Y3_stub.v
 // Design      : Aurora_64B_Framing_lane2_Y2Y3
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7k325tffv900-2
