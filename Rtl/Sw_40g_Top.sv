@@ -68,25 +68,25 @@ module Sw_40g_Top (
   wire [3:0] [63:0] TenG_xgmii_rxd;
   wire [3:0] [7:0]  TenG_xgmii_rxc;
   //--------------------------------------------
-  wire [2:0]status_vector_Mac1;
-  wire         rx_axis_aresetn;
-  wire  [63:0] rx_axis_tdata;
-  wire  [7:0]  rx_axis_tkeep;
-  wire         rx_axis_tvalid;
-  wire         rx_axis_tlast;
-  wire         rx_axis_tready;
+  wire [3:0][2:0]status_vector_Mac;
+  wire [3:0]         rx_axis_aresetn;
+  wire [3:0]  [63:0] rx_axis_tdata;
+  wire [3:0]  [7:0]  rx_axis_tkeep;
+  wire [3:0]         rx_axis_tvalid;
+  wire [3:0]         rx_axis_tlast;
+  wire [3:0]         rx_axis_tready;
+  wire [3:0] tx_axis_tready;
+  wire [3:0] tx_axis_tvalid;
+  wire [3:0] tx_axis_tlast;
+  wire [3:0] [63:0] tx_axis_tdata;
+  wire [3:0] [7:0] tx_axis_tkeep;
 
-  wire tx_axis_tready;
-  wire tx_axis_tvalid;
-  wire tx_axis_tlast;
-  wire [63:0] tx_axis_tdata;
-  wire [7:0] tx_axis_tkeep;
-
-  wire [31:0] TenGRxPkg_Cnt;
-  wire [31:0] RxPkgErr_Cnt;
-  wire [31:0] TenGBriRxPkg_Cnt;
-  wire [31:0] TenGTxPkg_Cnt;
-  wire [31:0] TenGBriTxPkg_Cnt;
+  wire [3:0] [31:0] TenGRxPkg_Cnt;
+  wire [3:0] [31:0] RxPkgErr_Cnt;
+  wire [3:0] [31:0] TenGBriRxPkg_Cnt;
+  wire [3:0] [31:0] TenGTxPkg_Cnt;
+  wire [3:0] [31:0] TenGBriTxPkg_Cnt;
+  wire [3:0] [7:0] XauiRxFifoStatus;
 
   //--------------------------------------------
   wire [1:0][0:127] Lane2_s_axi_tx_tdata;
@@ -374,46 +374,90 @@ module Sw_40g_Top (
   //                  );
 
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  genvar i;
+  generate
+    for(i=0; i<4; i=i+1)
+    begin:TengMac_Inst_loop
+      TenGEthMacPort1_New  TenGEthMacPort1_New_inst (
+                             .reset(~RstSys_n),
+                             .gtx_clk(clk156_out0),
+                             .tx_clk0(clk156_out0),
+                             .xgmii_txd(TenG_xgmii_txd[i]),
+                             .xgmii_txc(TenG_xgmii_txc[i]),
+                             .rx_clk0(clk156_out0),
+                             .xgmii_rxd(TenG_xgmii_rxd[i]),
+                             .xgmii_rxc(TenG_xgmii_rxc[i]),
+                             .tx_dcm_locked(1'b1),
+                             .rx_dcm_locked(1'b1),
+                             .status_vector_Mac1(status_vector_Mac[i]),
+                             .tx_axis_fifo_aclk(clk156_out0),
+                             .tx_axis_aresetn(RstSys_n),
+                             .tx_axis_fifo_tdata(tx_axis_tdata[i]),
+                             .tx_axis_fifo_tkeep(tx_axis_tkeep[i]),
+                             .tx_axis_fifo_tvalid(tx_axis_tvalid[i]),
+                             .tx_axis_fifo_tlast(tx_axis_tlast[i]),
+                             .tx_axis_fifo_tready(tx_axis_tready[i]),
+                             .rx_axis_fifo_aclk(clk156_out0),
+                             .rx_axis_aresetn(RstSys_n),
+                             .rx_axis_fifo_tdata(rx_axis_tdata[i]),
+                             .rx_axis_fifo_tkeep(rx_axis_tkeep[i]),
+                             .rx_axis_fifo_tvalid(rx_axis_tvalid[i]),
+                             .rx_axis_fifo_tlast(rx_axis_tlast[i]),
+                             .rx_axis_fifo_tready(rx_axis_tready[i]),
+                             .CntClr(CntClr),
+                             .RxPkg_Cnt(TenGRxPkg_Cnt[i]),
+                             .RxPkgErr_Cnt(RxPkgErr_Cnt[i]),
+                             .BriRxPkg_Cnt(TenGBriRxPkg_Cnt[i]),
+                             .TxPkg_Cnt(TenGTxPkg_Cnt[i]),
+                             .BriTxPkg_Cnt(TenGBriTxPkg_Cnt[i]),
+                             .XauiRxFifoStatus(XauiRxFifoStatus[i])
+                           );
+    end
+  endgenerate
+
+
+
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   ///////////////////////////////////////////                                 /////////////////////////////////////////////////////////
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  AxiStream2UserIfc64to128Bridge  AxiStream2UserIfc64to128Bridge_inst (
-                                    .Rst_n(Rst_n),
-                                    .FifoRst_n(FifoRst_n),
-                                    .rx_axis_tdata(rx_axis_tdata),
-                                    .rx_axis_tkeep(rx_axis_tkeep),
-                                    .rx_axis_tvalid(rx_axis_tvalid),
-                                    .rx_axis_tlast(rx_axis_tlast),
-                                    .rx_axis_tready(rx_axis_tready),
-                                    .rx_axis_uclk(rx_axis_uclk),
-                                    .tx_axis_uclk(tx_axis_uclk),
-                                    .tx_axis_tready(tx_axis_tready),
-                                    .tx_axis_tvalid(tx_axis_tvalid),
-                                    .tx_axis_tlast(tx_axis_tlast),
-                                    .tx_axis_tdata(tx_axis_tdata),
-                                    .tx_axis_tkeep(tx_axis_tkeep),
-                                    .CntClr(CntClr),
-                                    .RxPkg_Cnt(RxPkg_Cnt),
-                                    .TxPkg_Cnt(TxPkg_Cnt)
-                                  );
+  // AxiStream2UserIfc64to128Bridge  AxiStream2UserIfc64to128Bridge_inst (
+  //                                   .Rst_n(Rst_n),
+  //                                   .FifoRst_n(FifoRst_n),
+  //                                   .rx_axis_tdata(rx_axis_tdata),
+  //                                   .rx_axis_tkeep(rx_axis_tkeep),
+  //                                   .rx_axis_tvalid(rx_axis_tvalid),
+  //                                   .rx_axis_tlast(rx_axis_tlast),
+  //                                   .rx_axis_tready(rx_axis_tready),
+  //                                   .rx_axis_uclk(rx_axis_uclk),
+  //                                   .tx_axis_uclk(tx_axis_uclk),
+  //                                   .tx_axis_tready(tx_axis_tready),
+  //                                   .tx_axis_tvalid(tx_axis_tvalid),
+  //                                   .tx_axis_tlast(tx_axis_tlast),
+  //                                   .tx_axis_tdata(tx_axis_tdata),
+  //                                   .tx_axis_tkeep(tx_axis_tkeep),
+  //                                   .CntClr(CntClr),
+  //                                   .RxPkg_Cnt(RxPkg_Cnt),
+  //                                   .TxPkg_Cnt(TxPkg_Cnt)
+  //                                 );
 
-  UserIfc2AxiStream128to64Bridge  UserIfc2AxiStream128to64Bridge_inst (
-                                    .Rst_n(Rst_n),
-                                    .FifoRst_n(FifoRst_n),
-                                    .rx_axis_uclk(rx_axis_uclk),
-                                    .rx_axis_tready(rx_axis_tready),
-                                    .rx_axis_tvalid(rx_axis_tvalid),
-                                    .rx_axis_tlast(rx_axis_tlast),
-                                    .rx_axis_tdata(rx_axis_tdata),
-                                    .rx_axis_tkeep(rx_axis_tkeep),
-                                    .tx_axis_uclk(tx_axis_uclk),
-                                    .tx_axis_tready(tx_axis_tready),
-                                    .tx_axis_tvalid(tx_axis_tvalid),
-                                    .tx_axis_tlast(tx_axis_tlast),
-                                    .tx_axis_tdata(tx_axis_tdata),
-                                    .tx_axis_tkeep(tx_axis_tkeep),
-                                    .CntClr(CntClr),
-                                    .RxPkg_Cnt(RxPkg_Cnt),
-                                    .TxPkg_Cnt(TxPkg_Cnt)
-                                  );
+  // UserIfc2AxiStream128to64Bridge  UserIfc2AxiStream128to64Bridge_inst (
+  //                                   .Rst_n(Rst_n),
+  //                                   .FifoRst_n(FifoRst_n),
+  //                                   .rx_axis_uclk(rx_axis_uclk),
+  //                                   .rx_axis_tready(rx_axis_tready),
+  //                                   .rx_axis_tvalid(rx_axis_tvalid),
+  //                                   .rx_axis_tlast(rx_axis_tlast),
+  //                                   .rx_axis_tdata(rx_axis_tdata),
+  //                                   .rx_axis_tkeep(rx_axis_tkeep),
+  //                                   .tx_axis_uclk(tx_axis_uclk),
+  //                                   .tx_axis_tready(tx_axis_tready),
+  //                                   .tx_axis_tvalid(tx_axis_tvalid),
+  //                                   .tx_axis_tlast(tx_axis_tlast),
+  //                                   .tx_axis_tdata(tx_axis_tdata),
+  //                                   .tx_axis_tkeep(tx_axis_tkeep),
+  //                                   .CntClr(CntClr),
+  //                                   .RxPkg_Cnt(RxPkg_Cnt),
+  //                                   .TxPkg_Cnt(TxPkg_Cnt)
+  //                                 );
 endmodule
