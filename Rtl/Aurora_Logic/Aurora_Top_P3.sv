@@ -75,9 +75,9 @@ module Aurora_Top_P3 (
 
 
 Aurora_64B_Framing_CLOCK_MODULE  clock_module (
-    .INIT_CLK_P(gt_refclk_p),
-    .INIT_CLK_N(gt_refclk_n),
-    .INIT_CLK_O(gt_refclk),
+    .INIT_CLK_P(0),
+    .INIT_CLK_N(0),
+    .INIT_CLK_O(),
     .CLK(tx_out_clk),//In
     .CLK_LOCKED(gt_pll_lock),//In
     .USER_CLK(user_clk),//o
@@ -86,13 +86,13 @@ Aurora_64B_Framing_CLOCK_MODULE  clock_module (
   );
 
   // //例化IBUFGDS_GTE2，将差分时钟转换为单端时钟；
-  // IBUFDS_GTE2 IBUFDS_GTXE2_CLK1 (
-  //               .O      ( gt_refclk     ),//单端时钟输出信号；
-  //               .ODIV2  (               ),//单端时钟二分频输出信号；
-  //               .CEB    ( 1'b0          ),//IBUFDS_GTE2使能信号；
-  //               .I      ( gt_refclk_p   ),//差分时钟输入信号；
-  //               .IB     ( gt_refclk_n   ) //差分时钟输入信号；
-  //             );
+  IBUFDS_GTE2 IBUFDS_GTXE2_CLK1 (
+                .O      ( gt_refclk     ),//单端时钟输出信号；
+                .ODIV2  (               ),//单端时钟二分频输出信号；
+                .CEB    ( 1'b0          ),//IBUFDS_GTE2使能信号；
+                .I      ( gt_refclk_p   ),//差分时钟输入信号；
+                .IB     ( gt_refclk_n   ) //差分时钟输入信号；
+              );
 
   //例化QPLL模块；
   Aurora_64B_Framing_gt_common_wrapper gt_common_support (
