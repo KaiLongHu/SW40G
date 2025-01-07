@@ -1,18 +1,18 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-// Date        : Tue Feb  6 11:30:50 2024
-// Host        : Admin-PC running 64-bit Service Pack 1  (build 7601)
+// Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+// Date        : Tue Jan  7 10:52:04 2025
+// Host        : hkl running 64-bit Ubuntu 22.04.4 LTS
 // Command     : write_verilog -force -mode funcsim
-//               D:/HKL_FPGA/TOP16_multichnnel/MultiChnnel_KzBoard/RTL/com/FifoIP/AsynDisfifo32x256/AsynDisfifo32x256_sim_netlist.v
+//               /workspace/HKL_FPGA/TOP63_Aurora/Sw_40G_Prj/Rtl/com/AsynDisfifo32x256/AsynDisfifo32x256_sim_netlist.v
 // Design      : AsynDisfifo32x256
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
-// Device      : xc7z045ffg900-2
+// Device      : xc7k325tffv900-2
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "AsynDisfifo32x256,fifo_generator_v13_2_2,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "fifo_generator_v13_2_2,Vivado 2018.2" *) 
+(* CHECK_LICENSE_TYPE = "AsynDisfifo32x256,fifo_generator_v13_2_3,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "fifo_generator_v13_2_3,Vivado 2018.3" *) 
 (* NotValidForBitStream *)
 module AsynDisfifo32x256
    (rst,
@@ -26,8 +26,8 @@ module AsynDisfifo32x256
     empty,
     prog_full);
   input rst;
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 write_clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME write_clk, FREQ_HZ 100000000, PHASE 0.000" *) input wr_clk;
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 read_clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME read_clk, FREQ_HZ 100000000, PHASE 0.000" *) input rd_clk;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 write_clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME write_clk, FREQ_HZ 100000000, PHASE 0.000, INSERT_VIP 0" *) input wr_clk;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 read_clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME read_clk, FREQ_HZ 100000000, PHASE 0.000, INSERT_VIP 0" *) input rd_clk;
   (* x_interface_info = "xilinx.com:interface:fifo_write:1.0 FIFO_WRITE WR_DATA" *) input [31:0]din;
   (* x_interface_info = "xilinx.com:interface:fifo_write:1.0 FIFO_WRITE WR_EN" *) input wr_en;
   (* x_interface_info = "xilinx.com:interface:fifo_read:1.0 FIFO_READ RD_EN" *) input rd_en;
@@ -217,7 +217,7 @@ module AsynDisfifo32x256
   (* C_ERROR_INJECTION_TYPE_WACH = "0" *) 
   (* C_ERROR_INJECTION_TYPE_WDCH = "0" *) 
   (* C_ERROR_INJECTION_TYPE_WRCH = "0" *) 
-  (* C_FAMILY = "zynq" *) 
+  (* C_FAMILY = "kintex7" *) 
   (* C_FULL_FLAGS_RST_VAL = "1" *) 
   (* C_HAS_ALMOST_EMPTY = "0" *) 
   (* C_HAS_ALMOST_FULL = "0" *) 
@@ -371,7 +371,7 @@ module AsynDisfifo32x256
   (* C_WR_PNTR_WIDTH_WDCH = "10" *) 
   (* C_WR_PNTR_WIDTH_WRCH = "4" *) 
   (* C_WR_RESPONSE_LATENCY = "1" *) 
-  AsynDisfifo32x256_fifo_generator_v13_2_2 U0
+  AsynDisfifo32x256_fifo_generator_v13_2_3 U0
        (.almost_empty(NLW_U0_almost_empty_UNCONNECTED),
         .almost_full(NLW_U0_almost_full_UNCONNECTED),
         .axi_ar_data_count(NLW_U0_axi_ar_data_count_UNCONNECTED[4:0]),
@@ -648,7 +648,7 @@ endmodule
 (* DEF_VAL = "1'b0" *) (* DEST_SYNC_FF = "2" *) (* INIT_SYNC_FF = "0" *) 
 (* INV_DEF_VAL = "1'b1" *) (* ORIG_REF_NAME = "xpm_cdc_async_rst" *) (* RST_ACTIVE_HIGH = "1" *) 
 (* VERSION = "0" *) (* XPM_MODULE = "TRUE" *) (* xpm_cdc = "ASYNC_RST" *) 
-module AsynDisfifo32x256_xpm_cdc_async_rst__1
+module AsynDisfifo32x256_xpm_cdc_async_rst__2
    (src_arst,
     dest_clk,
     dest_arst);
@@ -1056,7 +1056,7 @@ endmodule
 (* REG_OUTPUT = "1" *) (* SIM_ASSERT_CHK = "0" *) (* SIM_LOSSLESS_GRAY_CHK = "0" *) 
 (* VERSION = "0" *) (* WIDTH = "8" *) (* XPM_MODULE = "TRUE" *) 
 (* xpm_cdc = "GRAY" *) 
-module AsynDisfifo32x256_xpm_cdc_gray__1
+module AsynDisfifo32x256_xpm_cdc_gray__2
    (src_clk,
     src_in_bin,
     dest_clk,
@@ -1478,7 +1478,7 @@ endmodule
 (* DEST_SYNC_FF = "4" *) (* INIT_SYNC_FF = "0" *) (* ORIG_REF_NAME = "xpm_cdc_single" *) 
 (* SIM_ASSERT_CHK = "0" *) (* SRC_INPUT_REG = "0" *) (* VERSION = "0" *) 
 (* XPM_MODULE = "TRUE" *) (* xpm_cdc = "SINGLE" *) 
-module AsynDisfifo32x256_xpm_cdc_single__1
+module AsynDisfifo32x256_xpm_cdc_single__2
    (src_clk,
     src_in,
     dest_clk,
@@ -1533,50 +1533,50 @@ endmodule
 
 (* ORIG_REF_NAME = "clk_x_pntrs" *) 
 module AsynDisfifo32x256_clk_x_pntrs
-   (ram_full_fb_i_reg,
+   (\dest_out_bin_ff_reg[6] ,
     RD_PNTR_WR,
     S,
     WR_PNTR_RD,
-    \dest_out_bin_ff_reg[3] ,
+    ram_full_fb_i_reg,
     Q,
-    \gic0.gc0.count_reg[6] ,
+    ram_full_i_i_5_0,
     out,
     ram_full_fb_i_reg_0,
     wr_clk,
-    \gic0.gc0.count_d2_reg[7] ,
+    \src_gray_ff_reg[7] ,
     rd_clk,
-    \gc0.count_d1_reg[7] );
-  output ram_full_fb_i_reg;
+    \src_gray_ff_reg[7]_0 );
+  output \dest_out_bin_ff_reg[6] ;
   output [7:0]RD_PNTR_WR;
   output [0:0]S;
   output [7:0]WR_PNTR_RD;
-  input \dest_out_bin_ff_reg[3] ;
+  input ram_full_fb_i_reg;
   input [3:0]Q;
-  input [6:0]\gic0.gc0.count_reg[6] ;
+  input [6:0]ram_full_i_i_5_0;
   input out;
   input ram_full_fb_i_reg_0;
   input wr_clk;
-  input [7:0]\gic0.gc0.count_d2_reg[7] ;
+  input [7:0]\src_gray_ff_reg[7] ;
   input rd_clk;
-  input [7:0]\gc0.count_d1_reg[7] ;
+  input [7:0]\src_gray_ff_reg[7]_0 ;
 
   wire [3:0]Q;
   wire [7:0]RD_PNTR_WR;
   wire [0:0]S;
   wire [7:0]WR_PNTR_RD;
-  wire \dest_out_bin_ff_reg[3] ;
-  wire [7:0]\gc0.count_d1_reg[7] ;
-  wire [7:0]\gic0.gc0.count_d2_reg[7] ;
-  wire [6:0]\gic0.gc0.count_reg[6] ;
+  wire \dest_out_bin_ff_reg[6] ;
   wire out;
   wire ram_full_fb_i_reg;
   wire ram_full_fb_i_reg_0;
   wire ram_full_i_i_3_n_0;
   wire ram_full_i_i_4_n_0;
+  wire [6:0]ram_full_i_i_5_0;
   wire ram_full_i_i_5_n_0;
   wire ram_full_i_i_7_n_0;
   wire ram_full_i_i_9_n_0;
   wire rd_clk;
+  wire [7:0]\src_gray_ff_reg[7] ;
+  wire [7:0]\src_gray_ff_reg[7]_0 ;
   wire wr_clk;
 
   LUT2 #(
@@ -1588,13 +1588,13 @@ module AsynDisfifo32x256_clk_x_pntrs
   LUT6 #(
     .INIT(64'hFFFFFFFF80080000)) 
     ram_full_i_i_1
-       (.I0(\dest_out_bin_ff_reg[3] ),
+       (.I0(ram_full_fb_i_reg),
         .I1(ram_full_i_i_3_n_0),
         .I2(RD_PNTR_WR[6]),
         .I3(Q[2]),
         .I4(ram_full_i_i_4_n_0),
         .I5(ram_full_i_i_5_n_0),
-        .O(ram_full_fb_i_reg));
+        .O(\dest_out_bin_ff_reg[6] ));
   LUT2 #(
     .INIT(4'h9)) 
     ram_full_i_i_3
@@ -1613,7 +1613,7 @@ module AsynDisfifo32x256_clk_x_pntrs
   LUT6 #(
     .INIT(64'h0900000000000000)) 
     ram_full_i_i_5
-       (.I0(\gic0.gc0.count_reg[6] [3]),
+       (.I0(ram_full_i_i_5_0[3]),
         .I1(RD_PNTR_WR[3]),
         .I2(out),
         .I3(ram_full_i_i_7_n_0),
@@ -1624,20 +1624,20 @@ module AsynDisfifo32x256_clk_x_pntrs
     .INIT(64'h9009000000009009)) 
     ram_full_i_i_7
        (.I0(RD_PNTR_WR[2]),
-        .I1(\gic0.gc0.count_reg[6] [2]),
+        .I1(ram_full_i_i_5_0[2]),
         .I2(RD_PNTR_WR[0]),
-        .I3(\gic0.gc0.count_reg[6] [0]),
-        .I4(\gic0.gc0.count_reg[6] [1]),
+        .I3(ram_full_i_i_5_0[0]),
+        .I4(ram_full_i_i_5_0[1]),
         .I5(RD_PNTR_WR[1]),
         .O(ram_full_i_i_7_n_0));
   LUT6 #(
     .INIT(64'h9009000000009009)) 
     ram_full_i_i_9
        (.I0(RD_PNTR_WR[6]),
-        .I1(\gic0.gc0.count_reg[6] [6]),
+        .I1(ram_full_i_i_5_0[6]),
         .I2(RD_PNTR_WR[5]),
-        .I3(\gic0.gc0.count_reg[6] [5]),
-        .I4(\gic0.gc0.count_reg[6] [4]),
+        .I3(ram_full_i_i_5_0[5]),
+        .I4(ram_full_i_i_5_0[4]),
         .I5(RD_PNTR_WR[4]),
         .O(ram_full_i_i_9_n_0));
   (* DEST_SYNC_FF = "2" *) 
@@ -1653,7 +1653,7 @@ module AsynDisfifo32x256_clk_x_pntrs
        (.dest_clk(wr_clk),
         .dest_out_bin(RD_PNTR_WR),
         .src_clk(rd_clk),
-        .src_in_bin(\gc0.count_d1_reg[7] ));
+        .src_in_bin(\src_gray_ff_reg[7]_0 ));
   (* DEST_SYNC_FF = "2" *) 
   (* INIT_SYNC_FF = "0" *) 
   (* REG_OUTPUT = "1" *) 
@@ -1663,36 +1663,36 @@ module AsynDisfifo32x256_clk_x_pntrs
   (* WIDTH = "8" *) 
   (* XPM_CDC = "GRAY" *) 
   (* XPM_MODULE = "TRUE" *) 
-  AsynDisfifo32x256_xpm_cdc_gray__1 wr_pntr_cdc_inst
+  AsynDisfifo32x256_xpm_cdc_gray__2 wr_pntr_cdc_inst
        (.dest_clk(rd_clk),
         .dest_out_bin(WR_PNTR_RD),
         .src_clk(wr_clk),
-        .src_in_bin(\gic0.gc0.count_d2_reg[7] ));
+        .src_in_bin(\src_gray_ff_reg[7] ));
 endmodule
 
 (* ORIG_REF_NAME = "dmem" *) 
 module AsynDisfifo32x256_dmem
-   (\goreg_dm.dout_i_reg[31] ,
+   (\gpr1.dout_i_reg[31]_0 ,
     wr_clk,
     din,
-    ram_full_fb_i_reg,
+    \gpr1.dout_i_reg[31]_1 ,
     Q,
-    \gic0.gc0.count_d2_reg[5] ,
-    \gic0.gc0.count_d2_reg[7] ,
-    \gic0.gc0.count_d2_reg[6] ,
-    ram_full_fb_i_reg_0,
+    \gpr1.dout_i_reg[0]_0 ,
+    \gpr1.dout_i_reg[31]_2 ,
+    \gpr1.dout_i_reg[31]_3 ,
+    \gpr1.dout_i_reg[31]_4 ,
     E,
     rd_clk,
     AR);
-  output [31:0]\goreg_dm.dout_i_reg[31] ;
+  output [31:0]\gpr1.dout_i_reg[31]_0 ;
   input wr_clk;
   input [31:0]din;
-  input ram_full_fb_i_reg;
+  input \gpr1.dout_i_reg[31]_1 ;
   input [7:0]Q;
-  input [5:0]\gic0.gc0.count_d2_reg[5] ;
-  input \gic0.gc0.count_d2_reg[7] ;
-  input \gic0.gc0.count_d2_reg[6] ;
-  input ram_full_fb_i_reg_0;
+  input [5:0]\gpr1.dout_i_reg[0]_0 ;
+  input \gpr1.dout_i_reg[31]_2 ;
+  input \gpr1.dout_i_reg[31]_3 ;
+  input \gpr1.dout_i_reg[31]_4 ;
   input [0:0]E;
   input rd_clk;
   input [0:0]AR;
@@ -1829,13 +1829,13 @@ module AsynDisfifo32x256_dmem
   wire RAM_reg_64_127_9_11_n_1;
   wire RAM_reg_64_127_9_11_n_2;
   wire [31:0]din;
-  wire [5:0]\gic0.gc0.count_d2_reg[5] ;
-  wire \gic0.gc0.count_d2_reg[6] ;
-  wire \gic0.gc0.count_d2_reg[7] ;
-  wire [31:0]\goreg_dm.dout_i_reg[31] ;
+  wire [5:0]\gpr1.dout_i_reg[0]_0 ;
+  wire [31:0]\gpr1.dout_i_reg[31]_0 ;
+  wire \gpr1.dout_i_reg[31]_1 ;
+  wire \gpr1.dout_i_reg[31]_2 ;
+  wire \gpr1.dout_i_reg[31]_3 ;
+  wire \gpr1.dout_i_reg[31]_4 ;
   wire [31:0]p_0_out;
-  wire ram_full_fb_i_reg;
-  wire ram_full_fb_i_reg_0;
   wire rd_clk;
   wire wr_clk;
   wire NLW_RAM_reg_0_63_0_2_DOD_UNCONNECTED;
@@ -1888,11 +1888,15 @@ module AsynDisfifo32x256_dmem
   wire NLW_RAM_reg_64_127_9_11_DOD_UNCONNECTED;
 
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "0" *) 
+  (* ram_addr_end = "63" *) 
+  (* ram_slice_begin = "0" *) 
+  (* ram_slice_end = "2" *) 
   RAM64M RAM_reg_0_63_0_2
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[0]),
         .DIB(din[1]),
         .DIC(din[2]),
@@ -1902,13 +1906,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_0_63_0_2_n_2),
         .DOD(NLW_RAM_reg_0_63_0_2_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(ram_full_fb_i_reg));
+        .WE(\gpr1.dout_i_reg[31]_1 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "0" *) 
+  (* ram_addr_end = "63" *) 
+  (* ram_slice_begin = "12" *) 
+  (* ram_slice_end = "14" *) 
   RAM64M RAM_reg_0_63_12_14
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[12]),
         .DIB(din[13]),
         .DIC(din[14]),
@@ -1918,13 +1926,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_0_63_12_14_n_2),
         .DOD(NLW_RAM_reg_0_63_12_14_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(ram_full_fb_i_reg));
+        .WE(\gpr1.dout_i_reg[31]_1 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "0" *) 
+  (* ram_addr_end = "63" *) 
+  (* ram_slice_begin = "15" *) 
+  (* ram_slice_end = "17" *) 
   RAM64M RAM_reg_0_63_15_17
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[15]),
         .DIB(din[16]),
         .DIC(din[17]),
@@ -1934,13 +1946,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_0_63_15_17_n_2),
         .DOD(NLW_RAM_reg_0_63_15_17_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(ram_full_fb_i_reg));
+        .WE(\gpr1.dout_i_reg[31]_1 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "0" *) 
+  (* ram_addr_end = "63" *) 
+  (* ram_slice_begin = "18" *) 
+  (* ram_slice_end = "20" *) 
   RAM64M RAM_reg_0_63_18_20
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[18]),
         .DIB(din[19]),
         .DIC(din[20]),
@@ -1950,13 +1966,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_0_63_18_20_n_2),
         .DOD(NLW_RAM_reg_0_63_18_20_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(ram_full_fb_i_reg));
+        .WE(\gpr1.dout_i_reg[31]_1 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "0" *) 
+  (* ram_addr_end = "63" *) 
+  (* ram_slice_begin = "21" *) 
+  (* ram_slice_end = "23" *) 
   RAM64M RAM_reg_0_63_21_23
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[21]),
         .DIB(din[22]),
         .DIC(din[23]),
@@ -1966,13 +1986,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_0_63_21_23_n_2),
         .DOD(NLW_RAM_reg_0_63_21_23_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(ram_full_fb_i_reg));
+        .WE(\gpr1.dout_i_reg[31]_1 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "0" *) 
+  (* ram_addr_end = "63" *) 
+  (* ram_slice_begin = "24" *) 
+  (* ram_slice_end = "26" *) 
   RAM64M RAM_reg_0_63_24_26
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[24]),
         .DIB(din[25]),
         .DIC(din[26]),
@@ -1982,13 +2006,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_0_63_24_26_n_2),
         .DOD(NLW_RAM_reg_0_63_24_26_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(ram_full_fb_i_reg));
+        .WE(\gpr1.dout_i_reg[31]_1 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "0" *) 
+  (* ram_addr_end = "63" *) 
+  (* ram_slice_begin = "27" *) 
+  (* ram_slice_end = "29" *) 
   RAM64M RAM_reg_0_63_27_29
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[27]),
         .DIB(din[28]),
         .DIC(din[29]),
@@ -1998,14 +2026,18 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_0_63_27_29_n_2),
         .DOD(NLW_RAM_reg_0_63_27_29_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(ram_full_fb_i_reg));
+        .WE(\gpr1.dout_i_reg[31]_1 ));
+  (* ram_addr_begin = "0" *) 
+  (* ram_addr_end = "63" *) 
+  (* ram_slice_begin = "30" *) 
+  (* ram_slice_end = "30" *) 
   RAM64X1D RAM_reg_0_63_30_30
-       (.A0(\gic0.gc0.count_d2_reg[5] [0]),
-        .A1(\gic0.gc0.count_d2_reg[5] [1]),
-        .A2(\gic0.gc0.count_d2_reg[5] [2]),
-        .A3(\gic0.gc0.count_d2_reg[5] [3]),
-        .A4(\gic0.gc0.count_d2_reg[5] [4]),
-        .A5(\gic0.gc0.count_d2_reg[5] [5]),
+       (.A0(\gpr1.dout_i_reg[0]_0 [0]),
+        .A1(\gpr1.dout_i_reg[0]_0 [1]),
+        .A2(\gpr1.dout_i_reg[0]_0 [2]),
+        .A3(\gpr1.dout_i_reg[0]_0 [3]),
+        .A4(\gpr1.dout_i_reg[0]_0 [4]),
+        .A5(\gpr1.dout_i_reg[0]_0 [5]),
         .D(din[30]),
         .DPO(RAM_reg_0_63_30_30_n_0),
         .DPRA0(Q[0]),
@@ -2016,14 +2048,18 @@ module AsynDisfifo32x256_dmem
         .DPRA5(Q[5]),
         .SPO(NLW_RAM_reg_0_63_30_30_SPO_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(ram_full_fb_i_reg));
+        .WE(\gpr1.dout_i_reg[31]_1 ));
+  (* ram_addr_begin = "0" *) 
+  (* ram_addr_end = "63" *) 
+  (* ram_slice_begin = "31" *) 
+  (* ram_slice_end = "31" *) 
   RAM64X1D RAM_reg_0_63_31_31
-       (.A0(\gic0.gc0.count_d2_reg[5] [0]),
-        .A1(\gic0.gc0.count_d2_reg[5] [1]),
-        .A2(\gic0.gc0.count_d2_reg[5] [2]),
-        .A3(\gic0.gc0.count_d2_reg[5] [3]),
-        .A4(\gic0.gc0.count_d2_reg[5] [4]),
-        .A5(\gic0.gc0.count_d2_reg[5] [5]),
+       (.A0(\gpr1.dout_i_reg[0]_0 [0]),
+        .A1(\gpr1.dout_i_reg[0]_0 [1]),
+        .A2(\gpr1.dout_i_reg[0]_0 [2]),
+        .A3(\gpr1.dout_i_reg[0]_0 [3]),
+        .A4(\gpr1.dout_i_reg[0]_0 [4]),
+        .A5(\gpr1.dout_i_reg[0]_0 [5]),
         .D(din[31]),
         .DPO(RAM_reg_0_63_31_31_n_0),
         .DPRA0(Q[0]),
@@ -2034,13 +2070,17 @@ module AsynDisfifo32x256_dmem
         .DPRA5(Q[5]),
         .SPO(NLW_RAM_reg_0_63_31_31_SPO_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(ram_full_fb_i_reg));
+        .WE(\gpr1.dout_i_reg[31]_1 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "0" *) 
+  (* ram_addr_end = "63" *) 
+  (* ram_slice_begin = "3" *) 
+  (* ram_slice_end = "5" *) 
   RAM64M RAM_reg_0_63_3_5
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[3]),
         .DIB(din[4]),
         .DIC(din[5]),
@@ -2050,13 +2090,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_0_63_3_5_n_2),
         .DOD(NLW_RAM_reg_0_63_3_5_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(ram_full_fb_i_reg));
+        .WE(\gpr1.dout_i_reg[31]_1 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "0" *) 
+  (* ram_addr_end = "63" *) 
+  (* ram_slice_begin = "6" *) 
+  (* ram_slice_end = "8" *) 
   RAM64M RAM_reg_0_63_6_8
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[6]),
         .DIB(din[7]),
         .DIC(din[8]),
@@ -2066,13 +2110,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_0_63_6_8_n_2),
         .DOD(NLW_RAM_reg_0_63_6_8_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(ram_full_fb_i_reg));
+        .WE(\gpr1.dout_i_reg[31]_1 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "0" *) 
+  (* ram_addr_end = "63" *) 
+  (* ram_slice_begin = "9" *) 
+  (* ram_slice_end = "11" *) 
   RAM64M RAM_reg_0_63_9_11
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[9]),
         .DIB(din[10]),
         .DIC(din[11]),
@@ -2082,13 +2130,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_0_63_9_11_n_2),
         .DOD(NLW_RAM_reg_0_63_9_11_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(ram_full_fb_i_reg));
+        .WE(\gpr1.dout_i_reg[31]_1 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "128" *) 
+  (* ram_addr_end = "191" *) 
+  (* ram_slice_begin = "0" *) 
+  (* ram_slice_end = "2" *) 
   RAM64M RAM_reg_128_191_0_2
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[0]),
         .DIB(din[1]),
         .DIC(din[2]),
@@ -2098,13 +2150,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_128_191_0_2_n_2),
         .DOD(NLW_RAM_reg_128_191_0_2_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(\gic0.gc0.count_d2_reg[6] ));
+        .WE(\gpr1.dout_i_reg[31]_3 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "128" *) 
+  (* ram_addr_end = "191" *) 
+  (* ram_slice_begin = "12" *) 
+  (* ram_slice_end = "14" *) 
   RAM64M RAM_reg_128_191_12_14
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[12]),
         .DIB(din[13]),
         .DIC(din[14]),
@@ -2114,13 +2170,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_128_191_12_14_n_2),
         .DOD(NLW_RAM_reg_128_191_12_14_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(\gic0.gc0.count_d2_reg[6] ));
+        .WE(\gpr1.dout_i_reg[31]_3 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "128" *) 
+  (* ram_addr_end = "191" *) 
+  (* ram_slice_begin = "15" *) 
+  (* ram_slice_end = "17" *) 
   RAM64M RAM_reg_128_191_15_17
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[15]),
         .DIB(din[16]),
         .DIC(din[17]),
@@ -2130,13 +2190,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_128_191_15_17_n_2),
         .DOD(NLW_RAM_reg_128_191_15_17_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(\gic0.gc0.count_d2_reg[6] ));
+        .WE(\gpr1.dout_i_reg[31]_3 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "128" *) 
+  (* ram_addr_end = "191" *) 
+  (* ram_slice_begin = "18" *) 
+  (* ram_slice_end = "20" *) 
   RAM64M RAM_reg_128_191_18_20
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[18]),
         .DIB(din[19]),
         .DIC(din[20]),
@@ -2146,13 +2210,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_128_191_18_20_n_2),
         .DOD(NLW_RAM_reg_128_191_18_20_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(\gic0.gc0.count_d2_reg[6] ));
+        .WE(\gpr1.dout_i_reg[31]_3 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "128" *) 
+  (* ram_addr_end = "191" *) 
+  (* ram_slice_begin = "21" *) 
+  (* ram_slice_end = "23" *) 
   RAM64M RAM_reg_128_191_21_23
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[21]),
         .DIB(din[22]),
         .DIC(din[23]),
@@ -2162,13 +2230,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_128_191_21_23_n_2),
         .DOD(NLW_RAM_reg_128_191_21_23_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(\gic0.gc0.count_d2_reg[6] ));
+        .WE(\gpr1.dout_i_reg[31]_3 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "128" *) 
+  (* ram_addr_end = "191" *) 
+  (* ram_slice_begin = "24" *) 
+  (* ram_slice_end = "26" *) 
   RAM64M RAM_reg_128_191_24_26
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[24]),
         .DIB(din[25]),
         .DIC(din[26]),
@@ -2178,13 +2250,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_128_191_24_26_n_2),
         .DOD(NLW_RAM_reg_128_191_24_26_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(\gic0.gc0.count_d2_reg[6] ));
+        .WE(\gpr1.dout_i_reg[31]_3 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "128" *) 
+  (* ram_addr_end = "191" *) 
+  (* ram_slice_begin = "27" *) 
+  (* ram_slice_end = "29" *) 
   RAM64M RAM_reg_128_191_27_29
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[27]),
         .DIB(din[28]),
         .DIC(din[29]),
@@ -2194,14 +2270,18 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_128_191_27_29_n_2),
         .DOD(NLW_RAM_reg_128_191_27_29_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(\gic0.gc0.count_d2_reg[6] ));
+        .WE(\gpr1.dout_i_reg[31]_3 ));
+  (* ram_addr_begin = "128" *) 
+  (* ram_addr_end = "191" *) 
+  (* ram_slice_begin = "30" *) 
+  (* ram_slice_end = "30" *) 
   RAM64X1D RAM_reg_128_191_30_30
-       (.A0(\gic0.gc0.count_d2_reg[5] [0]),
-        .A1(\gic0.gc0.count_d2_reg[5] [1]),
-        .A2(\gic0.gc0.count_d2_reg[5] [2]),
-        .A3(\gic0.gc0.count_d2_reg[5] [3]),
-        .A4(\gic0.gc0.count_d2_reg[5] [4]),
-        .A5(\gic0.gc0.count_d2_reg[5] [5]),
+       (.A0(\gpr1.dout_i_reg[0]_0 [0]),
+        .A1(\gpr1.dout_i_reg[0]_0 [1]),
+        .A2(\gpr1.dout_i_reg[0]_0 [2]),
+        .A3(\gpr1.dout_i_reg[0]_0 [3]),
+        .A4(\gpr1.dout_i_reg[0]_0 [4]),
+        .A5(\gpr1.dout_i_reg[0]_0 [5]),
         .D(din[30]),
         .DPO(RAM_reg_128_191_30_30_n_0),
         .DPRA0(Q[0]),
@@ -2212,14 +2292,18 @@ module AsynDisfifo32x256_dmem
         .DPRA5(Q[5]),
         .SPO(NLW_RAM_reg_128_191_30_30_SPO_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(\gic0.gc0.count_d2_reg[6] ));
+        .WE(\gpr1.dout_i_reg[31]_3 ));
+  (* ram_addr_begin = "128" *) 
+  (* ram_addr_end = "191" *) 
+  (* ram_slice_begin = "31" *) 
+  (* ram_slice_end = "31" *) 
   RAM64X1D RAM_reg_128_191_31_31
-       (.A0(\gic0.gc0.count_d2_reg[5] [0]),
-        .A1(\gic0.gc0.count_d2_reg[5] [1]),
-        .A2(\gic0.gc0.count_d2_reg[5] [2]),
-        .A3(\gic0.gc0.count_d2_reg[5] [3]),
-        .A4(\gic0.gc0.count_d2_reg[5] [4]),
-        .A5(\gic0.gc0.count_d2_reg[5] [5]),
+       (.A0(\gpr1.dout_i_reg[0]_0 [0]),
+        .A1(\gpr1.dout_i_reg[0]_0 [1]),
+        .A2(\gpr1.dout_i_reg[0]_0 [2]),
+        .A3(\gpr1.dout_i_reg[0]_0 [3]),
+        .A4(\gpr1.dout_i_reg[0]_0 [4]),
+        .A5(\gpr1.dout_i_reg[0]_0 [5]),
         .D(din[31]),
         .DPO(RAM_reg_128_191_31_31_n_0),
         .DPRA0(Q[0]),
@@ -2230,13 +2314,17 @@ module AsynDisfifo32x256_dmem
         .DPRA5(Q[5]),
         .SPO(NLW_RAM_reg_128_191_31_31_SPO_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(\gic0.gc0.count_d2_reg[6] ));
+        .WE(\gpr1.dout_i_reg[31]_3 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "128" *) 
+  (* ram_addr_end = "191" *) 
+  (* ram_slice_begin = "3" *) 
+  (* ram_slice_end = "5" *) 
   RAM64M RAM_reg_128_191_3_5
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[3]),
         .DIB(din[4]),
         .DIC(din[5]),
@@ -2246,13 +2334,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_128_191_3_5_n_2),
         .DOD(NLW_RAM_reg_128_191_3_5_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(\gic0.gc0.count_d2_reg[6] ));
+        .WE(\gpr1.dout_i_reg[31]_3 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "128" *) 
+  (* ram_addr_end = "191" *) 
+  (* ram_slice_begin = "6" *) 
+  (* ram_slice_end = "8" *) 
   RAM64M RAM_reg_128_191_6_8
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[6]),
         .DIB(din[7]),
         .DIC(din[8]),
@@ -2262,13 +2354,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_128_191_6_8_n_2),
         .DOD(NLW_RAM_reg_128_191_6_8_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(\gic0.gc0.count_d2_reg[6] ));
+        .WE(\gpr1.dout_i_reg[31]_3 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "128" *) 
+  (* ram_addr_end = "191" *) 
+  (* ram_slice_begin = "9" *) 
+  (* ram_slice_end = "11" *) 
   RAM64M RAM_reg_128_191_9_11
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[9]),
         .DIB(din[10]),
         .DIC(din[11]),
@@ -2278,13 +2374,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_128_191_9_11_n_2),
         .DOD(NLW_RAM_reg_128_191_9_11_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(\gic0.gc0.count_d2_reg[6] ));
+        .WE(\gpr1.dout_i_reg[31]_3 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "192" *) 
+  (* ram_addr_end = "255" *) 
+  (* ram_slice_begin = "0" *) 
+  (* ram_slice_end = "2" *) 
   RAM64M RAM_reg_192_255_0_2
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[0]),
         .DIB(din[1]),
         .DIC(din[2]),
@@ -2294,13 +2394,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_192_255_0_2_n_2),
         .DOD(NLW_RAM_reg_192_255_0_2_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(ram_full_fb_i_reg_0));
+        .WE(\gpr1.dout_i_reg[31]_4 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "192" *) 
+  (* ram_addr_end = "255" *) 
+  (* ram_slice_begin = "12" *) 
+  (* ram_slice_end = "14" *) 
   RAM64M RAM_reg_192_255_12_14
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[12]),
         .DIB(din[13]),
         .DIC(din[14]),
@@ -2310,13 +2414,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_192_255_12_14_n_2),
         .DOD(NLW_RAM_reg_192_255_12_14_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(ram_full_fb_i_reg_0));
+        .WE(\gpr1.dout_i_reg[31]_4 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "192" *) 
+  (* ram_addr_end = "255" *) 
+  (* ram_slice_begin = "15" *) 
+  (* ram_slice_end = "17" *) 
   RAM64M RAM_reg_192_255_15_17
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[15]),
         .DIB(din[16]),
         .DIC(din[17]),
@@ -2326,13 +2434,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_192_255_15_17_n_2),
         .DOD(NLW_RAM_reg_192_255_15_17_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(ram_full_fb_i_reg_0));
+        .WE(\gpr1.dout_i_reg[31]_4 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "192" *) 
+  (* ram_addr_end = "255" *) 
+  (* ram_slice_begin = "18" *) 
+  (* ram_slice_end = "20" *) 
   RAM64M RAM_reg_192_255_18_20
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[18]),
         .DIB(din[19]),
         .DIC(din[20]),
@@ -2342,13 +2454,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_192_255_18_20_n_2),
         .DOD(NLW_RAM_reg_192_255_18_20_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(ram_full_fb_i_reg_0));
+        .WE(\gpr1.dout_i_reg[31]_4 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "192" *) 
+  (* ram_addr_end = "255" *) 
+  (* ram_slice_begin = "21" *) 
+  (* ram_slice_end = "23" *) 
   RAM64M RAM_reg_192_255_21_23
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[21]),
         .DIB(din[22]),
         .DIC(din[23]),
@@ -2358,13 +2474,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_192_255_21_23_n_2),
         .DOD(NLW_RAM_reg_192_255_21_23_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(ram_full_fb_i_reg_0));
+        .WE(\gpr1.dout_i_reg[31]_4 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "192" *) 
+  (* ram_addr_end = "255" *) 
+  (* ram_slice_begin = "24" *) 
+  (* ram_slice_end = "26" *) 
   RAM64M RAM_reg_192_255_24_26
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[24]),
         .DIB(din[25]),
         .DIC(din[26]),
@@ -2374,13 +2494,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_192_255_24_26_n_2),
         .DOD(NLW_RAM_reg_192_255_24_26_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(ram_full_fb_i_reg_0));
+        .WE(\gpr1.dout_i_reg[31]_4 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "192" *) 
+  (* ram_addr_end = "255" *) 
+  (* ram_slice_begin = "27" *) 
+  (* ram_slice_end = "29" *) 
   RAM64M RAM_reg_192_255_27_29
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[27]),
         .DIB(din[28]),
         .DIC(din[29]),
@@ -2390,14 +2514,18 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_192_255_27_29_n_2),
         .DOD(NLW_RAM_reg_192_255_27_29_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(ram_full_fb_i_reg_0));
+        .WE(\gpr1.dout_i_reg[31]_4 ));
+  (* ram_addr_begin = "192" *) 
+  (* ram_addr_end = "255" *) 
+  (* ram_slice_begin = "30" *) 
+  (* ram_slice_end = "30" *) 
   RAM64X1D RAM_reg_192_255_30_30
-       (.A0(\gic0.gc0.count_d2_reg[5] [0]),
-        .A1(\gic0.gc0.count_d2_reg[5] [1]),
-        .A2(\gic0.gc0.count_d2_reg[5] [2]),
-        .A3(\gic0.gc0.count_d2_reg[5] [3]),
-        .A4(\gic0.gc0.count_d2_reg[5] [4]),
-        .A5(\gic0.gc0.count_d2_reg[5] [5]),
+       (.A0(\gpr1.dout_i_reg[0]_0 [0]),
+        .A1(\gpr1.dout_i_reg[0]_0 [1]),
+        .A2(\gpr1.dout_i_reg[0]_0 [2]),
+        .A3(\gpr1.dout_i_reg[0]_0 [3]),
+        .A4(\gpr1.dout_i_reg[0]_0 [4]),
+        .A5(\gpr1.dout_i_reg[0]_0 [5]),
         .D(din[30]),
         .DPO(RAM_reg_192_255_30_30_n_0),
         .DPRA0(Q[0]),
@@ -2408,14 +2536,18 @@ module AsynDisfifo32x256_dmem
         .DPRA5(Q[5]),
         .SPO(NLW_RAM_reg_192_255_30_30_SPO_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(ram_full_fb_i_reg_0));
+        .WE(\gpr1.dout_i_reg[31]_4 ));
+  (* ram_addr_begin = "192" *) 
+  (* ram_addr_end = "255" *) 
+  (* ram_slice_begin = "31" *) 
+  (* ram_slice_end = "31" *) 
   RAM64X1D RAM_reg_192_255_31_31
-       (.A0(\gic0.gc0.count_d2_reg[5] [0]),
-        .A1(\gic0.gc0.count_d2_reg[5] [1]),
-        .A2(\gic0.gc0.count_d2_reg[5] [2]),
-        .A3(\gic0.gc0.count_d2_reg[5] [3]),
-        .A4(\gic0.gc0.count_d2_reg[5] [4]),
-        .A5(\gic0.gc0.count_d2_reg[5] [5]),
+       (.A0(\gpr1.dout_i_reg[0]_0 [0]),
+        .A1(\gpr1.dout_i_reg[0]_0 [1]),
+        .A2(\gpr1.dout_i_reg[0]_0 [2]),
+        .A3(\gpr1.dout_i_reg[0]_0 [3]),
+        .A4(\gpr1.dout_i_reg[0]_0 [4]),
+        .A5(\gpr1.dout_i_reg[0]_0 [5]),
         .D(din[31]),
         .DPO(RAM_reg_192_255_31_31_n_0),
         .DPRA0(Q[0]),
@@ -2426,13 +2558,17 @@ module AsynDisfifo32x256_dmem
         .DPRA5(Q[5]),
         .SPO(NLW_RAM_reg_192_255_31_31_SPO_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(ram_full_fb_i_reg_0));
+        .WE(\gpr1.dout_i_reg[31]_4 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "192" *) 
+  (* ram_addr_end = "255" *) 
+  (* ram_slice_begin = "3" *) 
+  (* ram_slice_end = "5" *) 
   RAM64M RAM_reg_192_255_3_5
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[3]),
         .DIB(din[4]),
         .DIC(din[5]),
@@ -2442,13 +2578,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_192_255_3_5_n_2),
         .DOD(NLW_RAM_reg_192_255_3_5_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(ram_full_fb_i_reg_0));
+        .WE(\gpr1.dout_i_reg[31]_4 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "192" *) 
+  (* ram_addr_end = "255" *) 
+  (* ram_slice_begin = "6" *) 
+  (* ram_slice_end = "8" *) 
   RAM64M RAM_reg_192_255_6_8
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[6]),
         .DIB(din[7]),
         .DIC(din[8]),
@@ -2458,13 +2598,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_192_255_6_8_n_2),
         .DOD(NLW_RAM_reg_192_255_6_8_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(ram_full_fb_i_reg_0));
+        .WE(\gpr1.dout_i_reg[31]_4 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "192" *) 
+  (* ram_addr_end = "255" *) 
+  (* ram_slice_begin = "9" *) 
+  (* ram_slice_end = "11" *) 
   RAM64M RAM_reg_192_255_9_11
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[9]),
         .DIB(din[10]),
         .DIC(din[11]),
@@ -2474,13 +2618,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_192_255_9_11_n_2),
         .DOD(NLW_RAM_reg_192_255_9_11_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(ram_full_fb_i_reg_0));
+        .WE(\gpr1.dout_i_reg[31]_4 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "64" *) 
+  (* ram_addr_end = "127" *) 
+  (* ram_slice_begin = "0" *) 
+  (* ram_slice_end = "2" *) 
   RAM64M RAM_reg_64_127_0_2
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[0]),
         .DIB(din[1]),
         .DIC(din[2]),
@@ -2490,13 +2638,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_64_127_0_2_n_2),
         .DOD(NLW_RAM_reg_64_127_0_2_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(\gic0.gc0.count_d2_reg[7] ));
+        .WE(\gpr1.dout_i_reg[31]_2 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "64" *) 
+  (* ram_addr_end = "127" *) 
+  (* ram_slice_begin = "12" *) 
+  (* ram_slice_end = "14" *) 
   RAM64M RAM_reg_64_127_12_14
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[12]),
         .DIB(din[13]),
         .DIC(din[14]),
@@ -2506,13 +2658,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_64_127_12_14_n_2),
         .DOD(NLW_RAM_reg_64_127_12_14_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(\gic0.gc0.count_d2_reg[7] ));
+        .WE(\gpr1.dout_i_reg[31]_2 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "64" *) 
+  (* ram_addr_end = "127" *) 
+  (* ram_slice_begin = "15" *) 
+  (* ram_slice_end = "17" *) 
   RAM64M RAM_reg_64_127_15_17
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[15]),
         .DIB(din[16]),
         .DIC(din[17]),
@@ -2522,13 +2678,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_64_127_15_17_n_2),
         .DOD(NLW_RAM_reg_64_127_15_17_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(\gic0.gc0.count_d2_reg[7] ));
+        .WE(\gpr1.dout_i_reg[31]_2 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "64" *) 
+  (* ram_addr_end = "127" *) 
+  (* ram_slice_begin = "18" *) 
+  (* ram_slice_end = "20" *) 
   RAM64M RAM_reg_64_127_18_20
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[18]),
         .DIB(din[19]),
         .DIC(din[20]),
@@ -2538,13 +2698,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_64_127_18_20_n_2),
         .DOD(NLW_RAM_reg_64_127_18_20_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(\gic0.gc0.count_d2_reg[7] ));
+        .WE(\gpr1.dout_i_reg[31]_2 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "64" *) 
+  (* ram_addr_end = "127" *) 
+  (* ram_slice_begin = "21" *) 
+  (* ram_slice_end = "23" *) 
   RAM64M RAM_reg_64_127_21_23
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[21]),
         .DIB(din[22]),
         .DIC(din[23]),
@@ -2554,13 +2718,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_64_127_21_23_n_2),
         .DOD(NLW_RAM_reg_64_127_21_23_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(\gic0.gc0.count_d2_reg[7] ));
+        .WE(\gpr1.dout_i_reg[31]_2 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "64" *) 
+  (* ram_addr_end = "127" *) 
+  (* ram_slice_begin = "24" *) 
+  (* ram_slice_end = "26" *) 
   RAM64M RAM_reg_64_127_24_26
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[24]),
         .DIB(din[25]),
         .DIC(din[26]),
@@ -2570,13 +2738,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_64_127_24_26_n_2),
         .DOD(NLW_RAM_reg_64_127_24_26_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(\gic0.gc0.count_d2_reg[7] ));
+        .WE(\gpr1.dout_i_reg[31]_2 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "64" *) 
+  (* ram_addr_end = "127" *) 
+  (* ram_slice_begin = "27" *) 
+  (* ram_slice_end = "29" *) 
   RAM64M RAM_reg_64_127_27_29
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[27]),
         .DIB(din[28]),
         .DIC(din[29]),
@@ -2586,14 +2758,18 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_64_127_27_29_n_2),
         .DOD(NLW_RAM_reg_64_127_27_29_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(\gic0.gc0.count_d2_reg[7] ));
+        .WE(\gpr1.dout_i_reg[31]_2 ));
+  (* ram_addr_begin = "64" *) 
+  (* ram_addr_end = "127" *) 
+  (* ram_slice_begin = "30" *) 
+  (* ram_slice_end = "30" *) 
   RAM64X1D RAM_reg_64_127_30_30
-       (.A0(\gic0.gc0.count_d2_reg[5] [0]),
-        .A1(\gic0.gc0.count_d2_reg[5] [1]),
-        .A2(\gic0.gc0.count_d2_reg[5] [2]),
-        .A3(\gic0.gc0.count_d2_reg[5] [3]),
-        .A4(\gic0.gc0.count_d2_reg[5] [4]),
-        .A5(\gic0.gc0.count_d2_reg[5] [5]),
+       (.A0(\gpr1.dout_i_reg[0]_0 [0]),
+        .A1(\gpr1.dout_i_reg[0]_0 [1]),
+        .A2(\gpr1.dout_i_reg[0]_0 [2]),
+        .A3(\gpr1.dout_i_reg[0]_0 [3]),
+        .A4(\gpr1.dout_i_reg[0]_0 [4]),
+        .A5(\gpr1.dout_i_reg[0]_0 [5]),
         .D(din[30]),
         .DPO(RAM_reg_64_127_30_30_n_0),
         .DPRA0(Q[0]),
@@ -2604,14 +2780,18 @@ module AsynDisfifo32x256_dmem
         .DPRA5(Q[5]),
         .SPO(NLW_RAM_reg_64_127_30_30_SPO_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(\gic0.gc0.count_d2_reg[7] ));
+        .WE(\gpr1.dout_i_reg[31]_2 ));
+  (* ram_addr_begin = "64" *) 
+  (* ram_addr_end = "127" *) 
+  (* ram_slice_begin = "31" *) 
+  (* ram_slice_end = "31" *) 
   RAM64X1D RAM_reg_64_127_31_31
-       (.A0(\gic0.gc0.count_d2_reg[5] [0]),
-        .A1(\gic0.gc0.count_d2_reg[5] [1]),
-        .A2(\gic0.gc0.count_d2_reg[5] [2]),
-        .A3(\gic0.gc0.count_d2_reg[5] [3]),
-        .A4(\gic0.gc0.count_d2_reg[5] [4]),
-        .A5(\gic0.gc0.count_d2_reg[5] [5]),
+       (.A0(\gpr1.dout_i_reg[0]_0 [0]),
+        .A1(\gpr1.dout_i_reg[0]_0 [1]),
+        .A2(\gpr1.dout_i_reg[0]_0 [2]),
+        .A3(\gpr1.dout_i_reg[0]_0 [3]),
+        .A4(\gpr1.dout_i_reg[0]_0 [4]),
+        .A5(\gpr1.dout_i_reg[0]_0 [5]),
         .D(din[31]),
         .DPO(RAM_reg_64_127_31_31_n_0),
         .DPRA0(Q[0]),
@@ -2622,13 +2802,17 @@ module AsynDisfifo32x256_dmem
         .DPRA5(Q[5]),
         .SPO(NLW_RAM_reg_64_127_31_31_SPO_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(\gic0.gc0.count_d2_reg[7] ));
+        .WE(\gpr1.dout_i_reg[31]_2 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "64" *) 
+  (* ram_addr_end = "127" *) 
+  (* ram_slice_begin = "3" *) 
+  (* ram_slice_end = "5" *) 
   RAM64M RAM_reg_64_127_3_5
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[3]),
         .DIB(din[4]),
         .DIC(din[5]),
@@ -2638,13 +2822,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_64_127_3_5_n_2),
         .DOD(NLW_RAM_reg_64_127_3_5_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(\gic0.gc0.count_d2_reg[7] ));
+        .WE(\gpr1.dout_i_reg[31]_2 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "64" *) 
+  (* ram_addr_end = "127" *) 
+  (* ram_slice_begin = "6" *) 
+  (* ram_slice_end = "8" *) 
   RAM64M RAM_reg_64_127_6_8
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[6]),
         .DIB(din[7]),
         .DIC(din[8]),
@@ -2654,13 +2842,17 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_64_127_6_8_n_2),
         .DOD(NLW_RAM_reg_64_127_6_8_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(\gic0.gc0.count_d2_reg[7] ));
+        .WE(\gpr1.dout_i_reg[31]_2 ));
   (* METHODOLOGY_DRC_VIOS = "" *) 
+  (* ram_addr_begin = "64" *) 
+  (* ram_addr_end = "127" *) 
+  (* ram_slice_begin = "9" *) 
+  (* ram_slice_end = "11" *) 
   RAM64M RAM_reg_64_127_9_11
        (.ADDRA(Q[5:0]),
         .ADDRB(Q[5:0]),
         .ADDRC(Q[5:0]),
-        .ADDRD(\gic0.gc0.count_d2_reg[5] ),
+        .ADDRD(\gpr1.dout_i_reg[0]_0 ),
         .DIA(din[9]),
         .DIB(din[10]),
         .DIC(din[11]),
@@ -2670,7 +2862,7 @@ module AsynDisfifo32x256_dmem
         .DOC(RAM_reg_64_127_9_11_n_2),
         .DOD(NLW_RAM_reg_64_127_9_11_DOD_UNCONNECTED),
         .WCLK(wr_clk),
-        .WE(\gic0.gc0.count_d2_reg[7] ));
+        .WE(\gpr1.dout_i_reg[31]_2 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \gpr1.dout_i[0]_i_1 
@@ -2998,7 +3190,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[0]),
-        .Q(\goreg_dm.dout_i_reg[31] [0]));
+        .Q(\gpr1.dout_i_reg[31]_0 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[10] 
@@ -3006,7 +3198,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[10]),
-        .Q(\goreg_dm.dout_i_reg[31] [10]));
+        .Q(\gpr1.dout_i_reg[31]_0 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[11] 
@@ -3014,7 +3206,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[11]),
-        .Q(\goreg_dm.dout_i_reg[31] [11]));
+        .Q(\gpr1.dout_i_reg[31]_0 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[12] 
@@ -3022,7 +3214,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[12]),
-        .Q(\goreg_dm.dout_i_reg[31] [12]));
+        .Q(\gpr1.dout_i_reg[31]_0 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[13] 
@@ -3030,7 +3222,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[13]),
-        .Q(\goreg_dm.dout_i_reg[31] [13]));
+        .Q(\gpr1.dout_i_reg[31]_0 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[14] 
@@ -3038,7 +3230,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[14]),
-        .Q(\goreg_dm.dout_i_reg[31] [14]));
+        .Q(\gpr1.dout_i_reg[31]_0 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[15] 
@@ -3046,7 +3238,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[15]),
-        .Q(\goreg_dm.dout_i_reg[31] [15]));
+        .Q(\gpr1.dout_i_reg[31]_0 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[16] 
@@ -3054,7 +3246,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[16]),
-        .Q(\goreg_dm.dout_i_reg[31] [16]));
+        .Q(\gpr1.dout_i_reg[31]_0 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[17] 
@@ -3062,7 +3254,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[17]),
-        .Q(\goreg_dm.dout_i_reg[31] [17]));
+        .Q(\gpr1.dout_i_reg[31]_0 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[18] 
@@ -3070,7 +3262,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[18]),
-        .Q(\goreg_dm.dout_i_reg[31] [18]));
+        .Q(\gpr1.dout_i_reg[31]_0 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[19] 
@@ -3078,7 +3270,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[19]),
-        .Q(\goreg_dm.dout_i_reg[31] [19]));
+        .Q(\gpr1.dout_i_reg[31]_0 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[1] 
@@ -3086,7 +3278,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[1]),
-        .Q(\goreg_dm.dout_i_reg[31] [1]));
+        .Q(\gpr1.dout_i_reg[31]_0 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[20] 
@@ -3094,7 +3286,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[20]),
-        .Q(\goreg_dm.dout_i_reg[31] [20]));
+        .Q(\gpr1.dout_i_reg[31]_0 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[21] 
@@ -3102,7 +3294,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[21]),
-        .Q(\goreg_dm.dout_i_reg[31] [21]));
+        .Q(\gpr1.dout_i_reg[31]_0 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[22] 
@@ -3110,7 +3302,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[22]),
-        .Q(\goreg_dm.dout_i_reg[31] [22]));
+        .Q(\gpr1.dout_i_reg[31]_0 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[23] 
@@ -3118,7 +3310,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[23]),
-        .Q(\goreg_dm.dout_i_reg[31] [23]));
+        .Q(\gpr1.dout_i_reg[31]_0 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[24] 
@@ -3126,7 +3318,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[24]),
-        .Q(\goreg_dm.dout_i_reg[31] [24]));
+        .Q(\gpr1.dout_i_reg[31]_0 [24]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[25] 
@@ -3134,7 +3326,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[25]),
-        .Q(\goreg_dm.dout_i_reg[31] [25]));
+        .Q(\gpr1.dout_i_reg[31]_0 [25]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[26] 
@@ -3142,7 +3334,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[26]),
-        .Q(\goreg_dm.dout_i_reg[31] [26]));
+        .Q(\gpr1.dout_i_reg[31]_0 [26]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[27] 
@@ -3150,7 +3342,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[27]),
-        .Q(\goreg_dm.dout_i_reg[31] [27]));
+        .Q(\gpr1.dout_i_reg[31]_0 [27]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[28] 
@@ -3158,7 +3350,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[28]),
-        .Q(\goreg_dm.dout_i_reg[31] [28]));
+        .Q(\gpr1.dout_i_reg[31]_0 [28]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[29] 
@@ -3166,7 +3358,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[29]),
-        .Q(\goreg_dm.dout_i_reg[31] [29]));
+        .Q(\gpr1.dout_i_reg[31]_0 [29]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[2] 
@@ -3174,7 +3366,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[2]),
-        .Q(\goreg_dm.dout_i_reg[31] [2]));
+        .Q(\gpr1.dout_i_reg[31]_0 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[30] 
@@ -3182,7 +3374,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[30]),
-        .Q(\goreg_dm.dout_i_reg[31] [30]));
+        .Q(\gpr1.dout_i_reg[31]_0 [30]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[31] 
@@ -3190,7 +3382,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[31]),
-        .Q(\goreg_dm.dout_i_reg[31] [31]));
+        .Q(\gpr1.dout_i_reg[31]_0 [31]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[3] 
@@ -3198,7 +3390,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[3]),
-        .Q(\goreg_dm.dout_i_reg[31] [3]));
+        .Q(\gpr1.dout_i_reg[31]_0 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[4] 
@@ -3206,7 +3398,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[4]),
-        .Q(\goreg_dm.dout_i_reg[31] [4]));
+        .Q(\gpr1.dout_i_reg[31]_0 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[5] 
@@ -3214,7 +3406,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[5]),
-        .Q(\goreg_dm.dout_i_reg[31] [5]));
+        .Q(\gpr1.dout_i_reg[31]_0 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[6] 
@@ -3222,7 +3414,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[6]),
-        .Q(\goreg_dm.dout_i_reg[31] [6]));
+        .Q(\gpr1.dout_i_reg[31]_0 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[7] 
@@ -3230,7 +3422,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[7]),
-        .Q(\goreg_dm.dout_i_reg[31] [7]));
+        .Q(\gpr1.dout_i_reg[31]_0 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[8] 
@@ -3238,7 +3430,7 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[8]),
-        .Q(\goreg_dm.dout_i_reg[31] [8]));
+        .Q(\gpr1.dout_i_reg[31]_0 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[9] 
@@ -3246,13 +3438,13 @@ module AsynDisfifo32x256_dmem
         .CE(E),
         .CLR(AR),
         .D(p_0_out[9]),
-        .Q(\goreg_dm.dout_i_reg[31] [9]));
+        .Q(\gpr1.dout_i_reg[31]_0 [9]));
 endmodule
 
 (* ORIG_REF_NAME = "fifo_generator_ramfifo" *) 
 module AsynDisfifo32x256_fifo_generator_ramfifo
    (wr_rst_busy,
-    \syncstages_ff_reg[0] ,
+    \ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ,
     empty,
     full,
     dout,
@@ -3264,7 +3456,7 @@ module AsynDisfifo32x256_fifo_generator_ramfifo
     wr_en,
     rd_en);
   output wr_rst_busy;
-  output \syncstages_ff_reg[0] ;
+  output \ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ;
   output empty;
   output full;
   output [31:0]dout;
@@ -3288,6 +3480,7 @@ module AsynDisfifo32x256_fifo_generator_ramfifo
   wire \gntv_or_sync_fifo.gl0.wr_n_18 ;
   wire \gntv_or_sync_fifo.gl0.wr_n_26 ;
   wire \gntv_or_sync_fifo.gl0.wr_n_6 ;
+  wire \ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ;
   wire [7:0]p_0_out_0;
   wire [7:0]p_13_out;
   wire [7:0]p_14_out;
@@ -3302,7 +3495,6 @@ module AsynDisfifo32x256_fifo_generator_ramfifo
   wire rst_full_ff_i;
   wire rst_full_gen_i;
   wire rstblk_n_0;
-  wire \syncstages_ff_reg[0] ;
   wire wr_clk;
   wire wr_en;
   wire [6:0]wr_pntr_plus2;
@@ -3313,22 +3505,22 @@ module AsynDisfifo32x256_fifo_generator_ramfifo
         .RD_PNTR_WR(p_25_out),
         .S(\gntv_or_sync_fifo.gcx.clkx_n_9 ),
         .WR_PNTR_RD(p_24_out),
-        .\dest_out_bin_ff_reg[3] (\gntv_or_sync_fifo.gl0.wr_n_26 ),
-        .\gc0.count_d1_reg[7] (p_0_out_0),
-        .\gic0.gc0.count_d2_reg[7] (p_13_out),
-        .\gic0.gc0.count_reg[6] (wr_pntr_plus2),
+        .\dest_out_bin_ff_reg[6] (\gntv_or_sync_fifo.gcx.clkx_n_0 ),
         .out(rst_full_gen_i),
-        .ram_full_fb_i_reg(\gntv_or_sync_fifo.gcx.clkx_n_0 ),
+        .ram_full_fb_i_reg(\gntv_or_sync_fifo.gl0.wr_n_26 ),
         .ram_full_fb_i_reg_0(\gntv_or_sync_fifo.gl0.wr_n_18 ),
+        .ram_full_i_i_5_0(wr_pntr_plus2),
         .rd_clk(rd_clk),
+        .\src_gray_ff_reg[7] (p_13_out),
+        .\src_gray_ff_reg[7]_0 (p_0_out_0),
         .wr_clk(wr_clk));
   AsynDisfifo32x256_rd_logic \gntv_or_sync_fifo.gl0.rd 
-       (.AR(\syncstages_ff_reg[0] ),
+       (.AR(\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
         .E(ram_rd_en_i),
         .Q(p_0_out_0),
         .WR_PNTR_RD(p_24_out),
         .empty(empty),
-        .\goreg_dm.dout_i_reg[31] (p_6_out),
+        .\gpregsm1.curr_fwft_state_reg[1] (p_6_out),
         .rd_clk(rd_clk),
         .rd_en(rd_en));
   AsynDisfifo32x256_wr_logic \gntv_or_sync_fifo.gl0.wr 
@@ -3336,42 +3528,42 @@ module AsynDisfifo32x256_fifo_generator_ramfifo
         .Q({p_14_out[7:6],p_14_out[1:0]}),
         .RD_PNTR_WR(p_25_out),
         .S(\gntv_or_sync_fifo.gcx.clkx_n_9 ),
-        .\dest_out_bin_ff_reg[6] (\gntv_or_sync_fifo.gcx.clkx_n_0 ),
+        .\dest_out_bin_ff_reg[3] (\gntv_or_sync_fifo.gl0.wr_n_26 ),
         .full(full),
-        .\gic0.gc0.count_d1_reg[6] (wr_pntr_plus2),
-        .\gpr1.dout_i_reg[31] (\gntv_or_sync_fifo.gl0.wr_n_6 ),
-        .\gpr1.dout_i_reg[31]_0 (\gntv_or_sync_fifo.gl0.wr_n_15 ),
-        .\gpr1.dout_i_reg[31]_1 (\gntv_or_sync_fifo.gl0.wr_n_16 ),
-        .\gpr1.dout_i_reg[31]_2 (\gntv_or_sync_fifo.gl0.wr_n_17 ),
-        .\grstd1.grst_full.grst_f.rst_d3_reg (rst_full_gen_i),
+        .\gic0.gc0.count_d2_reg[6] (\gntv_or_sync_fifo.gl0.wr_n_16 ),
+        .\gic0.gc0.count_d2_reg[7] (p_13_out),
+        .\gic0.gc0.count_d2_reg[7]_0 (\gntv_or_sync_fifo.gl0.wr_n_15 ),
+        .\gic0.gc0.count_reg[6] (wr_pntr_plus2),
+        .\gpf1.prog_full_i_reg (rst_full_gen_i),
         .out(rst_full_ff_i),
         .prog_full(prog_full),
-        .ram_full_fb_i_reg(\gntv_or_sync_fifo.gl0.wr_n_18 ),
-        .ram_full_fb_i_reg_0(\gntv_or_sync_fifo.gl0.wr_n_26 ),
-        .\src_gray_ff_reg[7] (p_13_out),
+        .ram_full_fb_i_reg(\gntv_or_sync_fifo.gl0.wr_n_6 ),
+        .ram_full_fb_i_reg_0(\gntv_or_sync_fifo.gl0.wr_n_17 ),
+        .ram_full_fb_i_reg_1(\gntv_or_sync_fifo.gl0.wr_n_18 ),
+        .ram_full_fb_i_reg_2(\gntv_or_sync_fifo.gcx.clkx_n_0 ),
         .wr_clk(wr_clk),
         .wr_en(wr_en));
   AsynDisfifo32x256_memory \gntv_or_sync_fifo.mem 
-       (.AR(\syncstages_ff_reg[0] ),
+       (.AR(\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
         .E(ram_rd_en_i),
         .Q(p_0_out_0),
         .din(din),
         .dout(dout),
-        .\gic0.gc0.count_d2_reg[5] (p_13_out[5:0]),
-        .\gic0.gc0.count_d2_reg[6] (\gntv_or_sync_fifo.gl0.wr_n_16 ),
-        .\gic0.gc0.count_d2_reg[7] (\gntv_or_sync_fifo.gl0.wr_n_15 ),
-        .\gpregsm1.curr_fwft_state_reg[1] (p_6_out),
-        .ram_full_fb_i_reg(\gntv_or_sync_fifo.gl0.wr_n_6 ),
-        .ram_full_fb_i_reg_0(\gntv_or_sync_fifo.gl0.wr_n_17 ),
+        .\goreg_dm.dout_i_reg[31]_0 (p_6_out),
+        .\gpr1.dout_i_reg[0] (p_13_out[5:0]),
+        .\gpr1.dout_i_reg[31] (\gntv_or_sync_fifo.gl0.wr_n_6 ),
+        .\gpr1.dout_i_reg[31]_0 (\gntv_or_sync_fifo.gl0.wr_n_15 ),
+        .\gpr1.dout_i_reg[31]_1 (\gntv_or_sync_fifo.gl0.wr_n_16 ),
+        .\gpr1.dout_i_reg[31]_2 (\gntv_or_sync_fifo.gl0.wr_n_17 ),
         .rd_clk(rd_clk),
         .wr_clk(wr_clk));
   AsynDisfifo32x256_reset_blk_ramfifo rstblk
        (.AR(rstblk_n_0),
-        .\gpf1.prog_full_i_reg (rst_full_gen_i),
+        .\grstd1.grst_full.grst_f.rst_d3_reg_0 (rst_full_gen_i),
+        .\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg_0 (\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
         .out(rst_full_ff_i),
         .rd_clk(rd_clk),
         .rst(rst),
-        .\syncstages_ff_reg[0] (\syncstages_ff_reg[0] ),
         .wr_clk(wr_clk),
         .wr_rst_busy(wr_rst_busy));
 endmodule
@@ -3421,11 +3613,11 @@ module AsynDisfifo32x256_fifo_generator_top
         .dout(dout),
         .empty(empty),
         .full(full),
+        .\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg (AR),
         .prog_full(prog_full),
         .rd_clk(rd_clk),
         .rd_en(rd_en),
         .rst(rst),
-        .\syncstages_ff_reg[0] (AR),
         .wr_clk(wr_clk),
         .wr_en(wr_en),
         .wr_rst_busy(wr_rst_busy));
@@ -3447,7 +3639,7 @@ endmodule
 (* C_ENABLE_RST_SYNC = "1" *) (* C_EN_SAFETY_CKT = "0" *) (* C_ERROR_INJECTION_TYPE = "0" *) 
 (* C_ERROR_INJECTION_TYPE_AXIS = "0" *) (* C_ERROR_INJECTION_TYPE_RACH = "0" *) (* C_ERROR_INJECTION_TYPE_RDCH = "0" *) 
 (* C_ERROR_INJECTION_TYPE_WACH = "0" *) (* C_ERROR_INJECTION_TYPE_WDCH = "0" *) (* C_ERROR_INJECTION_TYPE_WRCH = "0" *) 
-(* C_FAMILY = "zynq" *) (* C_FULL_FLAGS_RST_VAL = "1" *) (* C_HAS_ALMOST_EMPTY = "0" *) 
+(* C_FAMILY = "kintex7" *) (* C_FULL_FLAGS_RST_VAL = "1" *) (* C_HAS_ALMOST_EMPTY = "0" *) 
 (* C_HAS_ALMOST_FULL = "0" *) (* C_HAS_AXIS_TDATA = "1" *) (* C_HAS_AXIS_TDEST = "0" *) 
 (* C_HAS_AXIS_TID = "0" *) (* C_HAS_AXIS_TKEEP = "0" *) (* C_HAS_AXIS_TLAST = "0" *) 
 (* C_HAS_AXIS_TREADY = "1" *) (* C_HAS_AXIS_TSTRB = "0" *) (* C_HAS_AXIS_TUSER = "1" *) 
@@ -3498,8 +3690,8 @@ endmodule
 (* C_WR_DEPTH_WRCH = "16" *) (* C_WR_FREQ = "1" *) (* C_WR_PNTR_WIDTH = "8" *) 
 (* C_WR_PNTR_WIDTH_AXIS = "10" *) (* C_WR_PNTR_WIDTH_RACH = "4" *) (* C_WR_PNTR_WIDTH_RDCH = "10" *) 
 (* C_WR_PNTR_WIDTH_WACH = "4" *) (* C_WR_PNTR_WIDTH_WDCH = "10" *) (* C_WR_PNTR_WIDTH_WRCH = "4" *) 
-(* C_WR_RESPONSE_LATENCY = "1" *) (* ORIG_REF_NAME = "fifo_generator_v13_2_2" *) 
-module AsynDisfifo32x256_fifo_generator_v13_2_2
+(* C_WR_RESPONSE_LATENCY = "1" *) (* ORIG_REF_NAME = "fifo_generator_v13_2_3" *) 
+module AsynDisfifo32x256_fifo_generator_v13_2_3
    (backup,
     backup_marker,
     clk,
@@ -4498,25 +4690,25 @@ module AsynDisfifo32x256_fifo_generator_v13_2_2
        (.G(\<const0> ));
   VCC VCC
        (.P(\<const1> ));
-  AsynDisfifo32x256_fifo_generator_v13_2_2_synth inst_fifo_gen
+  AsynDisfifo32x256_fifo_generator_v13_2_3_synth inst_fifo_gen
        (.din(din),
         .dout(dout),
         .empty(empty),
         .full(full),
+        .\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg (rd_rst_busy),
         .prog_full(prog_full),
         .rd_clk(rd_clk),
         .rd_en(rd_en),
         .rst(rst),
-        .\syncstages_ff_reg[0] (rd_rst_busy),
         .wr_clk(wr_clk),
         .wr_en(wr_en),
         .wr_rst_busy(wr_rst_busy));
 endmodule
 
-(* ORIG_REF_NAME = "fifo_generator_v13_2_2_synth" *) 
-module AsynDisfifo32x256_fifo_generator_v13_2_2_synth
+(* ORIG_REF_NAME = "fifo_generator_v13_2_3_synth" *) 
+module AsynDisfifo32x256_fifo_generator_v13_2_3_synth
    (wr_rst_busy,
-    \syncstages_ff_reg[0] ,
+    \ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ,
     empty,
     full,
     dout,
@@ -4528,7 +4720,7 @@ module AsynDisfifo32x256_fifo_generator_v13_2_2_synth
     wr_en,
     rd_en);
   output wr_rst_busy;
-  output \syncstages_ff_reg[0] ;
+  output \ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ;
   output empty;
   output full;
   output [31:0]dout;
@@ -4544,17 +4736,17 @@ module AsynDisfifo32x256_fifo_generator_v13_2_2_synth
   wire [31:0]dout;
   wire empty;
   wire full;
+  wire \ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ;
   wire prog_full;
   wire rd_clk;
   wire rd_en;
   wire rst;
-  wire \syncstages_ff_reg[0] ;
   wire wr_clk;
   wire wr_en;
   wire wr_rst_busy;
 
   AsynDisfifo32x256_fifo_generator_top \gconvfifo.rf 
-       (.AR(\syncstages_ff_reg[0] ),
+       (.AR(\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
         .din(din),
         .dout(dout),
         .empty(empty),
@@ -4573,29 +4765,29 @@ module AsynDisfifo32x256_memory
    (dout,
     wr_clk,
     din,
-    ram_full_fb_i_reg,
+    \gpr1.dout_i_reg[31] ,
     Q,
-    \gic0.gc0.count_d2_reg[5] ,
-    \gic0.gc0.count_d2_reg[7] ,
-    \gic0.gc0.count_d2_reg[6] ,
-    ram_full_fb_i_reg_0,
+    \gpr1.dout_i_reg[0] ,
+    \gpr1.dout_i_reg[31]_0 ,
+    \gpr1.dout_i_reg[31]_1 ,
+    \gpr1.dout_i_reg[31]_2 ,
     E,
     rd_clk,
     AR,
-    \gpregsm1.curr_fwft_state_reg[1] );
+    \goreg_dm.dout_i_reg[31]_0 );
   output [31:0]dout;
   input wr_clk;
   input [31:0]din;
-  input ram_full_fb_i_reg;
+  input \gpr1.dout_i_reg[31] ;
   input [7:0]Q;
-  input [5:0]\gic0.gc0.count_d2_reg[5] ;
-  input \gic0.gc0.count_d2_reg[7] ;
-  input \gic0.gc0.count_d2_reg[6] ;
-  input ram_full_fb_i_reg_0;
+  input [5:0]\gpr1.dout_i_reg[0] ;
+  input \gpr1.dout_i_reg[31]_0 ;
+  input \gpr1.dout_i_reg[31]_1 ;
+  input \gpr1.dout_i_reg[31]_2 ;
   input [0:0]E;
   input rd_clk;
   input [0:0]AR;
-  input [0:0]\gpregsm1.curr_fwft_state_reg[1] ;
+  input [0:0]\goreg_dm.dout_i_reg[31]_0 ;
 
   wire [0:0]AR;
   wire [0:0]E;
@@ -4603,12 +4795,12 @@ module AsynDisfifo32x256_memory
   wire [31:0]din;
   wire [31:0]dout;
   wire [31:0]dout_i;
-  wire [5:0]\gic0.gc0.count_d2_reg[5] ;
-  wire \gic0.gc0.count_d2_reg[6] ;
-  wire \gic0.gc0.count_d2_reg[7] ;
-  wire [0:0]\gpregsm1.curr_fwft_state_reg[1] ;
-  wire ram_full_fb_i_reg;
-  wire ram_full_fb_i_reg_0;
+  wire [0:0]\goreg_dm.dout_i_reg[31]_0 ;
+  wire [5:0]\gpr1.dout_i_reg[0] ;
+  wire \gpr1.dout_i_reg[31] ;
+  wire \gpr1.dout_i_reg[31]_0 ;
+  wire \gpr1.dout_i_reg[31]_1 ;
+  wire \gpr1.dout_i_reg[31]_2 ;
   wire rd_clk;
   wire wr_clk;
 
@@ -4617,19 +4809,19 @@ module AsynDisfifo32x256_memory
         .E(E),
         .Q(Q),
         .din(din),
-        .\gic0.gc0.count_d2_reg[5] (\gic0.gc0.count_d2_reg[5] ),
-        .\gic0.gc0.count_d2_reg[6] (\gic0.gc0.count_d2_reg[6] ),
-        .\gic0.gc0.count_d2_reg[7] (\gic0.gc0.count_d2_reg[7] ),
-        .\goreg_dm.dout_i_reg[31] (dout_i),
-        .ram_full_fb_i_reg(ram_full_fb_i_reg),
-        .ram_full_fb_i_reg_0(ram_full_fb_i_reg_0),
+        .\gpr1.dout_i_reg[0]_0 (\gpr1.dout_i_reg[0] ),
+        .\gpr1.dout_i_reg[31]_0 (dout_i),
+        .\gpr1.dout_i_reg[31]_1 (\gpr1.dout_i_reg[31] ),
+        .\gpr1.dout_i_reg[31]_2 (\gpr1.dout_i_reg[31]_0 ),
+        .\gpr1.dout_i_reg[31]_3 (\gpr1.dout_i_reg[31]_1 ),
+        .\gpr1.dout_i_reg[31]_4 (\gpr1.dout_i_reg[31]_2 ),
         .rd_clk(rd_clk),
         .wr_clk(wr_clk));
   FDCE #(
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[0] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[0]),
         .Q(dout[0]));
@@ -4637,7 +4829,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[10] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[10]),
         .Q(dout[10]));
@@ -4645,7 +4837,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[11] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[11]),
         .Q(dout[11]));
@@ -4653,7 +4845,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[12] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[12]),
         .Q(dout[12]));
@@ -4661,7 +4853,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[13] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[13]),
         .Q(dout[13]));
@@ -4669,7 +4861,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[14] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[14]),
         .Q(dout[14]));
@@ -4677,7 +4869,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[15] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[15]),
         .Q(dout[15]));
@@ -4685,7 +4877,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[16] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[16]),
         .Q(dout[16]));
@@ -4693,7 +4885,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[17] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[17]),
         .Q(dout[17]));
@@ -4701,7 +4893,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[18] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[18]),
         .Q(dout[18]));
@@ -4709,7 +4901,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[19] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[19]),
         .Q(dout[19]));
@@ -4717,7 +4909,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[1] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[1]),
         .Q(dout[1]));
@@ -4725,7 +4917,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[20] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[20]),
         .Q(dout[20]));
@@ -4733,7 +4925,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[21] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[21]),
         .Q(dout[21]));
@@ -4741,7 +4933,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[22] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[22]),
         .Q(dout[22]));
@@ -4749,7 +4941,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[23] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[23]),
         .Q(dout[23]));
@@ -4757,7 +4949,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[24] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[24]),
         .Q(dout[24]));
@@ -4765,7 +4957,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[25] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[25]),
         .Q(dout[25]));
@@ -4773,7 +4965,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[26] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[26]),
         .Q(dout[26]));
@@ -4781,7 +4973,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[27] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[27]),
         .Q(dout[27]));
@@ -4789,7 +4981,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[28] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[28]),
         .Q(dout[28]));
@@ -4797,7 +4989,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[29] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[29]),
         .Q(dout[29]));
@@ -4805,7 +4997,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[2] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[2]),
         .Q(dout[2]));
@@ -4813,7 +5005,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[30] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[30]),
         .Q(dout[30]));
@@ -4821,7 +5013,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[31] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[31]),
         .Q(dout[31]));
@@ -4829,7 +5021,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[3] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[3]),
         .Q(dout[3]));
@@ -4837,7 +5029,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[4] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[4]),
         .Q(dout[4]));
@@ -4845,7 +5037,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[5] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[5]),
         .Q(dout[5]));
@@ -4853,7 +5045,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[6] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[6]),
         .Q(dout[6]));
@@ -4861,7 +5053,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[7] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[7]),
         .Q(dout[7]));
@@ -4869,7 +5061,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[8] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[8]),
         .Q(dout[8]));
@@ -4877,7 +5069,7 @@ module AsynDisfifo32x256_memory
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[9] 
        (.C(rd_clk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(\goreg_dm.dout_i_reg[31]_0 ),
         .CLR(AR),
         .D(dout_i[9]),
         .Q(dout[9]));
@@ -4885,13 +5077,13 @@ endmodule
 
 (* ORIG_REF_NAME = "rd_bin_cntr" *) 
 module AsynDisfifo32x256_rd_bin_cntr
-   (ram_empty_i_reg,
+   (\dest_out_bin_ff_reg[5] ,
     Q,
     E,
     WR_PNTR_RD,
     rd_clk,
     AR);
-  output ram_empty_i_reg;
+  output \dest_out_bin_ff_reg[5] ;
   output [7:0]Q;
   input [0:0]E;
   input [7:0]WR_PNTR_RD;
@@ -4902,6 +5094,7 @@ module AsynDisfifo32x256_rd_bin_cntr
   wire [0:0]E;
   wire [7:0]Q;
   wire [7:0]WR_PNTR_RD;
+  wire \dest_out_bin_ff_reg[5] ;
   wire \gc0.count[7]_i_2_n_0 ;
   wire [7:0]plusOp__1;
   wire ram_empty_i_i_2_n_0;
@@ -4912,7 +5105,6 @@ module AsynDisfifo32x256_rd_bin_cntr
   wire ram_empty_i_i_7_n_0;
   wire ram_empty_i_i_8_n_0;
   wire ram_empty_i_i_9_n_0;
-  wire ram_empty_i_reg;
   wire rd_clk;
   wire [7:0]rd_pntr_plus1;
 
@@ -5124,7 +5316,7 @@ module AsynDisfifo32x256_rd_bin_cntr
         .I2(E),
         .I3(ram_empty_i_i_4_n_0),
         .I4(ram_empty_i_i_5_n_0),
-        .O(ram_empty_i_reg));
+        .O(\dest_out_bin_ff_reg[5] ));
   LUT5 #(
     .INIT(32'h6FF6FFFF)) 
     ram_empty_i_i_2
@@ -5201,16 +5393,16 @@ endmodule
 module AsynDisfifo32x256_rd_fwft
    (empty,
     E,
-    \goreg_dm.dout_i_reg[31] ,
-    \gc0.count_d1_reg[7] ,
+    \gpregsm1.curr_fwft_state_reg[1]_0 ,
+    ram_empty_fb_i_reg,
     rd_clk,
     AR,
     rd_en,
     out);
   output empty;
   output [0:0]E;
-  output [0:0]\goreg_dm.dout_i_reg[31] ;
-  output [0:0]\gc0.count_d1_reg[7] ;
+  output [0:0]\gpregsm1.curr_fwft_state_reg[1]_0 ;
+  output [0:0]ram_empty_fb_i_reg;
   input rd_clk;
   input [0:0]AR;
   input rd_en;
@@ -5227,10 +5419,10 @@ module AsynDisfifo32x256_rd_fwft
   wire empty_fwft_fb_o_i0;
   (* DONT_TOUCH *) wire empty_fwft_i;
   wire empty_fwft_i0;
-  wire [0:0]\gc0.count_d1_reg[7] ;
-  wire [0:0]\goreg_dm.dout_i_reg[31] ;
+  wire [0:0]\gpregsm1.curr_fwft_state_reg[1]_0 ;
   wire [1:0]next_fwft_state;
   wire out;
+  wire [0:0]ram_empty_fb_i_reg;
   wire rd_clk;
   wire rd_en;
   (* DONT_TOUCH *) wire user_valid;
@@ -5323,14 +5515,14 @@ module AsynDisfifo32x256_rd_fwft
         .I1(rd_en),
         .I2(curr_fwft_state[1]),
         .I3(curr_fwft_state[0]),
-        .O(\gc0.count_d1_reg[7] ));
+        .O(ram_empty_fb_i_reg));
   LUT3 #(
     .INIT(8'hA2)) 
     \goreg_dm.dout_i[31]_i_1 
        (.I0(curr_fwft_state[1]),
         .I1(curr_fwft_state[0]),
         .I2(rd_en),
-        .O(\goreg_dm.dout_i_reg[31] ));
+        .O(\gpregsm1.curr_fwft_state_reg[1]_0 ));
   LUT4 #(
     .INIT(16'h00F7)) 
     \gpr1.dout_i[31]_i_1 
@@ -5394,7 +5586,7 @@ module AsynDisfifo32x256_rd_logic
    (empty,
     Q,
     E,
-    \goreg_dm.dout_i_reg[31] ,
+    \gpregsm1.curr_fwft_state_reg[1] ,
     rd_clk,
     AR,
     rd_en,
@@ -5402,7 +5594,7 @@ module AsynDisfifo32x256_rd_logic
   output empty;
   output [7:0]Q;
   output [0:0]E;
-  output [0:0]\goreg_dm.dout_i_reg[31] ;
+  output [0:0]\gpregsm1.curr_fwft_state_reg[1] ;
   input rd_clk;
   input [0:0]AR;
   input rd_en;
@@ -5413,7 +5605,7 @@ module AsynDisfifo32x256_rd_logic
   wire [7:0]Q;
   wire [7:0]WR_PNTR_RD;
   wire empty;
-  wire [0:0]\goreg_dm.dout_i_reg[31] ;
+  wire [0:0]\gpregsm1.curr_fwft_state_reg[1] ;
   wire p_2_out;
   wire p_8_out;
   wire rd_clk;
@@ -5424,40 +5616,40 @@ module AsynDisfifo32x256_rd_logic
        (.AR(AR),
         .E(E),
         .empty(empty),
-        .\gc0.count_d1_reg[7] (p_8_out),
-        .\goreg_dm.dout_i_reg[31] (\goreg_dm.dout_i_reg[31] ),
+        .\gpregsm1.curr_fwft_state_reg[1]_0 (\gpregsm1.curr_fwft_state_reg[1] ),
         .out(p_2_out),
+        .ram_empty_fb_i_reg(p_8_out),
         .rd_clk(rd_clk),
         .rd_en(rd_en));
   AsynDisfifo32x256_rd_status_flags_as \gras.rsts 
        (.AR(AR),
-        .\dest_out_bin_ff_reg[5] (rpntr_n_0),
         .out(p_2_out),
+        .ram_empty_i_reg_0(rpntr_n_0),
         .rd_clk(rd_clk));
   AsynDisfifo32x256_rd_bin_cntr rpntr
        (.AR(AR),
         .E(p_8_out),
         .Q(Q),
         .WR_PNTR_RD(WR_PNTR_RD),
-        .ram_empty_i_reg(rpntr_n_0),
+        .\dest_out_bin_ff_reg[5] (rpntr_n_0),
         .rd_clk(rd_clk));
 endmodule
 
 (* ORIG_REF_NAME = "rd_status_flags_as" *) 
 module AsynDisfifo32x256_rd_status_flags_as
    (out,
-    \dest_out_bin_ff_reg[5] ,
+    ram_empty_i_reg_0,
     rd_clk,
     AR);
   output out;
-  input \dest_out_bin_ff_reg[5] ;
+  input ram_empty_i_reg_0;
   input rd_clk;
   input [0:0]AR;
 
   wire [0:0]AR;
-  wire \dest_out_bin_ff_reg[5] ;
   (* DONT_TOUCH *) wire ram_empty_fb_i;
   (* DONT_TOUCH *) wire ram_empty_i;
+  wire ram_empty_i_reg_0;
   wire rd_clk;
 
   assign out = ram_empty_fb_i;
@@ -5469,7 +5661,7 @@ module AsynDisfifo32x256_rd_status_flags_as
     ram_empty_fb_i_reg
        (.C(rd_clk),
         .CE(1'b1),
-        .D(\dest_out_bin_ff_reg[5] ),
+        .D(ram_empty_i_reg_0),
         .PRE(AR),
         .Q(ram_empty_fb_i));
   (* DONT_TOUCH *) 
@@ -5480,7 +5672,7 @@ module AsynDisfifo32x256_rd_status_flags_as
     ram_empty_i_reg
        (.C(rd_clk),
         .CE(1'b1),
-        .D(\dest_out_bin_ff_reg[5] ),
+        .D(ram_empty_i_reg_0),
         .PRE(AR),
         .Q(ram_empty_i));
 endmodule
@@ -5488,17 +5680,17 @@ endmodule
 (* ORIG_REF_NAME = "reset_blk_ramfifo" *) 
 module AsynDisfifo32x256_reset_blk_ramfifo
    (AR,
-    \syncstages_ff_reg[0] ,
+    \ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg_0 ,
     out,
-    \gpf1.prog_full_i_reg ,
+    \grstd1.grst_full.grst_f.rst_d3_reg_0 ,
     wr_rst_busy,
     rst,
     wr_clk,
     rd_clk);
   output [0:0]AR;
-  output [0:0]\syncstages_ff_reg[0] ;
+  output [0:0]\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg_0 ;
   output out;
-  output \gpf1.prog_full_i_reg ;
+  output \grstd1.grst_full.grst_f.rst_d3_reg_0 ;
   output wr_rst_busy;
   input rst;
   input wr_clk;
@@ -5508,6 +5700,7 @@ module AsynDisfifo32x256_reset_blk_ramfifo
   wire dest_out;
   wire \grstd1.grst_full.grst_f.rst_d3_i_1_n_0 ;
   wire \ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_i_1_n_0 ;
+  wire [0:0]\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg_0 ;
   wire \ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_wr_rst_ic_i_1_n_0 ;
   wire \ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.wr_rst_busy_i_i_1_n_0 ;
   wire rd_clk;
@@ -5519,12 +5712,11 @@ module AsynDisfifo32x256_reset_blk_ramfifo
   (* async_reg = "true" *) (* msgon = "true" *) wire rst_rd_reg2;
   (* async_reg = "true" *) (* msgon = "true" *) wire rst_wr_reg2;
   wire sckt_rd_rst_wr;
-  wire [0:0]\syncstages_ff_reg[0] ;
   wire wr_clk;
   wire wr_rst_busy;
   wire [1:0]wr_rst_rd_ext;
 
-  assign \gpf1.prog_full_i_reg  = rst_d3;
+  assign \grstd1.grst_full.grst_f.rst_d3_reg_0  = rst_d3;
   assign out = rst_d2;
   (* ASYNC_REG *) 
   (* KEEP = "yes" *) 
@@ -5612,7 +5804,7 @@ module AsynDisfifo32x256_reset_blk_ramfifo
   LUT2 #(
     .INIT(4'h2)) 
     \ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_i_1 
-       (.I0(\syncstages_ff_reg[0] ),
+       (.I0(\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg_0 ),
         .I1(wr_rst_rd_ext[1]),
         .O(\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_i_1_n_0 ));
   FDPE #(
@@ -5622,7 +5814,7 @@ module AsynDisfifo32x256_reset_blk_ramfifo
         .CE(1'b1),
         .D(\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_i_1_n_0 ),
         .PRE(rst_rd_reg2),
-        .Q(\syncstages_ff_reg[0] ));
+        .Q(\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg_0 ));
   LUT3 #(
     .INIT(8'h8A)) 
     \ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_wr_rst_ic_i_1 
@@ -5682,7 +5874,7 @@ module AsynDisfifo32x256_reset_blk_ramfifo
        (.dest_clk(wr_clk),
         .dest_out(sckt_rd_rst_wr),
         .src_clk(rd_clk),
-        .src_in(\syncstages_ff_reg[0] ));
+        .src_in(\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg_0 ));
   (* DEST_SYNC_FF = "4" *) 
   (* INIT_SYNC_FF = "0" *) 
   (* SIM_ASSERT_CHK = "0" *) 
@@ -5690,7 +5882,7 @@ module AsynDisfifo32x256_reset_blk_ramfifo
   (* VERSION = "0" *) 
   (* XPM_CDC = "SINGLE" *) 
   (* XPM_MODULE = "TRUE" *) 
-  AsynDisfifo32x256_xpm_cdc_single__1 \ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.xpm_cdc_single_inst_wrst_rd 
+  AsynDisfifo32x256_xpm_cdc_single__2 \ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.xpm_cdc_single_inst_wrst_rd 
        (.dest_clk(rd_clk),
         .dest_out(dest_out),
         .src_clk(wr_clk),
@@ -5703,7 +5895,7 @@ module AsynDisfifo32x256_reset_blk_ramfifo
   (* VERSION = "0" *) 
   (* XPM_CDC = "ASYNC_RST" *) 
   (* XPM_MODULE = "TRUE" *) 
-  AsynDisfifo32x256_xpm_cdc_async_rst__1 \ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst 
+  AsynDisfifo32x256_xpm_cdc_async_rst__2 \ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst 
        (.dest_arst(rst_wr_reg2),
         .dest_clk(wr_clk),
         .src_arst(rst));
@@ -5711,32 +5903,32 @@ endmodule
 
 (* ORIG_REF_NAME = "wr_bin_cntr" *) 
 module AsynDisfifo32x256_wr_bin_cntr
-   (\gdiff.diff_pntr_pad_reg[8] ,
+   (\gic0.gc0.count_d1_reg[6]_0 ,
     Q,
     S,
-    \gpr1.dout_i_reg[31] ,
-    \src_gray_ff_reg[7] ,
-    \gpr1.dout_i_reg[31]_0 ,
-    \gpr1.dout_i_reg[31]_1 ,
-    \gpr1.dout_i_reg[31]_2 ,
-    \gic0.gc0.count_d1_reg[7]_0 ,
     ram_full_fb_i_reg,
+    \gic0.gc0.count_d2_reg[7]_0 ,
+    \gic0.gc0.count_d2_reg[7]_1 ,
+    \gic0.gc0.count_d2_reg[6]_0 ,
+    ram_full_fb_i_reg_0,
+    \gic0.gc0.count_reg[7]_0 ,
+    \dest_out_bin_ff_reg[3] ,
     RD_PNTR_WR,
     out,
     wr_en,
     E,
     wr_clk,
     AR);
-  output [2:0]\gdiff.diff_pntr_pad_reg[8] ;
+  output [2:0]\gic0.gc0.count_d1_reg[6]_0 ;
   output [7:0]Q;
   output [3:0]S;
-  output \gpr1.dout_i_reg[31] ;
-  output [7:0]\src_gray_ff_reg[7] ;
-  output \gpr1.dout_i_reg[31]_0 ;
-  output \gpr1.dout_i_reg[31]_1 ;
-  output \gpr1.dout_i_reg[31]_2 ;
-  output [7:0]\gic0.gc0.count_d1_reg[7]_0 ;
   output ram_full_fb_i_reg;
+  output [7:0]\gic0.gc0.count_d2_reg[7]_0 ;
+  output \gic0.gc0.count_d2_reg[7]_1 ;
+  output \gic0.gc0.count_d2_reg[6]_0 ;
+  output ram_full_fb_i_reg_0;
+  output [7:0]\gic0.gc0.count_reg[7]_0 ;
+  output \dest_out_bin_ff_reg[3] ;
   input [6:0]RD_PNTR_WR;
   input out;
   input wr_en;
@@ -5749,18 +5941,18 @@ module AsynDisfifo32x256_wr_bin_cntr
   wire [7:0]Q;
   wire [6:0]RD_PNTR_WR;
   wire [3:0]S;
-  wire [2:0]\gdiff.diff_pntr_pad_reg[8] ;
+  wire \dest_out_bin_ff_reg[3] ;
   wire \gic0.gc0.count[7]_i_2_n_0 ;
-  wire [7:0]\gic0.gc0.count_d1_reg[7]_0 ;
-  wire \gpr1.dout_i_reg[31] ;
-  wire \gpr1.dout_i_reg[31]_0 ;
-  wire \gpr1.dout_i_reg[31]_1 ;
-  wire \gpr1.dout_i_reg[31]_2 ;
+  wire [2:0]\gic0.gc0.count_d1_reg[6]_0 ;
+  wire \gic0.gc0.count_d2_reg[6]_0 ;
+  wire [7:0]\gic0.gc0.count_d2_reg[7]_0 ;
+  wire \gic0.gc0.count_d2_reg[7]_1 ;
+  wire [7:0]\gic0.gc0.count_reg[7]_0 ;
   wire out;
   wire [7:0]plusOp__0;
   wire ram_full_fb_i_reg;
+  wire ram_full_fb_i_reg_0;
   wire ram_full_i_i_6_n_0;
-  wire [7:0]\src_gray_ff_reg[7] ;
   wire wr_clk;
   wire wr_en;
 
@@ -5769,113 +5961,113 @@ module AsynDisfifo32x256_wr_bin_cntr
     RAM_reg_0_63_0_2_i_1
        (.I0(out),
         .I1(wr_en),
-        .I2(\src_gray_ff_reg[7] [6]),
-        .I3(\src_gray_ff_reg[7] [7]),
-        .O(\gpr1.dout_i_reg[31] ));
+        .I2(\gic0.gc0.count_d2_reg[7]_0 [6]),
+        .I3(\gic0.gc0.count_d2_reg[7]_0 [7]),
+        .O(ram_full_fb_i_reg));
   LUT4 #(
     .INIT(16'h0040)) 
     RAM_reg_128_191_0_2_i_1
-       (.I0(\src_gray_ff_reg[7] [6]),
-        .I1(\src_gray_ff_reg[7] [7]),
+       (.I0(\gic0.gc0.count_d2_reg[7]_0 [6]),
+        .I1(\gic0.gc0.count_d2_reg[7]_0 [7]),
         .I2(wr_en),
         .I3(out),
-        .O(\gpr1.dout_i_reg[31]_1 ));
+        .O(\gic0.gc0.count_d2_reg[6]_0 ));
   LUT4 #(
     .INIT(16'h4000)) 
     RAM_reg_192_255_0_2_i_1
        (.I0(out),
         .I1(wr_en),
-        .I2(\src_gray_ff_reg[7] [6]),
-        .I3(\src_gray_ff_reg[7] [7]),
-        .O(\gpr1.dout_i_reg[31]_2 ));
+        .I2(\gic0.gc0.count_d2_reg[7]_0 [6]),
+        .I3(\gic0.gc0.count_d2_reg[7]_0 [7]),
+        .O(ram_full_fb_i_reg_0));
   LUT4 #(
     .INIT(16'h0040)) 
     RAM_reg_64_127_0_2_i_1
-       (.I0(\src_gray_ff_reg[7] [7]),
-        .I1(\src_gray_ff_reg[7] [6]),
+       (.I0(\gic0.gc0.count_d2_reg[7]_0 [7]),
+        .I1(\gic0.gc0.count_d2_reg[7]_0 [6]),
         .I2(wr_en),
         .I3(out),
-        .O(\gpr1.dout_i_reg[31]_0 ));
+        .O(\gic0.gc0.count_d2_reg[7]_1 ));
   (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \gic0.gc0.count[0]_i_1 
-       (.I0(\gic0.gc0.count_d1_reg[7]_0 [0]),
+       (.I0(\gic0.gc0.count_reg[7]_0 [0]),
         .O(plusOp__0[0]));
   LUT2 #(
     .INIT(4'h6)) 
     \gic0.gc0.count[1]_i_1 
-       (.I0(\gic0.gc0.count_d1_reg[7]_0 [0]),
-        .I1(\gic0.gc0.count_d1_reg[7]_0 [1]),
+       (.I0(\gic0.gc0.count_reg[7]_0 [0]),
+        .I1(\gic0.gc0.count_reg[7]_0 [1]),
         .O(plusOp__0[1]));
   (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \gic0.gc0.count[2]_i_1 
-       (.I0(\gic0.gc0.count_d1_reg[7]_0 [1]),
-        .I1(\gic0.gc0.count_d1_reg[7]_0 [0]),
-        .I2(\gic0.gc0.count_d1_reg[7]_0 [2]),
+       (.I0(\gic0.gc0.count_reg[7]_0 [1]),
+        .I1(\gic0.gc0.count_reg[7]_0 [0]),
+        .I2(\gic0.gc0.count_reg[7]_0 [2]),
         .O(plusOp__0[2]));
   (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \gic0.gc0.count[3]_i_1 
-       (.I0(\gic0.gc0.count_d1_reg[7]_0 [2]),
-        .I1(\gic0.gc0.count_d1_reg[7]_0 [0]),
-        .I2(\gic0.gc0.count_d1_reg[7]_0 [1]),
-        .I3(\gic0.gc0.count_d1_reg[7]_0 [3]),
+       (.I0(\gic0.gc0.count_reg[7]_0 [2]),
+        .I1(\gic0.gc0.count_reg[7]_0 [0]),
+        .I2(\gic0.gc0.count_reg[7]_0 [1]),
+        .I3(\gic0.gc0.count_reg[7]_0 [3]),
         .O(plusOp__0[3]));
   (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT5 #(
     .INIT(32'h7FFF8000)) 
     \gic0.gc0.count[4]_i_1 
-       (.I0(\gic0.gc0.count_d1_reg[7]_0 [3]),
-        .I1(\gic0.gc0.count_d1_reg[7]_0 [1]),
-        .I2(\gic0.gc0.count_d1_reg[7]_0 [0]),
-        .I3(\gic0.gc0.count_d1_reg[7]_0 [2]),
-        .I4(\gic0.gc0.count_d1_reg[7]_0 [4]),
+       (.I0(\gic0.gc0.count_reg[7]_0 [3]),
+        .I1(\gic0.gc0.count_reg[7]_0 [1]),
+        .I2(\gic0.gc0.count_reg[7]_0 [0]),
+        .I3(\gic0.gc0.count_reg[7]_0 [2]),
+        .I4(\gic0.gc0.count_reg[7]_0 [4]),
         .O(plusOp__0[4]));
   LUT6 #(
     .INIT(64'h7FFFFFFF80000000)) 
     \gic0.gc0.count[5]_i_1 
-       (.I0(\gic0.gc0.count_d1_reg[7]_0 [4]),
-        .I1(\gic0.gc0.count_d1_reg[7]_0 [2]),
-        .I2(\gic0.gc0.count_d1_reg[7]_0 [0]),
-        .I3(\gic0.gc0.count_d1_reg[7]_0 [1]),
-        .I4(\gic0.gc0.count_d1_reg[7]_0 [3]),
-        .I5(\gic0.gc0.count_d1_reg[7]_0 [5]),
+       (.I0(\gic0.gc0.count_reg[7]_0 [4]),
+        .I1(\gic0.gc0.count_reg[7]_0 [2]),
+        .I2(\gic0.gc0.count_reg[7]_0 [0]),
+        .I3(\gic0.gc0.count_reg[7]_0 [1]),
+        .I4(\gic0.gc0.count_reg[7]_0 [3]),
+        .I5(\gic0.gc0.count_reg[7]_0 [5]),
         .O(plusOp__0[5]));
   (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT2 #(
     .INIT(4'h9)) 
     \gic0.gc0.count[6]_i_1 
        (.I0(\gic0.gc0.count[7]_i_2_n_0 ),
-        .I1(\gic0.gc0.count_d1_reg[7]_0 [6]),
+        .I1(\gic0.gc0.count_reg[7]_0 [6]),
         .O(plusOp__0[6]));
   (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT3 #(
     .INIT(8'hD2)) 
     \gic0.gc0.count[7]_i_1 
-       (.I0(\gic0.gc0.count_d1_reg[7]_0 [6]),
+       (.I0(\gic0.gc0.count_reg[7]_0 [6]),
         .I1(\gic0.gc0.count[7]_i_2_n_0 ),
-        .I2(\gic0.gc0.count_d1_reg[7]_0 [7]),
+        .I2(\gic0.gc0.count_reg[7]_0 [7]),
         .O(plusOp__0[7]));
   LUT6 #(
     .INIT(64'h7FFFFFFFFFFFFFFF)) 
     \gic0.gc0.count[7]_i_2 
-       (.I0(\gic0.gc0.count_d1_reg[7]_0 [4]),
-        .I1(\gic0.gc0.count_d1_reg[7]_0 [2]),
-        .I2(\gic0.gc0.count_d1_reg[7]_0 [0]),
-        .I3(\gic0.gc0.count_d1_reg[7]_0 [1]),
-        .I4(\gic0.gc0.count_d1_reg[7]_0 [3]),
-        .I5(\gic0.gc0.count_d1_reg[7]_0 [5]),
+       (.I0(\gic0.gc0.count_reg[7]_0 [4]),
+        .I1(\gic0.gc0.count_reg[7]_0 [2]),
+        .I2(\gic0.gc0.count_reg[7]_0 [0]),
+        .I3(\gic0.gc0.count_reg[7]_0 [1]),
+        .I4(\gic0.gc0.count_reg[7]_0 [3]),
+        .I5(\gic0.gc0.count_reg[7]_0 [5]),
         .O(\gic0.gc0.count[7]_i_2_n_0 ));
   FDPE #(
     .INIT(1'b1)) 
     \gic0.gc0.count_d1_reg[0] 
        (.C(wr_clk),
         .CE(E),
-        .D(\gic0.gc0.count_d1_reg[7]_0 [0]),
+        .D(\gic0.gc0.count_reg[7]_0 [0]),
         .PRE(AR),
         .Q(Q[0]));
   FDCE #(
@@ -5884,7 +6076,7 @@ module AsynDisfifo32x256_wr_bin_cntr
        (.C(wr_clk),
         .CE(E),
         .CLR(AR),
-        .D(\gic0.gc0.count_d1_reg[7]_0 [1]),
+        .D(\gic0.gc0.count_reg[7]_0 [1]),
         .Q(Q[1]));
   FDCE #(
     .INIT(1'b0)) 
@@ -5892,7 +6084,7 @@ module AsynDisfifo32x256_wr_bin_cntr
        (.C(wr_clk),
         .CE(E),
         .CLR(AR),
-        .D(\gic0.gc0.count_d1_reg[7]_0 [2]),
+        .D(\gic0.gc0.count_reg[7]_0 [2]),
         .Q(Q[2]));
   FDCE #(
     .INIT(1'b0)) 
@@ -5900,7 +6092,7 @@ module AsynDisfifo32x256_wr_bin_cntr
        (.C(wr_clk),
         .CE(E),
         .CLR(AR),
-        .D(\gic0.gc0.count_d1_reg[7]_0 [3]),
+        .D(\gic0.gc0.count_reg[7]_0 [3]),
         .Q(Q[3]));
   FDCE #(
     .INIT(1'b0)) 
@@ -5908,7 +6100,7 @@ module AsynDisfifo32x256_wr_bin_cntr
        (.C(wr_clk),
         .CE(E),
         .CLR(AR),
-        .D(\gic0.gc0.count_d1_reg[7]_0 [4]),
+        .D(\gic0.gc0.count_reg[7]_0 [4]),
         .Q(Q[4]));
   FDCE #(
     .INIT(1'b0)) 
@@ -5916,7 +6108,7 @@ module AsynDisfifo32x256_wr_bin_cntr
        (.C(wr_clk),
         .CE(E),
         .CLR(AR),
-        .D(\gic0.gc0.count_d1_reg[7]_0 [5]),
+        .D(\gic0.gc0.count_reg[7]_0 [5]),
         .Q(Q[5]));
   FDCE #(
     .INIT(1'b0)) 
@@ -5924,7 +6116,7 @@ module AsynDisfifo32x256_wr_bin_cntr
        (.C(wr_clk),
         .CE(E),
         .CLR(AR),
-        .D(\gic0.gc0.count_d1_reg[7]_0 [6]),
+        .D(\gic0.gc0.count_reg[7]_0 [6]),
         .Q(Q[6]));
   FDCE #(
     .INIT(1'b0)) 
@@ -5932,7 +6124,7 @@ module AsynDisfifo32x256_wr_bin_cntr
        (.C(wr_clk),
         .CE(E),
         .CLR(AR),
-        .D(\gic0.gc0.count_d1_reg[7]_0 [7]),
+        .D(\gic0.gc0.count_reg[7]_0 [7]),
         .Q(Q[7]));
   FDCE #(
     .INIT(1'b0)) 
@@ -5941,7 +6133,7 @@ module AsynDisfifo32x256_wr_bin_cntr
         .CE(E),
         .CLR(AR),
         .D(Q[0]),
-        .Q(\src_gray_ff_reg[7] [0]));
+        .Q(\gic0.gc0.count_d2_reg[7]_0 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \gic0.gc0.count_d2_reg[1] 
@@ -5949,7 +6141,7 @@ module AsynDisfifo32x256_wr_bin_cntr
         .CE(E),
         .CLR(AR),
         .D(Q[1]),
-        .Q(\src_gray_ff_reg[7] [1]));
+        .Q(\gic0.gc0.count_d2_reg[7]_0 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \gic0.gc0.count_d2_reg[2] 
@@ -5957,7 +6149,7 @@ module AsynDisfifo32x256_wr_bin_cntr
         .CE(E),
         .CLR(AR),
         .D(Q[2]),
-        .Q(\src_gray_ff_reg[7] [2]));
+        .Q(\gic0.gc0.count_d2_reg[7]_0 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \gic0.gc0.count_d2_reg[3] 
@@ -5965,7 +6157,7 @@ module AsynDisfifo32x256_wr_bin_cntr
         .CE(E),
         .CLR(AR),
         .D(Q[3]),
-        .Q(\src_gray_ff_reg[7] [3]));
+        .Q(\gic0.gc0.count_d2_reg[7]_0 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \gic0.gc0.count_d2_reg[4] 
@@ -5973,7 +6165,7 @@ module AsynDisfifo32x256_wr_bin_cntr
         .CE(E),
         .CLR(AR),
         .D(Q[4]),
-        .Q(\src_gray_ff_reg[7] [4]));
+        .Q(\gic0.gc0.count_d2_reg[7]_0 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \gic0.gc0.count_d2_reg[5] 
@@ -5981,7 +6173,7 @@ module AsynDisfifo32x256_wr_bin_cntr
         .CE(E),
         .CLR(AR),
         .D(Q[5]),
-        .Q(\src_gray_ff_reg[7] [5]));
+        .Q(\gic0.gc0.count_d2_reg[7]_0 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \gic0.gc0.count_d2_reg[6] 
@@ -5989,7 +6181,7 @@ module AsynDisfifo32x256_wr_bin_cntr
         .CE(E),
         .CLR(AR),
         .D(Q[6]),
-        .Q(\src_gray_ff_reg[7] [6]));
+        .Q(\gic0.gc0.count_d2_reg[7]_0 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \gic0.gc0.count_d2_reg[7] 
@@ -5997,7 +6189,7 @@ module AsynDisfifo32x256_wr_bin_cntr
         .CE(E),
         .CLR(AR),
         .D(Q[7]),
-        .Q(\src_gray_ff_reg[7] [7]));
+        .Q(\gic0.gc0.count_d2_reg[7]_0 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \gic0.gc0.count_reg[0] 
@@ -6005,7 +6197,7 @@ module AsynDisfifo32x256_wr_bin_cntr
         .CE(E),
         .CLR(AR),
         .D(plusOp__0[0]),
-        .Q(\gic0.gc0.count_d1_reg[7]_0 [0]));
+        .Q(\gic0.gc0.count_reg[7]_0 [0]));
   FDPE #(
     .INIT(1'b1)) 
     \gic0.gc0.count_reg[1] 
@@ -6013,7 +6205,7 @@ module AsynDisfifo32x256_wr_bin_cntr
         .CE(E),
         .D(plusOp__0[1]),
         .PRE(AR),
-        .Q(\gic0.gc0.count_d1_reg[7]_0 [1]));
+        .Q(\gic0.gc0.count_reg[7]_0 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \gic0.gc0.count_reg[2] 
@@ -6021,7 +6213,7 @@ module AsynDisfifo32x256_wr_bin_cntr
         .CE(E),
         .CLR(AR),
         .D(plusOp__0[2]),
-        .Q(\gic0.gc0.count_d1_reg[7]_0 [2]));
+        .Q(\gic0.gc0.count_reg[7]_0 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \gic0.gc0.count_reg[3] 
@@ -6029,7 +6221,7 @@ module AsynDisfifo32x256_wr_bin_cntr
         .CE(E),
         .CLR(AR),
         .D(plusOp__0[3]),
-        .Q(\gic0.gc0.count_d1_reg[7]_0 [3]));
+        .Q(\gic0.gc0.count_reg[7]_0 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \gic0.gc0.count_reg[4] 
@@ -6037,7 +6229,7 @@ module AsynDisfifo32x256_wr_bin_cntr
         .CE(E),
         .CLR(AR),
         .D(plusOp__0[4]),
-        .Q(\gic0.gc0.count_d1_reg[7]_0 [4]));
+        .Q(\gic0.gc0.count_reg[7]_0 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \gic0.gc0.count_reg[5] 
@@ -6045,7 +6237,7 @@ module AsynDisfifo32x256_wr_bin_cntr
         .CE(E),
         .CLR(AR),
         .D(plusOp__0[5]),
-        .Q(\gic0.gc0.count_d1_reg[7]_0 [5]));
+        .Q(\gic0.gc0.count_reg[7]_0 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \gic0.gc0.count_reg[6] 
@@ -6053,7 +6245,7 @@ module AsynDisfifo32x256_wr_bin_cntr
         .CE(E),
         .CLR(AR),
         .D(plusOp__0[6]),
-        .Q(\gic0.gc0.count_d1_reg[7]_0 [6]));
+        .Q(\gic0.gc0.count_reg[7]_0 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \gic0.gc0.count_reg[7] 
@@ -6061,25 +6253,25 @@ module AsynDisfifo32x256_wr_bin_cntr
         .CE(E),
         .CLR(AR),
         .D(plusOp__0[7]),
-        .Q(\gic0.gc0.count_d1_reg[7]_0 [7]));
+        .Q(\gic0.gc0.count_reg[7]_0 [7]));
   LUT2 #(
     .INIT(4'h9)) 
     plusOp_carry__0_i_2
        (.I0(Q[6]),
         .I1(RD_PNTR_WR[6]),
-        .O(\gdiff.diff_pntr_pad_reg[8] [2]));
+        .O(\gic0.gc0.count_d1_reg[6]_0 [2]));
   LUT2 #(
     .INIT(4'h9)) 
     plusOp_carry__0_i_3
        (.I0(Q[5]),
         .I1(RD_PNTR_WR[5]),
-        .O(\gdiff.diff_pntr_pad_reg[8] [1]));
+        .O(\gic0.gc0.count_d1_reg[6]_0 [1]));
   LUT2 #(
     .INIT(4'h9)) 
     plusOp_carry__0_i_4
        (.I0(Q[4]),
         .I1(RD_PNTR_WR[4]),
-        .O(\gdiff.diff_pntr_pad_reg[8] [0]));
+        .O(\gic0.gc0.count_d1_reg[6]_0 [0]));
   LUT2 #(
     .INIT(4'h9)) 
     plusOp_carry_i_1
@@ -6112,7 +6304,7 @@ module AsynDisfifo32x256_wr_bin_cntr
         .I2(RD_PNTR_WR[2]),
         .I3(Q[2]),
         .I4(ram_full_i_i_6_n_0),
-        .O(ram_full_fb_i_reg));
+        .O(\dest_out_bin_ff_reg[3] ));
   LUT4 #(
     .INIT(16'h9009)) 
     ram_full_i_i_6
@@ -6128,54 +6320,53 @@ module AsynDisfifo32x256_wr_logic
    (full,
     Q,
     prog_full,
-    \gpr1.dout_i_reg[31] ,
-    \src_gray_ff_reg[7] ,
-    \gpr1.dout_i_reg[31]_0 ,
-    \gpr1.dout_i_reg[31]_1 ,
-    \gpr1.dout_i_reg[31]_2 ,
     ram_full_fb_i_reg,
-    \gic0.gc0.count_d1_reg[6] ,
+    \gic0.gc0.count_d2_reg[7] ,
+    \gic0.gc0.count_d2_reg[7]_0 ,
+    \gic0.gc0.count_d2_reg[6] ,
     ram_full_fb_i_reg_0,
-    \dest_out_bin_ff_reg[6] ,
+    ram_full_fb_i_reg_1,
+    \gic0.gc0.count_reg[6] ,
+    \dest_out_bin_ff_reg[3] ,
+    ram_full_fb_i_reg_2,
     wr_clk,
     out,
     S,
     RD_PNTR_WR,
     wr_en,
-    \grstd1.grst_full.grst_f.rst_d3_reg ,
+    \gpf1.prog_full_i_reg ,
     AR);
   output full;
   output [3:0]Q;
   output prog_full;
-  output \gpr1.dout_i_reg[31] ;
-  output [7:0]\src_gray_ff_reg[7] ;
-  output \gpr1.dout_i_reg[31]_0 ;
-  output \gpr1.dout_i_reg[31]_1 ;
-  output \gpr1.dout_i_reg[31]_2 ;
   output ram_full_fb_i_reg;
-  output [6:0]\gic0.gc0.count_d1_reg[6] ;
+  output [7:0]\gic0.gc0.count_d2_reg[7] ;
+  output \gic0.gc0.count_d2_reg[7]_0 ;
+  output \gic0.gc0.count_d2_reg[6] ;
   output ram_full_fb_i_reg_0;
-  input \dest_out_bin_ff_reg[6] ;
+  output ram_full_fb_i_reg_1;
+  output [6:0]\gic0.gc0.count_reg[6] ;
+  output \dest_out_bin_ff_reg[3] ;
+  input ram_full_fb_i_reg_2;
   input wr_clk;
   input out;
   input [0:0]S;
   input [7:0]RD_PNTR_WR;
   input wr_en;
-  input \grstd1.grst_full.grst_f.rst_d3_reg ;
+  input \gpf1.prog_full_i_reg ;
   input [0:0]AR;
 
   wire [0:0]AR;
   wire [3:0]Q;
   wire [7:0]RD_PNTR_WR;
   wire [0:0]S;
-  wire \dest_out_bin_ff_reg[6] ;
+  wire \dest_out_bin_ff_reg[3] ;
   wire full;
-  wire [6:0]\gic0.gc0.count_d1_reg[6] ;
-  wire \gpr1.dout_i_reg[31] ;
-  wire \gpr1.dout_i_reg[31]_0 ;
-  wire \gpr1.dout_i_reg[31]_1 ;
-  wire \gpr1.dout_i_reg[31]_2 ;
-  wire \grstd1.grst_full.grst_f.rst_d3_reg ;
+  wire \gic0.gc0.count_d2_reg[6] ;
+  wire [7:0]\gic0.gc0.count_d2_reg[7] ;
+  wire \gic0.gc0.count_d2_reg[7]_0 ;
+  wire [6:0]\gic0.gc0.count_reg[6] ;
+  wire \gpf1.prog_full_i_reg ;
   wire \gwas.wsts_n_1 ;
   wire out;
   wire [5:2]p_14_out;
@@ -6183,7 +6374,8 @@ module AsynDisfifo32x256_wr_logic
   wire prog_full;
   wire ram_full_fb_i_reg;
   wire ram_full_fb_i_reg_0;
-  wire [7:0]\src_gray_ff_reg[7] ;
+  wire ram_full_fb_i_reg_1;
+  wire ram_full_fb_i_reg_2;
   wire wpntr_n_0;
   wire wpntr_n_1;
   wire wpntr_n_11;
@@ -6200,21 +6392,21 @@ module AsynDisfifo32x256_wr_logic
         .E(p_20_out),
         .Q({Q[2],p_14_out,Q[1:0]}),
         .S({wpntr_n_11,wpntr_n_12,wpntr_n_13,wpntr_n_14}),
-        .\dest_out_bin_ff_reg[7] ({S,wpntr_n_0,wpntr_n_1,wpntr_n_2}),
-        .\grstd1.grst_full.grst_f.rst_d3_reg (\grstd1.grst_full.grst_f.rst_d3_reg ),
+        .\gdiff.diff_pntr_pad_reg[8]_0 ({S,wpntr_n_0,wpntr_n_1,wpntr_n_2}),
+        .\gpf1.prog_full_i_reg_0 (\gpf1.prog_full_i_reg ),
+        .\gpf1.prog_full_i_reg_1 (\gwas.wsts_n_1 ),
         .out(out),
         .prog_full(prog_full),
-        .ram_full_fb_i_reg(\gwas.wsts_n_1 ),
         .wr_clk(wr_clk));
   AsynDisfifo32x256_wr_status_flags_as \gwas.wsts 
        (.E(p_20_out),
         .Q(wr_pntr_plus2),
         .RD_PNTR_WR(RD_PNTR_WR[7]),
-        .\dest_out_bin_ff_reg[6] (\dest_out_bin_ff_reg[6] ),
         .full(full),
-        .\grstd1.grst_full.grst_f.rst_d2_reg (out),
         .out(\gwas.wsts_n_1 ),
-        .ram_full_fb_i_reg_0(ram_full_fb_i_reg),
+        .ram_full_fb_i_reg_0(ram_full_fb_i_reg_1),
+        .ram_full_fb_i_reg_1(ram_full_fb_i_reg_2),
+        .ram_full_fb_i_reg_2(out),
         .wr_clk(wr_clk),
         .wr_en(wr_en));
   AsynDisfifo32x256_wr_bin_cntr wpntr
@@ -6223,15 +6415,15 @@ module AsynDisfifo32x256_wr_logic
         .Q({Q[3:2],p_14_out,Q[1:0]}),
         .RD_PNTR_WR(RD_PNTR_WR[6:0]),
         .S({wpntr_n_11,wpntr_n_12,wpntr_n_13,wpntr_n_14}),
-        .\gdiff.diff_pntr_pad_reg[8] ({wpntr_n_0,wpntr_n_1,wpntr_n_2}),
-        .\gic0.gc0.count_d1_reg[7]_0 ({wr_pntr_plus2,\gic0.gc0.count_d1_reg[6] }),
-        .\gpr1.dout_i_reg[31] (\gpr1.dout_i_reg[31] ),
-        .\gpr1.dout_i_reg[31]_0 (\gpr1.dout_i_reg[31]_0 ),
-        .\gpr1.dout_i_reg[31]_1 (\gpr1.dout_i_reg[31]_1 ),
-        .\gpr1.dout_i_reg[31]_2 (\gpr1.dout_i_reg[31]_2 ),
+        .\dest_out_bin_ff_reg[3] (\dest_out_bin_ff_reg[3] ),
+        .\gic0.gc0.count_d1_reg[6]_0 ({wpntr_n_0,wpntr_n_1,wpntr_n_2}),
+        .\gic0.gc0.count_d2_reg[6]_0 (\gic0.gc0.count_d2_reg[6] ),
+        .\gic0.gc0.count_d2_reg[7]_0 (\gic0.gc0.count_d2_reg[7] ),
+        .\gic0.gc0.count_d2_reg[7]_1 (\gic0.gc0.count_d2_reg[7]_0 ),
+        .\gic0.gc0.count_reg[7]_0 ({wr_pntr_plus2,\gic0.gc0.count_reg[6] }),
         .out(\gwas.wsts_n_1 ),
-        .ram_full_fb_i_reg(ram_full_fb_i_reg_0),
-        .\src_gray_ff_reg[7] (\src_gray_ff_reg[7] ),
+        .ram_full_fb_i_reg(ram_full_fb_i_reg),
+        .ram_full_fb_i_reg_0(ram_full_fb_i_reg_0),
         .wr_clk(wr_clk),
         .wr_en(wr_en));
 endmodule
@@ -6242,32 +6434,33 @@ module AsynDisfifo32x256_wr_pf_as
     E,
     Q,
     S,
-    \dest_out_bin_ff_reg[7] ,
+    \gdiff.diff_pntr_pad_reg[8]_0 ,
     wr_clk,
     out,
-    \grstd1.grst_full.grst_f.rst_d3_reg ,
-    ram_full_fb_i_reg,
+    \gpf1.prog_full_i_reg_0 ,
+    \gpf1.prog_full_i_reg_1 ,
     AR);
   output prog_full;
   input [0:0]E;
   input [6:0]Q;
   input [3:0]S;
-  input [3:0]\dest_out_bin_ff_reg[7] ;
+  input [3:0]\gdiff.diff_pntr_pad_reg[8]_0 ;
   input wr_clk;
   input out;
-  input \grstd1.grst_full.grst_f.rst_d3_reg ;
-  input ram_full_fb_i_reg;
+  input \gpf1.prog_full_i_reg_0 ;
+  input \gpf1.prog_full_i_reg_1 ;
   input [0:0]AR;
 
   wire [0:0]AR;
   wire [0:0]E;
   wire [6:0]Q;
   wire [3:0]S;
-  wire [3:0]\dest_out_bin_ff_reg[7] ;
   wire [7:1]diff_pntr;
+  wire [3:0]\gdiff.diff_pntr_pad_reg[8]_0 ;
   wire \gpf1.prog_full_i_i_1_n_0 ;
   wire \gpf1.prog_full_i_i_2_n_0 ;
-  wire \grstd1.grst_full.grst_f.rst_d3_reg ;
+  wire \gpf1.prog_full_i_reg_0 ;
+  wire \gpf1.prog_full_i_reg_1 ;
   wire out;
   wire [8:2]plusOp;
   wire plusOp_carry__0_n_1;
@@ -6278,7 +6471,6 @@ module AsynDisfifo32x256_wr_pf_as
   wire plusOp_carry_n_2;
   wire plusOp_carry_n_3;
   wire prog_full;
-  wire ram_full_fb_i_reg;
   wire wr_clk;
   wire [0:0]NLW_plusOp_carry_O_UNCONNECTED;
   wire [3:3]NLW_plusOp_carry__0_CO_UNCONNECTED;
@@ -6345,8 +6537,8 @@ module AsynDisfifo32x256_wr_pf_as
        (.I0(diff_pntr[6]),
         .I1(diff_pntr[7]),
         .I2(\gpf1.prog_full_i_i_2_n_0 ),
-        .I3(\grstd1.grst_full.grst_f.rst_d3_reg ),
-        .I4(ram_full_fb_i_reg),
+        .I3(\gpf1.prog_full_i_reg_0 ),
+        .I4(\gpf1.prog_full_i_reg_1 ),
         .I5(prog_full),
         .O(\gpf1.prog_full_i_i_1_n_0 ));
   LUT5 #(
@@ -6379,7 +6571,7 @@ module AsynDisfifo32x256_wr_pf_as
         .CYINIT(1'b0),
         .DI({1'b0,Q[6:4]}),
         .O(plusOp[8:5]),
-        .S(\dest_out_bin_ff_reg[7] ));
+        .S(\gdiff.diff_pntr_pad_reg[8]_0 ));
 endmodule
 
 (* ORIG_REF_NAME = "wr_status_flags_as" *) 
@@ -6388,9 +6580,9 @@ module AsynDisfifo32x256_wr_status_flags_as
     out,
     ram_full_fb_i_reg_0,
     E,
-    \dest_out_bin_ff_reg[6] ,
+    ram_full_fb_i_reg_1,
     wr_clk,
-    \grstd1.grst_full.grst_f.rst_d2_reg ,
+    ram_full_fb_i_reg_2,
     wr_en,
     Q,
     RD_PNTR_WR);
@@ -6398,9 +6590,9 @@ module AsynDisfifo32x256_wr_status_flags_as
   output out;
   output ram_full_fb_i_reg_0;
   output [0:0]E;
-  input \dest_out_bin_ff_reg[6] ;
+  input ram_full_fb_i_reg_1;
   input wr_clk;
-  input \grstd1.grst_full.grst_f.rst_d2_reg ;
+  input ram_full_fb_i_reg_2;
   input wr_en;
   input [0:0]Q;
   input [0:0]RD_PNTR_WR;
@@ -6408,10 +6600,10 @@ module AsynDisfifo32x256_wr_status_flags_as
   wire [0:0]E;
   wire [0:0]Q;
   wire [0:0]RD_PNTR_WR;
-  wire \dest_out_bin_ff_reg[6] ;
-  wire \grstd1.grst_full.grst_f.rst_d2_reg ;
   (* DONT_TOUCH *) wire ram_full_fb_i;
   wire ram_full_fb_i_reg_0;
+  wire ram_full_fb_i_reg_1;
+  wire ram_full_fb_i_reg_2;
   (* DONT_TOUCH *) wire ram_full_i;
   wire wr_clk;
   wire wr_en;
@@ -6432,8 +6624,8 @@ module AsynDisfifo32x256_wr_status_flags_as
     ram_full_fb_i_reg
        (.C(wr_clk),
         .CE(1'b1),
-        .D(\dest_out_bin_ff_reg[6] ),
-        .PRE(\grstd1.grst_full.grst_f.rst_d2_reg ),
+        .D(ram_full_fb_i_reg_1),
+        .PRE(ram_full_fb_i_reg_2),
         .Q(ram_full_fb_i));
   LUT4 #(
     .INIT(16'h4004)) 
@@ -6451,8 +6643,8 @@ module AsynDisfifo32x256_wr_status_flags_as
     ram_full_i_reg
        (.C(wr_clk),
         .CE(1'b1),
-        .D(\dest_out_bin_ff_reg[6] ),
-        .PRE(\grstd1.grst_full.grst_f.rst_d2_reg ),
+        .D(ram_full_fb_i_reg_1),
+        .PRE(ram_full_fb_i_reg_2),
         .Q(ram_full_i));
 endmodule
 `ifndef GLBL

@@ -54,8 +54,8 @@
 // PART OF THIS FILE AT ALL TIMES. 
 // ------------------------------------------------------------------------------
 
-(* CORE_GENERATION_INFO = "ten_gig_eth_mac_0,ten_gig_eth_mac_v15_1_6,{x_ipProduct=Vivado 2018.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=ten_gig_eth_mac,x_ipVersion=15.1,x_ipCoreRevision=6,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,x_ipLicense=ten_gig_eth_mac@2016.04(source),c_family=zynq,c_component_name=ten_gig_eth_mac_0,c_has_stats=false,c_has_xgmii=false,c_has_management=false,c_has_wan_support=false,c_1588=0,c_pfc=false,c_tx_tuser_width=1,c_tx_stats_width=25,c_rx_stats_width=29,c_rx_vec_width=79,c_tx_vec_width=79,c_xgmii_data_width=63,c_xgmii_cntl_width=7,c_32bit=false,c_user_data_width=63,c_user_cntl_width=7,c_core_speed=10,c_axilite_freq=200.00}" *)
-(* X_CORE_INFO = "ten_gig_eth_mac_v15_1_6,Vivado 2018.2" *)
+(* CORE_GENERATION_INFO = "ten_gig_eth_mac_0,ten_gig_eth_mac_v15_1_6,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=ten_gig_eth_mac,x_ipVersion=15.1,x_ipCoreRevision=6,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,x_ipLicense=ten_gig_eth_mac@2016.04(source),c_family=kintex7,c_component_name=ten_gig_eth_mac_0,c_has_stats=false,c_has_xgmii=false,c_has_management=false,c_has_wan_support=false,c_1588=0,c_pfc=false,c_tx_tuser_width=1,c_tx_stats_width=25,c_rx_stats_width=29,c_rx_vec_width=79,c_tx_vec_width=79,c_xgmii_data_width=63,c_xgmii_cntl_width=7,c_32bit=false,c_user_data_width=63,c_user_cntl_width=7,c_core_speed=10,c_axilite_freq=200.00}" *)
+(* X_CORE_INFO = "ten_gig_eth_mac_v15_1_6,Vivado 2018.3" *)
 module ten_gig_eth_mac_0
   (
    // Port declarations

@@ -1,3 +1,7 @@
+2018.3:
+ * Version 15.1 (Rev. 6)
+ * No changes
+
 2018.2:
  * Version 15.1 (Rev. 6)
  * Bug Fix: Fixed bug in Example design pattern check module, VHDL version, which resulted in the frame error status siganl to be always deasserted

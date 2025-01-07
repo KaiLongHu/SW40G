@@ -1,13 +1,13 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
--- Date        : Tue Feb  6 11:32:08 2024
--- Host        : Admin-PC running 64-bit Service Pack 1  (build 7601)
--- Command     : write_vhdl -force -mode synth_stub
---               D:/HKL_FPGA/TOP16_multichnnel/MultiChnnel_KzBoard/RTL/TenGEthMacPort2/IpCore/ten_gig_eth_mac_0/ten_gig_eth_mac_0_stub.vhdl
+-- Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+-- Date        : Thu Jan  2 09:51:17 2025
+-- Host        : hkl running 64-bit Ubuntu 22.04.4 LTS
+-- Command     : write_vhdl -force -mode synth_stub -rename_top ten_gig_eth_mac_0 -prefix
+--               ten_gig_eth_mac_0_ ten_gig_eth_mac_0_stub.vhdl
 -- Design      : ten_gig_eth_mac_0
 -- Purpose     : Stub declaration of top-level module interface
--- Device      : xc7z045ffg900-2
+-- Device      : xc7k325tffv900-2
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -56,6 +56,6 @@ attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
 attribute black_box_pad_pin of stub : architecture is "tx_clk0,reset,tx_axis_aresetn,tx_axis_tdata[63:0],tx_axis_tkeep[7:0],tx_axis_tvalid,tx_axis_tlast,tx_axis_tuser,tx_ifg_delay[7:0],tx_axis_tready,tx_statistics_vector[25:0],tx_statistics_valid,pause_val[15:0],pause_req,rx_axis_aresetn,rx_axis_tdata[63:0],rx_axis_tkeep[7:0],rx_axis_tvalid,rx_axis_tuser,rx_axis_tlast,rx_statistics_vector[29:0],rx_statistics_valid,tx_configuration_vector[79:0],rx_configuration_vector[79:0],status_vector[2:0],tx_dcm_locked,xgmii_txd[63:0],xgmii_txc[7:0],rx_clk0,rx_dcm_locked,xgmii_rxd[63:0],xgmii_rxc[7:0]";
 attribute X_CORE_INFO : string;
-attribute X_CORE_INFO of stub : architecture is "ten_gig_eth_mac_v15_1_6,Vivado 2018.2";
+attribute X_CORE_INFO of stub : architecture is "ten_gig_eth_mac_v15_1_6,Vivado 2018.3";
 begin
 end;

@@ -1,19 +1,19 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-// Date        : Tue Feb  6 11:32:08 2024
-// Host        : Admin-PC running 64-bit Service Pack 1  (build 7601)
-// Command     : write_verilog -force -mode synth_stub
-//               D:/HKL_FPGA/TOP16_multichnnel/MultiChnnel_KzBoard/RTL/TenGEthMacPort2/IpCore/ten_gig_eth_mac_0/ten_gig_eth_mac_0_stub.v
+// Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+// Date        : Thu Jan  2 09:51:17 2025
+// Host        : hkl running 64-bit Ubuntu 22.04.4 LTS
+// Command     : write_verilog -force -mode synth_stub -rename_top ten_gig_eth_mac_0 -prefix
+//               ten_gig_eth_mac_0_ ten_gig_eth_mac_0_stub.v
 // Design      : ten_gig_eth_mac_0
 // Purpose     : Stub declaration of top-level module interface
-// Device      : xc7z045ffg900-2
+// Device      : xc7k325tffv900-2
 // --------------------------------------------------------------------------------
 
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* X_CORE_INFO = "ten_gig_eth_mac_v15_1_6,Vivado 2018.2" *)
+(* X_CORE_INFO = "ten_gig_eth_mac_v15_1_6,Vivado 2018.3" *)
 module ten_gig_eth_mac_0(tx_clk0, reset, tx_axis_aresetn, tx_axis_tdata, 
   tx_axis_tkeep, tx_axis_tvalid, tx_axis_tlast, tx_axis_tuser, tx_ifg_delay, tx_axis_tready, 
   tx_statistics_vector, tx_statistics_valid, pause_val, pause_req, rx_axis_aresetn, 

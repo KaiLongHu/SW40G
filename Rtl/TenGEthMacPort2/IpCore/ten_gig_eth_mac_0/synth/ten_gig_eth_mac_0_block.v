@@ -130,7 +130,7 @@ module ten_gig_eth_mac_0_block
    //-----------------------
    ten_gig_eth_mac_0_core_top #(
       .C_HAS_WAN_SUPPORT               (1'b0),
-      .C_FAMILY                        ("zynq"),
+      .C_FAMILY                        ("kintex7"),
       .C_HAS_MANAGEMENT                (1'b0),
       .C_HAS_STATS                     (1'b0),
       .C_1588                          (0),
