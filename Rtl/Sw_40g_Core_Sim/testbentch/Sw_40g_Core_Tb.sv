@@ -213,7 +213,7 @@ module Sw_40g_Core_Tb();
                 .clk(log_clk)
               );
 
-              bit CLK_156_25;
+  bit CLK_156_25;
   sys_clk_gen #(
                 .CLK_FREQUENCE(156.25),
                 .CLK_PHASE(0)
@@ -277,6 +277,7 @@ module Sw_40g_Core_Tb();
                  .lane1_m_axi_rx_tkeep({3{RapidIO_RxKeep}}),
                  .lane1_m_axi_rx_tlast({3{RapidIO_RxEop}}),
                  .lane1_m_axi_rx_tvalid({3{RapidIO_RxValid}}),
+                 .lane1_s_axi_tx_tready({3{1'b1}}),
                  .lane4_s_axi_tx_clk(CLK_156_25),
                  .lane4_s_axi_tx_tdata(),
                  .lane4_s_axi_tx_tkeep(),
@@ -302,8 +303,35 @@ module Sw_40g_Core_Tb();
                  .Base10G_rx_axis_fifo_tready()
                );
 
+                   taxi_axis_if #(.DATA_W(32))  Test_axi[2:0]();//.@
 
 
+//--------------------------------------------
+                   
+     assign Test_axi[0].snk.tdata     = RapidIO_RxData; 
+     assign Test_axi[0].snk.tkeep     = RapidIO_RxKeep; 
+     assign Test_axi[0].snk.tlast     = RapidIO_RxEop; 
+     assign Test_axi[0].snk.tvalid    = RapidIO_RxValid;   
+
+     assign RapidIO_RxData    = Test_axi[1].src.tdata ;
+     assign RapidIO_RxKeep    = Test_axi[1].src.tkeep ;
+     assign RapidIO_RxEop     = Test_axi[1].src.tlast ;
+     assign RapidIO_RxValid   = Test_axi[1].src.tvalid;
+
+  taxi_axis_adapter pre_fifo_adapter_inst (
+                      .clk(SysClk),
+                      .rst(Rst_n),
+
+                      /*
+                       * AXI4-Stream input (sink)
+                       */
+                      .s_axis(Test_axi[0]),
+
+                      /*
+                       * AXI4-Stream output (source)
+                       */
+                      .m_axis(Test_axi[1])
+                    );
 
 
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
