@@ -127,8 +127,8 @@ if (DROP_BAD_FRAME && !(FRAME_FIFO && DROP_OVERSIZE_FRAME))
 if (DROP_WHEN_FULL && !(FRAME_FIFO && DROP_OVERSIZE_FRAME))
     $fatal(0, "Error: DROP_WHEN_FULL set requires FRAME_FIFO and DROP_OVERSIZE_FRAME set (instance %m)");
 
-if ((DROP_BAD_FRAME || MARK_WHEN_FULL) && (USER_W'(USER_BAD_FRAME_MASK) & {USER_W{1'b1}}) == 0)
-    $fatal(0, "Error: Invalid USER_BAD_FRAME_MASK value (instance %m)");
+// if ((DROP_BAD_FRAME || MARK_WHEN_FULL) && (USER_W'(USER_BAD_FRAME_MASK) & {USER_W{1'b1}}) == 0)
+//     $fatal(0, "Error: Invalid USER_BAD_FRAME_MASK value (instance %m)");
 
 if (MARK_WHEN_FULL && FRAME_FIFO)
     $fatal(0, "Error: MARK_WHEN_FULL is not compatible with FRAME_FIFO (instance %m)");
