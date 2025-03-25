@@ -24,6 +24,7 @@ Function Description:
 `define RgmiiEthTestData    Sw_40g_Core_Tb.BaseXEthTestData_InstRgmii
 `define CpuIfcTest          Sw_40g_Core_Tb.CpuIfcTest_Inst
 `define RapidIO_PkgDta      Sw_40g_Core_Tb.BaseXEthTestData_Inst0
+`define Test40G_PkgDta      Sw_40g_Core_Tb.BaseXEthTestData_Inst1
 
 module Sw_40g_Core_Tb();
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -89,6 +90,11 @@ module Sw_40g_Core_Tb();
   bit  RapidIO_RxValid;
   bit  [31:0]RapidIO_RxData;
   bit  [3:0] RapidIO_RxKeep;
+  bit  Test40G_RxSop;
+  bit  Test40G_RxEop;
+  bit  Test40G_RxValid;
+  bit  [31:0]Test40G_RxData;
+  bit  [3:0] Test40G_RxKeep;
   bit   RapidIO_TxReady;
   bit  RapidIO_TxEn;
   bit   RapidIO_TxValid;
@@ -125,6 +131,13 @@ module Sw_40g_Core_Tb();
   bit [15:0] CpuLocRdData41;
   bit AllCntClr;
   bit Soft_Rst_n;
+
+
+
+  wire    [2:0] [63 : 0]    lane1_m_axi_rx_tdata;
+  wire    [2:0] [7 : 0]     lane1_m_axi_rx_tkeep;
+  wire    [2:0]             lane1_m_axi_rx_tlast;
+  wire    [2:0]             lane1_m_axi_rx_tvalid;
 
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   ///////////////////////////////////////        CLK RST GEN                   ///////////////////////////////////////////////////////
@@ -257,6 +270,21 @@ module Sw_40g_Core_Tb();
                      .BaseXTxKeep(RapidIO_RxKeep)
                    );
 
+  BaseXEthTestData BaseXEthTestData_Inst1(
+                     .SysClk(CLK_156_25),
+
+                     .BaseXTxReady(1'b1),
+                     .BaseXTxValid(Test40G_RxValid),
+                     .BaseXTxSop(Test40G_RxSop),
+                     .BaseXTxEop(Test40G_RxEop),
+                     .BaseXTxData(Test40G_RxData),
+                     .BaseXTxKeep(Test40G_RxKeep)
+                   );
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////                                 /////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  taxi_axis_if #(.DATA_W(32))  Test_axi32[3]();//.@
+  taxi_axis_if #(.DATA_W(64))  Test_axi64[3]();//.@
 
 
 
@@ -273,17 +301,17 @@ module Sw_40g_Core_Tb();
                  .lane1_s_axi_tx_tlast(),
                  .lane1_s_axi_tx_tvalid(),
                  .lane1_m_axi_rx_clk(CLK_156_25),
-                 .lane1_m_axi_rx_tdata({3{RapidIO_RxData}}),
-                 .lane1_m_axi_rx_tkeep({3{RapidIO_RxKeep}}),
-                 .lane1_m_axi_rx_tlast({3{RapidIO_RxEop}}),
-                 .lane1_m_axi_rx_tvalid({3{RapidIO_RxValid}}),
+                 .lane1_m_axi_rx_tdata(lane1_m_axi_rx_tdata),
+                 .lane1_m_axi_rx_tkeep(lane1_m_axi_rx_tkeep),
+                 .lane1_m_axi_rx_tlast(lane1_m_axi_rx_tlast),
+                 .lane1_m_axi_rx_tvalid(lane1_m_axi_rx_tvalid),
                  .lane1_s_axi_tx_tready({3{1'b1}}),
                  .lane4_s_axi_tx_clk(CLK_156_25),
                  .lane4_s_axi_tx_tdata(),
                  .lane4_s_axi_tx_tkeep(),
                  .lane4_s_axi_tx_tlast(),
                  .lane4_s_axi_tx_tvalid(),
-                 .lane4_s_axi_tx_tready('0),
+                 .lane4_s_axi_tx_tready({1'b1,1'b1}),
                  .lane4_m_axi_rx_clk(CLK_156_25),
                  .lane4_m_axi_rx_tdata('0),
                  .lane4_m_axi_rx_tkeep('0),
@@ -300,37 +328,71 @@ module Sw_40g_Core_Tb();
                  .Base10G_rx_axis_fifo_tkeep('0),
                  .Base10G_rx_axis_fifo_tvalid('0),
                  .Base10G_rx_axis_fifo_tlast('0),
-                 .Base10G_rx_axis_fifo_tready()
+                 .Base10G_rx_axis_fifo_tready(),
+                 .Route_Ctrl(2'd1),
+                 .Src_Mac_Cfg('0),
+                 .Dst_Mac_Cfg('0),
+                 .Src_Ip_Cfg('0),
+                 .Dst_Ip_Cfg('0),
+                 .Src_UdpPort_Cfg('0),
+                 .Dst_UdpPort_Cfg('0)           
                );
 
-                   taxi_axis_if #(.DATA_W(32))  Test_axi[2:0]();//.@
+
+  //--------------------------------------------
+
+  assign Test_axi32[0].tdata     = RapidIO_RxData;
+  assign Test_axi32[0].tkeep     = RapidIO_RxKeep;
+  assign Test_axi32[0].tlast     = RapidIO_RxEop;
+  assign Test_axi32[0].tvalid    = RapidIO_RxValid;
+  assign lane1_m_axi_rx_tdata[0]  = Test_axi64[0].tdata;
+  assign lane1_m_axi_rx_tkeep[0]  = Test_axi64[0].tkeep;
+  assign lane1_m_axi_rx_tlast[0]  = Test_axi64[0].tlast;
+  assign lane1_m_axi_rx_tvalid[0] = Test_axi64[0].tvalid;
 
 
-//--------------------------------------------
-                   
-     assign Test_axi[0].snk.tdata     = RapidIO_RxData; 
-     assign Test_axi[0].snk.tkeep     = RapidIO_RxKeep; 
-     assign Test_axi[0].snk.tlast     = RapidIO_RxEop; 
-     assign Test_axi[0].snk.tvalid    = RapidIO_RxValid;   
+  assign Test_axi32[1].tdata     = Test40G_RxData;
+  assign Test_axi32[1].tkeep     = Test40G_RxKeep;
+  assign Test_axi32[1].tlast     = Test40G_RxEop;
+  assign Test_axi32[1].tvalid    = Test40G_RxValid;
+  assign lane1_m_axi_rx_tdata[1]  = Test_axi64[1].tdata;
+  assign lane1_m_axi_rx_tkeep[1]  = Test_axi64[1].tkeep;
+  assign lane1_m_axi_rx_tlast[1]  = Test_axi64[1].tlast;
+  assign lane1_m_axi_rx_tvalid[1] = Test_axi64[1].tvalid;
 
-     assign RapidIO_RxData    = Test_axi[1].src.tdata ;
-     assign RapidIO_RxKeep    = Test_axi[1].src.tkeep ;
-     assign RapidIO_RxEop     = Test_axi[1].src.tlast ;
-     assign RapidIO_RxValid   = Test_axi[1].src.tvalid;
+  assign Test_axi32[2].tdata     = Test40G_RxData;
+  assign Test_axi32[2].tkeep     = Test40G_RxKeep;
+  assign Test_axi32[2].tlast     = Test40G_RxEop;
+  assign Test_axi32[2].tvalid    = Test40G_RxValid;
+  assign lane1_m_axi_rx_tdata[2]  = Test_axi64[2].tdata;
+  assign lane1_m_axi_rx_tkeep[2]  = Test_axi64[2].tkeep;
+  assign lane1_m_axi_rx_tlast[2]  = Test_axi64[2].tlast;
+  assign lane1_m_axi_rx_tvalid[2] = Test_axi64[2].tvalid;
+
+
+
+  assign Test_axi64[0].tready = 1'b1;
+  assign Test_axi64[1].tready = 1'b1;
+  assign Test_axi64[2].tready = 1'b1;
+
 
   taxi_axis_adapter pre_fifo_adapter_inst (
-                      .clk(SysClk),
-                      .rst(Rst_n),
-
-                      /*
-                       * AXI4-Stream input (sink)
-                       */
-                      .s_axis(Test_axi[0]),
-
-                      /*
-                       * AXI4-Stream output (source)
-                       */
-                      .m_axis(Test_axi[1])
+                      .clk(CLK_156_25),
+                      .rst(~Rst_n),
+                      .s_axis(Test_axi32[0]),
+                      .m_axis(Test_axi64[0])
+                    );
+  taxi_axis_adapter pre_fifo_adapter_inst1 (
+                      .clk(CLK_156_25),
+                      .rst(~Rst_n),
+                      .s_axis(Test_axi32[1]),
+                      .m_axis(Test_axi64[1])
+                    );
+  taxi_axis_adapter pre_fifo_adapter_inst2 (
+                      .clk(CLK_156_25),
+                      .rst(~Rst_n),
+                      .s_axis(Test_axi32[2]),
+                      .m_axis(Test_axi64[2])
                     );
 
 
@@ -349,7 +411,9 @@ module Sw_40g_Core_Tb();
         int i;
         for(i=0; i<10; i=i+1)
         begin
-          `RapidIO_PkgDta.BaseXEthVlanDataTest(1,12'h101,48'haabb_ccdd_eeff,48'h1122_3344_5566,8'h11,32'h5454_1234,32'h5454_5678,16'h2711,16'h2710,7'h3f,(16'd64+i));
+          `RapidIO_PkgDta.BaseXEthVlanDataTest(1,12'h101,48'haabb_ccdd_eeff,48'h1122_3344_5566,8'h11,32'h5454_1234,32'h5454_5678,16'h2711,16'h2710,7'h3f,16'd1000);
+          repeat(500) @(posedge SysClk);
+          `Test40G_PkgDta.BaseXEthVlanDataTest(1,12'h101,48'haabb_ccdd_eeff,48'h1122_3344_5566,8'h11,32'h5454_1234,32'h5454_5678,16'h2711,16'h2710,7'h3f,16'd64);
           repeat(500) @(posedge SysClk);
         end
       end
