@@ -256,75 +256,75 @@ module Sw_40g_Top (
 
   // //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   Aurora_Top_lane2_P2  Aurora_Top_lane2_P2_inst (
-                         .gt_refclk_p        ( Aurora_Clk_P[0]       ),//GT²î·Ö²Î¿¼Ê±ÖÓ£¬IPÉèÖÃÎª156.25MHZ;
-                         .gt_refclk_n        ( Aurora_Clk_N[0]       ),//GT²î·Ö²Î¿¼Ê±ÖÓ£¬IPÉèÖÃÎª156.25MHZ;
-                         .system_rst         ( ~RstSys_n        ),//ÏµÍ³¸´Î»ÐÅºÅ£»
-                         .init_clk           ( SysClk               ),//³õÊ¼»¯Ê±ÖÓ£¬IPÉèÖÃÎª100MHz¡£
-                         .drp_clk            ( SysClk               ),//DRPÊ±ÖÓÐÅºÅ,IPÉèÖÃÎª100MHz¡£
-                         //GTÊÕ·¢Æ÷0µÄÏà¹ØÐÅºÅ£»
-                         .gt_rx_p          ( Aurora_Rx_P[3:0]         ),//GTÊÕ·¢Æ÷µÄ½ÓÊÕÊý¾Ý²î·ÖÒý½Å£»
-                         .gt_rx_n          ( Aurora_Rx_N[3:0]         ),//GTÊÕ·¢Æ÷µÄ½ÓÊÕÊý¾Ý²î·ÖÒý½Å£»
-                         .user_clk         ( Aurora_user_clk[0]       ),//..ÓÃ»§²Î¿¼Ê±ÖÓÐÅºÅ,ÄÜ·ñ¹«ÓÃ£¿
-                         .user_reset       ( user_reset[1:0]      ),//Êä³ö¸øÓÃ»§µÄ¸´Î»ÐÅºÅ£»
-                         .gt_loopback      ( {3'b0,3'b0}),//GTÊÕ·¢Æ÷µÄ»Ø»·Ä£Ê½¿ØÖÆÐÅºÅ£»
-                         .gt_tx_p          ( Aurora_Tx_P[3:0]         ),//GTÊÕ·¢Æ÷µÄ·¢ËÍÊý¾Ý²î·ÖÒý½Å£»
-                         .gt_tx_n          ( Aurora_Tx_N[3:0]         ),//GTÊÕ·¢Æ÷µÄ·¢ËÍÊý¾Ý²î·ÖÒý½Å£»
-                         .hard_err         ( hard_err_0[1:0]        ),//Ó²¼þ´íÎóÖ¸Ê¾ÐÅºÅ£»
-                         .soft_err         ( soft_err_0[1:0]        ),//Èí¼þ´íÎóÖ¸Ê¾ÐÅºÅ£»
-                         .channel_up       ( channel_up_0[1:0]      ),//Í¨µÀ³õÊ¼»¯Íê³ÉÇÒÍ¨µÀ×¼±¸ºÃÊý¾ÝÊ±À­¸ß£»
-                         .lane_up          ( lane_up_0[1:0]         ),//µ¥Í¨µÀ³õÊ¼»¯³É¹¦ÐÅºÅ£»
-                         .s_axi_tx_tdata   ( Lane2_s_axi_tx_tdata[1:0]  ),//ÓÃ»§·¢ËÍÊý¾ÝµÄAXI_STEAMÁ÷½Ó¿ÚÐÅºÅ£»
-                         .s_axi_tx_tkeep   ( Lane2_s_axi_tx_tkeep[1:0]  ),//ÓÃ»§·¢ËÍÊý¾ÝµÄAXI_STEAMÁ÷½Ó¿ÚÐÅºÅ£»
-                         .s_axi_tx_tlast   ( Lane2_s_axi_tx_tlast[1:0]  ),//ÓÃ»§·¢ËÍÊý¾ÝµÄAXI_STEAMÁ÷½Ó¿ÚÐÅºÅ£»
-                         .s_axi_tx_tvalid  ( Lane2_s_axi_tx_tvalid[1:0] ),//ÓÃ»§·¢ËÍÊý¾ÝµÄAXI_STEAMÁ÷½Ó¿ÚÐÅºÅ£»
-                         .s_axi_tx_tready  ( Lane2_s_axi_tx_tready[1:0] ),//ÓÃ»§·¢ËÍÊý¾ÝµÄAXI_STEAMÁ÷½Ó¿ÚÐÅºÅ£»
-                         .m_axi_rx_tdata   ( Lane2_m_axi_rx_tdata[1:0]  ),//ÓÃ»§½ÓÊÕÊý¾ÝµÄAXI_STEAMÁ÷½Ó¿ÚÐÅºÅ£»
-                         .m_axi_rx_tkeep   ( Lane2_m_axi_rx_tkeep[1:0]  ),//ÓÃ»§½ÓÊÕÊý¾ÝµÄAXI_STEAMÁ÷½Ó¿ÚÐÅºÅ£»
-                         .m_axi_rx_tlast   ( Lane2_m_axi_rx_tlast[1:0]  ),//ÓÃ»§½ÓÊÕÊý¾ÝµÄAXI_STEAMÁ÷½Ó¿ÚÐÅºÅ£»
-                         .m_axi_rx_tvalid  ( Lane2_m_axi_rx_tvalid[1:0] )//ÓÃ»§½ÓÊÕÊý¾ÝµÄAXI_STEAMÁ÷½Ó¿ÚÐÅºÅ£»
+                         .gt_refclk_p        ( Aurora_Clk_P[0]       ),//GTï¿½ï¿½Ö²Î¿ï¿½Ê±ï¿½Ó£ï¿½IPï¿½ï¿½ï¿½ï¿½Îª156.25MHZ;
+                         .gt_refclk_n        ( Aurora_Clk_N[0]       ),//GTï¿½ï¿½Ö²Î¿ï¿½Ê±ï¿½Ó£ï¿½IPï¿½ï¿½ï¿½ï¿½Îª156.25MHZ;
+                         .system_rst         ( ~RstSys_n        ),//ÏµÍ³ï¿½ï¿½Î»ï¿½ÅºÅ£ï¿½
+                         .init_clk           ( SysClk               ),//ï¿½ï¿½Ê¼ï¿½ï¿½Ê±ï¿½Ó£ï¿½IPï¿½ï¿½ï¿½ï¿½Îª100MHzï¿½ï¿½
+                         .drp_clk            ( SysClk               ),//DRPÊ±ï¿½ï¿½ï¿½Åºï¿½,IPï¿½ï¿½ï¿½ï¿½Îª100MHzï¿½ï¿½
+                         //GTï¿½Õ·ï¿½ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÅºÅ£ï¿???
+                         .gt_rx_p          ( Aurora_Rx_P[3:0]         ),//GTï¿½Õ·ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý²ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿???
+                         .gt_rx_n          ( Aurora_Rx_N[3:0]         ),//GTï¿½Õ·ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý²ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿???
+                         .user_clk         ( Aurora_user_clk[0]       ),//..ï¿½Ã»ï¿½ï¿½Î¿ï¿½Ê±ï¿½ï¿½ï¿½Åºï¿½,ï¿½Ü·ï¿½ï¿½Ã£ï¿½
+                         .user_reset       ( user_reset[1:0]      ),//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½Ä¸ï¿½Î»ï¿½ÅºÅ£ï¿???
+                         .gt_loopback      ( {3'b0,3'b0}),//GTï¿½Õ·ï¿½ï¿½ï¿½ï¿½Ä»Ø»ï¿½Ä£Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ÅºÅ£ï¿½
+                         .gt_tx_p          ( Aurora_Tx_P[3:0]         ),//GTï¿½Õ·ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý²ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿???
+                         .gt_tx_n          ( Aurora_Tx_N[3:0]         ),//GTï¿½Õ·ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý²ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿???
+                         .hard_err         ( hard_err_0[1:0]        ),//Ó²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸Ê¾ï¿½ÅºÅ£ï¿½
+                         .soft_err         ( soft_err_0[1:0]        ),//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸Ê¾ï¿½ÅºÅ£ï¿???
+                         .channel_up       ( channel_up_0[1:0]      ),//Í¨ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?ï¿½ï¿½×¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ß£ï¿½
+                         .lane_up          ( lane_up_0[1:0]         ),//ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½É¹ï¿½ï¿½ÅºÅ£ï¿½
+                         .s_axi_tx_tdata   ( Lane2_s_axi_tx_tdata[1:0]  ),//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½AXI_STEAMï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ÅºÅ£ï¿½
+                         .s_axi_tx_tkeep   ( Lane2_s_axi_tx_tkeep[1:0]  ),//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½AXI_STEAMï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ÅºÅ£ï¿½
+                         .s_axi_tx_tlast   ( Lane2_s_axi_tx_tlast[1:0]  ),//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½AXI_STEAMï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ÅºÅ£ï¿½
+                         .s_axi_tx_tvalid  ( Lane2_s_axi_tx_tvalid[1:0] ),//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½AXI_STEAMï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ÅºÅ£ï¿½
+                         .s_axi_tx_tready  ( Lane2_s_axi_tx_tready[1:0] ),//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½AXI_STEAMï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ÅºÅ£ï¿½
+                         .m_axi_rx_tdata   ( Lane2_m_axi_rx_tdata[1:0]  ),//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½AXI_STEAMï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ÅºÅ£ï¿½
+                         .m_axi_rx_tkeep   ( Lane2_m_axi_rx_tkeep[1:0]  ),//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½AXI_STEAMï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ÅºÅ£ï¿½
+                         .m_axi_rx_tlast   ( Lane2_m_axi_rx_tlast[1:0]  ),//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½AXI_STEAMï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ÅºÅ£ï¿½
+                         .m_axi_rx_tvalid  ( Lane2_m_axi_rx_tvalid[1:0] )//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½AXI_STEAMï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ÅºÅ£ï¿½
                        );
 
 
   Aurora_Top_P3  Aurora_Top_P3_inst (
-                   .gt_refclk_p        ( Aurora_Clk_P[1]       ),//GT²î·Ö²Î¿¼Ê±ÖÓ£¬IPÉèÖÃÎª156.25MHZ;
-                   .gt_refclk_n        ( Aurora_Clk_N[1]       ),//GT²î·Ö²Î¿¼Ê±ÖÓ£¬IPÉèÖÃÎª156.25MHZ;
-                   .system_rst         ( ~RstSys_n        ),//ÏµÍ³¸´Î»ÐÅºÅ£»
-                   .init_clk           ( SysClk               ),//³õÊ¼»¯Ê±ÖÓ£¬IPÉèÖÃÎª100MHz¡£
-                   .drp_clk            ( SysClk               ),//DRPÊ±ÖÓÐÅºÅ,IPÉèÖÃÎª100MHz¡£
-                   //QPLLµÄDRP½Ó¿Ú£»
-                   .qpll_drpaddr       ({1'b0,1'b0,1'b0}),//QPLLµÄDRPµØÖ·ÐÅºÅ£»
-                   .qpll_drpdi         ({1'b0,1'b0,1'b0}),//QPLLµÄDRPÊý¾ÝÊäÈëÐÅºÅ£»
-                   .qpll_drprdy        (                   ),//QPLLµÄDRPÓ¦´ðÐÅºÅ£»
-                   .qpll_drpen         ({1'b0,1'b0,1'b0}),//QPLLµÄDRPÊ¹ÄÜÐÅºÅ£»
-                   .qpll_drpwe         ({1'b0,1'b0,1'b0}),//QPLLµÄDRP¶ÁÐ´Ö¸Ê¾ÐÅºÅ£»
-                   .qpll_drpdo         (                   ),//QPLLµÄDRPÊý¾ÝÊä³öÐÅºÅ£»
-                   //GTÊÕ·¢Æ÷0µÄÏà¹ØÐÅºÅ£»
-                   .gt_rx_p          ( Aurora_Rx_P[6:4]         ),//GTÊÕ·¢Æ÷µÄ½ÓÊÕÊý¾Ý²î·ÖÒý½Å£»
-                   .gt_rx_n          ( Aurora_Rx_N[6:4]         ),//GTÊÕ·¢Æ÷µÄ½ÓÊÕÊý¾Ý²î·ÖÒý½Å£»
-                   .user_clk         ( Aurora_user_clk[1]        ),//..ÓÃ»§²Î¿¼Ê±ÖÓÐÅºÅ,ÄÜ·ñ¹«ÓÃ£¿
-                   .user_reset       ( user_reset[4:2]      ),//Êä³ö¸øÓÃ»§µÄ¸´Î»ÐÅºÅ£»
-                   .gt_loopback      ( {3'b0,3'b0,3'b0}),//GTÊÕ·¢Æ÷µÄ»Ø»·Ä£Ê½¿ØÖÆÐÅºÅ£»
-                   .gt_tx_p          ( Aurora_Tx_P[6:4]         ),//GTÊÕ·¢Æ÷µÄ·¢ËÍÊý¾Ý²î·ÖÒý½Å£»
-                   .gt_tx_n          ( Aurora_Tx_N[6:4]         ),//GTÊÕ·¢Æ÷µÄ·¢ËÍÊý¾Ý²î·ÖÒý½Å£»
-                   .hard_err         ( hard_err_0[4:2]        ),//Ó²¼þ´íÎóÖ¸Ê¾ÐÅºÅ£»
-                   .soft_err         ( soft_err_0[4:2]        ),//Èí¼þ´íÎóÖ¸Ê¾ÐÅºÅ£»
-                   .channel_up       ( channel_up_0[4:2]      ),//Í¨µÀ³õÊ¼»¯Íê³ÉÇÒÍ¨µÀ×¼±¸ºÃÊý¾ÝÊ±À­¸ß£»
-                   .lane_up          ( lane_up_0[4:2]         ),//µ¥Í¨µÀ³õÊ¼»¯³É¹¦ÐÅºÅ£»
-                   .s_axi_tx_tdata   ( s_axi_tx_tdata[2:0]  ),//ÓÃ»§·¢ËÍÊý¾ÝµÄAXI_STEAMÁ÷½Ó¿ÚÐÅºÅ£»
-                   .s_axi_tx_tkeep   ( s_axi_tx_tkeep[2:0]  ),//ÓÃ»§·¢ËÍÊý¾ÝµÄAXI_STEAMÁ÷½Ó¿ÚÐÅºÅ£»
-                   .s_axi_tx_tlast   ( s_axi_tx_tlast[2:0]  ),//ÓÃ»§·¢ËÍÊý¾ÝµÄAXI_STEAMÁ÷½Ó¿ÚÐÅºÅ£»
-                   .s_axi_tx_tvalid  ( s_axi_tx_tvalid[2:0] ),//ÓÃ»§·¢ËÍÊý¾ÝµÄAXI_STEAMÁ÷½Ó¿ÚÐÅºÅ£»
-                   .s_axi_tx_tready  ( s_axi_tx_tready[2:0] ),//ÓÃ»§·¢ËÍÊý¾ÝµÄAXI_STEAMÁ÷½Ó¿ÚÐÅºÅ£»
-                   .m_axi_rx_tdata   ( m_axi_rx_tdata[2:0]  ),//ÓÃ»§½ÓÊÕÊý¾ÝµÄAXI_STEAMÁ÷½Ó¿ÚÐÅºÅ£»
-                   .m_axi_rx_tkeep   ( m_axi_rx_tkeep[2:0]  ),//ÓÃ»§½ÓÊÕÊý¾ÝµÄAXI_STEAMÁ÷½Ó¿ÚÐÅºÅ£»
-                   .m_axi_rx_tlast   ( m_axi_rx_tlast[2:0]  ),//ÓÃ»§½ÓÊÕÊý¾ÝµÄAXI_STEAMÁ÷½Ó¿ÚÐÅºÅ£»
-                   .m_axi_rx_tvalid  ( m_axi_rx_tvalid[2:0] ),//ÓÃ»§½ÓÊÕÊý¾ÝµÄAXI_STEAMÁ÷½Ó¿ÚÐÅºÅ£»
-                   .gt_drpaddr       ( 0                 ),//GTÊÕ·¢Æ÷µÄDRPµØÖ·ÐÅºÅ£»
-                   .gt_drpdi         ( 0                 ),//GTÊÕ·¢Æ÷µÄDRPÊý¾ÝÊäÈëÐÅºÅ£»
-                   .gt_drprdy        (                   ),//GTÊÕ·¢Æ÷µÄDRPÓ¦´ðÐÅºÅ£»
-                   .gt_drpen         ( 0                 ),//GTÊÕ·¢Æ÷µÄDRPÊ¹ÄÜÐÅºÅ£»
-                   .gt_drpwe         ( 0                 ),//GTÊÕ·¢Æ÷µÄDRP¶ÁÐ´Ö¸Ê¾ÐÅºÅ£»
-                   .gt_drpdo         (                   )//GTÊÕ·¢Æ÷µÄDRPÊý¾ÝÊä³öÐÅºÅ£»
+                   .gt_refclk_p        ( Aurora_Clk_P[1]       ),//GTï¿½ï¿½Ö²Î¿ï¿½Ê±ï¿½Ó£ï¿½IPï¿½ï¿½ï¿½ï¿½Îª156.25MHZ;
+                   .gt_refclk_n        ( Aurora_Clk_N[1]       ),//GTï¿½ï¿½Ö²Î¿ï¿½Ê±ï¿½Ó£ï¿½IPï¿½ï¿½ï¿½ï¿½Îª156.25MHZ;
+                   .system_rst         ( ~RstSys_n        ),//ÏµÍ³ï¿½ï¿½Î»ï¿½ÅºÅ£ï¿½
+                   .init_clk           ( SysClk               ),//ï¿½ï¿½Ê¼ï¿½ï¿½Ê±ï¿½Ó£ï¿½IPï¿½ï¿½ï¿½ï¿½Îª100MHzï¿½ï¿½
+                   .drp_clk            ( SysClk               ),//DRPÊ±ï¿½ï¿½ï¿½Åºï¿½,IPï¿½ï¿½ï¿½ï¿½Îª100MHzï¿½ï¿½
+                   //QPLLï¿½ï¿½DRPï¿½Ó¿Ú£ï¿½
+                   .qpll_drpaddr       ({1'b0,1'b0,1'b0}),//QPLLï¿½ï¿½DRPï¿½ï¿½Ö·ï¿½ÅºÅ£ï¿½
+                   .qpll_drpdi         ({1'b0,1'b0,1'b0}),//QPLLï¿½ï¿½DRPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÅºÅ£ï¿½
+                   .qpll_drprdy        (                   ),//QPLLï¿½ï¿½DRPÓ¦ï¿½ï¿½ï¿½ÅºÅ£ï¿½
+                   .qpll_drpen         ({1'b0,1'b0,1'b0}),//QPLLï¿½ï¿½DRPÊ¹ï¿½ï¿½ï¿½ÅºÅ£ï¿½
+                   .qpll_drpwe         ({1'b0,1'b0,1'b0}),//QPLLï¿½ï¿½DRPï¿½ï¿½Ð´Ö¸Ê¾ï¿½ÅºÅ£ï¿½
+                   .qpll_drpdo         (                   ),//QPLLï¿½ï¿½DRPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÅºÅ£ï¿???
+                   //GTï¿½Õ·ï¿½ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÅºÅ£ï¿???
+                   .gt_rx_p          ( Aurora_Rx_P[6:4]         ),//GTï¿½Õ·ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý²ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿???
+                   .gt_rx_n          ( Aurora_Rx_N[6:4]         ),//GTï¿½Õ·ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý²ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿???
+                   .user_clk         ( Aurora_user_clk[1]        ),//..ï¿½Ã»ï¿½ï¿½Î¿ï¿½Ê±ï¿½ï¿½ï¿½Åºï¿½,ï¿½Ü·ï¿½ï¿½Ã£ï¿½
+                   .user_reset       ( user_reset[4:2]      ),//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½Ä¸ï¿½Î»ï¿½ÅºÅ£ï¿???
+                   .gt_loopback      ( {3'b0,3'b0,3'b0}),//GTï¿½Õ·ï¿½ï¿½ï¿½ï¿½Ä»Ø»ï¿½Ä£Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ÅºÅ£ï¿½
+                   .gt_tx_p          ( Aurora_Tx_P[6:4]         ),//GTï¿½Õ·ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý²ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿???
+                   .gt_tx_n          ( Aurora_Tx_N[6:4]         ),//GTï¿½Õ·ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý²ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿???
+                   .hard_err         ( hard_err_0[4:2]        ),//Ó²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸Ê¾ï¿½ÅºÅ£ï¿½
+                   .soft_err         ( soft_err_0[4:2]        ),//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸Ê¾ï¿½ÅºÅ£ï¿???
+                   .channel_up       ( channel_up_0[4:2]      ),//Í¨ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?ï¿½ï¿½×¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ß£ï¿½
+                   .lane_up          ( lane_up_0[4:2]         ),//ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½É¹ï¿½ï¿½ÅºÅ£ï¿½
+                   .s_axi_tx_tdata   ( s_axi_tx_tdata[2:0]  ),//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½AXI_STEAMï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ÅºÅ£ï¿½
+                   .s_axi_tx_tkeep   ( s_axi_tx_tkeep[2:0]  ),//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½AXI_STEAMï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ÅºÅ£ï¿½
+                   .s_axi_tx_tlast   ( s_axi_tx_tlast[2:0]  ),//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½AXI_STEAMï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ÅºÅ£ï¿½
+                   .s_axi_tx_tvalid  ( s_axi_tx_tvalid[2:0] ),//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½AXI_STEAMï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ÅºÅ£ï¿½
+                   .s_axi_tx_tready  ( s_axi_tx_tready[2:0] ),//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½AXI_STEAMï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ÅºÅ£ï¿½
+                   .m_axi_rx_tdata   ( m_axi_rx_tdata[2:0]  ),//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½AXI_STEAMï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ÅºÅ£ï¿½
+                   .m_axi_rx_tkeep   ( m_axi_rx_tkeep[2:0]  ),//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½AXI_STEAMï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ÅºÅ£ï¿½
+                   .m_axi_rx_tlast   ( m_axi_rx_tlast[2:0]  ),//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½AXI_STEAMï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ÅºÅ£ï¿½
+                   .m_axi_rx_tvalid  ( m_axi_rx_tvalid[2:0] ),//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½AXI_STEAMï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ÅºÅ£ï¿½
+                   .gt_drpaddr       ( 0                 ),//GTï¿½Õ·ï¿½ï¿½ï¿½ï¿½ï¿½DRPï¿½ï¿½Ö·ï¿½ÅºÅ£ï¿½
+                   .gt_drpdi         ( 0                 ),//GTï¿½Õ·ï¿½ï¿½ï¿½ï¿½ï¿½DRPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÅºÅ£ï¿½
+                   .gt_drprdy        (                   ),//GTï¿½Õ·ï¿½ï¿½ï¿½ï¿½ï¿½DRPÓ¦ï¿½ï¿½ï¿½ÅºÅ£ï¿½
+                   .gt_drpen         ( 0                 ),//GTï¿½Õ·ï¿½ï¿½ï¿½ï¿½ï¿½DRPÊ¹ï¿½ï¿½ï¿½ÅºÅ£ï¿½
+                   .gt_drpwe         ( 0                 ),//GTï¿½Õ·ï¿½ï¿½ï¿½ï¿½ï¿½DRPï¿½ï¿½Ð´Ö¸Ê¾ï¿½ÅºÅ£ï¿½
+                   .gt_drpdo         (                   )//GTï¿½Õ·ï¿½ï¿½ï¿½ï¿½ï¿½DRPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÅºÅ£ï¿???
                  );
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   ///////////////////////////////////////////              Support                   /////////////////////////////////////////////////////////
@@ -377,43 +377,45 @@ module Sw_40g_Top (
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   ///////////////////////////////////////////                                 /////////////////////////////////////////////////////////
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // AxiStream2UserIfc64to128Bridge  AxiStream2UserIfc64to128Bridge_inst (
-  //                                   .Rst_n(Rst_n),
-  //                                   .FifoRst_n(FifoRst_n),
-  //                                   .rx_axis_tdata(rx_axis_tdata),
-  //                                   .rx_axis_tkeep(rx_axis_tkeep),
-  //                                   .rx_axis_tvalid(rx_axis_tvalid),
-  //                                   .rx_axis_tlast(rx_axis_tlast),
-  //                                   .rx_axis_tready(rx_axis_tready),
-  //                                   .rx_axis_uclk(rx_axis_uclk),
-  //                                   .tx_axis_uclk(tx_axis_uclk),
-  //                                   .tx_axis_tready(tx_axis_tready),
-  //                                   .tx_axis_tvalid(tx_axis_tvalid),
-  //                                   .tx_axis_tlast(tx_axis_tlast),
-  //                                   .tx_axis_tdata(tx_axis_tdata),
-  //                                   .tx_axis_tkeep(tx_axis_tkeep),
-  //                                   .CntClr(CntClr),
-  //                                   .RxPkg_Cnt(RxPkg_Cnt),
-  //                                   .TxPkg_Cnt(TxPkg_Cnt)
-  //                                 );
+  Sw_40g_Core  Sw_40g_Core_inst (
+                 .Rst_n(~RstSys_n),
+                 .SysClk(SysClk),
+                 .lane1_s_axi_tx_clk(Aurora_user_clk),
+                 .lane1_s_axi_tx_tdata(s_axi_tx_tdata),
+                 .lane1_s_axi_tx_tkeep(s_axi_tx_tkeep),
+                 .lane1_s_axi_tx_tlast(s_axi_tx_tlast),
+                 .lane1_s_axi_tx_tvalid(s_axi_tx_tvalid),
+                 .lane1_s_axi_tx_tready(s_axi_tx_tready),
+                 .lane1_m_axi_rx_clk(Aurora_user_clk),
+                 .lane1_m_axi_rx_tdata(m_axi_rx_tdata),
+                 .lane1_m_axi_rx_tkeep(m_axi_rx_tkeep),
+                 .lane1_m_axi_rx_tlast(m_axi_rx_tlast),
+                 .lane1_m_axi_rx_tvalid(m_axi_rx_tvalid),
 
-  // UserIfc2AxiStream128to64Bridge  UserIfc2AxiStream128to64Bridge_inst (
-  //                                   .Rst_n(Rst_n),
-  //                                   .FifoRst_n(FifoRst_n),
-  //                                   .rx_axis_uclk(rx_axis_uclk),
-  //                                   .rx_axis_tready(rx_axis_tready),
-  //                                   .rx_axis_tvalid(rx_axis_tvalid),
-  //                                   .rx_axis_tlast(rx_axis_tlast),
-  //                                   .rx_axis_tdata(rx_axis_tdata),
-  //                                   .rx_axis_tkeep(rx_axis_tkeep),
-  //                                   .tx_axis_uclk(tx_axis_uclk),
-  //                                   .tx_axis_tready(tx_axis_tready),
-  //                                   .tx_axis_tvalid(tx_axis_tvalid),
-  //                                   .tx_axis_tlast(tx_axis_tlast),
-  //                                   .tx_axis_tdata(tx_axis_tdata),
-  //                                   .tx_axis_tkeep(tx_axis_tkeep),
-  //                                   .CntClr(CntClr),
-  //                                   .RxPkg_Cnt(RxPkg_Cnt),
-  //                                   .TxPkg_Cnt(TxPkg_Cnt)
-  //                                 );
+                 .lane4_s_axi_tx_clk(Aurora_user_clk),
+                 .lane4_s_axi_tx_tdata(Lane2_s_axi_tx_tdata),
+                 .lane4_s_axi_tx_tkeep(Lane2_s_axi_tx_tkeep),
+                 .lane4_s_axi_tx_tlast(Lane2_s_axi_tx_tlast),
+                 .lane4_s_axi_tx_tvalid(Lane2_s_axi_tx_tvalid),
+                 .lane4_s_axi_tx_tready(Lane2_s_axi_tx_tready),
+                 .lane4_m_axi_rx_clk(Aurora_user_clk),
+                 .lane4_m_axi_rx_tdata(Lane2_m_axi_rx_tdata),
+                 .lane4_m_axi_rx_tkeep(Lane2_m_axi_rx_tkeep),
+                 .lane4_m_axi_rx_tlast(Lane2_m_axi_rx_tlast),
+                 .lane4_m_axi_rx_tvalid(Lane2_m_axi_rx_tvalid),
+
+                 .Base10G_tx_axis_fifo_aclk(Aurora_user_clk),
+                 .Base10G_tx_axis_fifo_tdata(rx_axis_tdata),
+                 .Base10G_tx_axis_fifo_tkeep(rx_axis_tkeep),
+                 .Base10G_tx_axis_fifo_tvalid(rx_axis_tvalid),
+                 .Base10G_tx_axis_fifo_tlast(rx_axis_tlast),
+                 .Base10G_tx_axis_fifo_tready(rx_axis_tready),
+                 .Base10G_rx_axis_fifo_aclk(Aurora_user_clk),
+                 .Base10G_rx_axis_fifo_tdata(tx_axis_tdata),
+                 .Base10G_rx_axis_fifo_tkeep(tx_axis_tkeep),
+                 .Base10G_rx_axis_fifo_tvalid(tx_axis_tvalid),
+                 .Base10G_rx_axis_fifo_tlast(tx_axis_tlast),
+                 .Base10G_rx_axis_fifo_tready(tx_axis_tready)
+               );
+
 endmodule

@@ -13,7 +13,8 @@ Function Description:
 `timescale 1ns/1ns
 module Sw_40g_Core (
     input  wire Rst_n,
-    input  wire SysClk,
+    input  wire SysClk,//100M
+    //use 156.25 10Gbase-R Clock for main logic
     //cpu spi
 
     //rmii 10M
@@ -83,26 +84,31 @@ module Sw_40g_Core (
   localparam WIDTH_PAUSE_EN             = 0;
   localparam WIDTH_FRAME_PAUSE          = WIDTH_FRAME_FIFO;
 
-  // localparam CROSS_DEPTH                = 4096;
-  // localparam CROSS_RAM_PIPELINE         = 1;
-  // localparam CROSS_OUTPUT_FIFO_EN       = 0;
-  // localparam CROSS_FRAME_FIFO           = 1;
-  // localparam CROSS_USER_BAD_FRAME_VALUE = 1;
-  // localparam CROSS_USER_BAD_FRAME_MASK  = 1;
-  // localparam CROSS_DROP_OVERSIZE_FRAME  = 1;
-  // localparam CROSS_DROP_BAD_FRAME       = 1;
-  // localparam CROSS_DROP_WHEN_FULL       = 1;
-  // localparam CROSS_MARK_WHEN_FULL       = 1;
-  // localparam CROSS_PAUSE_EN             = 1;
-  // localparam CROSS_FRAME_PAUSE          = 1;
+  localparam CROSS_DEPTH                = 4096;
+  localparam CROSS_RAM_PIPELINE         = 1;
+  localparam CROSS_OUTPUT_FIFO_EN       = 0;
+  localparam CROSS_FRAME_FIFO           = 0;
+  localparam CROSS_USER_BAD_FRAME_VALUE = 1;
+  localparam CROSS_USER_BAD_FRAME_MASK  = 1;
+  localparam CROSS_DROP_OVERSIZE_FRAME  = WIDTH_FRAME_FIFO;
+  localparam CROSS_DROP_BAD_FRAME       = 0;
+  localparam CROSS_DROP_WHEN_FULL       = 0;
+  localparam CROSS_MARK_WHEN_FULL       = 0;
+  localparam CROSS_PAUSE_EN             = 0;
+  localparam CROSS_FRAME_PAUSE          = WIDTH_FRAME_FIFO;
   //--------------------------------------------
 
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   ///////////////////////////////////////////            SUPPORT              ///////// ///////////////////////////////////////////////////
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   // lane1_axi_if--------------------------------------------
+  // [0] Payload Sensing(main)  udp_packed_unpacked
+  // [1] Payload Sensing(back)  udp_packed_unpacked
+  // [2] Data Transmit          interface-convert-only
   taxi_axis_if #(.DATA_W(64),  .ID_W(1), .DEST_W(1), .USER_W(1))  lane1_axi_tx[2:0]();
   taxi_axis_if #(.DATA_W(64),  .ID_W(1), .DEST_W(1), .USER_W(1))  lane1_axi_rx[2:0]();
+  taxi_axis_if #(.DATA_W(64),  .ID_W(1), .DEST_W(1), .USER_W(1))  lane1_axi_tx_BaseRClk[2:0]();
+  taxi_axis_if #(.DATA_W(64),  .ID_W(1), .DEST_W(1), .USER_W(1))  lane1_axi_rx_BaseRClk[2:0]();
   genvar i;
   generate
     for(i=0; i<2; i=i+1)
@@ -122,8 +128,12 @@ module Sw_40g_Core (
   endgenerate
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   // //lane4_axi_if--------------------------------------------
-  taxi_axis_if #(.DATA_W(64),  .ID_W(0), .DEST_W(0), .USER_W(0))  lane4_axi_tx[1:0]();
-  taxi_axis_if #(.DATA_W(64),  .ID_W(0), .DEST_W(0), .USER_W(0))  lane4_axi_rx[1:0]();
+  // [0] route(main)  Switch
+  // [1] route(back)  Switch
+  taxi_axis_if #(.DATA_W(256),  .ID_W(0), .DEST_W(0), .USER_W(0))  lane4_axi_tx[1:0]();
+  taxi_axis_if #(.DATA_W(256),  .ID_W(0), .DEST_W(0), .USER_W(0))  lane4_axi_rx[1:0]();
+  taxi_axis_if #(.DATA_W(256),  .ID_W(0), .DEST_W(0), .USER_W(0))  lane4_axi_tx_BaseRClk[1:0]();
+  taxi_axis_if #(.DATA_W(256),  .ID_W(0), .DEST_W(0), .USER_W(0))  lane4_axi_rx_BaseRClk[1:0]();
   genvar j;
   generate
     for(j=0; j<1; j=j+1)
@@ -143,8 +153,11 @@ module Sw_40g_Core (
   endgenerate
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   // //10G_axi_if--------------------------------------------
+  //
   taxi_axis_if #(.DATA_W(64),  .ID_W(0), .DEST_W(0), .USER_W(0))  Base10G_axi_tx[3:0]();
   taxi_axis_if #(.DATA_W(64),  .ID_W(0), .DEST_W(0), .USER_W(0))  Base10G_axi_rx[3:0]();
+  taxi_axis_if #(.DATA_W(64),  .ID_W(0), .DEST_W(0), .USER_W(0))  Base10G_axi_tx_BaseRClk[3:0]();
+  taxi_axis_if #(.DATA_W(64),  .ID_W(0), .DEST_W(0), .USER_W(0))  Base10G_axi_rx_BaseRClk[3:0]();
   genvar k;
   generate
     for(k=0; k<3; k=k+1)
@@ -171,24 +184,23 @@ module Sw_40g_Core (
 
 
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  ///////////////////////////////////////////            Width   convert  ///////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////            Clock adapter              /////////////////////////////////////////////////////
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
   taxi_axis_async_fifo_adapter # (
-                                 .DEPTH(WIDTH_DEPTH),
-                                 .RAM_PIPELINE(WIDTH_RAM_PIPELINE),
-                                 .OUTPUT_FIFO_EN(WIDTH_OUTPUT_FIFO_EN),
-                                 .FRAME_FIFO(WIDTH_FRAME_FIFO),
-                                 .USER_BAD_FRAME_VALUE(WIDTH_USER_BAD_FRAME_VALUE),
-                                 .USER_BAD_FRAME_MASK(WIDTH_USER_BAD_FRAME_MASK),
-                                 .DROP_OVERSIZE_FRAME(WIDTH_DROP_OVERSIZE_FRAME),
-                                 .DROP_BAD_FRAME(WIDTH_DROP_BAD_FRAME),
-                                 .DROP_WHEN_FULL(WIDTH_DROP_WHEN_FULL),
-                                 .MARK_WHEN_FULL(WIDTH_MARK_WHEN_FULL),
-                                 .PAUSE_EN(WIDTH_PAUSE_EN),
-                                 .FRAME_PAUSE(WIDTH_FRAME_PAUSE)
+                                 .DEPTH(CROSS_DEPTH),
+                                 .RAM_PIPELINE(CROSS_RAM_PIPELINE),
+                                 .OUTPUT_FIFO_EN(CROSS_OUTPUT_FIFO_EN),
+                                 .FRAME_FIFO(CROSS_FRAME_FIFO),
+                                 .USER_BAD_FRAME_VALUE(CROSS_USER_BAD_FRAME_VALUE),
+                                 .USER_BAD_FRAME_MASK(CROSS_USER_BAD_FRAME_MASK),
+                                 .DROP_OVERSIZE_FRAME(CROSS_DROP_OVERSIZE_FRAME),
+                                 .DROP_BAD_FRAME(CROSS_DROP_BAD_FRAME),
+                                 .DROP_WHEN_FULL(CROSS_DROP_WHEN_FULL),
+                                 .MARK_WHEN_FULL(CROSS_MARK_WHEN_FULL),
+                                 .PAUSE_EN(CROSS_PAUSE_EN),
+                                 .FRAME_PAUSE(CROSS_FRAME_PAUSE)
                                )
-                               taxi_axis_async_fifo_adapter_inst0 (
+                               taxi_axis_async_fifo_adapter_inst1 (
                                  .s_clk(lane1_m_axi_rx_clk),
                                  .s_rst(~Rst_n),
                                  .s_axis(lane1_axi_rx[0]),
@@ -213,35 +225,33 @@ module Sw_40g_Core (
 
 
 
-
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   ///////////////////////////////////////////           async adapter         /////////////////////////////////////////////////////////
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
   // taxi_axis_async_fifo_adapter # (
-  //                                .DEPTH(CROSS_DEPTH),
-  //                                .RAM_PIPELINE(CROSS_RAM_PIPELINE),
-  //                                .OUTPUT_FIFO_EN(CROSS_OUTPUT_FIFO_EN),
-  //                                .FRAME_FIFO(CROSS_FRAME_FIFO),
-  //                                .USER_BAD_FRAME_VALUE(CROSS_USER_BAD_FRAME_VALUE),
-  //                                .USER_BAD_FRAME_MASK(CROSS_USER_BAD_FRAME_MASK),
-  //                                .DROP_OVERSIZE_FRAME(CROSS_DROP_OVERSIZE_FRAME),
-  //                                .DROP_BAD_FRAME(CROSS_DROP_BAD_FRAME),
-  //                                .DROP_WHEN_FULL(CROSS_DROP_WHEN_FULL),
-  //                                .MARK_WHEN_FULL(CROSS_MARK_WHEN_FULL),
-  //                                .PAUSE_EN(CROSS_PAUSE_EN),
-  //                                .FRAME_PAUSE(CROSS_FRAME_PAUSE)
+  //                                .DEPTH(WIDTH_DEPTH),
+  //                                .RAM_PIPELINE(WIDTH_RAM_PIPELINE),
+  //                                .OUTPUT_FIFO_EN(WIDTH_OUTPUT_FIFO_EN),
+  //                                .FRAME_FIFO(WIDTH_FRAME_FIFO),
+  //                                .USER_BAD_FRAME_VALUE(WIDTH_USER_BAD_FRAME_VALUE),
+  //                                .USER_BAD_FRAME_MASK(WIDTH_USER_BAD_FRAME_MASK),
+  //                                .DROP_OVERSIZE_FRAME(WIDTH_DROP_OVERSIZE_FRAME),
+  //                                .DROP_BAD_FRAME(WIDTH_DROP_BAD_FRAME),
+  //                                .DROP_WHEN_FULL(WIDTH_DROP_WHEN_FULL),
+  //                                .MARK_WHEN_FULL(WIDTH_MARK_WHEN_FULL),
+  //                                .PAUSE_EN(WIDTH_PAUSE_EN),
+  //                                .FRAME_PAUSE(WIDTH_FRAME_PAUSE)
   //                              )
   //                              taxi_axis_async_fifo_adapter_inst0 (
-  //                                .s_clk(s_clk),
-  //                                .s_rst(s_rst),
-  //                                .s_axis(s_axis),
-  //                                .m_clk(m_clk),
-  //                                .m_rst(m_rst),
-  //                                .m_axis(m_axis),
-  //                                .s_pause_req(s_pause_req),
+  //                                .s_clk(lane1_m_axi_rx_clk),
+  //                                .s_rst(~Rst_n),
+  //                                .s_axis(lane1_axi_rx[0]),
+  //                                .m_clk(lane4_s_axi_tx_clk),
+  //                                .m_rst(~Rst_n),
+  //                                .m_axis(lane1_axi_tx[0]),
+  //                                .s_pause_req(1'b0),
   //                                .s_pause_ack(s_pause_ack),
-  //                                .m_pause_req(m_pause_req),
+  //                                .m_pause_req(1'b0),
   //                                .m_pause_ack(m_pause_ack),
   //                                .s_status_depth(s_status_depth),
   //                                .s_status_depth_commit(s_status_depth_commit),
@@ -254,8 +264,6 @@ module Sw_40g_Core (
   //                                .m_status_bad_frame(m_status_bad_frame),
   //                                .m_status_good_frame(m_status_good_frame)
   //                              );
-
-
 
 
 
