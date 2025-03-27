@@ -13,6 +13,7 @@ TODO:
 - Clock domain need to be setup well 
 - status need flow depth paramter
 - Ready need to be check, cant xx.ready=1'b1
+- Some module like taxi_axis_mux_v1 changed name,tcl timing_constraint need readd
  
 //////////////////////////////////////////////////////////////////////////////////////////////*/
 `timescale 1ns/1ns
@@ -399,7 +400,7 @@ module Sw_40g_Core (
                    taxi_axis_mux_inst (
                      .clk                                (lane1_m_axi_rx_clk        ),
                      .rst                                (~Rst_n                    ),
-                     .s_axis                             ({lane4_axi_rx_W64[1],lane4_axi_rx_W64[0]}),
+                     .s_axis                             (lane4_axi_rx_W64),
                      .m_axis                             (Base10G_axi_tx[0]         ),
                      .enable                             (1'b1                      ),
                      .select                             (Route_Ctrl[1]             ) //wait set

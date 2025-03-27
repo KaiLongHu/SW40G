@@ -29,7 +29,14 @@ module Sw_40g_Top (
     output wire [6:0]Aurora_Tx_P,
     output wire [6:0]Aurora_Tx_N,
     input  wire [6:0]Aurora_Rx_P,
-    input  wire [6:0]Aurora_Rx_N
+    input  wire [6:0]Aurora_Rx_N,
+
+    input  wire [1:0]AuroraLane4_Clk_P,
+    input  wire [1:0]AuroraLane4_Clk_N,
+    output wire [7:0]AuroraLane4_Tx_P,
+    output wire [7:0]AuroraLane4_Tx_N,
+    input  wire [7:0]AuroraLane4_Rx_P,
+    input  wire [7:0]AuroraLane4_Rx_N
 
   );
 
@@ -89,15 +96,15 @@ module Sw_40g_Top (
   wire [3:0] [7:0] XauiRxFifoStatus;
 
   //--------------------------------------------
-  wire [1:0][0:127] Lane2_s_axi_tx_tdata;
-  wire [1:0][0:7]   Lane2_s_axi_tx_tkeep;
-  wire [1:0]        Lane2_s_axi_tx_tlast;
-  wire [1:0]        Lane2_s_axi_tx_tvalid;
-  wire [1:0]        Lane2_s_axi_tx_tready;
-  wire [1:0][0:127] Lane2_m_axi_rx_tdata;
-  wire [1:0][0:15]  Lane2_m_axi_rx_tkeep;
-  wire [1:0]        Lane2_m_axi_rx_tlast;
-  wire [1:0]        Lane2_m_axi_rx_tvalid;
+  wire [1:0][255:0] Lane4_s_axi_tx_tdata;
+  wire [1:0]        Lane4_s_axi_tx_tlast;
+  wire [1:0][31:0]   Lane4_s_axi_tx_tkeep;
+  wire [1:0]        Lane4_s_axi_tx_tvalid;
+  wire [1:0]        Lane4_s_axi_tx_tready;
+  wire [1:0][255:0] Lane4_m_axi_rx_tdata;
+  wire [1:0][31:0]  Lane4_m_axi_rx_tkeep;
+  wire [1:0]        Lane4_m_axi_rx_tlast;
+  wire [1:0]        Lane4_m_axi_rx_tvalid;
 
   wire [2:0][0:63]s_axi_tx_tdata;
   wire [2:0][0:7] s_axi_tx_tkeep;
@@ -109,7 +116,7 @@ module Sw_40g_Top (
   wire [2:0]      m_axi_rx_tlast;
   wire [2:0]      m_axi_rx_tvalid;
 
-  wire [1:0]      Aurora_user_clk;
+  wire [2:0]      Aurora_user_clk;
   wire [4:0]      user_reset;
   wire [4:0]      hard_err_0;
   wire [4:0]      soft_err_0;
@@ -253,78 +260,188 @@ module Sw_40g_Top (
                                            );
 
 
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  aurora_64b66b_lan4_framing_support aurora_64b66b_lan4_framing_inst0
+                                     (
+                                       // TX AXI4-S Interface
+                                       .s_axi_tx_tdata                     (Lane4_s_axi_tx_tdata[0]   ),
+                                       .s_axi_tx_tlast                     (Lane4_s_axi_tx_tlast[0]   ),
+                                       .s_axi_tx_tkeep                     (Lane4_s_axi_tx_tkeep[0]   ),
+                                       .s_axi_tx_tvalid                    (Lane4_s_axi_tx_tvalid[0]  ),
+                                       .s_axi_tx_tready                    (Lane4_s_axi_tx_tready[0]  ),
+                                       // RX AXI4-S Interface
+                                       .m_axi_rx_tdata                     (Lane4_m_axi_rx_tdata[0]   ),
+                                       .m_axi_rx_tlast                     (Lane4_m_axi_rx_tkeep[0]   ),
+                                       .m_axi_rx_tkeep                     (Lane4_m_axi_rx_tlast[0]   ),
+                                       .m_axi_rx_tvalid                    (Lane4_m_axi_rx_tvalid[0]  ),
+                                       // GT Serial I/O
+                                       .rxp                                (AuroraLane4_Rx_P[3:0]     ),
+                                       .rxn                                (AuroraLane4_Rx_N[3:0]     ),
+                                       .txp                                (AuroraLane4_Tx_P[3:0]     ),
+                                       .txn                                (AuroraLane4_Tx_N[3:0]     ),
+                                       //GT Reference Clock Interface
+                                       .gt_refclk1_p                       (AuroraLane4_Clk_P[0]      ),
+                                       .gt_refclk1_n                       (AuroraLane4_Clk_N[0]      ),
+                                       // Error Detection Interface
+                                       .hard_err                           (hard_err_0[0]             ),
+                                       .soft_err                           (soft_err_0[0]             ),
+                                       // Status
+                                       .channel_up                         (channel_up_0[0]           ),
+                                       .lane_up                            (lane_up_0[0]              ),
+                                       // System Interface
+                                       .init_clk_out                       (                          ),
+                                       .user_clk_out                       (Aurora_user_clk[0]        ),
+                                       .sync_clk_out                       (                          ),
+                                       .reset_pb                           (user_reset[0]             ),
+                                       .gt_rxcdrovrden_in                  (1'b0                      ),
+                                       .power_down                         (1'b0                      ),
+                                       .loopback                           (3'b000                    ),
+                                       .pma_init                           (1'b1                      ),//gt reset
+                                       .gt_pll_lock                        (                          ),
+                                       .drp_clk_in                         (SysClk                    ),//
+                                       //---------------------- GT DRP Ports ----------------------
+                                       .drpaddr_in                         ('0                        ),
+                                       .drpdi_in                           ('0                        ),
+                                       .drpdo_out                          (                          ),
+                                       .drprdy_out                         (                          ),
+                                       .drpen_in                           ('0                        ),
+                                       .drpwe_in                           ('0                        ),
+                                       .drpaddr_in_lane1                   ('0                        ),
+                                       .drpdi_in_lane1                     ('0                        ),
+                                       .drpdo_out_lane1                    (                          ),
+                                       .drprdy_out_lane1                   (                          ),
+                                       .drpen_in_lane1                     ('0                        ),
+                                       .drpwe_in_lane1                     ('0                        ),
+                                       .drpaddr_in_lane2                   ('0                        ),
+                                       .drpdi_in_lane2                     ('0                        ),
+                                       .drpdo_out_lane2                    (                          ),
+                                       .drprdy_out_lane2                   (                          ),
+                                       .drpen_in_lane2                     ('0                        ),
+                                       .drpwe_in_lane2                     ('0                        ),
+                                       .drpaddr_in_lane3                   ('0                        ),
+                                       .drpdi_in_lane3                     ('0                        ),
+                                       .drpdo_out_lane3                    (                          ),
+                                       .drprdy_out_lane3                   (                          ),
+                                       .drpen_in_lane3                     ('0                        ),
+                                       .drpwe_in_lane3                     ('0                        ),
+                                       .init_clk_p                         ('0                        ),
+                                       .init_clk_n                         ('0                        ),
+                                       .link_reset_out                     (                          ),
+                                       .mmcm_not_locked_out                (                          ),
+                                       .sys_reset_out                      (                          ),
+                                       .tx_out_clk                         (                          )
+                                     );
 
-  // //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  Aurora_Top_lane2_P2  Aurora_Top_lane2_P2_inst (
-                         .gt_refclk_p        ( Aurora_Clk_P[0]       ),//GT��ֲο�ʱ�ӣ�IP����Ϊ156.25MHZ;
-                         .gt_refclk_n        ( Aurora_Clk_N[0]       ),//GT��ֲο�ʱ�ӣ�IP����Ϊ156.25MHZ;
-                         .system_rst         ( ~RstSys_n        ),//ϵͳ��λ�źţ�
-                         .init_clk           ( SysClk               ),//��ʼ��ʱ�ӣ�IP����Ϊ100MHz��
-                         .drp_clk            ( SysClk               ),//DRPʱ���ź�,IP����Ϊ100MHz��
-                         //GT�շ���0������źţ�???
-                         .gt_rx_p          ( Aurora_Rx_P[3:0]         ),//GT�շ����Ľ������ݲ�����ţ�???
-                         .gt_rx_n          ( Aurora_Rx_N[3:0]         ),//GT�շ����Ľ������ݲ�����ţ�???
-                         .user_clk         ( Aurora_user_clk[0]       ),//..�û��ο�ʱ���ź�,�ܷ��ã�
-                         .user_reset       ( user_reset[1:0]      ),//������û��ĸ�λ�źţ�???
-                         .gt_loopback      ( {3'b0,3'b0}),//GT�շ����Ļػ�ģʽ�����źţ�
-                         .gt_tx_p          ( Aurora_Tx_P[3:0]         ),//GT�շ����ķ������ݲ�����ţ�???
-                         .gt_tx_n          ( Aurora_Tx_N[3:0]         ),//GT�շ����ķ������ݲ�����ţ�???
-                         .hard_err         ( hard_err_0[1:0]        ),//Ӳ������ָʾ�źţ�
-                         .soft_err         ( soft_err_0[1:0]        ),//�������ָʾ�źţ�???
-                         .channel_up       ( channel_up_0[1:0]      ),//ͨ����ʼ��������?��׼��������ʱ���ߣ�
-                         .lane_up          ( lane_up_0[1:0]         ),//��ͨ����ʼ���ɹ��źţ�
-                         .s_axi_tx_tdata   ( Lane2_s_axi_tx_tdata[1:0]  ),//�û��������ݵ�AXI_STEAM���ӿ��źţ�
-                         .s_axi_tx_tkeep   ( Lane2_s_axi_tx_tkeep[1:0]  ),//�û��������ݵ�AXI_STEAM���ӿ��źţ�
-                         .s_axi_tx_tlast   ( Lane2_s_axi_tx_tlast[1:0]  ),//�û��������ݵ�AXI_STEAM���ӿ��źţ�
-                         .s_axi_tx_tvalid  ( Lane2_s_axi_tx_tvalid[1:0] ),//�û��������ݵ�AXI_STEAM���ӿ��źţ�
-                         .s_axi_tx_tready  ( Lane2_s_axi_tx_tready[1:0] ),//�û��������ݵ�AXI_STEAM���ӿ��źţ�
-                         .m_axi_rx_tdata   ( Lane2_m_axi_rx_tdata[1:0]  ),//�û��������ݵ�AXI_STEAM���ӿ��źţ�
-                         .m_axi_rx_tkeep   ( Lane2_m_axi_rx_tkeep[1:0]  ),//�û��������ݵ�AXI_STEAM���ӿ��źţ�
-                         .m_axi_rx_tlast   ( Lane2_m_axi_rx_tlast[1:0]  ),//�û��������ݵ�AXI_STEAM���ӿ��źţ�
-                         .m_axi_rx_tvalid  ( Lane2_m_axi_rx_tvalid[1:0] )//�û��������ݵ�AXI_STEAM���ӿ��źţ�
-                       );
-
+  aurora_64b66b_lan4_framing_support aurora_64b66b_lan4_framing_inst1
+                                     (
+                                       // TX AXI4-S Interface
+                                       .s_axi_tx_tdata                     (Lane4_s_axi_tx_tdata[1]   ),
+                                       .s_axi_tx_tlast                     (Lane4_s_axi_tx_tlast[1]   ),
+                                       .s_axi_tx_tkeep                     (Lane4_s_axi_tx_tkeep[1]   ),
+                                       .s_axi_tx_tvalid                    (Lane4_s_axi_tx_tvalid[1]  ),
+                                       .s_axi_tx_tready                    (Lane4_s_axi_tx_tready[1]  ),
+                                       // RX AXI4-S Interface
+                                       .m_axi_rx_tdata                     (Lane4_m_axi_rx_tdata[1]   ),
+                                       .m_axi_rx_tlast                     (Lane4_m_axi_rx_tkeep[1]   ),
+                                       .m_axi_rx_tkeep                     (Lane4_m_axi_rx_tlast[1]   ),
+                                       .m_axi_rx_tvalid                    (Lane4_m_axi_rx_tvalid[1]  ),
+                                       // GT Serial I/O
+                                       .rxp                                (AuroraLane4_Rx_P[7:4]     ),
+                                       .rxn                                (AuroraLane4_Rx_N[7:4]     ),
+                                       .txp                                (AuroraLane4_Tx_P[7:4]     ),
+                                       .txn                                (AuroraLane4_Tx_N[7:4]     ),
+                                       //GT Reference Clock Interface
+                                       .gt_refclk1_p                       (AuroraLane4_Clk_P[1]      ),
+                                       .gt_refclk1_n                       (AuroraLane4_Clk_N[1]      ),
+                                       // Error Detection Interface
+                                       .hard_err                           (hard_err_0[1]             ),
+                                       .soft_err                           (soft_err_0[1]             ),
+                                       // Status
+                                       .channel_up                         (channel_up_0[1]           ),
+                                       .lane_up                            (lane_up_0[1]              ),
+                                       // System Interface
+                                       .init_clk_out                       (                          ),
+                                       .user_clk_out                       (Aurora_user_clk[1]        ),
+                                       .sync_clk_out                       (                          ),
+                                       .reset_pb                           (user_reset[1]             ),
+                                       .gt_rxcdrovrden_in                  (1'b0                      ),
+                                       .power_down                         (1'b0                      ),
+                                       .loopback                           (3'b000                    ),
+                                       .pma_init                           (1'b1                      ),//gt reset
+                                       .gt_pll_lock                        (                          ),
+                                       .drp_clk_in                         (SysClk                    ),//
+                                       //---------------------- GT DRP Ports ----------------------
+                                       .drpaddr_in                         ('0                        ),
+                                       .drpdi_in                           ('0                        ),
+                                       .drpdo_out                          (                          ),
+                                       .drprdy_out                         (                          ),
+                                       .drpen_in                           ('0                        ),
+                                       .drpwe_in                           ('0                        ),
+                                       .drpaddr_in_lane1                   ('0                        ),
+                                       .drpdi_in_lane1                     ('0                        ),
+                                       .drpdo_out_lane1                    (                          ),
+                                       .drprdy_out_lane1                   (                          ),
+                                       .drpen_in_lane1                     ('0                        ),
+                                       .drpwe_in_lane1                     ('0                        ),
+                                       .drpaddr_in_lane2                   ('0                        ),
+                                       .drpdi_in_lane2                     ('0                        ),
+                                       .drpdo_out_lane2                    (                          ),
+                                       .drprdy_out_lane2                   (                          ),
+                                       .drpen_in_lane2                     ('0                        ),
+                                       .drpwe_in_lane2                     ('0                        ),
+                                       .drpaddr_in_lane3                   ('0                        ),
+                                       .drpdi_in_lane3                     ('0                        ),
+                                       .drpdo_out_lane3                    (                          ),
+                                       .drprdy_out_lane3                   (                          ),
+                                       .drpen_in_lane3                     ('0                        ),
+                                       .drpwe_in_lane3                     ('0                        ),
+                                       .init_clk_p                         ('0                        ),
+                                       .init_clk_n                         ('0                        ),
+                                       .link_reset_out                     (                          ),
+                                       .mmcm_not_locked_out                (                          ),
+                                       .sys_reset_out                      (                          ),
+                                       .tx_out_clk                         (                          )
+                                     );
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   Aurora_Top_P3  Aurora_Top_P3_inst (
-                   .gt_refclk_p        ( Aurora_Clk_P[1]       ),//GT��ֲο�ʱ�ӣ�IP����Ϊ156.25MHZ;
-                   .gt_refclk_n        ( Aurora_Clk_N[1]       ),//GT��ֲο�ʱ�ӣ�IP����Ϊ156.25MHZ;
-                   .system_rst         ( ~RstSys_n        ),//ϵͳ��λ�źţ�
-                   .init_clk           ( SysClk               ),//��ʼ��ʱ�ӣ�IP����Ϊ100MHz��
-                   .drp_clk            ( SysClk               ),//DRPʱ���ź�,IP����Ϊ100MHz��
-                   //QPLL��DRP�ӿڣ�
-                   .qpll_drpaddr       ({1'b0,1'b0,1'b0}),//QPLL��DRP��ַ�źţ�
-                   .qpll_drpdi         ({1'b0,1'b0,1'b0}),//QPLL��DRP���������źţ�
-                   .qpll_drprdy        (                   ),//QPLL��DRPӦ���źţ�
-                   .qpll_drpen         ({1'b0,1'b0,1'b0}),//QPLL��DRPʹ���źţ�
-                   .qpll_drpwe         ({1'b0,1'b0,1'b0}),//QPLL��DRP��дָʾ�źţ�
-                   .qpll_drpdo         (                   ),//QPLL��DRP��������źţ�???
-                   //GT�շ���0������źţ�???
-                   .gt_rx_p          ( Aurora_Rx_P[6:4]         ),//GT�շ����Ľ������ݲ�����ţ�???
-                   .gt_rx_n          ( Aurora_Rx_N[6:4]         ),//GT�շ����Ľ������ݲ�����ţ�???
-                   .user_clk         ( Aurora_user_clk[1]        ),//..�û��ο�ʱ���ź�,�ܷ��ã�
-                   .user_reset       ( user_reset[4:2]      ),//������û��ĸ�λ�źţ�???
-                   .gt_loopback      ( {3'b0,3'b0,3'b0}),//GT�շ����Ļػ�ģʽ�����źţ�
-                   .gt_tx_p          ( Aurora_Tx_P[6:4]         ),//GT�շ����ķ������ݲ�����ţ�???
-                   .gt_tx_n          ( Aurora_Tx_N[6:4]         ),//GT�շ����ķ������ݲ�����ţ�???
-                   .hard_err         ( hard_err_0[4:2]        ),//Ӳ������ָʾ�źţ�
-                   .soft_err         ( soft_err_0[4:2]        ),//�������ָʾ�źţ�???
-                   .channel_up       ( channel_up_0[4:2]      ),//ͨ����ʼ��������?��׼��������ʱ���ߣ�
-                   .lane_up          ( lane_up_0[4:2]         ),//��ͨ����ʼ���ɹ��źţ�
-                   .s_axi_tx_tdata   ( s_axi_tx_tdata[2:0]  ),//�û��������ݵ�AXI_STEAM���ӿ��źţ�
-                   .s_axi_tx_tkeep   ( s_axi_tx_tkeep[2:0]  ),//�û��������ݵ�AXI_STEAM���ӿ��źţ�
-                   .s_axi_tx_tlast   ( s_axi_tx_tlast[2:0]  ),//�û��������ݵ�AXI_STEAM���ӿ��źţ�
-                   .s_axi_tx_tvalid  ( s_axi_tx_tvalid[2:0] ),//�û��������ݵ�AXI_STEAM���ӿ��źţ�
-                   .s_axi_tx_tready  ( s_axi_tx_tready[2:0] ),//�û��������ݵ�AXI_STEAM���ӿ��źţ�
-                   .m_axi_rx_tdata   ( m_axi_rx_tdata[2:0]  ),//�û��������ݵ�AXI_STEAM���ӿ��źţ�
-                   .m_axi_rx_tkeep   ( m_axi_rx_tkeep[2:0]  ),//�û��������ݵ�AXI_STEAM���ӿ��źţ�
-                   .m_axi_rx_tlast   ( m_axi_rx_tlast[2:0]  ),//�û��������ݵ�AXI_STEAM���ӿ��źţ�
-                   .m_axi_rx_tvalid  ( m_axi_rx_tvalid[2:0] ),//�û��������ݵ�AXI_STEAM���ӿ��źţ�
-                   .gt_drpaddr       ( 0                 ),//GT�շ�����DRP��ַ�źţ�
-                   .gt_drpdi         ( 0                 ),//GT�շ�����DRP���������źţ�
-                   .gt_drprdy        (                   ),//GT�շ�����DRPӦ���źţ�
-                   .gt_drpen         ( 0                 ),//GT�շ�����DRPʹ���źţ�
-                   .gt_drpwe         ( 0                 ),//GT�շ�����DRP��дָʾ�źţ�
-                   .gt_drpdo         (                   )//GT�շ�����DRP��������źţ�???
+                   .gt_refclk_p                        (Aurora_Clk_P[1]           ),
+                   .gt_refclk_n                        (Aurora_Clk_N[1]           ),
+                   .system_rst                         (~RstSys_n                 ),
+                   .init_clk                           (SysClk                    ),
+                   .drp_clk                            (SysClk                    ),
+                   .qpll_drpaddr                       ({1'b0,1'b0,1'b0}          ),
+                   .qpll_drpdi                         ({1'b0,1'b0,1'b0}          ),
+                   .qpll_drprdy                        (                          ),
+                   .qpll_drpen                         ({1'b0,1'b0,1'b0}          ),
+                   .qpll_drpwe                         ({1'b0,1'b0,1'b0}          ),
+                   .qpll_drpdo                         (                          ),
+                   .gt_rx_p                            (Aurora_Rx_P[6:4]          ),
+                   .gt_rx_n                            (Aurora_Rx_N[6:4]          ),
+                   .user_clk                           (Aurora_user_clk[2]        ),
+                   .user_reset                         (user_reset[4:2]           ),
+                   .gt_loopback                        ({3'b0,3'b0,3'b0}          ),
+                   .gt_tx_p                            (Aurora_Tx_P[6:4]          ),
+                   .gt_tx_n                            (Aurora_Tx_N[6:4]          ),
+                   .hard_err                           (hard_err_0[4:2]           ),
+                   .soft_err                           (soft_err_0[4:2]           ),
+                   .channel_up                         (channel_up_0[4:2]         ),
+                   .lane_up                            (lane_up_0[4:2]            ),
+                   .s_axi_tx_tdata                     (s_axi_tx_tdata[2:0]       ),
+                   .s_axi_tx_tkeep                     (s_axi_tx_tkeep[2:0]       ),
+                   .s_axi_tx_tlast                     (s_axi_tx_tlast[2:0]       ),
+                   .s_axi_tx_tvalid                    (s_axi_tx_tvalid[2:0]      ),
+                   .s_axi_tx_tready                    (s_axi_tx_tready[2:0]      ),
+                   .m_axi_rx_tdata                     (m_axi_rx_tdata[2:0]       ),
+                   .m_axi_rx_tkeep                     (m_axi_rx_tkeep[2:0]       ),
+                   .m_axi_rx_tlast                     (m_axi_rx_tlast[2:0]       ),
+                   .m_axi_rx_tvalid                    (m_axi_rx_tvalid[2:0]      ),
+                   .gt_drpaddr                         (0                         ),
+                   .gt_drpdi                           (0                         ),
+                   .gt_drprdy                          (                          ),
+                   .gt_drpen                           (0                         ),
+                   .gt_drpwe                           (0                         ),
+                   .gt_drpdo                           (                          )
                  );
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   ///////////////////////////////////////////              Support                   /////////////////////////////////////////////////////////
@@ -371,8 +488,6 @@ module Sw_40g_Top (
     end
   endgenerate
 
-
-
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   ///////////////////////////////////////////                                 /////////////////////////////////////////////////////////
@@ -393,16 +508,16 @@ module Sw_40g_Top (
                  .lane1_m_axi_rx_tvalid(m_axi_rx_tvalid),
 
                  .lane4_s_axi_tx_clk(Aurora_user_clk),
-                 .lane4_s_axi_tx_tdata(Lane2_s_axi_tx_tdata),
-                 .lane4_s_axi_tx_tkeep(Lane2_s_axi_tx_tkeep),
-                 .lane4_s_axi_tx_tlast(Lane2_s_axi_tx_tlast),
-                 .lane4_s_axi_tx_tvalid(Lane2_s_axi_tx_tvalid),
-                 .lane4_s_axi_tx_tready(Lane2_s_axi_tx_tready),
+                 .lane4_s_axi_tx_tdata(Lane4_s_axi_tx_tdata),
+                 .lane4_s_axi_tx_tkeep(Lane4_s_axi_tx_tkeep),
+                 .lane4_s_axi_tx_tlast(Lane4_s_axi_tx_tlast),
+                 .lane4_s_axi_tx_tvalid(Lane4_s_axi_tx_tvalid),
+                 .lane4_s_axi_tx_tready(Lane4_s_axi_tx_tready),
                  .lane4_m_axi_rx_clk(Aurora_user_clk),
-                 .lane4_m_axi_rx_tdata(Lane2_m_axi_rx_tdata),
-                 .lane4_m_axi_rx_tkeep(Lane2_m_axi_rx_tkeep),
-                 .lane4_m_axi_rx_tlast(Lane2_m_axi_rx_tlast),
-                 .lane4_m_axi_rx_tvalid(Lane2_m_axi_rx_tvalid),
+                 .lane4_m_axi_rx_tdata(Lane4_m_axi_rx_tdata),
+                 .lane4_m_axi_rx_tkeep(Lane4_m_axi_rx_tkeep),
+                 .lane4_m_axi_rx_tlast(Lane4_m_axi_rx_tlast),
+                 .lane4_m_axi_rx_tvalid(Lane4_m_axi_rx_tvalid),
 
                  .Base10G_tx_axis_fifo_aclk(Aurora_user_clk),
                  .Base10G_tx_axis_fifo_tdata(rx_axis_tdata),
