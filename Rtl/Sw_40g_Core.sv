@@ -12,7 +12,7 @@ Function Description:
 TODO: 
 - Clock domain need to be setup well 
 - status need flow depth paramter
-- 
+- Ready need to be check, cant xx.ready=1'b1
  
 //////////////////////////////////////////////////////////////////////////////////////////////*/
 `timescale 1ns/1ns
@@ -480,7 +480,7 @@ module Sw_40g_Core (
                                taxi_axis_async_fifo_adapter_CDC0 (
                                  .s_clk                              (lane1_m_axi_rx_clk        ),
                                  .s_rst                              (~Rst_n                    ),
-                                 .s_axis                             (lane1_axi_rx[1]           ),
+                                 .s_axis                             (lane1_axi_rx[0]           ),
                                  .m_clk                              (lane4_s_axi_tx_clk        ),
                                  .m_rst                              (~Rst_n                    ),
                                  .m_axis                             (lane1_axi_rx_CDC_BaseR[0] ),
@@ -519,7 +519,7 @@ module Sw_40g_Core (
                                taxi_axis_async_fifo_adapter_CDC1 (
                                  .s_clk                              (lane1_m_axi_rx_clk        ),
                                  .s_rst                              (~Rst_n                    ),
-                                 .s_axis                             (lane1_axi_rx[2]           ),
+                                 .s_axis                             (lane1_axi_rx[1]           ),
                                  .m_clk                              (lane4_s_axi_tx_clk        ),
                                  .m_rst                              (~Rst_n                    ),
                                  .m_axis                             (lane1_axi_rx_CDC_BaseR[1] ),
@@ -540,7 +540,8 @@ module Sw_40g_Core (
                                );
 
 
-
+  assign lane1_axi_rx_CDC_BaseR[0].tready=1'b1;//.@
+  assign lane1_axi_rx_CDC_BaseR[1].tready=1'b1;//.@
 
 
 
